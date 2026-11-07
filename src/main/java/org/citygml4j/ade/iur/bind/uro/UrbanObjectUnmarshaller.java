@@ -211,6 +211,10 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                     .with(TunnelStructureAttributePropertyType.class, this::unmarshalTunnelStructureAttributeProperty)
                     .with(WaterBodyDetailAttributeType.class, this::unmarshalWaterBodyDetailAttribute)
                     .with(WaterBodyDetailAttributePropertyType.class, this::unmarshalWaterBodyDetailAttributeProperty)
+                    .with(PointCloudType.class, this::unmarshalPointCloud)
+                    .with(PointCloudSpecAttributeType.class, this::unmarshalPointCloudSpecAttribute)
+                    .with(PointCloudSpecAttributePropertyType.class, this::unmarshalPointCloudSpecAttributeProperty)
+                    .with(AbstractPointCloudPropertyType.class, this::unmarshalAbstractPointCloudProperty)
                     .with(OtherConstructionType.class, this::unmarshalOtherConstruction)
                     .with(ConstructionEventType.class, this::unmarshalConstructionEvent)
                     .with(ConstructionEventPropertyType.class, this::unmarshalConstructionEventProperty)
@@ -233,10 +237,6 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                     .with(_BoundarySurfacePropertyType.class, this::unmarshalAbstractBoundarySurfaceProperty)
                     .with(ConstructionInstallationType.class, this::unmarshalConstructionInstallation)
                     .with(ConstructionInstallationPropertyType.class, this::unmarshalConstructionInstallationProperty)
-                    .with(PointCloudType.class, this::unmarshalPointCloud)
-                    .with(PointCloudSpecAttributeType.class, this::unmarshalPointCloudSpecAttribute)
-                    .with(PointCloudSpecAttributePropertyType.class, this::unmarshalPointCloudSpecAttributeProperty)
-                    .with(AbstractPointCloudPropertyType.class, this::unmarshalAbstractPointCloudProperty)
                     .with(CableType.class, this::unmarshalCable)
                     .with(ElectricityCableType.class, this::unmarshalElectricityCable)
                     .with(TelecommunicationsCableType.class, this::unmarshalTelecommunicationsCable)
@@ -468,6 +468,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new WtrFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
             case "wtrKeyValuePairAttribute":
                 return new WtrKeyValuePairAttributePropertyElement(unmarshalKeyValuePairAttributeProperty((KeyValuePairAttributePropertyType) value));
+            case "pointCloud":
+                return new PointCloudPropertyElement(unmarshalAbstractPointCloudProperty((AbstractPointCloudPropertyType) value));
             case "fiscalYearOfPublication":
                 LocalDate fiscalYearOfPublication = ((XMLGregorianCalendar) value).toGregorianCalendar().toZonedDateTime().toLocalDate();
                 return new FiscalYearOfPublicationProperty(Year.of(fiscalYearOfPublication.getYear()));
@@ -3994,6 +3996,121 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
         return dest;
     }
 
+    private void unmarshalAbstractPointCloud(AbstractPointCloudType src, AbstractPointCloud dest) throws MissingADESchemaException {
+        helper.getGMLUnmarshaller().unmarshalAbstractFeature(src, dest);
+    }
+
+    private PointCloud unmarshalPointCloud(PointCloudType src) throws MissingADESchemaException {
+        PointCloud dest = new PointCloud();
+        unmarshalAbstractPointCloud(src, dest);
+
+        if (src.isSetMimeType())
+            dest.setMimeType(helper.getGMLUnmarshaller().unmarshalCode(src.getMimeType()));
+
+        dest.setPointFile(src.getPointFile());
+        dest.setPointFileSrsName(src.getPointFileSrsName());
+
+        if (src.isSetPoints())
+            dest.setPoints(helper.getGMLUnmarshaller().unmarshalMultiPointProperty(src.getPoints()));
+
+        if (src.isSetPointCloudSpecAttribute())
+            dest.setPointCloudSpecAttribute(unmarshalPointCloudSpecAttributeProperty(src.getPointCloudSpecAttribute()));
+
+        return dest;
+    }
+
+    private PointCloudSpecAttribute unmarshalPointCloudSpecAttribute(PointCloudSpecAttributeType src) throws MissingADESchemaException {
+        PointCloudSpecAttribute dest = new PointCloudSpecAttribute();
+
+        if (src.isSetClazz())
+            dest.setClassifier(helper.getGMLUnmarshaller().unmarshalCode(src.getClazz()));
+
+        if (src.isSetFunction()) {
+            for (CodeType function : src.getFunction())
+                dest.getFunction().add(helper.getGMLUnmarshaller().unmarshalCode(function));
+        }
+
+        if (src.isSetSrcScale())
+            dest.setSrcScale(helper.getGMLUnmarshaller().unmarshalCode(src.getSrcScale()));
+
+        if (src.isSetSrcRequiredHorizontalAccuracy())
+            dest.setSrcRequiredHorizontalAccuracy(helper.getGMLUnmarshaller().unmarshalLength(src.getSrcRequiredHorizontalAccuracy()));
+
+        if (src.isSetSrcRequiredVerticalAccuracy())
+            dest.setSrcRequiredVerticalAccuracy(helper.getGMLUnmarshaller().unmarshalLength(src.getSrcRequiredVerticalAccuracy()));
+
+        if (src.isSetSrcRequiredPointDensity())
+            dest.setSrcRequiredPointDensity(helper.getGMLUnmarshaller().unmarshalMeasure(src.getSrcRequiredPointDensity()));
+
+        if (src.isSetSrcFilteringCriteria()) {
+            for (CodeType srcFilteringCriteria : src.getSrcFilteringCriteria())
+                dest.getSrcFilteringCriteria().add(helper.getGMLUnmarshaller().unmarshalCode(srcFilteringCriteria));
+        }
+
+        if (src.isSetSrcGridInterval())
+            dest.setSrcGridInterval(helper.getGMLUnmarshaller().unmarshalMeasure(src.getSrcGridInterval()));
+
+        dest.setIsIntensity(src.isIsIntensity());
+
+        if (src.isSetSpectralBandSet()) {
+            for (CodeType spectralBandSet : src.getSpectralBandSet())
+                dest.getSpectralBandSet().add(helper.getGMLUnmarshaller().unmarshalCode(spectralBandSet));
+        }
+
+        dest.setIsReturnInfo(src.isIsReturnInfo());
+        dest.setIsStandardClassification(src.isIsStandardClassification());
+
+        if (src.isSetCustomClassificationType()) {
+            for (CodeType customClassificationType : src.getCustomClassificationType())
+                dest.getCustomClassificationType().add(helper.getGMLUnmarshaller().unmarshalCode(customClassificationType));
+        }
+
+        if (src.isSetPointCloudAssociationMethod())
+            dest.setPointCloudAssociationMethod(helper.getGMLUnmarshaller().unmarshalCode(src.getPointCloudAssociationMethod()));
+
+        if (src.isSetPointSubsamplingInfo())
+            dest.setPointSubsamplingInfo(helper.getGMLUnmarshaller().unmarshalCode(src.getPointSubsamplingInfo()));
+
+        return dest;
+    }
+
+    private PointCloudSpecAttributeProperty unmarshalPointCloudSpecAttributeProperty(PointCloudSpecAttributePropertyType src) throws MissingADESchemaException {
+        PointCloudSpecAttributeProperty dest = new PointCloudSpecAttributeProperty();
+
+        if (src.isSetPointCloudSpecAttribute())
+            dest.setObject(unmarshalPointCloudSpecAttribute(src.getPointCloudSpecAttribute()));
+
+        return dest;
+    }
+
+    private AbstractPointCloudProperty unmarshalAbstractPointCloudProperty(AbstractPointCloudPropertyType src) throws MissingADESchemaException {
+        AbstractPointCloudProperty dest = new AbstractPointCloudProperty();
+
+        if (src.isSetAbstractPointCloud()) {
+            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.getAbstractPointCloud());
+            if (object instanceof AbstractPointCloud)
+                dest.setObject((AbstractPointCloud) object);
+        }
+
+        dest.setRemoteSchema(src.getRemoteSchema());
+
+        if (src.isSetType())
+            dest.setType(XLinkType.fromValue(src.getType().value()));
+
+        dest.setHref(src.getHref());
+        dest.setRole(src.getRole());
+        dest.setArcrole(src.getArcrole());
+        dest.setTitle(src.getTitle());
+
+        if (src.isSetShow())
+            dest.setShow(XLinkShow.fromValue(src.getShow().value()));
+
+        if (src.isSetActuate())
+            dest.setActuate(XLinkActuate.fromValue(src.getActuate().value()));
+
+        return dest;
+    }
+
     private void unmarshalAbstractConstruction(AbstractConstructionType src, AbstractConstruction dest) throws MissingADESchemaException {
         helper.getCore200Unmarshaller().unmarshalAbstractCityObject(src, dest);
 
@@ -4373,121 +4490,6 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
 
         if (src.isSetConstructionInstallation())
             dest.setObject(unmarshalConstructionInstallation(src.getConstructionInstallation()));
-
-        dest.setRemoteSchema(src.getRemoteSchema());
-
-        if (src.isSetType())
-            dest.setType(XLinkType.fromValue(src.getType().value()));
-
-        dest.setHref(src.getHref());
-        dest.setRole(src.getRole());
-        dest.setArcrole(src.getArcrole());
-        dest.setTitle(src.getTitle());
-
-        if (src.isSetShow())
-            dest.setShow(XLinkShow.fromValue(src.getShow().value()));
-
-        if (src.isSetActuate())
-            dest.setActuate(XLinkActuate.fromValue(src.getActuate().value()));
-
-        return dest;
-    }
-
-    private void unmarshalAbstractPointCloud(AbstractPointCloudType src, AbstractPointCloud dest) throws MissingADESchemaException {
-        helper.getGMLUnmarshaller().unmarshalAbstractFeature(src, dest);
-    }
-
-    private PointCloud unmarshalPointCloud(PointCloudType src) throws MissingADESchemaException {
-        PointCloud dest = new PointCloud();
-        unmarshalAbstractPointCloud(src, dest);
-
-        if (src.isSetMimeType())
-            dest.setMimeType(helper.getGMLUnmarshaller().unmarshalCode(src.getMimeType()));
-
-        dest.setPointFile(src.getPointFile());
-        dest.setPointFileSrsName(src.getPointFileSrsName());
-
-        if (src.isSetPoints())
-            dest.setPoints(helper.getGMLUnmarshaller().unmarshalMultiPointProperty(src.getPoints()));
-
-        if (src.isSetPointCloudSpecAttribute())
-            dest.setPointCloudSpecAttribute(unmarshalPointCloudSpecAttributeProperty(src.getPointCloudSpecAttribute()));
-
-        return dest;
-    }
-
-    private PointCloudSpecAttribute unmarshalPointCloudSpecAttribute(PointCloudSpecAttributeType src) throws MissingADESchemaException {
-        PointCloudSpecAttribute dest = new PointCloudSpecAttribute();
-
-        if (src.isSetClazz())
-            dest.setClassifier(helper.getGMLUnmarshaller().unmarshalCode(src.getClazz()));
-
-        if (src.isSetFunction()) {
-            for (CodeType function : src.getFunction())
-                dest.getFunction().add(helper.getGMLUnmarshaller().unmarshalCode(function));
-        }
-
-        if (src.isSetSrcScale())
-            dest.setSrcScale(helper.getGMLUnmarshaller().unmarshalCode(src.getSrcScale()));
-
-        if (src.isSetSrcRequiredHorizontalAccuracy())
-            dest.setSrcRequiredHorizontalAccuracy(helper.getGMLUnmarshaller().unmarshalLength(src.getSrcRequiredHorizontalAccuracy()));
-
-        if (src.isSetSrcRequiredVerticalAccuracy())
-            dest.setSrcRequiredVerticalAccuracy(helper.getGMLUnmarshaller().unmarshalLength(src.getSrcRequiredVerticalAccuracy()));
-
-        if (src.isSetSrcRequiredPointDensity())
-            dest.setSrcRequiredPointDensity(helper.getGMLUnmarshaller().unmarshalMeasure(src.getSrcRequiredPointDensity()));
-
-        if (src.isSetSrcFilteringCriteria()) {
-            for (CodeType srcFilteringCriteria : src.getSrcFilteringCriteria())
-                dest.getSrcFilteringCriteria().add(helper.getGMLUnmarshaller().unmarshalCode(srcFilteringCriteria));
-        }
-
-        if (src.isSetSrcGridInterval())
-            dest.setSrcGridInterval(helper.getGMLUnmarshaller().unmarshalMeasure(src.getSrcGridInterval()));
-
-        dest.setIsIntensity(src.isIsIntensity());
-
-        if (src.isSetSpectralBandSet()) {
-            for (CodeType spectralBandSet : src.getSpectralBandSet())
-                dest.getSpectralBandSet().add(helper.getGMLUnmarshaller().unmarshalCode(spectralBandSet));
-        }
-
-        dest.setIsReturnInfo(src.isIsReturnInfo());
-        dest.setIsStandardClassification(src.isIsStandardClassification());
-
-        if (src.isSetCustomClassificationType()) {
-            for (CodeType customClassificationType : src.getCustomClassificationType())
-                dest.getCustomClassificationType().add(helper.getGMLUnmarshaller().unmarshalCode(customClassificationType));
-        }
-
-        if (src.isSetPointCloudAssociationMethod())
-            dest.setPointCloudAssociationMethod(helper.getGMLUnmarshaller().unmarshalCode(src.getPointCloudAssociationMethod()));
-
-        if (src.isSetPointSubsamplingInfo())
-            dest.setPointSubsamplingInfo(helper.getGMLUnmarshaller().unmarshalCode(src.getPointSubsamplingInfo()));
-
-        return dest;
-    }
-
-    private PointCloudSpecAttributeProperty unmarshalPointCloudSpecAttributeProperty(PointCloudSpecAttributePropertyType src) throws MissingADESchemaException {
-        PointCloudSpecAttributeProperty dest = new PointCloudSpecAttributeProperty();
-
-        if (src.isSetPointCloudSpecAttribute())
-            dest.setObject(unmarshalPointCloudSpecAttribute(src.getPointCloudSpecAttribute()));
-
-        return dest;
-    }
-
-    private AbstractPointCloudProperty unmarshalAbstractPointCloudProperty(AbstractPointCloudPropertyType src) throws MissingADESchemaException {
-        AbstractPointCloudProperty dest = new AbstractPointCloudProperty();
-
-        if (src.isSetAbstractPointCloud()) {
-            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.getAbstractPointCloud());
-            if (object instanceof AbstractPointCloud)
-                dest.setObject((AbstractPointCloud) object);
-        }
 
         dest.setRemoteSchema(src.getRemoteSchema());
 

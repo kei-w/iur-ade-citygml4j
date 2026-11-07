@@ -163,6 +163,8 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(TunnelFunctionalAttribute.class, this::createTunnelFunctionalAttribute)
                     .with(TunnelStructureAttribute.class, this::createTunnelStructureAttribute)
                     .with(WaterBodyDetailAttribute.class, this::createWaterBodyDetailAttribute)
+                    .with(PointCloud.class, this::createPointCloud)
+                    .with(PointCloudSpecAttribute.class, this::createPointCloudSpecAttribute)
                     .with(OtherConstruction.class, this::createOtherConstruction)
                     .with(ConstructionEvent.class, this::createConstructionEvent)
                     .with(Elevation.class, this::createElevation)
@@ -178,8 +180,6 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(RoofSurface.class, this::createRoofSurface)
                     .with(WallSurface.class, this::createWallSurface)
                     .with(ConstructionInstallation.class, this::createConstructionInstallation)
-                    .with(PointCloud.class, this::createPointCloud)
-                    .with(PointCloudSpecAttribute.class, this::createPointCloudSpecAttribute)
                     .with(Cable.class, this::createCable)
                     .with(ElectricityCable.class, this::createElectricityCable)
                     .with(TelecommunicationsCable.class, this::createTelecommunicationsCable)
@@ -295,6 +295,7 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(WtrFacilityIdAttributePropertyElement.class, this::createWtrFacilityIdAttributePropertyElement)
                     .with(WtrFacilityTypeAttributePropertyElement.class, this::createWtrFacilityTypeAttributePropertyElement)
                     .with(WtrKeyValuePairAttributePropertyElement.class, this::createWtrKeyValuePairAttributePropertyElement)
+                    .with(PointCloudPropertyElement.class, this::createPointCloudPropertyElement)
                     .with(FiscalYearOfPublicationProperty.class, this::createFiscalYearOfPublicationProperty)
                     .with(LanguageProperty.class, this::createLanguageProperty);
         }
@@ -468,6 +469,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(TunnelStructureAttributeProperty.class, this::marshalTunnelStructureAttributeProperty)
                     .with(WaterBodyDetailAttribute.class, this::marshalWaterBodyDetailAttribute)
                     .with(WaterBodyDetailAttributeProperty.class, this::marshalWaterBodyDetailAttributeProperty)
+                    .with(PointCloud.class, this::marshalPointCloud)
+                    .with(PointCloudSpecAttribute.class, this::marshalPointCloudSpecAttribute)
+                    .with(PointCloudSpecAttributeProperty.class, this::marshalPointCloudSpecAttributeProperty)
+                    .with(AbstractPointCloudProperty.class, this::marshalAbstractPointCloudProperty)
                     .with(OtherConstruction.class, this::marshalOtherConstruction)
                     .with(ConstructionEvent.class, this::marshalConstructionEvent)
                     .with(ConstructionEventProperty.class, this::marshalConstructionEventProperty)
@@ -490,10 +495,6 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(AbstractBoundarySurfaceProperty.class, this::marshalAbstractBoundarySurfaceProperty)
                     .with(ConstructionInstallation.class, this::marshalConstructionInstallation)
                     .with(ConstructionInstallationProperty.class, this::marshalConstructionInstallationProperty)
-                    .with(PointCloud.class, this::marshalPointCloud)
-                    .with(PointCloudSpecAttribute.class, this::marshalPointCloudSpecAttribute)
-                    .with(PointCloudSpecAttributeProperty.class, this::marshalPointCloudSpecAttributeProperty)
-                    .with(AbstractPointCloudProperty.class, this::marshalAbstractPointCloudProperty)
                     .with(Cable.class, this::marshalCable)
                     .with(ElectricityCable.class, this::marshalElectricityCable)
                     .with(TelecommunicationsCable.class, this::marshalTelecommunicationsCable)
@@ -3900,6 +3901,113 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return dest;
     }
 
+    private void marshalAbstractPointCloud(AbstractPointCloud src, AbstractPointCloudType dest) {
+        helper.getGMLMarshaller().marshalAbstractFeature(src, dest);
+    }
+
+    private PointCloudType marshalPointCloud(PointCloud src) {
+        PointCloudType dest = factory.createPointCloudType();
+        marshalAbstractPointCloud(src, dest);
+
+        if (src.getMimeType() != null)
+            dest.setMimeType(helper.getGMLMarshaller().marshalCode(src.getMimeType()));
+
+        dest.setPointFile(src.getPointFile());
+        dest.setPointFileSrsName(src.getPointFileSrsName());
+
+        if (src.getPoints() != null)
+            dest.setPoints(helper.getGMLMarshaller().marshalMultiPointProperty(src.getPoints()));
+
+        if (src.getPointCloudSpecAttribute() != null)
+            dest.setPointCloudSpecAttribute(marshalPointCloudSpecAttributeProperty(src.getPointCloudSpecAttribute()));
+
+        return dest;
+    }
+
+    private PointCloudSpecAttributeType marshalPointCloudSpecAttribute(PointCloudSpecAttribute src) {
+        PointCloudSpecAttributeType dest = factory.createPointCloudSpecAttributeType();
+
+        if (src.getClassifier() != null)
+            dest.setClazz(helper.getGMLMarshaller().marshalCode(src.getClassifier()));
+
+        for (Code function : src.getFunction())
+            dest.getFunction().add(helper.getGMLMarshaller().marshalCode(function));
+
+        if (src.getSrcScale() != null)
+            dest.setSrcScale(helper.getGMLMarshaller().marshalCode(src.getSrcScale()));
+
+        if (src.getSrcRequiredHorizontalAccuracy() != null)
+            dest.setSrcRequiredHorizontalAccuracy(helper.getGMLMarshaller().marshalLength(src.getSrcRequiredHorizontalAccuracy()));
+
+        if (src.getSrcRequiredVerticalAccuracy() != null)
+            dest.setSrcRequiredVerticalAccuracy(helper.getGMLMarshaller().marshalLength(src.getSrcRequiredVerticalAccuracy()));
+
+        if (src.getSrcRequiredPointDensity() != null)
+            dest.setSrcRequiredPointDensity(helper.getGMLMarshaller().marshalMeasure(src.getSrcRequiredPointDensity()));
+
+        for (Code srcFilteringCriteria : src.getSrcFilteringCriteria())
+            dest.getSrcFilteringCriteria().add(helper.getGMLMarshaller().marshalCode(srcFilteringCriteria));
+
+        if (src.getSrcGridInterval() != null)
+            dest.setSrcGridInterval(helper.getGMLMarshaller().marshalMeasure(src.getSrcGridInterval()));
+
+        dest.setIsIntensity(src.getIsIntensity());
+
+        for (Code spectralBandSet : src.getSpectralBandSet())
+            dest.getSpectralBandSet().add(helper.getGMLMarshaller().marshalCode(spectralBandSet));
+
+        dest.setIsReturnInfo(src.getIsReturnInfo());
+        dest.setIsStandardClassification(src.getIsStandardClassification());
+
+        for (Code customClassificationType : src.getCustomClassificationType())
+            dest.getCustomClassificationType().add(helper.getGMLMarshaller().marshalCode(customClassificationType));
+
+        if (src.getPointCloudAssociationMethod() != null)
+            dest.setPointCloudAssociationMethod(helper.getGMLMarshaller().marshalCode(src.getPointCloudAssociationMethod()));
+
+        if (src.getPointSubsamplingInfo() != null)
+            dest.setPointSubsamplingInfo(helper.getGMLMarshaller().marshalCode(src.getPointSubsamplingInfo()));
+
+        return dest;
+    }
+
+    private PointCloudSpecAttributePropertyType marshalPointCloudSpecAttributeProperty(PointCloudSpecAttributeProperty src) {
+        PointCloudSpecAttributePropertyType dest = factory.createPointCloudSpecAttributePropertyType();
+
+        if (src.isSetObject())
+            dest.setPointCloudSpecAttribute(marshalPointCloudSpecAttribute(src.getObject()));
+
+        return dest;
+    }
+
+    private AbstractPointCloudPropertyType marshalAbstractPointCloudProperty(AbstractPointCloudProperty src) {
+        AbstractPointCloudPropertyType dest = factory.createAbstractPointCloudPropertyType();
+
+        if (src.getObject() != null) {
+            JAXBElement<?> elem = helper.getJAXBMarshaller().marshalJAXBElement(src.getObject());
+            if (elem != null && elem.getValue() instanceof AbstractPointCloudType)
+                dest.setAbstractPointCloud((JAXBElement<? extends AbstractPointCloudType>) elem);
+        }
+
+        dest.setRemoteSchema(src.getRemoteSchema());
+
+        if (src.isSetType())
+            dest.setType(TypeType.fromValue(src.getType().getValue()));
+
+        dest.setHref(src.getHref());
+        dest.setRole(src.getRole());
+        dest.setArcrole(src.getArcrole());
+        dest.setTitle(src.getTitle());
+
+        if (src.isSetShow())
+            dest.setShow(ShowType.fromValue(src.getShow().getValue()));
+
+        if (src.isSetActuate())
+            dest.setActuate(ActuateType.fromValue(src.getActuate().getValue()));
+
+        return dest;
+    }
+
     private void marshalAbstractConstruction(AbstractConstruction src, AbstractConstructionType dest) {
         helper.getCore200Marshaller().marshalAbstractCityObject(src, dest);
 
@@ -4249,113 +4357,6 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
         if (src.isSetObject())
             dest.setConstructionInstallation(marshalConstructionInstallation(src.getObject()));
-
-        dest.setRemoteSchema(src.getRemoteSchema());
-
-        if (src.isSetType())
-            dest.setType(TypeType.fromValue(src.getType().getValue()));
-
-        dest.setHref(src.getHref());
-        dest.setRole(src.getRole());
-        dest.setArcrole(src.getArcrole());
-        dest.setTitle(src.getTitle());
-
-        if (src.isSetShow())
-            dest.setShow(ShowType.fromValue(src.getShow().getValue()));
-
-        if (src.isSetActuate())
-            dest.setActuate(ActuateType.fromValue(src.getActuate().getValue()));
-
-        return dest;
-    }
-
-    private void marshalAbstractPointCloud(AbstractPointCloud src, AbstractPointCloudType dest) {
-        helper.getGMLMarshaller().marshalAbstractFeature(src, dest);
-    }
-
-    private PointCloudType marshalPointCloud(PointCloud src) {
-        PointCloudType dest = factory.createPointCloudType();
-        marshalAbstractPointCloud(src, dest);
-
-        if (src.getMimeType() != null)
-            dest.setMimeType(helper.getGMLMarshaller().marshalCode(src.getMimeType()));
-
-        dest.setPointFile(src.getPointFile());
-        dest.setPointFileSrsName(src.getPointFileSrsName());
-
-        if (src.getPoints() != null)
-            dest.setPoints(helper.getGMLMarshaller().marshalMultiPointProperty(src.getPoints()));
-
-        if (src.getPointCloudSpecAttribute() != null)
-            dest.setPointCloudSpecAttribute(marshalPointCloudSpecAttributeProperty(src.getPointCloudSpecAttribute()));
-
-        return dest;
-    }
-
-    private PointCloudSpecAttributeType marshalPointCloudSpecAttribute(PointCloudSpecAttribute src) {
-        PointCloudSpecAttributeType dest = factory.createPointCloudSpecAttributeType();
-
-        if (src.getClassifier() != null)
-            dest.setClazz(helper.getGMLMarshaller().marshalCode(src.getClassifier()));
-
-        for (Code function : src.getFunction())
-            dest.getFunction().add(helper.getGMLMarshaller().marshalCode(function));
-
-        if (src.getSrcScale() != null)
-            dest.setSrcScale(helper.getGMLMarshaller().marshalCode(src.getSrcScale()));
-
-        if (src.getSrcRequiredHorizontalAccuracy() != null)
-            dest.setSrcRequiredHorizontalAccuracy(helper.getGMLMarshaller().marshalLength(src.getSrcRequiredHorizontalAccuracy()));
-
-        if (src.getSrcRequiredVerticalAccuracy() != null)
-            dest.setSrcRequiredVerticalAccuracy(helper.getGMLMarshaller().marshalLength(src.getSrcRequiredVerticalAccuracy()));
-
-        if (src.getSrcRequiredPointDensity() != null)
-            dest.setSrcRequiredPointDensity(helper.getGMLMarshaller().marshalMeasure(src.getSrcRequiredPointDensity()));
-
-        for (Code srcFilteringCriteria : src.getSrcFilteringCriteria())
-            dest.getSrcFilteringCriteria().add(helper.getGMLMarshaller().marshalCode(srcFilteringCriteria));
-
-        if (src.getSrcGridInterval() != null)
-            dest.setSrcGridInterval(helper.getGMLMarshaller().marshalMeasure(src.getSrcGridInterval()));
-
-        dest.setIsIntensity(src.getIsIntensity());
-
-        for (Code spectralBandSet : src.getSpectralBandSet())
-            dest.getSpectralBandSet().add(helper.getGMLMarshaller().marshalCode(spectralBandSet));
-
-        dest.setIsReturnInfo(src.getIsReturnInfo());
-        dest.setIsStandardClassification(src.getIsStandardClassification());
-
-        for (Code customClassificationType : src.getCustomClassificationType())
-            dest.getCustomClassificationType().add(helper.getGMLMarshaller().marshalCode(customClassificationType));
-
-        if (src.getPointCloudAssociationMethod() != null)
-            dest.setPointCloudAssociationMethod(helper.getGMLMarshaller().marshalCode(src.getPointCloudAssociationMethod()));
-
-        if (src.getPointSubsamplingInfo() != null)
-            dest.setPointSubsamplingInfo(helper.getGMLMarshaller().marshalCode(src.getPointSubsamplingInfo()));
-
-        return dest;
-    }
-
-    private PointCloudSpecAttributePropertyType marshalPointCloudSpecAttributeProperty(PointCloudSpecAttributeProperty src) {
-        PointCloudSpecAttributePropertyType dest = factory.createPointCloudSpecAttributePropertyType();
-
-        if (src.isSetObject())
-            dest.setPointCloudSpecAttribute(marshalPointCloudSpecAttribute(src.getObject()));
-
-        return dest;
-    }
-
-    private AbstractPointCloudPropertyType marshalAbstractPointCloudProperty(AbstractPointCloudProperty src) {
-        AbstractPointCloudPropertyType dest = factory.createAbstractPointCloudPropertyType();
-
-        if (src.getObject() != null) {
-            JAXBElement<?> elem = helper.getJAXBMarshaller().marshalJAXBElement(src.getObject());
-            if (elem != null && elem.getValue() instanceof AbstractPointCloudType)
-                dest.setAbstractPointCloud((JAXBElement<? extends AbstractPointCloudType>) elem);
-        }
 
         dest.setRemoteSchema(src.getRemoteSchema());
 
@@ -5191,6 +5192,14 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createWaterBodyDetailAttribute(marshalWaterBodyDetailAttribute(src));
     }
 
+    private JAXBElement<?> createPointCloud(PointCloud src) {
+        return factory.createPointCloud(marshalPointCloud(src));
+    }
+
+    private JAXBElement<?> createPointCloudSpecAttribute(PointCloudSpecAttribute src) {
+        return factory.createPointCloudSpecAttribute(marshalPointCloudSpecAttribute(src));
+    }
+
     private JAXBElement<?> createOtherConstruction(OtherConstruction src) {
         return factory.createOtherConstruction(marshalOtherConstruction(src));
     }
@@ -5249,14 +5258,6 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
     private JAXBElement<?> createConstructionInstallation(ConstructionInstallation src) {
         return factory.createConstructionInstallation(marshalConstructionInstallation(src));
-    }
-
-    private JAXBElement<?> createPointCloud(PointCloud src) {
-        return factory.createPointCloud(marshalPointCloud(src));
-    }
-
-    private JAXBElement<?> createPointCloudSpecAttribute(PointCloudSpecAttribute src) {
-        return factory.createPointCloudSpecAttribute(marshalPointCloudSpecAttribute(src));
     }
 
     private JAXBElement<?> createCable(Cable src) {
@@ -5717,6 +5718,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
     private JAXBElement<?> createWtrKeyValuePairAttributePropertyElement(WtrKeyValuePairAttributePropertyElement src) {
         return factory.createWtrKeyValuePairAttribute(marshalKeyValuePairAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createPointCloudPropertyElement(PointCloudPropertyElement src) {
+        return factory.createPointCloudProperty(marshalAbstractPointCloudProperty(src.getValue()));
     }
 
     private JAXBElement<?> createFiscalYearOfPublicationProperty(FiscalYearOfPublicationProperty src) {

@@ -39,10 +39,10 @@ Change Log
   qualified where both are in scope.
 * The top-level `Unmarshaller` dispatches JAXB objects by their JAXB package, so `urf` properties of `uro` types
   (`keyValuePairAttribute`, `dataQualityAttribute`, `urfDmAttribute`) are unmarshalled.
+* The hook `uro:pointCloud` (`core:_GenericApplicationPropertyOfCityObject`, a `uro:PointCloud` feature) is
+  modelled and (un)marshalled as `PointCloudPropertyElement` on every city object.
 
 ##### Known limitations
-* The feature-typed hook `uro:pointCloud` (`core:_GenericApplicationPropertyOfCityObject`) is not supported;
-  `uro:PointCloud` itself is modelled.
 * `gml:pos` values (`uro:Elevation/elevationValue`, `uro:OffsetDepth/pos`) keep their coordinates only; `srsName` and
   `srsDimension` are not stored.
 * `urg` and `urt` remain at 1.4.

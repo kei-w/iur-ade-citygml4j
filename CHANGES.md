@@ -15,10 +15,22 @@ Change Log
   city furniture, relief, transportation, vegetation, water bodies, city object groups and building interiors.
 * The `uro` model and binding classes are generated from the XSD (`poc/gen` in the PoC workspace).
 
+##### Changes (ADE feature types, 2026-11-07)
+* The ADE feature types of the i-UR 3.2 Urban Object module are modelled, (un)marshalled and walked:
+  `OtherConstruction` with its boundary surfaces and `ConstructionInstallation`, `UndergroundBuilding`, `Waterway`,
+  `PublicLand` and the utility network elements (`Pipe`, `SewerPipe`, `ThermalPipe`, `WaterPipe`, `OilGasChemicalsPipe`,
+  `Duct`, `Cable`, `ElectricityCable`, `TelecommunicationsCable`, `Appurtenance`, `Manhole`, `Handhole`) and `PointCloud`.
+  `UrbanObjectModule` registers them as features.
+* The JAXB properties `AbstractConstructionType/boundedBy` and `PublicLandType/id` are renamed to `boundedBySurface` and
+  `identifier` in `binding.xjb` (ade-xjc otherwise binds the whole content model as a generic list); the model accessors
+  are named alike.
+
 ##### Known limitations
-* The feature-typed hook `uro:pointCloud` (`core:_GenericApplicationPropertyOfCityObject`) is not supported.
-* ADE feature types (`uro:UndergroundBuilding`, `uro:OtherConstruction`, `uro:Waterway`, utility networks, ...) are not
-  supported; `urf`, `urg` and `urt` remain at 1.4.
+* The feature-typed hook `uro:pointCloud` (`core:_GenericApplicationPropertyOfCityObject`) is not supported;
+  `uro:PointCloud` itself is modelled.
+* `gml:pos` values (`uro:Elevation/elevationValue`, `uro:OffsetDepth/pos`) keep their coordinates only; `srsName` and
+  `srsDimension` are not stored.
+* `urf`, `urg` and `urt` remain at 1.4.
 
 ### 3.1.0 - 2026-11-07
 

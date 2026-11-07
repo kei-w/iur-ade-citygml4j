@@ -12,6 +12,12 @@
     <jaxb:bindings node="xs:element[@name='buildingDataQualityAttribute']">
       <jaxb:factoryMethod name="BuildingDataQualityAttributeProperty"/>
     </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='AbstractConstructionType']//xs:element[@name='boundedBy']">
+      <jaxb:property name="boundedBySurface"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='PublicLandType']//xs:element[@name='id']">
+      <jaxb:property name="identifier"/>
+    </jaxb:bindings>
     <jaxb:bindings node="xs:element[@name='buildingDetailAttribute']">
       <jaxb:factoryMethod name="BuildingDetailAttributeProperty"/>
     </jaxb:bindings>

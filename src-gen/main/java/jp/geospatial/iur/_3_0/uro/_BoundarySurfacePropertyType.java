@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 12:50:54 JST 2026
+// Generated: Sat Nov 07 17:21:15 JST 2026
 //
 
 
@@ -71,12 +71,12 @@ public class _BoundarySurfacePropertyType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link OuterCeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoofSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link OuterFloorSurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link GroundSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoofSurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ClosureSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OuterFloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OuterCeilingSurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link _BoundarySurfaceType }{@code >}
      *     
      */
@@ -89,12 +89,12 @@ public class _BoundarySurfacePropertyType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link OuterCeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoofSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link OuterFloorSurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link GroundSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoofSurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ClosureSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OuterFloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OuterCeilingSurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link _BoundarySurfaceType }{@code >}
      *     
      */

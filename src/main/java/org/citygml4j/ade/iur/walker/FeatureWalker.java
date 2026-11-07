@@ -22,12 +22,26 @@
 
 package org.citygml4j.ade.iur.walker;
 
+import org.citygml4j.ade.iur.model.urf.*;
 import org.citygml4j.ade.iur.model.urf.LandUseDiversion;
 import org.citygml4j.ade.iur.model.urf.TargetProperty;
-import org.citygml4j.ade.iur.model.urf.*;
 import org.citygml4j.ade.iur.model.urg.*;
+import org.citygml4j.ade.iur.model.uro.AbstractBoundarySurface;
+import org.citygml4j.ade.iur.model.uro.AbstractBoundarySurfaceProperty;
+import org.citygml4j.ade.iur.model.uro.AbstractConstruction;
+import org.citygml4j.ade.iur.model.uro.ClosureSurface;
+import org.citygml4j.ade.iur.model.uro.ConstructionInstallation;
+import org.citygml4j.ade.iur.model.uro.ConstructionInstallationProperty;
+import org.citygml4j.ade.iur.model.uro.GroundSurface;
+import org.citygml4j.ade.iur.model.uro.OtherConstruction;
+import org.citygml4j.ade.iur.model.uro.OuterCeilingSurface;
+import org.citygml4j.ade.iur.model.uro.OuterFloorSurface;
+import org.citygml4j.ade.iur.model.uro.RoofSurface;
+import org.citygml4j.ade.iur.model.uro.UndergroundBuilding;
+import org.citygml4j.ade.iur.model.uro.WallSurface;
 import org.citygml4j.ade.iur.model.urt.*;
 import org.citygml4j.model.citygml.ade.binding.ADEWalker;
+import org.citygml4j.model.citygml.building.AbstractBuilding;
 import org.citygml4j.model.citygml.core.AbstractCityObject;
 import org.citygml4j.model.gml.feature.FeatureProperty;
 
@@ -253,5 +267,56 @@ public class FeatureWalker implements ADEWalker<org.citygml4j.util.walker.Featur
 
         if (trip.getShape() != null)
             walker.visit((FeatureProperty<?>) trip.getShape());
+    }
+
+    // uro feature types (generated)
+    public void visit(AbstractConstruction abstractConstruction) {
+        walker.visit((AbstractCityObject) abstractConstruction);
+
+        for (AbstractBoundarySurfaceProperty property : new ArrayList<>(abstractConstruction.getBoundedBySurface()))
+            walker.visit((FeatureProperty<?>) property);
+
+        for (ConstructionInstallationProperty property : new ArrayList<>(abstractConstruction.getConstructionInstallation()))
+            walker.visit((FeatureProperty<?>) property);
+    }
+
+    public void visit(OtherConstruction otherConstruction) {
+        visit((AbstractConstruction) otherConstruction);
+    }
+
+    public void visit(AbstractBoundarySurface abstractBoundarySurface) {
+        walker.visit((AbstractCityObject) abstractBoundarySurface);
+    }
+
+    public void visit(RoofSurface roofSurface) {
+        visit((AbstractBoundarySurface) roofSurface);
+    }
+
+    public void visit(WallSurface wallSurface) {
+        visit((AbstractBoundarySurface) wallSurface);
+    }
+
+    public void visit(GroundSurface groundSurface) {
+        visit((AbstractBoundarySurface) groundSurface);
+    }
+
+    public void visit(OuterCeilingSurface outerCeilingSurface) {
+        visit((AbstractBoundarySurface) outerCeilingSurface);
+    }
+
+    public void visit(OuterFloorSurface outerFloorSurface) {
+        visit((AbstractBoundarySurface) outerFloorSurface);
+    }
+
+    public void visit(ClosureSurface closureSurface) {
+        visit((AbstractBoundarySurface) closureSurface);
+    }
+
+    public void visit(ConstructionInstallation constructionInstallation) {
+        walker.visit((AbstractCityObject) constructionInstallation);
+    }
+
+    public void visit(UndergroundBuilding undergroundBuilding) {
+        walker.visit((AbstractBuilding) undergroundBuilding);
     }
 }

@@ -17,10 +17,12 @@ Change Log
   city furniture, relief, transportation, vegetation, water bodies, city object groups and building interiors.
 * The `uro` model and binding classes are generated from the XSD (`poc/gen` in the PoC workspace).
 
+##### Changes (ADE feature types, 2026-11-07)
+* The i-UR 2.0 XSD defines no ADE feature types; regenerated with the generator that supports them (no code change).
+
 ##### Known limitations
 * `uro:ControlPoint/uro:parameter` is not supported: the 2.0 XSD declares it with the type of `uro:ControlPoint` itself.
-* ADE feature types (`uro:UndergroundBuilding`, `uro:OtherConstruction`, `uro:Waterway`, utility networks, ...) are not
-  supported; `urf`, `urg` and `urt` remain at 1.4.
+* `urf`, `urg` and `urt` remain at 1.4.
 
 ### 1.5.0 - 2024-08-27
 

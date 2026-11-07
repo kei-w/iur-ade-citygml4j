@@ -50,7 +50,7 @@ public class TranslationJP extends PublicTransit {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         TranslationJP copy = target == null ? new TranslationJP() : (TranslationJP) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

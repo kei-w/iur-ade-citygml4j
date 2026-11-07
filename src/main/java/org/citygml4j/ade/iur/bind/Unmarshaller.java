@@ -57,11 +57,11 @@ public class Unmarshaller implements ADEUnmarshaller {
 
         if (UrbanFunctionModule.v2_0.getNamespaceURI().equals(namespaceURI))
             return urbanFunction.unmarshal(src);
-        else if (StatisticalGridModule.v1_4.getNamespaceURI().equals(namespaceURI))
+        else if (StatisticalGridModule.v2_0.getNamespaceURI().equals(namespaceURI))
             return statisticalGrid.unmarshal(src);
         else if (UrbanObjectModule.v2_0.getNamespaceURI().equals(namespaceURI))
             return urbanObject.unmarshal(src);
-        else if (PublicTransitModule.v1_4.getNamespaceURI().equals(namespaceURI))
+        else if (PublicTransitModule.v2_0.getNamespaceURI().equals(namespaceURI))
             return publicTransit.unmarshal(src);
 
         return null;
@@ -73,11 +73,11 @@ public class Unmarshaller implements ADEUnmarshaller {
 
         if (UrbanFunctionModule.v2_0.getJAXBPackageNames().contains(packageName))
             return urbanFunction.unmarshal(src);
-        else if (StatisticalGridModule.v1_4.getJAXBPackageNames().contains(packageName))
+        else if (StatisticalGridModule.v2_0.getJAXBPackageNames().contains(packageName))
             return statisticalGrid.unmarshal(src);
         else if (UrbanObjectModule.v2_0.getJAXBPackageNames().contains(packageName))
             return urbanObject.unmarshal(src);
-        else if (PublicTransitModule.v1_4.getJAXBPackageNames().contains(packageName))
+        else if (PublicTransitModule.v2_0.getJAXBPackageNames().contains(packageName))
             return publicTransit.unmarshal(src);
 
         return null;

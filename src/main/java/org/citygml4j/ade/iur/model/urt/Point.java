@@ -64,7 +64,7 @@ public class Point extends AbstractDataType {
     }
 
     public void setPointSequence(Integer pointSequence) {
-        this.pointSequence = pointSequence != null && pointSequence >= 0 ? pointSequence : null;
+        this.pointSequence = pointSequence;
     }
 
     public Double getPointDistanceTraveled() {

@@ -34,7 +34,7 @@ public class OfficesAndEmployees extends StatisticalGrid {
     }
 
     public void setNumberOfOffices(Integer numberOfOffices) {
-        this.numberOfOffices = numberOfOffices != null && numberOfOffices >= 0 ? numberOfOffices : null;
+        this.numberOfOffices = numberOfOffices;
     }
 
     public Integer getNumberOfEmployees() {
@@ -42,13 +42,13 @@ public class OfficesAndEmployees extends StatisticalGrid {
     }
 
     public void setNumberOfEmployees(Integer numberOfEmployees) {
-        this.numberOfEmployees = numberOfEmployees != null && numberOfEmployees >= 0 ? numberOfEmployees : null;
+        this.numberOfEmployees = numberOfEmployees;
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         OfficesAndEmployees copy = target == null ? new OfficesAndEmployees() : (OfficesAndEmployees) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

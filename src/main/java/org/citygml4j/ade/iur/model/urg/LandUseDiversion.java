@@ -30,35 +30,35 @@ import org.citygml4j.model.common.child.ChildList;
 import java.util.List;
 
 public class LandUseDiversion extends StatisticalGrid {
-    private List<NumberOfAnnualDiversionsProperty> numberOfAnnualDiversions;
-    private List<AreaOfAnnualDiversionsProperty> areaOfAnnualDiversions;
+    private List<NumberOfAnnualDiversionsProperty> numberOfAnnualDiversion;
+    private List<AreaOfAnnualDiversionsProperty> areaOfAnnualDiversion;
 
-    public List<NumberOfAnnualDiversionsProperty> getNumberOfAnnualDiversions() {
-        if (numberOfAnnualDiversions == null)
-            numberOfAnnualDiversions = new ChildList<>(this);
+    public List<NumberOfAnnualDiversionsProperty> getNumberOfAnnualDiversion() {
+        if (numberOfAnnualDiversion == null)
+            numberOfAnnualDiversion = new ChildList<>(this);
 
-        return numberOfAnnualDiversions;
+        return numberOfAnnualDiversion;
     }
 
-    public void setNumberOfAnnualDiversions(List<NumberOfAnnualDiversionsProperty> numberOfAnnualDiversions) {
-        this.numberOfAnnualDiversions = ModelObjects.setParent(numberOfAnnualDiversions, this);
+    public void setNumberOfAnnualDiversion(List<NumberOfAnnualDiversionsProperty> numberOfAnnualDiversion) {
+        this.numberOfAnnualDiversion = ModelObjects.setParent(numberOfAnnualDiversion, this);
     }
 
-    public List<AreaOfAnnualDiversionsProperty> getAreaOfAnnualDiversions() {
-        if (areaOfAnnualDiversions == null)
-            areaOfAnnualDiversions = new ChildList<>(this);
+    public List<AreaOfAnnualDiversionsProperty> getAreaOfAnnualDiversion() {
+        if (areaOfAnnualDiversion == null)
+            areaOfAnnualDiversion = new ChildList<>(this);
 
-        return areaOfAnnualDiversions;
+        return areaOfAnnualDiversion;
     }
 
-    public void setAreaOfAnnualDiversions(List<AreaOfAnnualDiversionsProperty> areaOfAnnualDiversions) {
-        this.areaOfAnnualDiversions = ModelObjects.setParent(areaOfAnnualDiversions, this);
+    public void setAreaOfAnnualDiversion(List<AreaOfAnnualDiversionsProperty> areaOfAnnualDiversion) {
+        this.areaOfAnnualDiversion = ModelObjects.setParent(areaOfAnnualDiversion, this);
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         LandUseDiversion copy = target == null ? new LandUseDiversion() : (LandUseDiversion) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

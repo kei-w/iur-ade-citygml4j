@@ -26,7 +26,6 @@ import org.citygml4j.builder.copy.CopyBuilder;
 import org.citygml4j.builder.copy.ObjectCopier;
 import org.citygml4j.model.citygml.ade.binding.ADEModelObject;
 import org.citygml4j.model.citygml.core.AbstractCityObject;
-import org.citygml4j.model.citygml.core.LodRepresentation;
 import org.citygml4j.model.common.base.ModelObjects;
 import org.citygml4j.model.common.visitor.FeatureFunctor;
 import org.citygml4j.model.common.visitor.FeatureVisitor;
@@ -37,40 +36,25 @@ import org.citygml4j.model.gml.feature.BoundingShape;
 import org.citygml4j.model.gml.geometry.aggregates.MultiSurfaceProperty;
 import org.citygml4j.util.bbox.BoundingBoxOptions;
 import org.citygml4j.util.bbox.SimpleBoundingBoxCalculator;
-import org.w3c.dom.Element;
 
 import java.time.Year;
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class StatisticalGrid extends AbstractCityObject implements ADEModelObject {
     private Code classifier;
-    private List<Element> values;
     private Code urbanPlanType;
     private Code areaClassificationType;
     private Code prefecture;
     private Code city;
     private Year surveyYear;
-    private MultiSurfaceProperty lod1MultiSurface;
-    private MultiSurfaceProperty lod2MultiSurface;
+    private MultiSurfaceProperty lodMinus1MultiSurface;
+    private MultiSurfaceProperty lodMinus2MultiSurface;
 
     public Code getClassifier() {
         return classifier;
     }
 
     public void setClassifier(Code classifier) {
-        this.classifier = classifier;
-    }
-
-    public List<Element> getValues() {
-        if (values == null)
-            values = new ArrayList<>();
-
-        return values;
-    }
-
-    public void setValues(List<Element> values) {
-        this.values = values;
+        this.classifier = ModelObjects.setParent(classifier, this);
     }
 
     public Code getUrbanPlanType() {
@@ -113,33 +97,25 @@ public abstract class StatisticalGrid extends AbstractCityObject implements ADEM
         this.surveyYear = surveyYear;
     }
 
-    public MultiSurfaceProperty getLod1MultiSurface() {
-        return lod1MultiSurface;
+    public MultiSurfaceProperty getLodMinus1MultiSurface() {
+        return lodMinus1MultiSurface;
     }
 
-    public void setLod1MultiSurface(MultiSurfaceProperty lod1MultiSurface) {
-        this.lod1MultiSurface = ModelObjects.setParent(lod1MultiSurface, this);
+    public void setLodMinus1MultiSurface(MultiSurfaceProperty lodMinus1MultiSurface) {
+        this.lodMinus1MultiSurface = ModelObjects.setParent(lodMinus1MultiSurface, this);
     }
 
-    public MultiSurfaceProperty getLod2MultiSurface() {
-        return lod2MultiSurface;
+    public MultiSurfaceProperty getLodMinus2MultiSurface() {
+        return lodMinus2MultiSurface;
     }
 
-    public void setLod2MultiSurface(MultiSurfaceProperty lod2MultiSurface) {
-        this.lod2MultiSurface = ModelObjects.setParent(lod2MultiSurface, this);
+    public void setLodMinus2MultiSurface(MultiSurfaceProperty lodMinus2MultiSurface) {
+        this.lodMinus2MultiSurface = ModelObjects.setParent(lodMinus2MultiSurface, this);
     }
 
     @Override
     public BoundingShape calcBoundedBy(BoundingBoxOptions options) {
         return SimpleBoundingBoxCalculator.calcBoundedBy(this, options);
-    }
-
-    @Override
-    public LodRepresentation getLodRepresentation() {
-        LodRepresentation lodRepresentation = new LodRepresentation();
-        lodRepresentation.addRepresentation(lod1MultiSurface);
-        lodRepresentation.addRepresentation(lod2MultiSurface);
-        return lodRepresentation;
     }
 
     @Override

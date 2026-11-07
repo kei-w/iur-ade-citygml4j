@@ -28,18 +28,18 @@ import org.citygml4j.model.common.base.ModelObjects;
 import org.citygml4j.model.gml.basicTypes.Code;
 
 public class FareAttribute extends PublicTransit {
-    private double price;
+    private Double price;
     private Code currencyType;
     private Code paymentMethod;
     private Code transfers;
     private Integer transferDuration;
     private AgencyProperty agency;
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -86,7 +86,7 @@ public class FareAttribute extends PublicTransit {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         FareAttribute copy = target == null ? new FareAttribute() : (FareAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

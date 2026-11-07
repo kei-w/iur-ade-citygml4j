@@ -29,6 +29,7 @@ import org.citygml4j.model.gml.feature.FeatureProperty;
 public class ShapeProperty extends FeatureProperty<Shape> implements ADEModelObject {
 
     public ShapeProperty() {
+        super();
     }
 
     public ShapeProperty(Shape object) {

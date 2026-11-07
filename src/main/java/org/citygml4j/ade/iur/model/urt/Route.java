@@ -34,7 +34,7 @@ import java.time.LocalDate;
 public class Route extends PublicTransit {
     private String shortName;
     private String longName;
-    private DescriptionProperty description;
+    private DescriptionProperty routeDescription;
     private Code type;
     private String url;
     private String color;
@@ -67,11 +67,11 @@ public class Route extends PublicTransit {
     }
 
     public DescriptionProperty getRouteDescription() {
-        return description;
+        return routeDescription;
     }
 
-    public void setRouteDescription(DescriptionProperty description) {
-        this.description = ModelObjects.setParent(description, this);
+    public void setRouteDescription(DescriptionProperty routeDescription) {
+        this.routeDescription = ModelObjects.setParent(routeDescription, this);
     }
 
     public Code getType() {
@@ -188,15 +188,16 @@ public class Route extends PublicTransit {
 
     @Override
     public LodRepresentation getLodRepresentation() {
-        LodRepresentation lodRepresentation = new LodRepresentation();
+        LodRepresentation lodRepresentation = super.getLodRepresentation();
         lodRepresentation.addRepresentation(0, lod0MultiCurve);
+
         return lodRepresentation;
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Route copy = target == null ? new Route() : (Route) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

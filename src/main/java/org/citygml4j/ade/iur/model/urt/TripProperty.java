@@ -29,6 +29,7 @@ import org.citygml4j.model.gml.feature.FeatureProperty;
 public class TripProperty extends FeatureProperty<Trip> implements ADEModelObject {
 
     public TripProperty() {
+        super();
     }
 
     public TripProperty(Trip object) {

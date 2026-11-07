@@ -29,6 +29,7 @@ import org.citygml4j.model.gml.feature.FeatureProperty;
 public class OfficeProperty extends FeatureProperty<Office> implements ADEModelObject {
 
     public OfficeProperty() {
+        super();
     }
 
     public OfficeProperty(Office object) {

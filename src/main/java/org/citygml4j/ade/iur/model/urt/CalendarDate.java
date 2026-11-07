@@ -60,13 +60,13 @@ public class CalendarDate extends PublicTransit {
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
-        Level copy = target == null ? new Level() : (Level) target;
-        super.copyTo(target, copyBuilder);
+        CalendarDate copy = target == null ? new CalendarDate() : (CalendarDate) target;
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 
     @Override
     public Object copy(CopyBuilder copyBuilder) {
-        return copyTo(new Level(), copyBuilder);
+        return copyTo(new CalendarDate(), copyBuilder);
     }
 }

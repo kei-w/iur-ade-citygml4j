@@ -29,6 +29,7 @@ import org.citygml4j.model.gml.feature.FeatureProperty;
 public class CalendarDateProperty extends FeatureProperty<CalendarDate> implements ADEModelObject {
 
     public CalendarDateProperty() {
+        super();
     }
 
     public CalendarDateProperty(CalendarDate object) {

@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 20:15:07 JST 2026
+// Generated: Sun Nov 08 02:49:19 JST 2026
 //
 
 
@@ -15,27 +15,27 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import jp.go.kantei.iur._1_4.urg.GenericGridCellType;
-import jp.go.kantei.iur._1_4.urg.HouseholdsType;
-import jp.go.kantei.iur._1_4.urg.LandPriceType;
-import jp.go.kantei.iur._1_4.urg.OfficesAndEmployeesType;
-import jp.go.kantei.iur._1_4.urg.PopulationType;
-import jp.go.kantei.iur._1_4.urg.PublicTransitAccessibilityType;
-import jp.go.kantei.iur._1_4.urg.StatisticalGridType;
-import jp.go.kantei.iur._1_4.urt.AgencyType;
-import jp.go.kantei.iur._1_4.urt.AttributionType;
-import jp.go.kantei.iur._1_4.urt.CalendarDateType;
-import jp.go.kantei.iur._1_4.urt.CalendarType;
-import jp.go.kantei.iur._1_4.urt.FareAttributeType;
-import jp.go.kantei.iur._1_4.urt.LevelType;
-import jp.go.kantei.iur._1_4.urt.OfficeType;
-import jp.go.kantei.iur._1_4.urt.PathwayType;
-import jp.go.kantei.iur._1_4.urt.PublicTransitType;
-import jp.go.kantei.iur._1_4.urt.RouteType;
-import jp.go.kantei.iur._1_4.urt.ShapeType;
-import jp.go.kantei.iur._1_4.urt.StopType;
-import jp.go.kantei.iur._1_4.urt.TranslationJPType;
-import jp.go.kantei.iur._1_4.urt.TripType;
+import jp.geospatial.iur._2_0.urg.GenericGridCellType;
+import jp.geospatial.iur._2_0.urg.HouseholdsType;
+import jp.geospatial.iur._2_0.urg.LandPriceType;
+import jp.geospatial.iur._2_0.urg.OfficesAndEmployeesType;
+import jp.geospatial.iur._2_0.urg.PopulationType;
+import jp.geospatial.iur._2_0.urg.PublicTransitAccessibilityType;
+import jp.geospatial.iur._2_0.urg.StatisticalGridType;
+import jp.geospatial.iur._2_0.urt.AgencyType;
+import jp.geospatial.iur._2_0.urt.AttributionType;
+import jp.geospatial.iur._2_0.urt.CalendarDateType;
+import jp.geospatial.iur._2_0.urt.CalendarType;
+import jp.geospatial.iur._2_0.urt.FareAttributeType;
+import jp.geospatial.iur._2_0.urt.LevelType;
+import jp.geospatial.iur._2_0.urt.OfficeType;
+import jp.geospatial.iur._2_0.urt.PathwayType;
+import jp.geospatial.iur._2_0.urt.PublicTransitType;
+import jp.geospatial.iur._2_0.urt.RouteType;
+import jp.geospatial.iur._2_0.urt.ShapeType;
+import jp.geospatial.iur._2_0.urt.StopType;
+import jp.geospatial.iur._2_0.urt.TranslationJPType;
+import jp.geospatial.iur._2_0.urt.TripType;
 import net.opengis.citygml._2.AbstractCityObjectType;
 import net.opengis.citygml._2.AbstractSiteType;
 import net.opengis.citygml.bridge._2.AbstractBridgeType;
@@ -143,236 +143,236 @@ public class TargetPropertyType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link BridgeInstallationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IntBuildingInstallationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandUseType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TunnelPartType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TunnelType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractTunnelType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BridgePartType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BridgeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractBridgeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BuildingType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingPartType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AbstractBuildingType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BridgeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BridgePartType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractBridgeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TunnelType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TunnelPartType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractTunnelType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AbstractSiteType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link OfficesAndEmployeesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PopulationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PublicTransitAccessibilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HouseholdsType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandPriceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link jp.go.kantei.iur._1_4.urg.LandUseDiversionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link GenericGridCellType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link StatisticalGridType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TunnelInstallationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CityObjectGroupType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HollowSpaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BridgeRoomType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TunnelFurnitureType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AuxiliaryTrafficAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TrafficAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SquareType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoadType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RailwayType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TrackType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TransportationComplexType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractTransportationObjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ShapeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LevelType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link OfficeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BridgeInstallationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.WindowType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.DoorType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.AbstractOpeningType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TripType }{@code >}
      *     {@link JAXBElement }{@code <}{@link FareAttributeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TranslationJPType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CalendarDateType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AgencyType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ShapeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PathwayType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LevelType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CalendarType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OfficeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link RouteType }{@code >}
      *     {@link JAXBElement }{@code <}{@link StopType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AttributionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CalendarType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CalendarDateType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AgencyType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TranslationJPType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TripType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PathwayType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PublicTransitType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IntBridgeInstallationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.GroundSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.InteriorWallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.ClosureSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.OuterFloorSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.WallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.OuterCeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.RoofSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SolitaryVegetationObjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PlantCoverType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractVegetationObjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandUseType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IntTunnelInstallationType }{@code >}
      *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.FloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.GroundSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.OuterCeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.OuterFloorSurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.CeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.InteriorWallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.RoofSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.WallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.ClosureSurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.AbstractBoundarySurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CityFurnitureType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBaseType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BoundaryType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PrivateUrbanRenewalProjectPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link NewHousingAndUrbanDevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanRenewalProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link NewUrbanInfrastructureProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanRedevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ResidentialBlockConstructionProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IndustrialParkDevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandReadjustmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBlockImprovementProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanDevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SedimentDisasterProneAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ZonalDisasterPreventionFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link EducationalAndCulturalFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForReconstructionAndRevitalizationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TreatmentFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistributionBusinessParkType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForReconstructionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveGovernmentAndPublicOfficeFacilitiesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveHousingFacilitiesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TrafficFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link MarketsSlaughterhousesCrematoriaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link OpenSpaceForPublicUseType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link FloodPreventionFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TelecommunicationFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WindProtectionFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SnowProtectionFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link FireProtectionFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SandControlFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TideFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanFacilityStipulatedByCabinetOrderType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link MedicalFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SocialWelfareFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveUrbanDisasterPreventionFacilitiesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForTsunamiDisasterPreventionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SupplyFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WaterwayType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AgreementType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PromotionDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanPlanningAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBlockImprovementZonePlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RuralDistrictPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HistoricSceneryMaintenanceAndImprovementDistrictPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractDistrictPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecifiedUrgentUrbanRenewalAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrgentUrbanRenewalAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link QuasiUrbanPlanningAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AreaClassificationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecifiedBuildingZoneImprovementPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictImprovementPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictImprovementPlanForDisasterPreventionBlockImprovementZonePlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictImprovementPlanForHistoricSceneryMaintenanceAndImprovementDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RuralDistrictImprovementPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictDevelopmentPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ResidentialBlockConstructionPromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandReadjustmentPromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandReadjustmentPromotionAreasForCoreBusinessUrbanDevelopmentType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanRedevelopmentPromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ProjectPromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RuralDistrictFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanDisasterRecoveryPromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RegulationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UnusedLandUsePromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForIndustrialParkDevelopmentProjectsType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForCollectiveGovernmentAndPublicOfficeFacilitiesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForNewHousingAndUrbanDevelopmentProjectsType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForDistributionBusinessParkType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForNewUrbanInfrastructureProjectsType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForCollectiveHousingFacilitiesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForUrbanDevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link FirePreventionDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialGreenSpaceConservationDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ConservationZoneForClustersOfTraditionalStructuresType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ZoneForPreservationOfHistoricalLandscapeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AircraftNoiseControlZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TreePlantingDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecifiedDisasterPreventionBlockImprovementZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecifiedBlockType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandscapeZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialUseAttractionDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HousingControlAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialUseDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PortZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ProductiveGreenZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ExceptionalFloorAreaRateDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HeightControlDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HighLevelUseDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScenicDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialZoneForPreservationOfHistoricalLandscapeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialUseRestrictionDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ResidentialEnvironmentImprovementDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialUrbanRenaissanceDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HighRiseResidentialAttractionDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link GreenSpaceConservationDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UseDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistributionBusinessZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ParkingPlaceDevelopmentZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictsAndZonesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link GlobalHubCityDevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AdministrationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ThreeDimensionalExtent }{@code >}
-     *     {@link JAXBElement }{@code <}{@link jp.geospatial.iur._2_0.urf.LandUseDiversionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PublicTransitFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanizationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RecreationsType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HubCityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CensusBlockType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DisasterDamageType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PollutionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanFunctionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.WindowType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.DoorType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.AbstractOpeningType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.RoofSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.ClosureSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.GroundSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.WallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.OuterFloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.OuterCeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.FloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.CeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.InteriorWallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.AbstractBoundarySurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TrafficAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoadType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TrackType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RailwayType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SquareType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TransportationComplexType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AuxiliaryTrafficAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractTransportationObjectType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ReliefFeatureType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CityFurnitureType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BridgeRoomType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.GroundSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.OuterCeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.FloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.CeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.RoofSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.InteriorWallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.ClosureSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.OuterFloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.WallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.AbstractBoundarySurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IntBuildingInstallationType }{@code >}
      *     {@link JAXBElement }{@code <}{@link WaterBodyType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AbstractWaterObjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IntTunnelInstallationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingInstallationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HollowSpaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CityObjectGroupType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TunnelFurnitureType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingFurnitureType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TunnelInstallationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WaterClosureSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WaterGroundSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WaterSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractWaterBoundarySurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IntBridgeInstallationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.DoorType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.WindowType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.AbstractOpeningType }{@code >}
      *     {@link JAXBElement }{@code <}{@link MassPointReliefType }{@code >}
      *     {@link JAXBElement }{@code <}{@link RasterReliefType }{@code >}
      *     {@link JAXBElement }{@code <}{@link TINReliefType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BreaklineReliefType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AbstractReliefComponentType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.RoofSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.WallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.FloorSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.GroundSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.ClosureSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.CeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.OuterFloorSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.InteriorWallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.OuterCeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.AbstractBoundarySurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.DoorType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.WindowType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.AbstractOpeningType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link jp.geospatial.iur._2_0.urg.LandUseDiversionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PublicTransitAccessibilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OfficesAndEmployeesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PopulationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandPriceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HouseholdsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link GenericGridCellType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link StatisticalGridType }{@code >}
      *     {@link JAXBElement }{@code <}{@link GenericCityObjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.DoorType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.WindowType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.AbstractOpeningType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WaterSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WaterGroundSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WaterClosureSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractWaterBoundarySurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link RoomType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PlantCoverType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SolitaryVegetationObjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractVegetationObjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.RoofSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.ClosureSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.InteriorWallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.WallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.OuterCeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.GroundSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.CeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.OuterFloorSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.FloorSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.AbstractBoundarySurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BuildingInstallationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BuildingFurnitureType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BridgeConstructionElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BridgeFurnitureType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.DoorType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.WindowType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.AbstractOpeningType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BridgeConstructionElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PollutionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link jp.geospatial.iur._2_0.urf.LandUseDiversionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RecreationsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanizationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ThreeDimensionalExtent }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BoundaryType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DisasterDamageType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AdministrationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CensusBlockType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IndustrialParkDevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link NewHousingAndUrbanDevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanRedevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ResidentialBlockConstructionProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanRenewalProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link NewUrbanInfrastructureProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandReadjustmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBlockImprovementProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanDevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AgreementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ZonalDisasterPreventionFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RegulationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecifiedUrgentUrbanRenewalAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrgentUrbanRenewalAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AreaClassificationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link QuasiUrbanPlanningAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RuralDistrictPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HistoricSceneryMaintenanceAndImprovementDistrictPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBlockImprovementZonePlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractDistrictPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistributionBusinessParkType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveUrbanDisasterPreventionFacilitiesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SupplyFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveHousingFacilitiesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link MedicalFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SocialWelfareFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link EducationalAndCulturalFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link MarketsSlaughterhousesCrematoriaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForReconstructionAndRevitalizationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OpenSpaceForPublicUseType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForTsunamiDisasterPreventionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForReconstructionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveGovernmentAndPublicOfficeFacilitiesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WindProtectionFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TelecommunicationFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SandControlFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SnowProtectionFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link FireProtectionFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link FloodPreventionFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TideFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanFacilityStipulatedByCabinetOrderType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TrafficFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TreatmentFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WaterwayType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanDisasterRecoveryPromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PrivateUrbanRenewalProjectPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialUseRestrictionDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HighLevelUseDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UseDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialGreenSpaceConservationDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HighRiseResidentialAttractionDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialUrbanRenaissanceDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandscapeZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecifiedDisasterPreventionBlockImprovementZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ZoneForPreservationOfHistoricalLandscapeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialUseAttractionDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScenicDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ExceptionalFloorAreaRateDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link FirePreventionDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ProductiveGreenZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialZoneForPreservationOfHistoricalLandscapeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TreePlantingDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecifiedBlockType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ResidentialEnvironmentImprovementDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistributionBusinessZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialUseDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HeightControlDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ConservationZoneForClustersOfTraditionalStructuresType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AircraftNoiseControlZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link GreenSpaceConservationDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ParkingPlaceDevelopmentZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HousingControlAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictsAndZonesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanRedevelopmentPromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ResidentialBlockConstructionPromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandReadjustmentPromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandReadjustmentPromotionAreasForCoreBusinessUrbanDevelopmentType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ProjectPromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanPlanningAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link GlobalHubCityDevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictImprovementPlanForDisasterPreventionBlockImprovementZonePlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecifiedBuildingZoneImprovementPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RuralDistrictImprovementPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictImprovementPlanForHistoricSceneryMaintenanceAndImprovementDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictImprovementPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictDevelopmentPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RuralDistrictFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UnusedLandUsePromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SedimentDisasterProneAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForIndustrialParkDevelopmentProjectsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForDistributionBusinessParkType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForNewHousingAndUrbanDevelopmentProjectsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForNewUrbanInfrastructureProjectsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForCollectiveHousingFacilitiesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForCollectiveGovernmentAndPublicOfficeFacilitiesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForUrbanDevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PromotionDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBaseType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HubCityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PublicTransitFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanFunctionType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AbstractCityObjectType }{@code >}
      *     
      */
@@ -385,236 +385,236 @@ public class TargetPropertyType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link BridgeInstallationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IntBuildingInstallationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandUseType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TunnelPartType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TunnelType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractTunnelType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BridgePartType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BridgeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractBridgeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BuildingType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingPartType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AbstractBuildingType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BridgeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BridgePartType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractBridgeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TunnelType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TunnelPartType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractTunnelType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AbstractSiteType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link OfficesAndEmployeesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PopulationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PublicTransitAccessibilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HouseholdsType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandPriceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link jp.go.kantei.iur._1_4.urg.LandUseDiversionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link GenericGridCellType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link StatisticalGridType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TunnelInstallationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CityObjectGroupType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HollowSpaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BridgeRoomType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TunnelFurnitureType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AuxiliaryTrafficAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TrafficAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SquareType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoadType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RailwayType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TrackType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TransportationComplexType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractTransportationObjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ShapeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LevelType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link OfficeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BridgeInstallationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.WindowType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.DoorType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.AbstractOpeningType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TripType }{@code >}
      *     {@link JAXBElement }{@code <}{@link FareAttributeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TranslationJPType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CalendarDateType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AgencyType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ShapeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PathwayType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LevelType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CalendarType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OfficeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link RouteType }{@code >}
      *     {@link JAXBElement }{@code <}{@link StopType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AttributionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CalendarType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CalendarDateType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AgencyType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TranslationJPType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TripType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PathwayType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PublicTransitType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IntBridgeInstallationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.GroundSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.InteriorWallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.ClosureSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.OuterFloorSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.WallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.OuterCeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.RoofSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SolitaryVegetationObjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PlantCoverType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractVegetationObjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandUseType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IntTunnelInstallationType }{@code >}
      *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.FloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.GroundSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.OuterCeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.OuterFloorSurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.CeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.InteriorWallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.RoofSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.WallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.ClosureSurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.AbstractBoundarySurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CityFurnitureType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBaseType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BoundaryType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PrivateUrbanRenewalProjectPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link NewHousingAndUrbanDevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanRenewalProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link NewUrbanInfrastructureProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanRedevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ResidentialBlockConstructionProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IndustrialParkDevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandReadjustmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBlockImprovementProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanDevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SedimentDisasterProneAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ZonalDisasterPreventionFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link EducationalAndCulturalFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForReconstructionAndRevitalizationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TreatmentFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistributionBusinessParkType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForReconstructionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveGovernmentAndPublicOfficeFacilitiesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveHousingFacilitiesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TrafficFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link MarketsSlaughterhousesCrematoriaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link OpenSpaceForPublicUseType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link FloodPreventionFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TelecommunicationFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WindProtectionFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SnowProtectionFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link FireProtectionFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SandControlFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TideFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanFacilityStipulatedByCabinetOrderType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link MedicalFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SocialWelfareFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveUrbanDisasterPreventionFacilitiesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForTsunamiDisasterPreventionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SupplyFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WaterwayType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AgreementType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PromotionDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanPlanningAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBlockImprovementZonePlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RuralDistrictPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HistoricSceneryMaintenanceAndImprovementDistrictPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractDistrictPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecifiedUrgentUrbanRenewalAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrgentUrbanRenewalAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link QuasiUrbanPlanningAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AreaClassificationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecifiedBuildingZoneImprovementPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictImprovementPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictImprovementPlanForDisasterPreventionBlockImprovementZonePlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictImprovementPlanForHistoricSceneryMaintenanceAndImprovementDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RuralDistrictImprovementPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictDevelopmentPlanType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ResidentialBlockConstructionPromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandReadjustmentPromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandReadjustmentPromotionAreasForCoreBusinessUrbanDevelopmentType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanRedevelopmentPromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ProjectPromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RuralDistrictFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanDisasterRecoveryPromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RegulationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UnusedLandUsePromotionAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForIndustrialParkDevelopmentProjectsType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForCollectiveGovernmentAndPublicOfficeFacilitiesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForNewHousingAndUrbanDevelopmentProjectsType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForDistributionBusinessParkType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForNewUrbanInfrastructureProjectsType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForCollectiveHousingFacilitiesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForUrbanDevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link FirePreventionDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialGreenSpaceConservationDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ConservationZoneForClustersOfTraditionalStructuresType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ZoneForPreservationOfHistoricalLandscapeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AircraftNoiseControlZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TreePlantingDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecifiedDisasterPreventionBlockImprovementZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecifiedBlockType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandscapeZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialUseAttractionDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HousingControlAreaType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialUseDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PortZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ProductiveGreenZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ExceptionalFloorAreaRateDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HeightControlDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HighLevelUseDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ScenicDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialZoneForPreservationOfHistoricalLandscapeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialUseRestrictionDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ResidentialEnvironmentImprovementDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SpecialUrbanRenaissanceDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HighRiseResidentialAttractionDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link GreenSpaceConservationDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UseDistrictType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistributionBusinessZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ParkingPlaceDevelopmentZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DistrictsAndZonesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link GlobalHubCityDevelopmentProjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AdministrationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ThreeDimensionalExtent }{@code >}
-     *     {@link JAXBElement }{@code <}{@link jp.geospatial.iur._2_0.urf.LandUseDiversionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PublicTransitFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanizationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RecreationsType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HubCityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CensusBlockType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link DisasterDamageType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PollutionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UrbanFunctionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.WindowType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.DoorType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.AbstractOpeningType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.RoofSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.ClosureSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.GroundSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.WallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.OuterFloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.OuterCeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.FloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.CeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.InteriorWallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.AbstractBoundarySurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TrafficAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoadType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TrackType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RailwayType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SquareType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TransportationComplexType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AuxiliaryTrafficAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractTransportationObjectType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ReliefFeatureType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CityFurnitureType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BridgeRoomType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.GroundSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.OuterCeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.FloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.CeilingSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.RoofSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.InteriorWallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.ClosureSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.OuterFloorSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.WallSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.AbstractBoundarySurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IntBuildingInstallationType }{@code >}
      *     {@link JAXBElement }{@code <}{@link WaterBodyType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AbstractWaterObjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IntTunnelInstallationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingInstallationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HollowSpaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CityObjectGroupType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TunnelFurnitureType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingFurnitureType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TunnelInstallationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WaterClosureSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WaterGroundSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WaterSurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractWaterBoundarySurfaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IntBridgeInstallationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.DoorType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.WindowType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.AbstractOpeningType }{@code >}
      *     {@link JAXBElement }{@code <}{@link MassPointReliefType }{@code >}
      *     {@link JAXBElement }{@code <}{@link RasterReliefType }{@code >}
      *     {@link JAXBElement }{@code <}{@link TINReliefType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BreaklineReliefType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AbstractReliefComponentType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.RoofSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.WallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.FloorSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.GroundSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.ClosureSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.CeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.OuterFloorSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.InteriorWallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.OuterCeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.AbstractBoundarySurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.DoorType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.WindowType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.tunnel._2.AbstractOpeningType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link jp.geospatial.iur._2_0.urg.LandUseDiversionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PublicTransitAccessibilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OfficesAndEmployeesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PopulationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandPriceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HouseholdsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link GenericGridCellType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link StatisticalGridType }{@code >}
      *     {@link JAXBElement }{@code <}{@link GenericCityObjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.DoorType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.WindowType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.building._2.AbstractOpeningType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WaterSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WaterGroundSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WaterClosureSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractWaterBoundarySurfaceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link RoomType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PlantCoverType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link SolitaryVegetationObjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link AbstractVegetationObjectType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.RoofSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.ClosureSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.InteriorWallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.WallSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.OuterCeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.GroundSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.CeilingSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.OuterFloorSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.FloorSurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.AbstractBoundarySurfaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BuildingInstallationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BuildingFurnitureType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BridgeConstructionElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BridgeFurnitureType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.DoorType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.WindowType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link net.opengis.citygml.bridge._2.AbstractOpeningType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BridgeConstructionElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PollutionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link jp.geospatial.iur._2_0.urf.LandUseDiversionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RecreationsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanizationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ThreeDimensionalExtent }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BoundaryType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DisasterDamageType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AdministrationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CensusBlockType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IndustrialParkDevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link NewHousingAndUrbanDevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanRedevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ResidentialBlockConstructionProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanRenewalProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link NewUrbanInfrastructureProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandReadjustmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBlockImprovementProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanDevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AgreementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ZonalDisasterPreventionFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RegulationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecifiedUrgentUrbanRenewalAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrgentUrbanRenewalAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AreaClassificationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link QuasiUrbanPlanningAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RuralDistrictPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HistoricSceneryMaintenanceAndImprovementDistrictPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBlockImprovementZonePlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AbstractDistrictPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistributionBusinessParkType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveUrbanDisasterPreventionFacilitiesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SupplyFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveHousingFacilitiesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link MedicalFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SocialWelfareFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link EducationalAndCulturalFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link MarketsSlaughterhousesCrematoriaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForReconstructionAndRevitalizationType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OpenSpaceForPublicUseType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForTsunamiDisasterPreventionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveFacilitiesForReconstructionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CollectiveGovernmentAndPublicOfficeFacilitiesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WindProtectionFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TelecommunicationFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SandControlFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SnowProtectionFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link FireProtectionFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link FloodPreventionFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TideFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanFacilityStipulatedByCabinetOrderType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TrafficFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TreatmentFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WaterwayType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanDisasterRecoveryPromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PrivateUrbanRenewalProjectPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialUseRestrictionDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HighLevelUseDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UseDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialGreenSpaceConservationDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HighRiseResidentialAttractionDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialUrbanRenaissanceDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandscapeZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecifiedDisasterPreventionBlockImprovementZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ZoneForPreservationOfHistoricalLandscapeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialUseAttractionDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScenicDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ExceptionalFloorAreaRateDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link FirePreventionDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ProductiveGreenZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialZoneForPreservationOfHistoricalLandscapeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TreePlantingDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecifiedBlockType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ResidentialEnvironmentImprovementDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistributionBusinessZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecialUseDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HeightControlDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ConservationZoneForClustersOfTraditionalStructuresType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AircraftNoiseControlZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link GreenSpaceConservationDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ParkingPlaceDevelopmentZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HousingControlAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictsAndZonesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanRedevelopmentPromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ResidentialBlockConstructionPromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandReadjustmentPromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandReadjustmentPromotionAreasForCoreBusinessUrbanDevelopmentType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ProjectPromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanPlanningAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link GlobalHubCityDevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictImprovementPlanForDisasterPreventionBlockImprovementZonePlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SpecifiedBuildingZoneImprovementPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RuralDistrictImprovementPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictImprovementPlanForHistoricSceneryMaintenanceAndImprovementDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictImprovementPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictDevelopmentPlanType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RoadsideDistrictFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RuralDistrictFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DistrictFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UnusedLandUsePromotionAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link SedimentDisasterProneAreaType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForIndustrialParkDevelopmentProjectsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForDistributionBusinessParkType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForNewHousingAndUrbanDevelopmentProjectsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForNewUrbanInfrastructureProjectsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForCollectiveHousingFacilitiesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForCollectiveGovernmentAndPublicOfficeFacilitiesType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ScheduledAreaForUrbanDevelopmentProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PromotionDistrictType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DisasterPreventionBaseType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HubCityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PublicTransitFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UrbanFunctionType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AbstractCityObjectType }{@code >}
      *     
      */

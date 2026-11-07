@@ -41,6 +41,8 @@ public class LargeCustomerFacilityAttribute extends BuildingAttribute {
     private Measure totalFloorArea;
     private Measure totalStoreFloorArea;
     private LocalDate inauguralDate;
+    private Year yearOpened;
+    private Year yearClosed;
     private String keyTenants;
     private Boolean availability;
     private Code urbanPlanType;
@@ -105,6 +107,22 @@ public class LargeCustomerFacilityAttribute extends BuildingAttribute {
 
     public void setInauguralDate(LocalDate inauguralDate) {
         this.inauguralDate = inauguralDate;
+    }
+
+    public Year getYearOpened() {
+        return yearOpened;
+    }
+
+    public void setYearOpened(Year yearOpened) {
+        this.yearOpened = yearOpened;
+    }
+
+    public Year getYearClosed() {
+        return yearClosed;
+    }
+
+    public void setYearClosed(Year yearClosed) {
+        this.yearClosed = yearClosed;
     }
 
     public String getKeyTenants() {

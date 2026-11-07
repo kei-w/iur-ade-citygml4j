@@ -13,7 +13,8 @@ The "i-UR" is an information infrastructure for urban revitalization and plannin
 parsing and writing i-UR ADE enriched CityGML datasets to citygml4j.
 
 :warning: This fork targets the **PLATEAU** flavour of the i-UR ADE: the Urban Object module (`uro`) follows
-*i-UR ADE version 2.0* (`https://www.geospatial.jp/iur/uro/2.0`) and currently covers the building attributes.
+*i-UR ADE version 3.0* (`https://www.geospatial.jp/iur/uro/3.0`) and currently covers the building attributes.
+Other editions are kept on the `feature/iur-2.0`, `feature/iur-3.1` and `feature/iur-3.2` branches.
 The `urf`, `urg` and `urt` modules still follow version 1.4. See `CHANGES.md` for details.
 
 * **i-UR specification and material: https://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur**

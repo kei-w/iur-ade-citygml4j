@@ -9,7 +9,7 @@ plugins {
 }
 
 group 'org.citygml4j.ade'
-version '2.0.0'
+version '3.0.0'
 description 'i-Urban Revitalization ADE module for citygml4j'
 
 java {
@@ -27,12 +27,17 @@ repositories {
     mavenCentral()
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 dependencies {
     api 'org.citygml4j:citygml4j:2.13.0'
 }
 
 javadoc {
     options {
+        encoding = 'UTF-8'
         overview "$projectDir/build/tmp/javadoc/overview.html"
         header "$project.name $project.version"
         bottom """

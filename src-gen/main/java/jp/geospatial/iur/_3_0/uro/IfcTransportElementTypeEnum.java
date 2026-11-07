@@ -1,0 +1,50 @@
+//
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
+// ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
+// Any modifications to this file will be lost upon recompilation of the source
+// Generated: Sat Nov 07 12:50:54 JST 2026
+//
+
+
+package jp.geospatial.iur._3_0.uro;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for IfcTransportElementTypeEnum.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="IfcTransportElementTypeEnum"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="ELEVATOR"/&gt;
+ *     &lt;enumeration value="ESCALATOR"/&gt;
+ *     &lt;enumeration value="NOTDEFINED"/&gt;
+ *     &lt;enumeration value="USERDEFINED"/&gt;
+ *     &lt;enumeration value="NOTDEFINED"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
+ * 
+ */
+@XmlType(name = "IfcTransportElementTypeEnum")
+@XmlEnum
+public enum IfcTransportElementTypeEnum {
+
+    ELEVATOR,
+    ESCALATOR,
+    NOTDEFINED,
+    USERDEFINED;
+
+    public String value() {
+        return name();
+    }
+
+    public static IfcTransportElementTypeEnum fromValue(String v) {
+        return valueOf(v);
+    }
+
+}

@@ -1,6 +1,17 @@
 Change Log
 ==========
 
+### 3.0.0 - 2026-11-07
+
+##### Breaking changes
+* Updated the Urban Object module (`uro`) to version 3.0 of the i-UR ADE
+  (`https://www.geospatial.jp/iur/uro/3.0`). The building attributes keep the 2.0 structure;
+  `LargeCustomerFacilityAttribute` gains `yearOpened` and `yearClosed`.
+* JAXB classes for `uro` are generated into `jp.geospatial.iur._3_0.uro`.
+
+##### Changes
+* Sources are compiled as UTF-8.
+
 ### 2.0.0 - 2026-11-07
 
 ##### Breaking changes

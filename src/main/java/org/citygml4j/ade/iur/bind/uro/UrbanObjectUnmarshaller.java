@@ -22,7 +22,7 @@
 
 package org.citygml4j.ade.iur.bind.uro;
 
-import jp.geospatial.iur._2_0.uro.*;
+import jp.geospatial.iur._3_0.uro.*;
 import net.opengis.gml.CodeType;
 import org.citygml4j.ade.iur.model.uro.*;
 import org.citygml4j.builder.jaxb.unmarshal.citygml.ade.ADEUnmarshallerHelper;
@@ -275,6 +275,16 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
 
         if (src.isSetInauguralDate())
             dest.setInauguralDate(src.getInauguralDate().toGregorianCalendar().toZonedDateTime().toLocalDate());
+
+        if (src.isSetYearOpened()) {
+            LocalDate date = src.getYearOpened().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setYearOpened(Year.of(date.getYear()));
+        }
+
+        if (src.isSetYearClosed()) {
+            LocalDate date = src.getYearClosed().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setYearClosed(Year.of(date.getYear()));
+        }
 
         dest.setKeyTenants(src.getKeyTenants());
         dest.setAvailability(src.isAvailability());

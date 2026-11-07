@@ -22,7 +22,7 @@
 
 package org.citygml4j.ade.iur.bind.uro;
 
-import jp.geospatial.iur._2_0.uro.*;
+import jp.geospatial.iur._3_0.uro.*;
 import org.citygml4j.ade.iur.bind.Marshaller;
 import org.citygml4j.ade.iur.model.uro.*;
 import org.citygml4j.builder.jaxb.marshal.citygml.ade.ADEMarshallerHelper;
@@ -278,6 +278,12 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
         if (src.getInauguralDate() != null)
             dest.setInauguralDate(marshaller.toCalendar(src.getInauguralDate()));
+
+        if (src.getYearOpened() != null)
+            dest.setYearOpened(marshaller.toCalendar(src.getYearOpened()));
+
+        if (src.getYearClosed() != null)
+            dest.setYearClosed(marshaller.toCalendar(src.getYearClosed()));
 
         dest.setKeyTenants(src.getKeyTenants());
         dest.setAvailability(src.getAvailability());

@@ -41,7 +41,7 @@ public class LandSlideRiskAttribute extends DisasterRiskAttribute {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         LandSlideRiskAttribute copy = target == null ? new LandSlideRiskAttribute() : (LandSlideRiskAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

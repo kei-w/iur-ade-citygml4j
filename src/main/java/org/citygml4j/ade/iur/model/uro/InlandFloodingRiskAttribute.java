@@ -29,7 +29,7 @@ public class InlandFloodingRiskAttribute extends FloodingRiskAttribute {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         InlandFloodingRiskAttribute copy = target == null ? new InlandFloodingRiskAttribute() : (InlandFloodingRiskAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

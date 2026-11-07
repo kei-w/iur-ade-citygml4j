@@ -29,7 +29,7 @@ public class ReservoirFloodingRiskAttribute extends FloodingRiskAttribute {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         ReservoirFloodingRiskAttribute copy = target == null ? new ReservoirFloodingRiskAttribute() : (ReservoirFloodingRiskAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

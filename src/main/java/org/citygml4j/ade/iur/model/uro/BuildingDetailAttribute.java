@@ -383,7 +383,7 @@ public class BuildingDetailAttribute extends BuildingAttribute {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         BuildingDetailAttribute copy = target == null ? new BuildingDetailAttribute() : (BuildingDetailAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

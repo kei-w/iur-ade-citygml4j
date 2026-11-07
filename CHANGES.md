@@ -13,7 +13,7 @@ Change Log
 * Every `uro` generic application property of every CityGML feature type defined by the i-UR 3.2 XSD is now modelled and
   (un)marshalled: facility, DM, ifc and indoor attributes of buildings and the attributes of bridges, tunnels, land use,
   city furniture, relief, transportation, vegetation, water bodies, city object groups and building interiors.
-* The `uro` model and binding classes are generated from the XSD (`poc/gen` in the PoC workspace).
+* The `uro` model and binding classes are generated from the XSD by the `iur-ade-generator` repository.
 
 ##### Changes (ADE feature types, 2026-11-07)
 * The ADE feature types of the i-UR 3.2 Urban Object module are modelled, (un)marshalled and walked:

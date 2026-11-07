@@ -77,7 +77,7 @@ public class BuildingIDAttribute extends BuildingAttribute {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         BuildingIDAttribute copy = target == null ? new BuildingIDAttribute() : (BuildingIDAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

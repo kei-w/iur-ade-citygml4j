@@ -32,10 +32,10 @@ import org.citygml4j.model.common.base.ModelObject;
 import org.citygml4j.util.mapper.CheckedTypeMapper;
 import org.citygml4j.xml.io.reader.MissingADESchemaException;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.LocalDate;
 import java.time.Year;
+import javax.xml.bind.JAXBElement;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
     private ADEUnmarshallerHelper helper;
@@ -59,7 +59,28 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                     .with(KeyValuePairAttributeType.class, this::unmarshalKeyValuePairAttribute)
                     .with(KeyValuePairAttributePropertyType.class, this::unmarshalKeyValuePairAttributeProperty)
                     .with(BuildingDataQualityAttributeType.class, this::unmarshalBuildingDataQualityAttribute)
-                    .with(BuildingDataQualityAttributePropertyType.class, this::unmarshalBuildingDataQualityAttributeProperty);
+                    .with(BuildingDataQualityAttributePropertyType.class, this::unmarshalBuildingDataQualityAttributeProperty)
+                    .with(LandUseDetailAttributeType.class, this::unmarshalLandUseDetailAttribute)
+                    .with(LandUseDetailAttributePropertyType.class, this::unmarshalLandUseDetailAttributeProperty)
+                    .with(TrafficVolumeAttributeType.class, this::unmarshalTrafficVolumeAttribute)
+                    .with(TrafficVolumeAttributePropertyType.class, this::unmarshalTrafficVolumeAttributeProperty)
+                    .with(RoadStructureAttributeType.class, this::unmarshalRoadStructureAttribute)
+                    .with(RoadStructureAttributePropertyType.class, this::unmarshalRoadStructureAttributeProperty)
+                    .with(RoadDataQualityAttributeType.class, this::unmarshalRoadDataQualityAttribute)
+                    .with(RoadDataQualityAttributePropertyType.class, this::unmarshalRoadDataQualityAttributeProperty)
+                    .with(TrafficAreaStructureAttributeType.class, this::unmarshalTrafficAreaStructureAttribute)
+                    .with(TrafficAreaStructureAttributePropertyType.class, this::unmarshalTrafficAreaStructureAttributeProperty)
+                    .with(CityFurnitureDetailAttributeType.class, this::unmarshalCityFurnitureDetailAttribute)
+                    .with(CityFurnitureDetailAttributePropertyType.class, this::unmarshalCityFurnitureDetailAttributeProperty)
+                    .with(CityFurnitureDataQualityAttributeType.class, this::unmarshalCityFurnitureDataQualityAttribute)
+                    .with(CityFurnitureDataQualityAttributePropertyType.class, this::unmarshalCityFurnitureDataQualityAttributeProperty)
+                    .with(VegetationDataQualityAttributeType.class, this::unmarshalVegetationDataQualityAttribute)
+                    .with(VegetationDataQualityAttributePropertyType.class, this::unmarshalVegetationDataQualityAttributeProperty)
+                    .with(WaterBodyRiverFloodingRiskAttributeType.class, this::unmarshalWaterBodyRiverFloodingRiskAttribute)
+                    .with(WaterBodyTsunamiRiskAttributeType.class, this::unmarshalWaterBodyTsunamiRiskAttribute)
+                    .with(WaterBodyHighTideRiskAttributeType.class, this::unmarshalWaterBodyHighTideRiskAttribute)
+                    .with(WaterBodyInlandFloodingRiskAttributeType.class, this::unmarshalWaterBodyInlandFloodingRiskAttribute)
+                    .with(WaterBodyFloodingRiskAttributePropertyType.class, this::unmarshalWaterBodyFloodingRiskAttributeProperty);
         }
 
         return typeMapper;
@@ -88,6 +109,24 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new KeyValuePairAttributePropertyElement(unmarshalKeyValuePairAttributeProperty((KeyValuePairAttributePropertyType) value));
             case "buildingDataQualityAttribute":
                 return new BuildingDataQualityAttributePropertyElement(unmarshalBuildingDataQualityAttributeProperty((BuildingDataQualityAttributePropertyType) value));
+            case "landUseDetailAttribute":
+                return new LandUseDetailAttributePropertyElement(unmarshalLandUseDetailAttributeProperty((LandUseDetailAttributePropertyType) value));
+            case "trafficVolumeAttribute":
+                return new TrafficVolumeAttributePropertyElement(unmarshalTrafficVolumeAttributeProperty((TrafficVolumeAttributePropertyType) value));
+            case "roadStructureAttribute":
+                return new RoadStructureAttributePropertyElement(unmarshalRoadStructureAttributeProperty((RoadStructureAttributePropertyType) value));
+            case "roadDataQualityAttribute":
+                return new RoadDataQualityAttributePropertyElement(unmarshalRoadDataQualityAttributeProperty((RoadDataQualityAttributePropertyType) value));
+            case "trafficAreaStructureAttribute":
+                return new TrafficAreaStructureAttributePropertyElement(unmarshalTrafficAreaStructureAttributeProperty((TrafficAreaStructureAttributePropertyType) value));
+            case "cityFurnitureDetailAttribute":
+                return new CityFurnitureDetailAttributePropertyElement(unmarshalCityFurnitureDetailAttributeProperty((CityFurnitureDetailAttributePropertyType) value));
+            case "cityFurnitureDataQualityAttribute":
+                return new CityFurnitureDataQualityAttributePropertyElement(unmarshalCityFurnitureDataQualityAttributeProperty((CityFurnitureDataQualityAttributePropertyType) value));
+            case "vegetationDataQualityAttribute":
+                return new VegetationDataQualityAttributePropertyElement(unmarshalVegetationDataQualityAttributeProperty((VegetationDataQualityAttributePropertyType) value));
+            case "floodingRiskAttribute":
+                return new FloodingRiskAttributePropertyElement(unmarshalWaterBodyFloodingRiskAttributeProperty((WaterBodyFloodingRiskAttributePropertyType) value));
             case "fiscalYearOfPublication":
                 LocalDate fiscalYearOfPublication = ((XMLGregorianCalendar) value).toGregorianCalendar().toZonedDateTime().toLocalDate();
                 return new FiscalYearOfPublicationProperty(Year.of(fiscalYearOfPublication.getYear()));
@@ -395,18 +434,21 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
 
         if (src.isSetCodeValue())
             dest.setCodeValue(helper.getGMLUnmarshaller().unmarshalCode(src.getCodeValue()));
-        else if (src.isSetStringValue())
-            dest.setStringValue(src.getStringValue());
-        else if (src.isSetIntValue())
+
+        dest.setStringValue(src.getStringValue());
+
+        if (src.isSetIntValue())
             dest.setIntValue(src.getIntValue().intValue());
-        else if (src.isSetDoubleValue())
-            dest.setDoubleValue(src.getDoubleValue());
-        else if (src.isSetMeasuredValue())
+
+        dest.setDoubleValue(src.getDoubleValue());
+
+        if (src.isSetMeasuredValue())
             dest.setMeasuredValue(helper.getGMLUnmarshaller().unmarshalMeasure(src.getMeasuredValue()));
-        else if (src.isSetDateValue())
+
+        if (src.isSetDateValue())
             dest.setDateValue(src.getDateValue().toGregorianCalendar().toZonedDateTime().toLocalDate());
-        else if (src.isSetUriValue())
-            dest.setUriValue(src.getUriValue());
+
+        dest.setUriValue(src.getUriValue());
 
         return dest;
     }
@@ -446,8 +488,10 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
         if (src.isSetLod1HeightType())
             dest.setLod1HeightType(helper.getGMLUnmarshaller().unmarshalCode(src.getLod1HeightType()));
 
-        if (src.isSetLodType())
-            dest.getLodType().addAll(src.getLodType());
+        if (src.isSetLodType()) {
+            for (String lodType : src.getLodType())
+                dest.getLodType().add(lodType);
+        }
 
         return dest;
     }
@@ -457,6 +501,340 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
 
         if (src.isSetBuildingDataQualityAttribute())
             dest.setObject(unmarshalBuildingDataQualityAttribute(src.getBuildingDataQualityAttribute()));
+
+        return dest;
+    }
+
+    private LandUseDetailAttribute unmarshalLandUseDetailAttribute(LandUseDetailAttributeType src) throws MissingADESchemaException {
+        LandUseDetailAttribute dest = new LandUseDetailAttribute();
+
+        if (src.isSetOrgLandUse())
+            dest.setOrgLandUse(helper.getGMLUnmarshaller().unmarshalCode(src.getOrgLandUse()));
+
+        if (src.isSetNominalArea())
+            dest.setNominalArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNominalArea()));
+
+        if (src.isSetOwnerType())
+            dest.setOwnerType(helper.getGMLUnmarshaller().unmarshalCode(src.getOwnerType()));
+
+        dest.setOwner(src.getOwner());
+
+        if (src.isSetAreaInSquareMeter())
+            dest.setAreaInSquareMeter(helper.getGMLUnmarshaller().unmarshalMeasure(src.getAreaInSquareMeter()));
+
+        if (src.isSetAreaInHa())
+            dest.setAreaInHa(helper.getGMLUnmarshaller().unmarshalMeasure(src.getAreaInHa()));
+
+        dest.setBuildingCoverageRate(src.getBuildingCoverageRate());
+        dest.setFloorAreaRate(src.getFloorAreaRate());
+        dest.setSpecifiedBuildingCoverageRate(src.getSpecifiedBuildingCoverageRate());
+        dest.setSpecifiedFloorAreaRate(src.getSpecifiedFloorAreaRate());
+        dest.setStandardFloorAreaRate(src.getStandardFloorAreaRate());
+
+        if (src.isSetUrbanPlanType())
+            dest.setUrbanPlanType(helper.getGMLUnmarshaller().unmarshalCode(src.getUrbanPlanType()));
+
+        if (src.isSetAreaClassificationType())
+            dest.setAreaClassificationType(helper.getGMLUnmarshaller().unmarshalCode(src.getAreaClassificationType()));
+
+        if (src.isSetDistrictsAndZonesType()) {
+            for (CodeType districtsAndZonesType : src.getDistrictsAndZonesType())
+                dest.getDistrictsAndZonesType().add(helper.getGMLUnmarshaller().unmarshalCode(districtsAndZonesType));
+        }
+
+        if (src.isSetPrefecture())
+            dest.setPrefecture(helper.getGMLUnmarshaller().unmarshalCode(src.getPrefecture()));
+
+        if (src.isSetCity())
+            dest.setCity(helper.getGMLUnmarshaller().unmarshalCode(src.getCity()));
+
+        dest.setReference(src.getReference());
+        dest.setNote(src.getNote());
+
+        if (src.isSetSurveyYear()) {
+            LocalDate date = src.getSurveyYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setSurveyYear(Year.of(date.getYear()));
+        }
+
+        return dest;
+    }
+
+    private LandUseDetailAttributeProperty unmarshalLandUseDetailAttributeProperty(LandUseDetailAttributePropertyType src) throws MissingADESchemaException {
+        LandUseDetailAttributeProperty dest = new LandUseDetailAttributeProperty();
+
+        if (src.isSetLandUseDetailAttribute())
+            dest.setObject(unmarshalLandUseDetailAttribute(src.getLandUseDetailAttribute()));
+
+        return dest;
+    }
+
+    private TrafficVolumeAttribute unmarshalTrafficVolumeAttribute(TrafficVolumeAttributeType src) throws MissingADESchemaException {
+        TrafficVolumeAttribute dest = new TrafficVolumeAttribute();
+
+        dest.setSectionID(src.getSectionID());
+
+        if (src.isSetWeekday12HourTrafficVolume())
+            dest.setWeekday12hourTrafficVolume(src.getWeekday12HourTrafficVolume().intValue());
+
+        if (src.isSetWeekday24HourTrafficVolume())
+            dest.setWeekday24hourTrafficVolume(src.getWeekday24HourTrafficVolume().intValue());
+
+        dest.setLargeVehicleRate(src.getLargeVehicleRate());
+        dest.setCongestionRate(src.getCongestionRate());
+        dest.setAverageTravelSpeedInCongestion(src.getAverageTravelSpeedInCongestion());
+        dest.setAverageInboundTravelSpeedInCongestion(src.getAverageInboundTravelSpeedInCongestion());
+        dest.setAverageOutboundTravelSpeedInCongestion(src.getAverageOutboundTravelSpeedInCongestion());
+        dest.setObservationPointName(src.getObservationPointName());
+        dest.setReference(src.getReference());
+
+        if (src.isSetSurveyYear()) {
+            LocalDate date = src.getSurveyYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setSurveyYear(Year.of(date.getYear()));
+        }
+
+        return dest;
+    }
+
+    private TrafficVolumeAttributeProperty unmarshalTrafficVolumeAttributeProperty(TrafficVolumeAttributePropertyType src) throws MissingADESchemaException {
+        TrafficVolumeAttributeProperty dest = new TrafficVolumeAttributeProperty();
+
+        if (src.isSetTrafficVolumeAttribute())
+            dest.setObject(unmarshalTrafficVolumeAttribute(src.getTrafficVolumeAttribute()));
+
+        return dest;
+    }
+
+    private RoadStructureAttribute unmarshalRoadStructureAttribute(RoadStructureAttributeType src) throws MissingADESchemaException {
+        RoadStructureAttribute dest = new RoadStructureAttribute();
+
+        if (src.isSetWidthType())
+            dest.setWidthType(helper.getGMLUnmarshaller().unmarshalCode(src.getWidthType()));
+
+        if (src.isSetWidth())
+            dest.setWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getWidth()));
+
+        if (src.isSetNumberOfLanes())
+            dest.setNumberOfLanes(src.getNumberOfLanes().intValue());
+
+        if (src.isSetSectionType())
+            dest.setSectionType(helper.getGMLUnmarshaller().unmarshalCode(src.getSectionType()));
+
+        return dest;
+    }
+
+    private RoadStructureAttributeProperty unmarshalRoadStructureAttributeProperty(RoadStructureAttributePropertyType src) throws MissingADESchemaException {
+        RoadStructureAttributeProperty dest = new RoadStructureAttributeProperty();
+
+        if (src.isSetRoadStructureAttribute())
+            dest.setObject(unmarshalRoadStructureAttribute(src.getRoadStructureAttribute()));
+
+        return dest;
+    }
+
+    private RoadDataQualityAttribute unmarshalRoadDataQualityAttribute(RoadDataQualityAttributeType src) throws MissingADESchemaException {
+        RoadDataQualityAttribute dest = new RoadDataQualityAttribute();
+
+        if (src.isSetSrcScale()) {
+            for (CodeType srcScale : src.getSrcScale())
+                dest.getSrcScale().add(helper.getGMLUnmarshaller().unmarshalCode(srcScale));
+        }
+
+        if (src.isSetGeometrySrcDesc()) {
+            for (CodeType geometrySrcDesc : src.getGeometrySrcDesc())
+                dest.getGeometrySrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(geometrySrcDesc));
+        }
+
+        if (src.isSetThematicSrcDesc()) {
+            for (CodeType thematicSrcDesc : src.getThematicSrcDesc())
+                dest.getThematicSrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(thematicSrcDesc));
+        }
+
+        if (src.isSetAppearanceSrcDesc()) {
+            for (CodeType appearanceSrcDesc : src.getAppearanceSrcDesc())
+                dest.getAppearanceSrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(appearanceSrcDesc));
+        }
+
+        dest.setLodType(src.getLodType());
+
+        return dest;
+    }
+
+    private RoadDataQualityAttributeProperty unmarshalRoadDataQualityAttributeProperty(RoadDataQualityAttributePropertyType src) throws MissingADESchemaException {
+        RoadDataQualityAttributeProperty dest = new RoadDataQualityAttributeProperty();
+
+        if (src.isSetRoadDataQualityAttribute())
+            dest.setObject(unmarshalRoadDataQualityAttribute(src.getRoadDataQualityAttribute()));
+
+        return dest;
+    }
+
+    private TrafficAreaStructureAttribute unmarshalTrafficAreaStructureAttribute(TrafficAreaStructureAttributeType src) throws MissingADESchemaException {
+        TrafficAreaStructureAttribute dest = new TrafficAreaStructureAttribute();
+
+        if (src.isSetNumberOfLanes())
+            dest.setNumberOfLanes(src.getNumberOfLanes().intValue());
+
+        return dest;
+    }
+
+    private TrafficAreaStructureAttributeProperty unmarshalTrafficAreaStructureAttributeProperty(TrafficAreaStructureAttributePropertyType src) throws MissingADESchemaException {
+        TrafficAreaStructureAttributeProperty dest = new TrafficAreaStructureAttributeProperty();
+
+        if (src.isSetTrafficAreaStructureAttribute())
+            dest.setObject(unmarshalTrafficAreaStructureAttribute(src.getTrafficAreaStructureAttribute()));
+
+        return dest;
+    }
+
+    private CityFurnitureDetailAttribute unmarshalCityFurnitureDetailAttribute(CityFurnitureDetailAttributeType src) throws MissingADESchemaException {
+        CityFurnitureDetailAttribute dest = new CityFurnitureDetailAttribute();
+
+        dest.setFacilityType(src.getFacilityType());
+        dest.setDescription(src.getDescription());
+
+        return dest;
+    }
+
+    private CityFurnitureDetailAttributeProperty unmarshalCityFurnitureDetailAttributeProperty(CityFurnitureDetailAttributePropertyType src) throws MissingADESchemaException {
+        CityFurnitureDetailAttributeProperty dest = new CityFurnitureDetailAttributeProperty();
+
+        if (src.isSetCityFurnitureDetailAttribute())
+            dest.setObject(unmarshalCityFurnitureDetailAttribute(src.getCityFurnitureDetailAttribute()));
+
+        return dest;
+    }
+
+    private CityFurnitureDataQualityAttribute unmarshalCityFurnitureDataQualityAttribute(CityFurnitureDataQualityAttributeType src) throws MissingADESchemaException {
+        CityFurnitureDataQualityAttribute dest = new CityFurnitureDataQualityAttribute();
+
+        if (src.isSetSrcScale()) {
+            for (CodeType srcScale : src.getSrcScale())
+                dest.getSrcScale().add(helper.getGMLUnmarshaller().unmarshalCode(srcScale));
+        }
+
+        if (src.isSetGeometrySrcDesc()) {
+            for (CodeType geometrySrcDesc : src.getGeometrySrcDesc())
+                dest.getGeometrySrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(geometrySrcDesc));
+        }
+
+        if (src.isSetThematicSrcDesc()) {
+            for (CodeType thematicSrcDesc : src.getThematicSrcDesc())
+                dest.getThematicSrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(thematicSrcDesc));
+        }
+
+        if (src.isSetAppearanceSrcDesc()) {
+            for (CodeType appearanceSrcDesc : src.getAppearanceSrcDesc())
+                dest.getAppearanceSrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(appearanceSrcDesc));
+        }
+
+        if (src.isSetLodType()) {
+            for (String lodType : src.getLodType())
+                dest.getLodType().add(lodType);
+        }
+
+        return dest;
+    }
+
+    private CityFurnitureDataQualityAttributeProperty unmarshalCityFurnitureDataQualityAttributeProperty(CityFurnitureDataQualityAttributePropertyType src) throws MissingADESchemaException {
+        CityFurnitureDataQualityAttributeProperty dest = new CityFurnitureDataQualityAttributeProperty();
+
+        if (src.isSetCityFurnitureDataQualityAttribute())
+            dest.setObject(unmarshalCityFurnitureDataQualityAttribute(src.getCityFurnitureDataQualityAttribute()));
+
+        return dest;
+    }
+
+    private VegetationDataQualityAttribute unmarshalVegetationDataQualityAttribute(VegetationDataQualityAttributeType src) throws MissingADESchemaException {
+        VegetationDataQualityAttribute dest = new VegetationDataQualityAttribute();
+
+        if (src.isSetSrcScale()) {
+            for (CodeType srcScale : src.getSrcScale())
+                dest.getSrcScale().add(helper.getGMLUnmarshaller().unmarshalCode(srcScale));
+        }
+
+        if (src.isSetGeometrySrcDesc()) {
+            for (CodeType geometrySrcDesc : src.getGeometrySrcDesc())
+                dest.getGeometrySrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(geometrySrcDesc));
+        }
+
+        if (src.isSetThematicSrcDesc()) {
+            for (CodeType thematicSrcDesc : src.getThematicSrcDesc())
+                dest.getThematicSrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(thematicSrcDesc));
+        }
+
+        if (src.isSetAppearanceSrcDesc()) {
+            for (CodeType appearanceSrcDesc : src.getAppearanceSrcDesc())
+                dest.getAppearanceSrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(appearanceSrcDesc));
+        }
+
+        return dest;
+    }
+
+    private VegetationDataQualityAttributeProperty unmarshalVegetationDataQualityAttributeProperty(VegetationDataQualityAttributePropertyType src) throws MissingADESchemaException {
+        VegetationDataQualityAttributeProperty dest = new VegetationDataQualityAttributeProperty();
+
+        if (src.isSetVegetationDataQualityAttribute())
+            dest.setObject(unmarshalVegetationDataQualityAttribute(src.getVegetationDataQualityAttribute()));
+
+        return dest;
+    }
+
+    private void unmarshalWaterBodyFloodingRiskAttribute(WaterBodyFloodingRiskAttributeType src, WaterBodyFloodingRiskAttribute dest) throws MissingADESchemaException {
+        if (src.isSetDescription())
+            dest.setDescription(helper.getGMLUnmarshaller().unmarshalCode(src.getDescription()));
+
+        if (src.isSetRank())
+            dest.setRank(helper.getGMLUnmarshaller().unmarshalCode(src.getRank()));
+
+        if (src.isSetRankOrg())
+            dest.setRankOrg(helper.getGMLUnmarshaller().unmarshalCode(src.getRankOrg()));
+
+        if (src.isSetDepth())
+            dest.setDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getDepth()));
+    }
+
+    private WaterBodyRiverFloodingRiskAttribute unmarshalWaterBodyRiverFloodingRiskAttribute(WaterBodyRiverFloodingRiskAttributeType src) throws MissingADESchemaException {
+        WaterBodyRiverFloodingRiskAttribute dest = new WaterBodyRiverFloodingRiskAttribute();
+        unmarshalWaterBodyFloodingRiskAttribute(src, dest);
+
+        if (src.isSetAdminType())
+            dest.setAdminType(helper.getGMLUnmarshaller().unmarshalCode(src.getAdminType()));
+
+        if (src.isSetScale())
+            dest.setScale(helper.getGMLUnmarshaller().unmarshalCode(src.getScale()));
+
+        if (src.isSetDuration())
+            dest.setDuration(helper.getGMLUnmarshaller().unmarshalMeasure(src.getDuration()));
+
+        return dest;
+    }
+
+    private WaterBodyTsunamiRiskAttribute unmarshalWaterBodyTsunamiRiskAttribute(WaterBodyTsunamiRiskAttributeType src) throws MissingADESchemaException {
+        WaterBodyTsunamiRiskAttribute dest = new WaterBodyTsunamiRiskAttribute();
+        unmarshalWaterBodyFloodingRiskAttribute(src, dest);
+        return dest;
+    }
+
+    private WaterBodyHighTideRiskAttribute unmarshalWaterBodyHighTideRiskAttribute(WaterBodyHighTideRiskAttributeType src) throws MissingADESchemaException {
+        WaterBodyHighTideRiskAttribute dest = new WaterBodyHighTideRiskAttribute();
+        unmarshalWaterBodyFloodingRiskAttribute(src, dest);
+        return dest;
+    }
+
+    private WaterBodyInlandFloodingRiskAttribute unmarshalWaterBodyInlandFloodingRiskAttribute(WaterBodyInlandFloodingRiskAttributeType src) throws MissingADESchemaException {
+        WaterBodyInlandFloodingRiskAttribute dest = new WaterBodyInlandFloodingRiskAttribute();
+        unmarshalWaterBodyFloodingRiskAttribute(src, dest);
+        return dest;
+    }
+
+    private WaterBodyFloodingRiskAttributeProperty unmarshalWaterBodyFloodingRiskAttributeProperty(WaterBodyFloodingRiskAttributePropertyType src) throws MissingADESchemaException {
+        WaterBodyFloodingRiskAttributeProperty dest = new WaterBodyFloodingRiskAttributeProperty();
+
+        if (src.isSetWaterBodyFloodingRiskAttribute()) {
+            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.getWaterBodyFloodingRiskAttribute());
+            if (object instanceof WaterBodyFloodingRiskAttribute)
+                dest.setObject((WaterBodyFloodingRiskAttribute) object);
+        }
 
         return dest;
     }

@@ -185,7 +185,7 @@ public class LargeCustomerFacilityAttribute extends BuildingAttribute {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         LargeCustomerFacilityAttribute copy = target == null ? new LargeCustomerFacilityAttribute() : (LargeCustomerFacilityAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

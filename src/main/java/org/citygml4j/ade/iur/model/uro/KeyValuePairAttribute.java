@@ -22,62 +22,93 @@
 
 package org.citygml4j.ade.iur.model.uro;
 
-import org.citygml4j.ade.iur.model.common.AbstractKeyValuePair;
+import org.citygml4j.ade.iur.model.common.AbstractDataType;
 import org.citygml4j.builder.copy.CopyBuilder;
+import org.citygml4j.builder.copy.ObjectCopier;
+import org.citygml4j.model.common.base.ModelObjects;
 import org.citygml4j.model.gml.basicTypes.Code;
 import org.citygml4j.model.gml.basicTypes.Measure;
 
 import java.time.LocalDate;
 
-public class KeyValuePairAttribute extends AbstractKeyValuePair {
+public class KeyValuePairAttribute extends AbstractDataType {
+    private Code key;
+    private Code codeValue;
+    private String stringValue;
+    private Integer intValue;
+    private Double doubleValue;
+    private Measure measuredValue;
+    private LocalDate dateValue;
+    private String uriValue;
 
-    public KeyValuePairAttribute() {
+    public Code getKey() {
+        return key;
     }
 
-    public KeyValuePairAttribute(Code key) {
-        super(key);
+    public void setKey(Code key) {
+        this.key = ModelObjects.setParent(key, this);
     }
 
-    public static KeyValuePairAttribute ofStringValue(Code key, String value) {
-        KeyValuePairAttribute keyValuePair = new KeyValuePairAttribute(key);
-        keyValuePair.setStringValue(value);
-        return keyValuePair;
+    public Code getCodeValue() {
+        return codeValue;
     }
 
-    public static KeyValuePairAttribute ofIntValue(Code key, int value) {
-        KeyValuePairAttribute keyValuePair = new KeyValuePairAttribute(key);
-        keyValuePair.setIntValue(value);
-        return keyValuePair;
+    public void setCodeValue(Code codeValue) {
+        this.codeValue = ModelObjects.setParent(codeValue, this);
     }
 
-    public static KeyValuePairAttribute ofDoubleValue(Code key, double value) {
-        KeyValuePairAttribute keyValuePair = new KeyValuePairAttribute(key);
-        keyValuePair.setDoubleValue(value);
-        return keyValuePair;
+    public String getStringValue() {
+        return stringValue;
     }
 
-    public static KeyValuePairAttribute ofCodeValue(Code key, Code value) {
-        KeyValuePairAttribute keyValuePair = new KeyValuePairAttribute(key);
-        keyValuePair.setCodeValue(value);
-        return keyValuePair;
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
     }
 
-    public static KeyValuePairAttribute ofMeasuredValue(Code key, Measure value) {
-        KeyValuePairAttribute keyValuePair = new KeyValuePairAttribute(key);
-        keyValuePair.setMeasuredValue(value);
-        return keyValuePair;
+    public Integer getIntValue() {
+        return intValue;
     }
 
-    public static KeyValuePairAttribute ofDateValue(Code key, LocalDate value) {
-        KeyValuePairAttribute keyValuePair = new KeyValuePairAttribute(key);
-        keyValuePair.setDateValue(value);
-        return keyValuePair;
+    public void setIntValue(Integer intValue) {
+        this.intValue = intValue;
     }
 
-    public static KeyValuePairAttribute ofUriValue(Code key, String value) {
-        KeyValuePairAttribute keyValuePair = new KeyValuePairAttribute(key);
-        keyValuePair.setUriValue(value);
-        return keyValuePair;
+    public Double getDoubleValue() {
+        return doubleValue;
+    }
+
+    public void setDoubleValue(Double doubleValue) {
+        this.doubleValue = doubleValue;
+    }
+
+    public Measure getMeasuredValue() {
+        return measuredValue;
+    }
+
+    public void setMeasuredValue(Measure measuredValue) {
+        this.measuredValue = ModelObjects.setParent(measuredValue, this);
+    }
+
+    public LocalDate getDateValue() {
+        return dateValue;
+    }
+
+    public void setDateValue(LocalDate dateValue) {
+        this.dateValue = dateValue;
+    }
+
+    public String getUriValue() {
+        return uriValue;
+    }
+
+    public void setUriValue(String uriValue) {
+        this.uriValue = uriValue;
+    }
+
+    @Override
+    public Object copyTo(Object target, CopyBuilder copyBuilder) {
+        KeyValuePairAttribute copy = target == null ? new KeyValuePairAttribute() : (KeyValuePairAttribute) target;
+        return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 
     @Override

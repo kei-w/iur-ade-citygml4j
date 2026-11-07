@@ -29,7 +29,7 @@ public class BuildingTsunamiRiskAttribute extends BuildingFloodingRiskAttribute 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         BuildingTsunamiRiskAttribute copy = target == null ? new BuildingTsunamiRiskAttribute() : (BuildingTsunamiRiskAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

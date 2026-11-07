@@ -11,10 +11,16 @@ Change Log
   `BuildingDataQualityAttribute`). The 1.4 `uro` model classes were removed.
 * JAXB classes for `uro` are generated into `jp.geospatial.iur._2_0.uro`.
 
+##### Changes (all uro attributes, 2026-11-07)
+* Every `uro` generic application property of every CityGML feature type defined by the i-UR 2.0 XSD is now modelled and
+  (un)marshalled: facility, DM, ifc and indoor attributes of buildings and the attributes of bridges, tunnels, land use,
+  city furniture, relief, transportation, vegetation, water bodies, city object groups and building interiors.
+* The `uro` model and binding classes are generated from the XSD (`poc/gen` in the PoC workspace).
+
 ##### Known limitations
-* The `uro` 2.0 attributes of LandUse, Road, TrafficArea, CityFurniture, Vegetation and WaterBody are not
-  modelled yet.
-* The Urban Function (`urf`), Statistical Grid (`urg`) and Public Transit (`urt`) modules remain at i-UR 1.4.
+* `uro:ControlPoint/uro:parameter` is not supported: the 2.0 XSD declares it with the type of `uro:ControlPoint` itself.
+* ADE feature types (`uro:UndergroundBuilding`, `uro:OtherConstruction`, `uro:Waterway`, utility networks, ...) are not
+  supported; `urf`, `urg` and `urt` remain at 1.4.
 
 ### 1.5.0 - 2024-08-27
 

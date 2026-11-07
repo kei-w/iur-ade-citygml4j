@@ -1,6 +1,21 @@
 Change Log
 ==========
 
+### 2.0.0 - 2026-11-07
+
+##### Breaking changes
+* Updated the Urban Object module (`uro`) to version 2.0 of the i-UR ADE
+  (`https://www.geospatial.jp/iur/uro/2.0`). The building attributes are now modelled as the
+  `BuildingAttribute` hierarchy (`BuildingIDAttribute`, `BuildingDetailAttribute`,
+  `LargeCustomerFacilityAttribute`, `BuildingDisasterRiskAttribute` subtypes, `KeyValuePairAttribute`,
+  `BuildingDataQualityAttribute`). The 1.4 `uro` model classes were removed.
+* JAXB classes for `uro` are generated into `jp.geospatial.iur._2_0.uro`.
+
+##### Known limitations
+* The `uro` 2.0 attributes of LandUse, Road, TrafficArea, CityFurniture, Vegetation and WaterBody are not
+  modelled yet.
+* The Urban Function (`urf`), Statistical Grid (`urg`) and Public Transit (`urt`) modules remain at i-UR 1.4.
+
 ### 1.5.0 - 2024-08-27
 
 ##### Changes

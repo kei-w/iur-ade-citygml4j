@@ -122,6 +122,7 @@ publishing {
 }
 
 signing {
+    required = { gradle.taskGraph.hasTask("publishToSonatype") }
     sign publishing.publications.mavenJava
 }
 

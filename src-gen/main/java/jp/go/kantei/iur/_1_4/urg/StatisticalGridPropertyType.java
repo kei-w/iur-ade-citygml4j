@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:15:07 JST 2026
 //
 
 
@@ -21,9 +21,9 @@ import org.w3._1999.xlink.TypeType;
 
 
 /**
- * <p>Java-Klasse für StatisticalGridPropertyType complex type.
+ * <p>Java class for StatisticalGridPropertyType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="StatisticalGridPropertyType"&gt;
@@ -67,17 +67,17 @@ public class StatisticalGridPropertyType {
     protected ActuateType actuate;
 
     /**
-     * Ruft den Wert der _StatisticalGrid-Eigenschaft ab.
+     * Gets the value of the _StatisticalGrid property.
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link PopulationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link GenericGridCellType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandUseDiversionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandPriceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link OfficesAndEmployeesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HouseholdsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PopulationType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PublicTransitAccessibilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HouseholdsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandPriceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandUseDiversionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link GenericGridCellType }{@code >}
      *     {@link JAXBElement }{@code <}{@link StatisticalGridType }{@code >}
      *     
      */
@@ -86,17 +86,17 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Legt den Wert der _StatisticalGrid-Eigenschaft fest.
+     * Sets the value of the _StatisticalGrid property.
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link PopulationType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link GenericGridCellType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandUseDiversionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LandPriceType }{@code >}
      *     {@link JAXBElement }{@code <}{@link OfficesAndEmployeesType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HouseholdsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PopulationType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PublicTransitAccessibilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HouseholdsType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandPriceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LandUseDiversionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link GenericGridCellType }{@code >}
      *     {@link JAXBElement }{@code <}{@link StatisticalGridType }{@code >}
      *     
      */
@@ -109,7 +109,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Ruft den Wert der remoteSchema-Eigenschaft ab.
+     * Gets the value of the remoteSchema property.
      * 
      * @return
      *     possible object is
@@ -121,7 +121,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Legt den Wert der remoteSchema-Eigenschaft fest.
+     * Sets the value of the remoteSchema property.
      * 
      * @param value
      *     allowed object is
@@ -137,7 +137,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Ruft den Wert der type-Eigenschaft ab.
+     * Gets the value of the type property.
      * 
      * @return
      *     possible object is
@@ -153,7 +153,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Legt den Wert der type-Eigenschaft fest.
+     * Sets the value of the type property.
      * 
      * @param value
      *     allowed object is
@@ -169,7 +169,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Ruft den Wert der href-Eigenschaft ab.
+     * Gets the value of the href property.
      * 
      * @return
      *     possible object is
@@ -181,7 +181,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Legt den Wert der href-Eigenschaft fest.
+     * Sets the value of the href property.
      * 
      * @param value
      *     allowed object is
@@ -197,7 +197,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Ruft den Wert der role-Eigenschaft ab.
+     * Gets the value of the role property.
      * 
      * @return
      *     possible object is
@@ -209,7 +209,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Legt den Wert der role-Eigenschaft fest.
+     * Sets the value of the role property.
      * 
      * @param value
      *     allowed object is
@@ -225,7 +225,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Ruft den Wert der arcrole-Eigenschaft ab.
+     * Gets the value of the arcrole property.
      * 
      * @return
      *     possible object is
@@ -237,7 +237,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Legt den Wert der arcrole-Eigenschaft fest.
+     * Sets the value of the arcrole property.
      * 
      * @param value
      *     allowed object is
@@ -253,7 +253,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Ruft den Wert der title-Eigenschaft ab.
+     * Gets the value of the title property.
      * 
      * @return
      *     possible object is
@@ -265,7 +265,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Legt den Wert der title-Eigenschaft fest.
+     * Sets the value of the title property.
      * 
      * @param value
      *     allowed object is
@@ -281,7 +281,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Ruft den Wert der show-Eigenschaft ab.
+     * Gets the value of the show property.
      * 
      * @return
      *     possible object is
@@ -293,7 +293,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Legt den Wert der show-Eigenschaft fest.
+     * Sets the value of the show property.
      * 
      * @param value
      *     allowed object is
@@ -309,7 +309,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Ruft den Wert der actuate-Eigenschaft ab.
+     * Gets the value of the actuate property.
      * 
      * @return
      *     possible object is
@@ -321,7 +321,7 @@ public class StatisticalGridPropertyType {
     }
 
     /**
-     * Legt den Wert der actuate-Eigenschaft fest.
+     * Sets the value of the actuate property.
      * 
      * @param value
      *     allowed object is

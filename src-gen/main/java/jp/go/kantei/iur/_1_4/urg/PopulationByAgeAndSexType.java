@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:15:07 JST 2026
 //
 
 
@@ -17,9 +17,9 @@ import net.opengis.gml.CodeType;
 
 
 /**
- * <p>Java-Klasse für PopulationByAgeAndSexType complex type.
+ * <p>Java class for PopulationByAgeAndSexType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PopulationByAgeAndSexType"&gt;
@@ -48,7 +48,7 @@ public class PopulationByAgeAndSexType {
     protected BigInteger number;
 
     /**
-     * Ruft den Wert der ageAndSex-Eigenschaft ab.
+     * Gets the value of the ageAndSex property.
      * 
      * @return
      *     possible object is
@@ -60,7 +60,7 @@ public class PopulationByAgeAndSexType {
     }
 
     /**
-     * Legt den Wert der ageAndSex-Eigenschaft fest.
+     * Sets the value of the ageAndSex property.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class PopulationByAgeAndSexType {
     }
 
     /**
-     * Ruft den Wert der number-Eigenschaft ab.
+     * Gets the value of the number property.
      * 
      * @return
      *     possible object is
@@ -88,7 +88,7 @@ public class PopulationByAgeAndSexType {
     }
 
     /**
-     * Legt den Wert der number-Eigenschaft fest.
+     * Sets the value of the number property.
      * 
      * @param value
      *     allowed object is

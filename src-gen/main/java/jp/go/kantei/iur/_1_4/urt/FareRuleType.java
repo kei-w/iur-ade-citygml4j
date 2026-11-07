@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:15:07 JST 2026
 //
 
 
@@ -16,9 +16,9 @@ import net.opengis.gml.CodeType;
 
 
 /**
- * <p>Java-Klasse für FareRuleType complex type.
+ * <p>Java class for FareRuleType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="FareRuleType"&gt;
@@ -58,7 +58,7 @@ public class FareRuleType
     protected RoutePropertyType route;
 
     /**
-     * Ruft den Wert der originId-Eigenschaft ab.
+     * Gets the value of the originId property.
      * 
      * @return
      *     possible object is
@@ -70,7 +70,7 @@ public class FareRuleType
     }
 
     /**
-     * Legt den Wert der originId-Eigenschaft fest.
+     * Sets the value of the originId property.
      * 
      * @param value
      *     allowed object is
@@ -86,7 +86,7 @@ public class FareRuleType
     }
 
     /**
-     * Ruft den Wert der destinationId-Eigenschaft ab.
+     * Gets the value of the destinationId property.
      * 
      * @return
      *     possible object is
@@ -98,7 +98,7 @@ public class FareRuleType
     }
 
     /**
-     * Legt den Wert der destinationId-Eigenschaft fest.
+     * Sets the value of the destinationId property.
      * 
      * @param value
      *     allowed object is
@@ -114,7 +114,7 @@ public class FareRuleType
     }
 
     /**
-     * Ruft den Wert der containsId-Eigenschaft ab.
+     * Gets the value of the containsId property.
      * 
      * @return
      *     possible object is
@@ -126,7 +126,7 @@ public class FareRuleType
     }
 
     /**
-     * Legt den Wert der containsId-Eigenschaft fest.
+     * Sets the value of the containsId property.
      * 
      * @param value
      *     allowed object is
@@ -142,7 +142,7 @@ public class FareRuleType
     }
 
     /**
-     * Ruft den Wert der fare-Eigenschaft ab.
+     * Gets the value of the fare property.
      * 
      * @return
      *     possible object is
@@ -154,7 +154,7 @@ public class FareRuleType
     }
 
     /**
-     * Legt den Wert der fare-Eigenschaft fest.
+     * Sets the value of the fare property.
      * 
      * @param value
      *     allowed object is
@@ -170,7 +170,7 @@ public class FareRuleType
     }
 
     /**
-     * Ruft den Wert der route-Eigenschaft ab.
+     * Gets the value of the route property.
      * 
      * @return
      *     possible object is
@@ -182,7 +182,7 @@ public class FareRuleType
     }
 
     /**
-     * Legt den Wert der route-Eigenschaft fest.
+     * Sets the value of the route property.
      * 
      * @param value
      *     allowed object is

@@ -35,7 +35,7 @@ public class CensusBlock extends UrbanFunction {
     private Integer numberOfOrdinaryHouseholds;
     private List<NumberOfHouseholdsProperty> numberOfHouseholdsByOwnership;
     private Integer numberOfMainHouseholds;
-    private List<NumberOfHouseholdsProperty> numberOfHouseholdsByStructure;
+    private List<NumberOfHouseholdsProperty> numberOfHouseholdsByStruture;
 
     public Integer getDaytimePopulation() {
         return daytimePopulation;
@@ -80,21 +80,21 @@ public class CensusBlock extends UrbanFunction {
         this.numberOfMainHouseholds = numberOfMainHouseholds;
     }
 
-    public List<NumberOfHouseholdsProperty> getNumberOfHouseholdsByStructure() {
-        if (numberOfHouseholdsByStructure == null)
-            numberOfHouseholdsByStructure = new ChildList<>(this);
+    public List<NumberOfHouseholdsProperty> getNumberOfHouseholdsByStruture() {
+        if (numberOfHouseholdsByStruture == null)
+            numberOfHouseholdsByStruture = new ChildList<>(this);
 
-        return numberOfHouseholdsByStructure;
+        return numberOfHouseholdsByStruture;
     }
 
-    public void setNumberOfHouseholdsByStructure(List<NumberOfHouseholdsProperty> numberOfHouseholdsByStructure) {
-        this.numberOfHouseholdsByStructure = ModelObjects.setParent(numberOfHouseholdsByStructure, this);
+    public void setNumberOfHouseholdsByStruture(List<NumberOfHouseholdsProperty> numberOfHouseholdsByStruture) {
+        this.numberOfHouseholdsByStruture = ModelObjects.setParent(numberOfHouseholdsByStruture, this);
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         CensusBlock copy = target == null ? new CensusBlock() : (CensusBlock) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:15:07 JST 2026
 //
 
 
@@ -17,9 +17,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java-Klasse für CalendarType complex type.
+ * <p>Java class for CalendarType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="CalendarType"&gt;
@@ -74,7 +74,7 @@ public class CalendarType
     protected XMLGregorianCalendar endDate;
 
     /**
-     * Ruft den Wert der monday-Eigenschaft ab.
+     * Gets the value of the monday property.
      * 
      */
     public boolean isMonday() {
@@ -82,7 +82,7 @@ public class CalendarType
     }
 
     /**
-     * Legt den Wert der monday-Eigenschaft fest.
+     * Sets the value of the monday property.
      * 
      */
     public void setMonday(boolean value) {
@@ -94,7 +94,7 @@ public class CalendarType
     }
 
     /**
-     * Ruft den Wert der tuesday-Eigenschaft ab.
+     * Gets the value of the tuesday property.
      * 
      */
     public boolean isTuesday() {
@@ -102,7 +102,7 @@ public class CalendarType
     }
 
     /**
-     * Legt den Wert der tuesday-Eigenschaft fest.
+     * Sets the value of the tuesday property.
      * 
      */
     public void setTuesday(boolean value) {
@@ -114,7 +114,7 @@ public class CalendarType
     }
 
     /**
-     * Ruft den Wert der wednesday-Eigenschaft ab.
+     * Gets the value of the wednesday property.
      * 
      */
     public boolean isWednesday() {
@@ -122,7 +122,7 @@ public class CalendarType
     }
 
     /**
-     * Legt den Wert der wednesday-Eigenschaft fest.
+     * Sets the value of the wednesday property.
      * 
      */
     public void setWednesday(boolean value) {
@@ -134,7 +134,7 @@ public class CalendarType
     }
 
     /**
-     * Ruft den Wert der thursday-Eigenschaft ab.
+     * Gets the value of the thursday property.
      * 
      */
     public boolean isThursday() {
@@ -142,7 +142,7 @@ public class CalendarType
     }
 
     /**
-     * Legt den Wert der thursday-Eigenschaft fest.
+     * Sets the value of the thursday property.
      * 
      */
     public void setThursday(boolean value) {
@@ -154,7 +154,7 @@ public class CalendarType
     }
 
     /**
-     * Ruft den Wert der friday-Eigenschaft ab.
+     * Gets the value of the friday property.
      * 
      */
     public boolean isFriday() {
@@ -162,7 +162,7 @@ public class CalendarType
     }
 
     /**
-     * Legt den Wert der friday-Eigenschaft fest.
+     * Sets the value of the friday property.
      * 
      */
     public void setFriday(boolean value) {
@@ -174,7 +174,7 @@ public class CalendarType
     }
 
     /**
-     * Ruft den Wert der saturday-Eigenschaft ab.
+     * Gets the value of the saturday property.
      * 
      */
     public boolean isSaturday() {
@@ -182,7 +182,7 @@ public class CalendarType
     }
 
     /**
-     * Legt den Wert der saturday-Eigenschaft fest.
+     * Sets the value of the saturday property.
      * 
      */
     public void setSaturday(boolean value) {
@@ -194,7 +194,7 @@ public class CalendarType
     }
 
     /**
-     * Ruft den Wert der sunday-Eigenschaft ab.
+     * Gets the value of the sunday property.
      * 
      */
     public boolean isSunday() {
@@ -202,7 +202,7 @@ public class CalendarType
     }
 
     /**
-     * Legt den Wert der sunday-Eigenschaft fest.
+     * Sets the value of the sunday property.
      * 
      */
     public void setSunday(boolean value) {
@@ -214,7 +214,7 @@ public class CalendarType
     }
 
     /**
-     * Ruft den Wert der startDate-Eigenschaft ab.
+     * Gets the value of the startDate property.
      * 
      * @return
      *     possible object is
@@ -226,7 +226,7 @@ public class CalendarType
     }
 
     /**
-     * Legt den Wert der startDate-Eigenschaft fest.
+     * Sets the value of the startDate property.
      * 
      * @param value
      *     allowed object is
@@ -242,7 +242,7 @@ public class CalendarType
     }
 
     /**
-     * Ruft den Wert der endDate-Eigenschaft ab.
+     * Gets the value of the endDate property.
      * 
      * @return
      *     possible object is
@@ -254,7 +254,7 @@ public class CalendarType
     }
 
     /**
-     * Legt den Wert der endDate-Eigenschaft fest.
+     * Sets the value of the endDate property.
      * 
      * @param value
      *     allowed object is

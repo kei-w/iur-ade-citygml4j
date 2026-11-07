@@ -125,7 +125,7 @@ public class DevelopmentProject extends Zone {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         DevelopmentProject copy = target == null ? new DevelopmentProject() : (DevelopmentProject) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

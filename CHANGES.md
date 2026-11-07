@@ -20,9 +20,24 @@ Change Log
 ##### Changes (ADE feature types, 2026-11-07)
 * The i-UR 2.0 XSD defines no ADE feature types; regenerated with the generator that supports them (no code change).
 
+##### Changes (Urban Function module, 2026-11-07)
+* **Breaking:** the Urban Function module (`urf`) is updated to version 2.0 of the i-UR ADE
+  (`https://www.geospatial.jp/iur/urf/2.0`): 119 feature types and 9 data types generated from the schema shipped
+  with the PLATEAU datasets replace the hand-written 1.4 model, binding and walker classes; JAXB classes are
+  generated into `jp.geospatial.iur._2_0.urf` (the `urt` classes refer to the `urf` feature classes and are regenerated with them).
+* Every concrete `urf` feature is registered as a top-level feature (PLATEAU writes them all as city object members);
+  references to other members (`urf:districtDevelopmentPlan`, `urf:promotionDistrict`, ...) and to city objects
+  (`urf:target`) are feature properties that carry an xlink.
+* `urf` feature types with an `id` or `location` element are bound under the properties `identifier` and
+  `locationDescription`, and the `lod-N` geometries under `lodMinusN...` (`binding.xjb`); the model accessors are named
+  alike. `uro` and `urf` classes of the same simple name (`Waterway`, `LandPrice`, `LandUseDiversion`) are referred to
+  qualified where both are in scope.
+* The top-level `Unmarshaller` dispatches JAXB objects by their JAXB package, so `urf` properties of `uro` types
+  (`keyValuePairAttribute`, `dataQualityAttribute`, `urfDmAttribute`) are unmarshalled.
+
 ##### Known limitations
 * `uro:ControlPoint/uro:parameter` is not supported: the 2.0 XSD declares it with the type of `uro:ControlPoint` itself.
-* `urf`, `urg` and `urt` remain at 1.4.
+* `urg` and `urt` remain at 1.4.
 
 ### 1.5.0 - 2024-08-27
 

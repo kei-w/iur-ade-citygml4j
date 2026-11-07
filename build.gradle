@@ -27,12 +27,17 @@ repositories {
     mavenCentral()
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 dependencies {
     api 'org.citygml4j:citygml4j:2.13.0'
 }
 
 javadoc {
     options {
+        encoding = 'UTF-8'
         overview "$projectDir/build/tmp/javadoc/overview.html"
         header "$project.name $project.version"
         bottom """

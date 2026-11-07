@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:15:07 JST 2026
 //
 
 
@@ -18,9 +18,9 @@ import net.opengis.gml.CodeType;
 
 
 /**
- * <p>Java-Klasse für FeedInfoType complex type.
+ * <p>Java class for FeedInfoType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="FeedInfoType"&gt;
@@ -81,7 +81,7 @@ public class FeedInfoType
     protected String detailedInfo;
 
     /**
-     * Ruft den Wert der publisherName-Eigenschaft ab.
+     * Gets the value of the publisherName property.
      * 
      * @return
      *     possible object is
@@ -93,7 +93,7 @@ public class FeedInfoType
     }
 
     /**
-     * Legt den Wert der publisherName-Eigenschaft fest.
+     * Sets the value of the publisherName property.
      * 
      * @param value
      *     allowed object is
@@ -109,7 +109,7 @@ public class FeedInfoType
     }
 
     /**
-     * Ruft den Wert der publisherUrl-Eigenschaft ab.
+     * Gets the value of the publisherUrl property.
      * 
      * @return
      *     possible object is
@@ -121,7 +121,7 @@ public class FeedInfoType
     }
 
     /**
-     * Legt den Wert der publisherUrl-Eigenschaft fest.
+     * Sets the value of the publisherUrl property.
      * 
      * @param value
      *     allowed object is
@@ -137,7 +137,7 @@ public class FeedInfoType
     }
 
     /**
-     * Ruft den Wert der language-Eigenschaft ab.
+     * Gets the value of the language property.
      * 
      * @return
      *     possible object is
@@ -149,7 +149,7 @@ public class FeedInfoType
     }
 
     /**
-     * Legt den Wert der language-Eigenschaft fest.
+     * Sets the value of the language property.
      * 
      * @param value
      *     allowed object is
@@ -165,7 +165,7 @@ public class FeedInfoType
     }
 
     /**
-     * Ruft den Wert der defaultLanguage-Eigenschaft ab.
+     * Gets the value of the defaultLanguage property.
      * 
      * @return
      *     possible object is
@@ -177,7 +177,7 @@ public class FeedInfoType
     }
 
     /**
-     * Legt den Wert der defaultLanguage-Eigenschaft fest.
+     * Sets the value of the defaultLanguage property.
      * 
      * @param value
      *     allowed object is
@@ -193,7 +193,7 @@ public class FeedInfoType
     }
 
     /**
-     * Ruft den Wert der startDate-Eigenschaft ab.
+     * Gets the value of the startDate property.
      * 
      * @return
      *     possible object is
@@ -205,7 +205,7 @@ public class FeedInfoType
     }
 
     /**
-     * Legt den Wert der startDate-Eigenschaft fest.
+     * Sets the value of the startDate property.
      * 
      * @param value
      *     allowed object is
@@ -221,7 +221,7 @@ public class FeedInfoType
     }
 
     /**
-     * Ruft den Wert der endDate-Eigenschaft ab.
+     * Gets the value of the endDate property.
      * 
      * @return
      *     possible object is
@@ -233,7 +233,7 @@ public class FeedInfoType
     }
 
     /**
-     * Legt den Wert der endDate-Eigenschaft fest.
+     * Sets the value of the endDate property.
      * 
      * @param value
      *     allowed object is
@@ -249,7 +249,7 @@ public class FeedInfoType
     }
 
     /**
-     * Ruft den Wert der version-Eigenschaft ab.
+     * Gets the value of the version property.
      * 
      * @return
      *     possible object is
@@ -261,7 +261,7 @@ public class FeedInfoType
     }
 
     /**
-     * Legt den Wert der version-Eigenschaft fest.
+     * Sets the value of the version property.
      * 
      * @param value
      *     allowed object is
@@ -277,7 +277,7 @@ public class FeedInfoType
     }
 
     /**
-     * Ruft den Wert der contactEmail-Eigenschaft ab.
+     * Gets the value of the contactEmail property.
      * 
      * @return
      *     possible object is
@@ -289,7 +289,7 @@ public class FeedInfoType
     }
 
     /**
-     * Legt den Wert der contactEmail-Eigenschaft fest.
+     * Sets the value of the contactEmail property.
      * 
      * @param value
      *     allowed object is
@@ -305,7 +305,7 @@ public class FeedInfoType
     }
 
     /**
-     * Ruft den Wert der contactURL-Eigenschaft ab.
+     * Gets the value of the contactURL property.
      * 
      * @return
      *     possible object is
@@ -317,7 +317,7 @@ public class FeedInfoType
     }
 
     /**
-     * Legt den Wert der contactURL-Eigenschaft fest.
+     * Sets the value of the contactURL property.
      * 
      * @param value
      *     allowed object is
@@ -333,7 +333,7 @@ public class FeedInfoType
     }
 
     /**
-     * Ruft den Wert der detailedInfo-Eigenschaft ab.
+     * Gets the value of the detailedInfo property.
      * 
      * @return
      *     possible object is
@@ -345,7 +345,7 @@ public class FeedInfoType
     }
 
     /**
-     * Legt den Wert der detailedInfo-Eigenschaft fest.
+     * Sets the value of the detailedInfo property.
      * 
      * @param value
      *     allowed object is

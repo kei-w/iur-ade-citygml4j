@@ -30,6 +30,7 @@ import org.citygml4j.model.gml.feature.FeatureProperty;
 public class TargetProperty extends FeatureProperty<AbstractCityObject> implements ADEModelObject {
 
     public TargetProperty() {
+        super();
     }
 
     public TargetProperty(AbstractCityObject object) {

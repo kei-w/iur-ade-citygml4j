@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:15:07 JST 2026
 //
 
 
@@ -18,9 +18,9 @@ import net.opengis.gml.PointPropertyType;
 
 
 /**
- * <p>Java-Klasse für PointType complex type.
+ * <p>Java class for PointType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PointType"&gt;
@@ -60,7 +60,7 @@ public class PointType {
     protected Double pointDistanceTraveled;
 
     /**
-     * Ruft den Wert der latitude-Eigenschaft ab.
+     * Gets the value of the latitude property.
      * 
      */
     public double getLatitude() {
@@ -68,7 +68,7 @@ public class PointType {
     }
 
     /**
-     * Legt den Wert der latitude-Eigenschaft fest.
+     * Sets the value of the latitude property.
      * 
      */
     public void setLatitude(double value) {
@@ -80,7 +80,7 @@ public class PointType {
     }
 
     /**
-     * Ruft den Wert der longitude-Eigenschaft ab.
+     * Gets the value of the longitude property.
      * 
      */
     public double getLongitude() {
@@ -88,7 +88,7 @@ public class PointType {
     }
 
     /**
-     * Legt den Wert der longitude-Eigenschaft fest.
+     * Sets the value of the longitude property.
      * 
      */
     public void setLongitude(double value) {
@@ -100,7 +100,7 @@ public class PointType {
     }
 
     /**
-     * Ruft den Wert der point-Eigenschaft ab.
+     * Gets the value of the point property.
      * 
      * @return
      *     possible object is
@@ -112,7 +112,7 @@ public class PointType {
     }
 
     /**
-     * Legt den Wert der point-Eigenschaft fest.
+     * Sets the value of the point property.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class PointType {
     }
 
     /**
-     * Ruft den Wert der pointSequence-Eigenschaft ab.
+     * Gets the value of the pointSequence property.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class PointType {
     }
 
     /**
-     * Legt den Wert der pointSequence-Eigenschaft fest.
+     * Sets the value of the pointSequence property.
      * 
      * @param value
      *     allowed object is
@@ -156,7 +156,7 @@ public class PointType {
     }
 
     /**
-     * Ruft den Wert der pointDistanceTraveled-Eigenschaft ab.
+     * Gets the value of the pointDistanceTraveled property.
      * 
      * @return
      *     possible object is
@@ -168,7 +168,7 @@ public class PointType {
     }
 
     /**
-     * Legt den Wert der pointDistanceTraveled-Eigenschaft fest.
+     * Sets the value of the pointDistanceTraveled property.
      * 
      * @param value
      *     allowed object is

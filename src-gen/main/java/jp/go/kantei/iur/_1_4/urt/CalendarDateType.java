@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:15:07 JST 2026
 //
 
 
@@ -18,9 +18,9 @@ import net.opengis.gml.CodeType;
 
 
 /**
- * <p>Java-Klasse für CalendarDateType complex type.
+ * <p>Java class for CalendarDateType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="CalendarDateType"&gt;
@@ -56,7 +56,7 @@ public class CalendarDateType
     protected CalendarPropertyType calendar;
 
     /**
-     * Ruft den Wert der date-Eigenschaft ab.
+     * Gets the value of the date property.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class CalendarDateType
     }
 
     /**
-     * Legt den Wert der date-Eigenschaft fest.
+     * Sets the value of the date property.
      * 
      * @param value
      *     allowed object is
@@ -84,7 +84,7 @@ public class CalendarDateType
     }
 
     /**
-     * Ruft den Wert der exceptionType-Eigenschaft ab.
+     * Gets the value of the exceptionType property.
      * 
      * @return
      *     possible object is
@@ -96,7 +96,7 @@ public class CalendarDateType
     }
 
     /**
-     * Legt den Wert der exceptionType-Eigenschaft fest.
+     * Sets the value of the exceptionType property.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +112,7 @@ public class CalendarDateType
     }
 
     /**
-     * Ruft den Wert der calendar-Eigenschaft ab.
+     * Gets the value of the calendar property.
      * 
      * @return
      *     possible object is
@@ -124,7 +124,7 @@ public class CalendarDateType
     }
 
     /**
-     * Legt den Wert der calendar-Eigenschaft fest.
+     * Sets the value of the calendar property.
      * 
      * @param value
      *     allowed object is

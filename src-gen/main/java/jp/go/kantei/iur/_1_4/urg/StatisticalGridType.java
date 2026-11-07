@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:15:07 JST 2026
 //
 
 
@@ -23,9 +23,9 @@ import net.opengis.gml.MultiSurfacePropertyType;
 
 
 /**
- * <p>Java-Klasse für StatisticalGridType complex type.
+ * <p>Java class for StatisticalGridType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="StatisticalGridType"&gt;
@@ -89,7 +89,7 @@ public abstract class StatisticalGridType
     protected MultiSurfacePropertyType lod2MultiSurface;
 
     /**
-     * Ruft den Wert der clazz-Eigenschaft ab.
+     * Gets the value of the clazz property.
      * 
      * @return
      *     possible object is
@@ -101,7 +101,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Legt den Wert der clazz-Eigenschaft fest.
+     * Sets the value of the clazz property.
      * 
      * @param value
      *     allowed object is
@@ -154,7 +154,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Ruft den Wert der urbanPlanType-Eigenschaft ab.
+     * Gets the value of the urbanPlanType property.
      * 
      * @return
      *     possible object is
@@ -166,7 +166,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Legt den Wert der urbanPlanType-Eigenschaft fest.
+     * Sets the value of the urbanPlanType property.
      * 
      * @param value
      *     allowed object is
@@ -182,7 +182,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Ruft den Wert der areaClassificationType-Eigenschaft ab.
+     * Gets the value of the areaClassificationType property.
      * 
      * @return
      *     possible object is
@@ -194,7 +194,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Legt den Wert der areaClassificationType-Eigenschaft fest.
+     * Sets the value of the areaClassificationType property.
      * 
      * @param value
      *     allowed object is
@@ -210,7 +210,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Ruft den Wert der prefecture-Eigenschaft ab.
+     * Gets the value of the prefecture property.
      * 
      * @return
      *     possible object is
@@ -222,7 +222,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Legt den Wert der prefecture-Eigenschaft fest.
+     * Sets the value of the prefecture property.
      * 
      * @param value
      *     allowed object is
@@ -238,7 +238,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Ruft den Wert der city-Eigenschaft ab.
+     * Gets the value of the city property.
      * 
      * @return
      *     possible object is
@@ -250,7 +250,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Legt den Wert der city-Eigenschaft fest.
+     * Sets the value of the city property.
      * 
      * @param value
      *     allowed object is
@@ -266,7 +266,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Ruft den Wert der surveyYear-Eigenschaft ab.
+     * Gets the value of the surveyYear property.
      * 
      * @return
      *     possible object is
@@ -278,7 +278,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Legt den Wert der surveyYear-Eigenschaft fest.
+     * Sets the value of the surveyYear property.
      * 
      * @param value
      *     allowed object is
@@ -294,7 +294,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Ruft den Wert der lod1MultiSurface-Eigenschaft ab.
+     * Gets the value of the lod1MultiSurface property.
      * 
      * @return
      *     possible object is
@@ -306,7 +306,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Legt den Wert der lod1MultiSurface-Eigenschaft fest.
+     * Sets the value of the lod1MultiSurface property.
      * 
      * @param value
      *     allowed object is
@@ -322,7 +322,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Ruft den Wert der lod2MultiSurface-Eigenschaft ab.
+     * Gets the value of the lod2MultiSurface property.
      * 
      * @return
      *     possible object is
@@ -334,7 +334,7 @@ public abstract class StatisticalGridType
     }
 
     /**
-     * Legt den Wert der lod2MultiSurface-Eigenschaft fest.
+     * Sets the value of the lod2MultiSurface property.
      * 
      * @param value
      *     allowed object is

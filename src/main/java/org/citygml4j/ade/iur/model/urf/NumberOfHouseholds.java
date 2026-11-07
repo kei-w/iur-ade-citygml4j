@@ -32,14 +32,6 @@ public class NumberOfHouseholds extends AbstractDataType {
     private Code classifier;
     private Integer number;
 
-    public NumberOfHouseholds() {
-    }
-
-    public NumberOfHouseholds(Code classifier, Integer number) {
-        this.classifier = classifier;
-        this.number = number;
-    }
-
     public Code getClassifier() {
         return classifier;
     }

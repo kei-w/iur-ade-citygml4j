@@ -39,7 +39,7 @@ public class DisasterPreventionBase extends UrbanFunction {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         DisasterPreventionBase copy = target == null ? new DisasterPreventionBase() : (DisasterPreventionBase) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

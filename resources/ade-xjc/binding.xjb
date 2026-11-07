@@ -55,10 +55,31 @@
   
   <jaxb:bindings schemaLocation="schemas/urbanFunction.xsd" node="/xs:schema">
     <jaxb:schemaBindings>
-      <jaxb:package name="jp.go.kantei.iur._1_4.urf"/>
+      <jaxb:package name="jp.geospatial.iur._2_0.urf"/>
     </jaxb:schemaBindings>
     <jaxb:bindings>
       <namespace:prefix name="urf"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:complexType[@name='ZoneType']//xs:element[@name='location']">
+      <jaxb:property name="locationDescription"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="//xs:element[@name='lod-1MultiCurve']" multiple="true">
+      <jaxb:property name="lodMinus1MultiCurve"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="//xs:element[@name='lod-1MultiPoint']" multiple="true">
+      <jaxb:property name="lodMinus1MultiPoint"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="//xs:element[@name='lod-1MultiSurface']" multiple="true">
+      <jaxb:property name="lodMinus1MultiSurface"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="//xs:element[@name='lod-2MultiCurve']" multiple="true">
+      <jaxb:property name="lodMinus2MultiCurve"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="//xs:element[@name='lod-2MultiPoint']" multiple="true">
+      <jaxb:property name="lodMinus2MultiPoint"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="//xs:element[@name='lod-2MultiSurface']" multiple="true">
+      <jaxb:property name="lodMinus2MultiSurface"/>
     </jaxb:bindings>
   </jaxb:bindings>
   

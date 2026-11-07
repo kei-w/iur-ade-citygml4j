@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:15:07 JST 2026
 //
 
 
@@ -14,9 +14,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für LevelType complex type.
+ * <p>Java class for LevelType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="LevelType"&gt;
@@ -43,7 +43,7 @@ public class LevelType
     protected double index;
 
     /**
-     * Ruft den Wert der index-Eigenschaft ab.
+     * Gets the value of the index property.
      * 
      */
     public double getIndex() {
@@ -51,7 +51,7 @@ public class LevelType
     }
 
     /**
-     * Legt den Wert der index-Eigenschaft fest.
+     * Sets the value of the index property.
      * 
      */
     public void setIndex(double value) {

@@ -24,6 +24,7 @@ package org.citygml4j.ade.iur.model.urf;
 
 import org.citygml4j.builder.copy.CopyBuilder;
 import org.citygml4j.builder.copy.ObjectCopier;
+import org.citygml4j.model.common.base.ModelObjects;
 import org.citygml4j.model.gml.basicTypes.Measure;
 
 public class DisasterDamage extends UrbanFunction {
@@ -39,7 +40,7 @@ public class DisasterDamage extends UrbanFunction {
     }
 
     public void setDamagedArea(Measure damagedArea) {
-        this.damagedArea = damagedArea;
+        this.damagedArea = ModelObjects.setParent(damagedArea, this);
     }
 
     public Integer getNumberOfDamagedHouses() {
@@ -47,8 +48,7 @@ public class DisasterDamage extends UrbanFunction {
     }
 
     public void setNumberOfDamagedHouses(Integer numberOfDamagedHouses) {
-        this.numberOfDamagedHouses = numberOfDamagedHouses != null && numberOfDamagedHouses >= 0 ?
-                numberOfDamagedHouses : null;
+        this.numberOfDamagedHouses = numberOfDamagedHouses;
     }
 
     public Integer getNumberOfHousesFloodedAboveFloorLevel() {
@@ -56,8 +56,7 @@ public class DisasterDamage extends UrbanFunction {
     }
 
     public void setNumberOfHousesFloodedAboveFloorLevel(Integer numberOfHousesFloodedAboveFloorLevel) {
-        this.numberOfHousesFloodedAboveFloorLevel = numberOfHousesFloodedAboveFloorLevel != null && numberOfHousesFloodedAboveFloorLevel >= 0 ?
-                numberOfHousesFloodedAboveFloorLevel : null;
+        this.numberOfHousesFloodedAboveFloorLevel = numberOfHousesFloodedAboveFloorLevel;
     }
 
     public Integer getNumberOfHousesFloodedBelowFloorLevel() {
@@ -65,8 +64,7 @@ public class DisasterDamage extends UrbanFunction {
     }
 
     public void setNumberOfHousesFloodedBelowFloorLevel(Integer numberOfHousesFloodedBelowFloorLevel) {
-        this.numberOfHousesFloodedBelowFloorLevel = numberOfHousesFloodedBelowFloorLevel != null && numberOfHousesFloodedBelowFloorLevel >= 0 ?
-                numberOfHousesFloodedBelowFloorLevel : null;
+        this.numberOfHousesFloodedBelowFloorLevel = numberOfHousesFloodedBelowFloorLevel;
     }
 
     public Integer getMaximumRainfallPerHour() {
@@ -74,8 +72,7 @@ public class DisasterDamage extends UrbanFunction {
     }
 
     public void setMaximumRainfallPerHour(Integer maximumRainfallPerHour) {
-        this.maximumRainfallPerHour = maximumRainfallPerHour != null && maximumRainfallPerHour >= 0 ?
-                maximumRainfallPerHour : null;
+        this.maximumRainfallPerHour = maximumRainfallPerHour;
     }
 
     public Integer getTotalRainfall() {
@@ -83,14 +80,13 @@ public class DisasterDamage extends UrbanFunction {
     }
 
     public void setTotalRainfall(Integer totalRainfall) {
-        this.totalRainfall = totalRainfall != null && totalRainfall >= 0 ?
-                totalRainfall : null;
+        this.totalRainfall = totalRainfall;
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         DisasterDamage copy = target == null ? new DisasterDamage() : (DisasterDamage) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

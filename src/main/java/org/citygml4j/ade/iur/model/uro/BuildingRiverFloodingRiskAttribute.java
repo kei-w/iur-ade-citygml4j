@@ -60,7 +60,7 @@ public class BuildingRiverFloodingRiskAttribute extends BuildingFloodingRiskAttr
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         BuildingRiverFloodingRiskAttribute copy = target == null ? new BuildingRiverFloodingRiskAttribute() : (BuildingRiverFloodingRiskAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

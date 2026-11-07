@@ -41,6 +41,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Year;
+import java.time.YearMonth;
 
 public class Marshaller implements ADEMarshaller {
     private final UrbanFunctionMarshaller urbanFunction = new UrbanFunctionMarshaller(this);
@@ -113,6 +114,14 @@ public class Marshaller implements ADEMarshaller {
         return helper.getJAXBMarshaller().getDataTypeFactory()
                 .newXMLGregorianCalendarDate(year.getValue(),
                         DatatypeConstants.FIELD_UNDEFINED,
+                        DatatypeConstants.FIELD_UNDEFINED,
+                        DatatypeConstants.FIELD_UNDEFINED);
+    }
+
+    public XMLGregorianCalendar toCalendar(YearMonth yearMonth) {
+        return helper.getJAXBMarshaller().getDataTypeFactory()
+                .newXMLGregorianCalendarDate(yearMonth.getYear(),
+                        yearMonth.getMonthValue(),
                         DatatypeConstants.FIELD_UNDEFINED,
                         DatatypeConstants.FIELD_UNDEFINED);
     }

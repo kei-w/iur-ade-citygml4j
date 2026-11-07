@@ -105,7 +105,7 @@ public class BuildingDataQualityAttribute extends BuildingAttribute {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         BuildingDataQualityAttribute copy = target == null ? new BuildingDataQualityAttribute() : (BuildingDataQualityAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

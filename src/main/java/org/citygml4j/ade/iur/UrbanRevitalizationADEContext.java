@@ -43,7 +43,7 @@ import java.util.List;
 
 public class UrbanRevitalizationADEContext implements ADEContext {
     private final List<ADEModule> modules = Arrays.asList(
-            UrbanObjectModule.v2_0,
+            UrbanObjectModule.v3_1,
             UrbanFunctionModule.v1_4,
             StatisticalGridModule.v1_4,
             PublicTransitModule.v1_4
@@ -57,7 +57,7 @@ public class UrbanRevitalizationADEContext implements ADEContext {
     @Override
     public List<String> getModelPackageNames() {
         return Arrays.asList(
-                UrbanObjectModule.v2_0.getModelPackageName(),
+                UrbanObjectModule.v3_1.getModelPackageName(),
                 UrbanFunctionModule.v1_4.getModelPackageName(),
                 StatisticalGridModule.v1_4.getModelPackageName(),
                 PublicTransitModule.v1_4.getModelPackageName()

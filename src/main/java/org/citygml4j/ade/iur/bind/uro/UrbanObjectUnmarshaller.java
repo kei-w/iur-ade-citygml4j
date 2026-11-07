@@ -22,7 +22,7 @@
 
 package org.citygml4j.ade.iur.bind.uro;
 
-import jp.geospatial.iur._2_0.uro.*;
+import jp.geospatial.iur._3_1.uro.*;
 import net.opengis.gml.CodeType;
 import org.citygml4j.ade.iur.model.uro.*;
 import org.citygml4j.builder.jaxb.unmarshal.citygml.ade.ADEUnmarshallerHelper;
@@ -50,16 +50,23 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                     .with(BuildingDetailAttributePropertyType.class, this::unmarshalBuildingDetailAttributeProperty)
                     .with(LargeCustomerFacilityAttributeType.class, this::unmarshalLargeCustomerFacilityAttribute)
                     .with(LargeCustomerFacilityAttributePropertyType.class, this::unmarshalLargeCustomerFacilityAttributeProperty)
-                    .with(BuildingRiverFloodingRiskAttributeType.class, this::unmarshalBuildingRiverFloodingRiskAttribute)
-                    .with(BuildingTsunamiRiskAttributeType.class, this::unmarshalBuildingTsunamiRiskAttribute)
-                    .with(BuildingInlandFloodingRiskAttributeType.class, this::unmarshalBuildingInlandFloodingRiskAttribute)
-                    .with(BuildingHighTideRiskAttributeType.class, this::unmarshalBuildingHighTideRiskAttribute)
-                    .with(BuildingLandSlideRiskAttributeType.class, this::unmarshalBuildingLandSlideRiskAttribute)
-                    .with(BuildingDisasterRiskAttributePropertyType.class, this::unmarshalBuildingDisasterRiskAttributeProperty)
+                    .with(RealEstateIDAttributeType.class, this::unmarshalRealEstateIDAttribute)
+                    .with(RealEstateIDAttributePropertyType.class, this::unmarshalRealEstateIDAttributeProperty)
+                    .with(BuildingUsecaseAttributeType.class, this::unmarshalBuildingUsecaseAttribute)
+                    .with(BuildingUsecaseAttributePropertyType.class, this::unmarshalBuildingUsecaseAttributeProperty)
+                    .with(RiverFloodingRiskAttributeType.class, this::unmarshalRiverFloodingRiskAttribute)
+                    .with(TsunamiRiskAttributeType.class, this::unmarshalTsunamiRiskAttribute)
+                    .with(HighTideRiskAttributeType.class, this::unmarshalHighTideRiskAttribute)
+                    .with(InlandFloodingRiskAttributeType.class, this::unmarshalInlandFloodingRiskAttribute)
+                    .with(ReservoirFloodingRiskAttributeType.class, this::unmarshalReservoirFloodingRiskAttribute)
+                    .with(LandSlideRiskAttributeType.class, this::unmarshalLandSlideRiskAttribute)
+                    .with(DisasterRiskAttributePropertyType.class, this::unmarshalDisasterRiskAttributeProperty)
                     .with(KeyValuePairAttributeType.class, this::unmarshalKeyValuePairAttribute)
                     .with(KeyValuePairAttributePropertyType.class, this::unmarshalKeyValuePairAttributeProperty)
-                    .with(BuildingDataQualityAttributeType.class, this::unmarshalBuildingDataQualityAttribute)
-                    .with(BuildingDataQualityAttributePropertyType.class, this::unmarshalBuildingDataQualityAttributeProperty);
+                    .with(DataQualityAttributeType.class, this::unmarshalDataQualityAttribute)
+                    .with(DataQualityAttributePropertyType.class, this::unmarshalDataQualityAttributeProperty)
+                    .with(PublicSurveyDataQualityAttributeType.class, this::unmarshalPublicSurveyDataQualityAttribute)
+                    .with(PublicSurveyDataQualityAttributePropertyType.class, this::unmarshalPublicSurveyDataQualityAttributeProperty);
         }
 
         return typeMapper;
@@ -82,12 +89,16 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new BuildingDetailAttributePropertyElement(unmarshalBuildingDetailAttributeProperty((BuildingDetailAttributePropertyType) value));
             case "largeCustomerFacilityAttribute":
                 return new LargeCustomerFacilityAttributePropertyElement(unmarshalLargeCustomerFacilityAttributeProperty((LargeCustomerFacilityAttributePropertyType) value));
-            case "buildingDisasterRiskAttribute":
-                return new BuildingDisasterRiskAttributePropertyElement(unmarshalBuildingDisasterRiskAttributeProperty((BuildingDisasterRiskAttributePropertyType) value));
-            case "keyValuePairAttribute":
-                return new KeyValuePairAttributePropertyElement(unmarshalKeyValuePairAttributeProperty((KeyValuePairAttributePropertyType) value));
-            case "buildingDataQualityAttribute":
-                return new BuildingDataQualityAttributePropertyElement(unmarshalBuildingDataQualityAttributeProperty((BuildingDataQualityAttributePropertyType) value));
+            case "bldgDisasterRiskAttribute":
+                return new BldgDisasterRiskAttributePropertyElement(unmarshalDisasterRiskAttributeProperty((DisasterRiskAttributePropertyType) value));
+            case "bldgKeyValuePairAttribute":
+                return new BldgKeyValuePairAttributePropertyElement(unmarshalKeyValuePairAttributeProperty((KeyValuePairAttributePropertyType) value));
+            case "bldgDataQualityAttribute":
+                return new BldgDataQualityAttributePropertyElement(unmarshalDataQualityAttributeProperty((DataQualityAttributePropertyType) value));
+            case "bldgRealEstateIDAttribute":
+                return new BldgRealEstateIDAttributePropertyElement(unmarshalRealEstateIDAttributeProperty((RealEstateIDAttributePropertyType) value));
+            case "bldgUsecaseAttribute":
+                return new BldgUsecaseAttributePropertyElement(unmarshalBuildingUsecaseAttributeProperty((BuildingUsecaseAttributePropertyType) value));
             case "fiscalYearOfPublication":
                 LocalDate fiscalYearOfPublication = ((XMLGregorianCalendar) value).toGregorianCalendar().toZonedDateTime().toLocalDate();
                 return new FiscalYearOfPublicationProperty(Year.of(fiscalYearOfPublication.getYear()));
@@ -276,6 +287,16 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
         if (src.isSetInauguralDate())
             dest.setInauguralDate(src.getInauguralDate().toGregorianCalendar().toZonedDateTime().toLocalDate());
 
+        if (src.isSetYearOpened()) {
+            LocalDate date = src.getYearOpened().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setYearOpened(Year.of(date.getYear()));
+        }
+
+        if (src.isSetYearClosed()) {
+            LocalDate date = src.getYearClosed().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setYearClosed(Year.of(date.getYear()));
+        }
+
         dest.setKeyTenants(src.getKeyTenants());
         dest.setAvailability(src.isAvailability());
 
@@ -313,13 +334,68 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
         return dest;
     }
 
-    private void unmarshalBuildingDisasterRiskAttribute(BuildingDisasterRiskAttributeType src, BuildingDisasterRiskAttribute dest) throws MissingADESchemaException {
+    private RealEstateIDAttribute unmarshalRealEstateIDAttribute(RealEstateIDAttributeType src) throws MissingADESchemaException {
+        RealEstateIDAttribute dest = new RealEstateIDAttribute();
+
+        dest.setRealEstateIDOfBuilding(src.getRealEstateIDOfBuilding());
+
+        if (src.isSetNumberOfBuildingUnitOwnership())
+            dest.setNumberOfBuildingUnitOwnership(src.getNumberOfBuildingUnitOwnership().intValue());
+
+        if (src.isSetRealEstateIDOfBuildingUnitOwnership())
+            dest.getRealEstateIDOfBuildingUnitOwnership().addAll(src.getRealEstateIDOfBuildingUnitOwnership());
+
+        if (src.isSetNumberOfRealEstateIDOfLand())
+            dest.setNumberOfRealEstateIDOfLand(src.getNumberOfRealEstateIDOfLand().intValue());
+
+        if (src.isSetRealEstateIDOfLand())
+            dest.getRealEstateIDOfLand().addAll(src.getRealEstateIDOfLand());
+
+        if (src.isSetMatchingScore())
+            dest.setMatchingScore(src.getMatchingScore().intValue());
+
+        return dest;
+    }
+
+    private RealEstateIDAttributeProperty unmarshalRealEstateIDAttributeProperty(RealEstateIDAttributePropertyType src) throws MissingADESchemaException {
+        RealEstateIDAttributeProperty dest = new RealEstateIDAttributeProperty();
+
+        if (src.isSetRealEstateIDAttribute())
+            dest.setObject(unmarshalRealEstateIDAttribute(src.getRealEstateIDAttribute()));
+
+        return dest;
+    }
+
+    private BuildingUsecaseAttribute unmarshalBuildingUsecaseAttribute(BuildingUsecaseAttributeType src) throws MissingADESchemaException {
+        BuildingUsecaseAttribute dest = new BuildingUsecaseAttribute();
+
+        if (src.isSetIsTemporal())
+            dest.setIsTemporal(helper.getGMLUnmarshaller().unmarshalCode(src.getIsTemporal()));
+
+        if (src.isSetFloorHeight())
+            dest.setFloorHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getFloorHeight()));
+
+        dest.setIsGroundFloorOpen(src.isIsGroundFloorOpen());
+
+        return dest;
+    }
+
+    private BuildingUsecaseAttributeProperty unmarshalBuildingUsecaseAttributeProperty(BuildingUsecaseAttributePropertyType src) throws MissingADESchemaException {
+        BuildingUsecaseAttributeProperty dest = new BuildingUsecaseAttributeProperty();
+
+        if (src.isSetBuildingUsecaseAttribute())
+            dest.setObject(unmarshalBuildingUsecaseAttribute(src.getBuildingUsecaseAttribute()));
+
+        return dest;
+    }
+
+    private void unmarshalDisasterRiskAttribute(DisasterRiskAttributeType src, DisasterRiskAttribute dest) throws MissingADESchemaException {
         if (src.isSetDescription())
             dest.setDescription(helper.getGMLUnmarshaller().unmarshalCode(src.getDescription()));
     }
 
-    private void unmarshalBuildingFloodingRiskAttribute(BuildingFloodingRiskAttributeType src, BuildingFloodingRiskAttribute dest) throws MissingADESchemaException {
-        unmarshalBuildingDisasterRiskAttribute(src, dest);
+    private void unmarshalFloodingRiskAttribute(FloodingRiskAttributeType src, FloodingRiskAttribute dest) throws MissingADESchemaException {
+        unmarshalDisasterRiskAttribute(src, dest);
 
         if (src.isSetRank())
             dest.setRank(helper.getGMLUnmarshaller().unmarshalCode(src.getRank()));
@@ -331,9 +407,9 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
             dest.setDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getDepth()));
     }
 
-    private BuildingRiverFloodingRiskAttribute unmarshalBuildingRiverFloodingRiskAttribute(BuildingRiverFloodingRiskAttributeType src) throws MissingADESchemaException {
-        BuildingRiverFloodingRiskAttribute dest = new BuildingRiverFloodingRiskAttribute();
-        unmarshalBuildingFloodingRiskAttribute(src, dest);
+    private RiverFloodingRiskAttribute unmarshalRiverFloodingRiskAttribute(RiverFloodingRiskAttributeType src) throws MissingADESchemaException {
+        RiverFloodingRiskAttribute dest = new RiverFloodingRiskAttribute();
+        unmarshalFloodingRiskAttribute(src, dest);
 
         if (src.isSetAdminType())
             dest.setAdminType(helper.getGMLUnmarshaller().unmarshalCode(src.getAdminType()));
@@ -347,27 +423,33 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
         return dest;
     }
 
-    private BuildingTsunamiRiskAttribute unmarshalBuildingTsunamiRiskAttribute(BuildingTsunamiRiskAttributeType src) throws MissingADESchemaException {
-        BuildingTsunamiRiskAttribute dest = new BuildingTsunamiRiskAttribute();
-        unmarshalBuildingFloodingRiskAttribute(src, dest);
+    private TsunamiRiskAttribute unmarshalTsunamiRiskAttribute(TsunamiRiskAttributeType src) throws MissingADESchemaException {
+        TsunamiRiskAttribute dest = new TsunamiRiskAttribute();
+        unmarshalFloodingRiskAttribute(src, dest);
         return dest;
     }
 
-    private BuildingInlandFloodingRiskAttribute unmarshalBuildingInlandFloodingRiskAttribute(BuildingInlandFloodingRiskAttributeType src) throws MissingADESchemaException {
-        BuildingInlandFloodingRiskAttribute dest = new BuildingInlandFloodingRiskAttribute();
-        unmarshalBuildingFloodingRiskAttribute(src, dest);
+    private HighTideRiskAttribute unmarshalHighTideRiskAttribute(HighTideRiskAttributeType src) throws MissingADESchemaException {
+        HighTideRiskAttribute dest = new HighTideRiskAttribute();
+        unmarshalFloodingRiskAttribute(src, dest);
         return dest;
     }
 
-    private BuildingHighTideRiskAttribute unmarshalBuildingHighTideRiskAttribute(BuildingHighTideRiskAttributeType src) throws MissingADESchemaException {
-        BuildingHighTideRiskAttribute dest = new BuildingHighTideRiskAttribute();
-        unmarshalBuildingFloodingRiskAttribute(src, dest);
+    private InlandFloodingRiskAttribute unmarshalInlandFloodingRiskAttribute(InlandFloodingRiskAttributeType src) throws MissingADESchemaException {
+        InlandFloodingRiskAttribute dest = new InlandFloodingRiskAttribute();
+        unmarshalFloodingRiskAttribute(src, dest);
         return dest;
     }
 
-    private BuildingLandSlideRiskAttribute unmarshalBuildingLandSlideRiskAttribute(BuildingLandSlideRiskAttributeType src) throws MissingADESchemaException {
-        BuildingLandSlideRiskAttribute dest = new BuildingLandSlideRiskAttribute();
-        unmarshalBuildingDisasterRiskAttribute(src, dest);
+    private ReservoirFloodingRiskAttribute unmarshalReservoirFloodingRiskAttribute(ReservoirFloodingRiskAttributeType src) throws MissingADESchemaException {
+        ReservoirFloodingRiskAttribute dest = new ReservoirFloodingRiskAttribute();
+        unmarshalFloodingRiskAttribute(src, dest);
+        return dest;
+    }
+
+    private LandSlideRiskAttribute unmarshalLandSlideRiskAttribute(LandSlideRiskAttributeType src) throws MissingADESchemaException {
+        LandSlideRiskAttribute dest = new LandSlideRiskAttribute();
+        unmarshalDisasterRiskAttribute(src, dest);
 
         if (src.isSetAreaType())
             dest.setAreaType(helper.getGMLUnmarshaller().unmarshalCode(src.getAreaType()));
@@ -375,13 +457,13 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
         return dest;
     }
 
-    private BuildingDisasterRiskAttributeProperty unmarshalBuildingDisasterRiskAttributeProperty(BuildingDisasterRiskAttributePropertyType src) throws MissingADESchemaException {
-        BuildingDisasterRiskAttributeProperty dest = new BuildingDisasterRiskAttributeProperty();
+    private DisasterRiskAttributeProperty unmarshalDisasterRiskAttributeProperty(DisasterRiskAttributePropertyType src) throws MissingADESchemaException {
+        DisasterRiskAttributeProperty dest = new DisasterRiskAttributeProperty();
 
-        if (src.isSetBuildingDisasterRiskAttribute()) {
-            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.getBuildingDisasterRiskAttribute());
-            if (object instanceof BuildingDisasterRiskAttribute)
-                dest.setObject((BuildingDisasterRiskAttribute) object);
+        if (src.isSetDisasterRiskAttribute()) {
+            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.getDisasterRiskAttribute());
+            if (object instanceof DisasterRiskAttribute)
+                dest.setObject((DisasterRiskAttribute) object);
         }
 
         return dest;
@@ -395,18 +477,6 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
 
         if (src.isSetCodeValue())
             dest.setCodeValue(helper.getGMLUnmarshaller().unmarshalCode(src.getCodeValue()));
-        else if (src.isSetStringValue())
-            dest.setStringValue(src.getStringValue());
-        else if (src.isSetIntValue())
-            dest.setIntValue(src.getIntValue().intValue());
-        else if (src.isSetDoubleValue())
-            dest.setDoubleValue(src.getDoubleValue());
-        else if (src.isSetMeasuredValue())
-            dest.setMeasuredValue(helper.getGMLUnmarshaller().unmarshalMeasure(src.getMeasuredValue()));
-        else if (src.isSetDateValue())
-            dest.setDateValue(src.getDateValue().toGregorianCalendar().toZonedDateTime().toLocalDate());
-        else if (src.isSetUriValue())
-            dest.setUriValue(src.getUriValue());
 
         return dest;
     }
@@ -420,17 +490,32 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
         return dest;
     }
 
-    private BuildingDataQualityAttribute unmarshalBuildingDataQualityAttribute(BuildingDataQualityAttributeType src) throws MissingADESchemaException {
-        BuildingDataQualityAttribute dest = new BuildingDataQualityAttribute();
+    private DataQualityAttribute unmarshalDataQualityAttribute(DataQualityAttributeType src) throws MissingADESchemaException {
+        DataQualityAttribute dest = new DataQualityAttribute();
 
-        if (src.isSetSrcScale()) {
-            for (CodeType srcScale : src.getSrcScale())
-                dest.getSrcScale().add(helper.getGMLUnmarshaller().unmarshalCode(srcScale));
+        if (src.isSetGeometrySrcDescLod0()) {
+            for (CodeType geometrySrcDescLod0 : src.getGeometrySrcDescLod0())
+                dest.getGeometrySrcDescLod0().add(helper.getGMLUnmarshaller().unmarshalCode(geometrySrcDescLod0));
         }
 
-        if (src.isSetGeometrySrcDesc()) {
-            for (CodeType geometrySrcDesc : src.getGeometrySrcDesc())
-                dest.getGeometrySrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(geometrySrcDesc));
+        if (src.isSetGeometrySrcDescLod1()) {
+            for (CodeType geometrySrcDescLod1 : src.getGeometrySrcDescLod1())
+                dest.getGeometrySrcDescLod1().add(helper.getGMLUnmarshaller().unmarshalCode(geometrySrcDescLod1));
+        }
+
+        if (src.isSetGeometrySrcDescLod2()) {
+            for (CodeType geometrySrcDescLod2 : src.getGeometrySrcDescLod2())
+                dest.getGeometrySrcDescLod2().add(helper.getGMLUnmarshaller().unmarshalCode(geometrySrcDescLod2));
+        }
+
+        if (src.isSetGeometrySrcDescLod3()) {
+            for (CodeType geometrySrcDescLod3 : src.getGeometrySrcDescLod3())
+                dest.getGeometrySrcDescLod3().add(helper.getGMLUnmarshaller().unmarshalCode(geometrySrcDescLod3));
+        }
+
+        if (src.isSetGeometrySrcDescLod4()) {
+            for (CodeType geometrySrcDescLod4 : src.getGeometrySrcDescLod4())
+                dest.getGeometrySrcDescLod4().add(helper.getGMLUnmarshaller().unmarshalCode(geometrySrcDescLod4));
         }
 
         if (src.isSetThematicSrcDesc()) {
@@ -438,25 +523,107 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 dest.getThematicSrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(thematicSrcDesc));
         }
 
-        if (src.isSetAppearanceSrcDesc()) {
-            for (CodeType appearanceSrcDesc : src.getAppearanceSrcDesc())
-                dest.getAppearanceSrcDesc().add(helper.getGMLUnmarshaller().unmarshalCode(appearanceSrcDesc));
+        if (src.isSetAppearanceSrcDescLod0()) {
+            for (CodeType appearanceSrcDescLod0 : src.getAppearanceSrcDescLod0())
+                dest.getAppearanceSrcDescLod0().add(helper.getGMLUnmarshaller().unmarshalCode(appearanceSrcDescLod0));
+        }
+
+        if (src.isSetAppearanceSrcDescLod1()) {
+            for (CodeType appearanceSrcDescLod1 : src.getAppearanceSrcDescLod1())
+                dest.getAppearanceSrcDescLod1().add(helper.getGMLUnmarshaller().unmarshalCode(appearanceSrcDescLod1));
+        }
+
+        if (src.isSetAppearanceSrcDescLod2()) {
+            for (CodeType appearanceSrcDescLod2 : src.getAppearanceSrcDescLod2())
+                dest.getAppearanceSrcDescLod2().add(helper.getGMLUnmarshaller().unmarshalCode(appearanceSrcDescLod2));
+        }
+
+        if (src.isSetAppearanceSrcDescLod3()) {
+            for (CodeType appearanceSrcDescLod3 : src.getAppearanceSrcDescLod3())
+                dest.getAppearanceSrcDescLod3().add(helper.getGMLUnmarshaller().unmarshalCode(appearanceSrcDescLod3));
+        }
+
+        if (src.isSetAppearanceSrcDescLod4()) {
+            for (CodeType appearanceSrcDescLod4 : src.getAppearanceSrcDescLod4())
+                dest.getAppearanceSrcDescLod4().add(helper.getGMLUnmarshaller().unmarshalCode(appearanceSrcDescLod4));
+        }
+
+        if (src.isSetLodType()) {
+            for (CodeType lodType : src.getLodType())
+                dest.getLodType().add(helper.getGMLUnmarshaller().unmarshalCode(lodType));
         }
 
         if (src.isSetLod1HeightType())
             dest.setLod1HeightType(helper.getGMLUnmarshaller().unmarshalCode(src.getLod1HeightType()));
 
-        if (src.isSetLodType())
-            dest.getLodType().addAll(src.getLodType());
+        dest.setTranDataAcquisition(src.getTranDataAcquisition());
+
+        if (src.isSetPublicSurveyDataQualityAttribute())
+            dest.setPublicSurveyDataQualityAttribute(unmarshalPublicSurveyDataQualityAttributeProperty(src.getPublicSurveyDataQualityAttribute()));
 
         return dest;
     }
 
-    private BuildingDataQualityAttributeProperty unmarshalBuildingDataQualityAttributeProperty(BuildingDataQualityAttributePropertyType src) throws MissingADESchemaException {
-        BuildingDataQualityAttributeProperty dest = new BuildingDataQualityAttributeProperty();
+    private DataQualityAttributeProperty unmarshalDataQualityAttributeProperty(DataQualityAttributePropertyType src) throws MissingADESchemaException {
+        DataQualityAttributeProperty dest = new DataQualityAttributeProperty();
 
-        if (src.isSetBuildingDataQualityAttribute())
-            dest.setObject(unmarshalBuildingDataQualityAttribute(src.getBuildingDataQualityAttribute()));
+        if (src.isSetDataQualityAttribute())
+            dest.setObject(unmarshalDataQualityAttribute(src.getDataQualityAttribute()));
+
+        return dest;
+    }
+
+    private PublicSurveyDataQualityAttribute unmarshalPublicSurveyDataQualityAttribute(PublicSurveyDataQualityAttributeType src) throws MissingADESchemaException {
+        PublicSurveyDataQualityAttribute dest = new PublicSurveyDataQualityAttribute();
+
+        if (src.isSetSrcScaleLod0())
+            dest.setSrcScaleLod0(helper.getGMLUnmarshaller().unmarshalCode(src.getSrcScaleLod0()));
+
+        if (src.isSetSrcScaleLod1())
+            dest.setSrcScaleLod1(helper.getGMLUnmarshaller().unmarshalCode(src.getSrcScaleLod1()));
+
+        if (src.isSetSrcScaleLod2())
+            dest.setSrcScaleLod2(helper.getGMLUnmarshaller().unmarshalCode(src.getSrcScaleLod2()));
+
+        if (src.isSetSrcScaleLod3())
+            dest.setSrcScaleLod3(helper.getGMLUnmarshaller().unmarshalCode(src.getSrcScaleLod3()));
+
+        if (src.isSetSrcScaleLod4())
+            dest.setSrcScaleLod4(helper.getGMLUnmarshaller().unmarshalCode(src.getSrcScaleLod4()));
+
+        if (src.isSetPublicSurveySrcDescLod0()) {
+            for (CodeType publicSurveySrcDescLod0 : src.getPublicSurveySrcDescLod0())
+                dest.getPublicSurveySrcDescLod0().add(helper.getGMLUnmarshaller().unmarshalCode(publicSurveySrcDescLod0));
+        }
+
+        if (src.isSetPublicSurveySrcDescLod1()) {
+            for (CodeType publicSurveySrcDescLod1 : src.getPublicSurveySrcDescLod1())
+                dest.getPublicSurveySrcDescLod1().add(helper.getGMLUnmarshaller().unmarshalCode(publicSurveySrcDescLod1));
+        }
+
+        if (src.isSetPublicSurveySrcDescLod2()) {
+            for (CodeType publicSurveySrcDescLod2 : src.getPublicSurveySrcDescLod2())
+                dest.getPublicSurveySrcDescLod2().add(helper.getGMLUnmarshaller().unmarshalCode(publicSurveySrcDescLod2));
+        }
+
+        if (src.isSetPublicSurveySrcDescLod3()) {
+            for (CodeType publicSurveySrcDescLod3 : src.getPublicSurveySrcDescLod3())
+                dest.getPublicSurveySrcDescLod3().add(helper.getGMLUnmarshaller().unmarshalCode(publicSurveySrcDescLod3));
+        }
+
+        if (src.isSetPublicSurveySrcDescLod4()) {
+            for (CodeType publicSurveySrcDescLod4 : src.getPublicSurveySrcDescLod4())
+                dest.getPublicSurveySrcDescLod4().add(helper.getGMLUnmarshaller().unmarshalCode(publicSurveySrcDescLod4));
+        }
+
+        return dest;
+    }
+
+    private PublicSurveyDataQualityAttributeProperty unmarshalPublicSurveyDataQualityAttributeProperty(PublicSurveyDataQualityAttributePropertyType src) throws MissingADESchemaException {
+        PublicSurveyDataQualityAttributeProperty dest = new PublicSurveyDataQualityAttributeProperty();
+
+        if (src.isSetPublicSurveyDataQualityAttribute())
+            dest.setObject(unmarshalPublicSurveyDataQualityAttribute(src.getPublicSurveyDataQualityAttribute()));
 
         return dest;
     }

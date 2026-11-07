@@ -4,52 +4,55 @@
   
   <jaxb:bindings schemaLocation="schemas/urbanObject.xsd" node="/xs:schema">
     <jaxb:schemaBindings>
-      <jaxb:package name="jp.geospatial.iur._2_0.uro"/>
+      <jaxb:package name="jp.geospatial.iur._3_1.uro"/>
     </jaxb:schemaBindings>
     <jaxb:bindings>
       <namespace:prefix name="uro"/>
     </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='buildingIDAttribute']">
-      <jaxb:factoryMethod name="BuildingIDAttributeProperty"/>
-    </jaxb:bindings>
     <jaxb:bindings node="xs:element[@name='buildingDetailAttribute']">
       <jaxb:factoryMethod name="BuildingDetailAttributeProperty"/>
     </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='largeCustomerFacilityAttribute']">
-      <jaxb:factoryMethod name="LargeCustomerFacilityAttributeProperty"/>
-    </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='buildingDisasterRiskAttribute']">
-      <jaxb:factoryMethod name="BuildingDisasterRiskAttributeProperty"/>
-    </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='keyValuePairAttribute']">
-      <jaxb:factoryMethod name="KeyValuePairAttributeProperty"/>
-    </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='buildingDataQualityAttribute']">
-      <jaxb:factoryMethod name="BuildingDataQualityAttributeProperty"/>
-    </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='landUseDetailAttribute']">
-      <jaxb:factoryMethod name="LandUseDetailAttributeProperty"/>
-    </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='trafficVolumeAttribute']">
-      <jaxb:factoryMethod name="TrafficVolumeAttributeProperty"/>
-    </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='roadStructureAttribute']">
-      <jaxb:factoryMethod name="RoadStructureAttributeProperty"/>
-    </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='roadDataQualityAttribute']">
-      <jaxb:factoryMethod name="RoadDataQualityAttributeProperty"/>
-    </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='trafficAreaStructureAttribute']">
-      <jaxb:factoryMethod name="TrafficAreaStructureAttributeProperty"/>
+    <jaxb:bindings node="xs:element[@name='buildingIDAttribute']">
+      <jaxb:factoryMethod name="BuildingIDAttributeProperty"/>
     </jaxb:bindings>
     <jaxb:bindings node="xs:element[@name='cityFurnitureDetailAttribute']">
       <jaxb:factoryMethod name="CityFurnitureDetailAttributeProperty"/>
     </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='cityFurnitureDataQualityAttribute']">
-      <jaxb:factoryMethod name="CityFurnitureDataQualityAttributeProperty"/>
+    <jaxb:bindings node="xs:element[@name='floodingRiskAttribute']">
+      <jaxb:factoryMethod name="FloodingRiskAttributeProperty"/>
     </jaxb:bindings>
-    <jaxb:bindings node="xs:element[@name='vegetationDataQualityAttribute']">
-      <jaxb:factoryMethod name="VegetationDataQualityAttributeProperty"/>
+    <jaxb:bindings node="xs:element[@name='indoorStoreyAttribute']">
+      <jaxb:factoryMethod name="IndoorStoreyAttributeProperty"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:element[@name='landUseDetailAttribute']">
+      <jaxb:factoryMethod name="LandUseDetailAttributeProperty"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:element[@name='largeCustomerFacilityAttribute']">
+      <jaxb:factoryMethod name="LargeCustomerFacilityAttributeProperty"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:element[@name='railwayRouteAttribute']">
+      <jaxb:factoryMethod name="RailwayRouteAttributeProperty"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:element[@name='railwayTrackAttribute']">
+      <jaxb:factoryMethod name="RailwayTrackAttributeProperty"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:element[@name='roadStructureAttribute']">
+      <jaxb:factoryMethod name="RoadStructureAttributeProperty"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:element[@name='squareUrbanPlanAttribute']">
+      <jaxb:factoryMethod name="SquareUrbanPlanAttributeProperty"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:element[@name='trackAttribute']">
+      <jaxb:factoryMethod name="TrackAttributeProperty"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:element[@name='trafficAreaStructureAttribute']">
+      <jaxb:factoryMethod name="TrafficAreaStructureAttributeProperty"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:element[@name='trafficVolumeAttribute']">
+      <jaxb:factoryMethod name="TrafficVolumeAttributeProperty"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:element[@name='waterBodyDetailAttribute']">
+      <jaxb:factoryMethod name="WaterBodyDetailAttributeProperty"/>
     </jaxb:bindings>
   </jaxb:bindings>
   

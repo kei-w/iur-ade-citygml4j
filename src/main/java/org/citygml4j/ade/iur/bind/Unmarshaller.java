@@ -59,7 +59,7 @@ public class Unmarshaller implements ADEUnmarshaller {
             return urbanFunction.unmarshal(src);
         else if (StatisticalGridModule.v1_4.getNamespaceURI().equals(namespaceURI))
             return statisticalGrid.unmarshal(src);
-        else if (UrbanObjectModule.v2_0.getNamespaceURI().equals(namespaceURI))
+        else if (UrbanObjectModule.v3_1.getNamespaceURI().equals(namespaceURI))
             return urbanObject.unmarshal(src);
         else if (PublicTransitModule.v1_4.getNamespaceURI().equals(namespaceURI))
             return publicTransit.unmarshal(src);
@@ -75,7 +75,7 @@ public class Unmarshaller implements ADEUnmarshaller {
             return urbanFunction.unmarshal(src);
         else if (StatisticalGridModule.v1_4.getModelPackageName().equals(packageName))
             return statisticalGrid.unmarshal(src);
-        else if (UrbanObjectModule.v2_0.getModelPackageName().equals(packageName))
+        else if (UrbanObjectModule.v3_1.getModelPackageName().equals(packageName))
             return urbanObject.unmarshal(src);
         else if (PublicTransitModule.v1_4.getModelPackageName().equals(packageName))
             return publicTransit.unmarshal(src);

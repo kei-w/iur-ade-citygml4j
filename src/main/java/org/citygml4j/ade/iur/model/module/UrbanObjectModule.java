@@ -22,24 +22,77 @@
 
 package org.citygml4j.ade.iur.model.module;
 
+import org.citygml4j.ade.iur.model.uro.Appurtenance;
+import org.citygml4j.ade.iur.model.uro.Cable;
+import org.citygml4j.ade.iur.model.uro.ClosureSurface;
+import org.citygml4j.ade.iur.model.uro.ConstructionInstallation;
+import org.citygml4j.ade.iur.model.uro.Duct;
+import org.citygml4j.ade.iur.model.uro.ElectricityCable;
+import org.citygml4j.ade.iur.model.uro.GroundSurface;
+import org.citygml4j.ade.iur.model.uro.Handhole;
+import org.citygml4j.ade.iur.model.uro.Manhole;
+import org.citygml4j.ade.iur.model.uro.OilGasChemicalsPipe;
+import org.citygml4j.ade.iur.model.uro.OtherConstruction;
+import org.citygml4j.ade.iur.model.uro.OuterCeilingSurface;
+import org.citygml4j.ade.iur.model.uro.OuterFloorSurface;
+import org.citygml4j.ade.iur.model.uro.Pipe;
+import org.citygml4j.ade.iur.model.uro.PointCloud;
+import org.citygml4j.ade.iur.model.uro.PublicLand;
+import org.citygml4j.ade.iur.model.uro.RoofSurface;
+import org.citygml4j.ade.iur.model.uro.SewerPipe;
+import org.citygml4j.ade.iur.model.uro.TelecommunicationsCable;
+import org.citygml4j.ade.iur.model.uro.ThermalPipe;
+import org.citygml4j.ade.iur.model.uro.UndergroundBuilding;
+import org.citygml4j.ade.iur.model.uro.WallSurface;
+import org.citygml4j.ade.iur.model.uro.WaterPipe;
+import org.citygml4j.ade.iur.model.uro.Waterway;
 import org.citygml4j.model.gml.feature.AbstractFeature;
 import org.citygml4j.model.module.ade.ADEModule;
 import org.citygml4j.model.module.citygml.CityGMLVersion;
 
-import javax.xml.namespace.QName;
 import java.net.URL;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 
 public class UrbanObjectModule extends ADEModule {
     public static final UrbanObjectModule v3_2 = new UrbanObjectModule();
+
+    private final Map<String, Class<? extends AbstractFeature>> features;
 
     private UrbanObjectModule() {
         super("https://www.geospatial.jp/iur/uro/3.2",
                 "uro",
                 "https://www.geospatial.jp/iur/schemas/uro/3.2/urbanObject.xsd",
                 CityGMLVersion.v2_0_0);
+
+        features = new HashMap<>();
+        features.put("Appurtenance", Appurtenance.class);
+        features.put("Cable", Cable.class);
+        features.put("ClosureSurface", ClosureSurface.class);
+        features.put("ConstructionInstallation", ConstructionInstallation.class);
+        features.put("Duct", Duct.class);
+        features.put("ElectricityCable", ElectricityCable.class);
+        features.put("GroundSurface", GroundSurface.class);
+        features.put("Handhole", Handhole.class);
+        features.put("Manhole", Manhole.class);
+        features.put("Pipe", Pipe.class);
+        features.put("OilGasChemicalsPipe", OilGasChemicalsPipe.class);
+        features.put("OtherConstruction", OtherConstruction.class);
+        features.put("OuterCeilingSurface", OuterCeilingSurface.class);
+        features.put("OuterFloorSurface", OuterFloorSurface.class);
+        features.put("PointCloud", PointCloud.class);
+        features.put("PublicLand", PublicLand.class);
+        features.put("RoofSurface", RoofSurface.class);
+        features.put("SewerPipe", SewerPipe.class);
+        features.put("TelecommunicationsCable", TelecommunicationsCable.class);
+        features.put("ThermalPipe", ThermalPipe.class);
+        features.put("UndergroundBuilding", UndergroundBuilding.class);
+        features.put("WallSurface", WallSurface.class);
+        features.put("WaterPipe", WaterPipe.class);
+        features.put("Waterway", Waterway.class);
     }
 
     @Override
@@ -58,31 +111,36 @@ public class UrbanObjectModule extends ADEModule {
 
     @Override
     public boolean hasFeatureProperty(String name) {
-        return false;
+        return "boundedBy".equals(name) || "constructionInstallation".equals(name);
     }
 
     @Override
     public boolean hasFeature(String name) {
-        return false;
+        return features.containsKey(name);
     }
 
     @Override
     public Class<? extends AbstractFeature> getFeatureClass(String name) {
-        return null;
+        return features.get(name);
     }
 
     @Override
     public QName getFeatureName(Class<? extends AbstractFeature> featureClass) {
+        for (Map.Entry<String, Class<? extends AbstractFeature>> entry : features.entrySet()) {
+            if (entry.getValue() == featureClass)
+                return new QName(getNamespaceURI(), entry.getKey());
+        }
+
         return null;
     }
 
     @Override
     public Map<String, Class<? extends AbstractFeature>> getFeatures() {
-        return Collections.emptyMap();
+        return new HashMap<>(features);
     }
 
     @Override
     public boolean isTopLevelFeature(String name) {
-        return false;
+        return "Appurtenance".equals(name) || "Cable".equals(name) || "Duct".equals(name) || "ElectricityCable".equals(name) || "Handhole".equals(name) || "Manhole".equals(name) || "OilGasChemicalsPipe".equals(name) || "OtherConstruction".equals(name) || "Pipe".equals(name) || "PublicLand".equals(name) || "SewerPipe".equals(name) || "TelecommunicationsCable".equals(name) || "ThermalPipe".equals(name) || "UndergroundBuilding".equals(name) || "WaterPipe".equals(name) || "Waterway".equals(name);
     }
 }

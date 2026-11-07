@@ -2,19 +2,15 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 12:50:58 JST 2026
+// Generated: Sat Nov 07 16:43:46 JST 2026
 //
 
 
 package jp.geospatial.iur._3_2.uro;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import net.opengis.citygml.landuse._2.LandUseType;
 import net.opengis.gml.CodeType;
@@ -48,66 +44,221 @@ import net.opengis.gml.MeasureType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PublicLandType", propOrder = {
-    "rest"
+    "identifier",
+    "ownerName",
+    "ownerType",
+    "landCategory",
+    "area",
+    "status",
+    "note"
 })
 public class PublicLandType
     extends LandUseType
 {
 
-    @XmlElementRefs({
-        @XmlElementRef(name = "id", namespace = "https://www.geospatial.jp/iur/uro/3.2", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "ownerName", namespace = "https://www.geospatial.jp/iur/uro/3.2", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "ownerType", namespace = "https://www.geospatial.jp/iur/uro/3.2", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "landCategory", namespace = "https://www.geospatial.jp/iur/uro/3.2", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "area", namespace = "https://www.geospatial.jp/iur/uro/3.2", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "status", namespace = "https://www.geospatial.jp/iur/uro/3.2", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "note", namespace = "https://www.geospatial.jp/iur/uro/3.2", type = JAXBElement.class, required = false)
-    })
-    protected List<JAXBElement<?>> rest;
+    @XmlElement(name = "id", required = true)
+    protected String identifier;
+    protected String ownerName;
+    protected CodeType ownerType;
+    protected String landCategory;
+    protected MeasureType area;
+    protected String status;
+    protected String note;
 
     /**
-     * Gets the rest of the content model. 
+     * Gets the value of the identifier property.
      * 
-     * <p>
-     * You are getting this "catch-all" property because of the following reason: 
-     * The field name "Id" is used by two different parts of a schema. See: 
-     * line 2996 of file:/D:/Tools/ade-xjc-2.10.0/ade-xjc-2.10.0/iur-3.2/schemas/urbanObject.xsd
-     * line 84 of file:/D:/Tools/ade-xjc-2.10.0/ade-xjc-2.10.0/schemas/gml/3.1.1/base/gmlBase.xsd
-     * <p>
-     * To get rid of this property, apply a property customization to one 
-     * of both of the following declarations to change their names: 
-     * Gets the value of the rest property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rest property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRest().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link CodeType }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link MeasureType }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * {@link JAXBElement }{@code <}{@link String }{@code >}
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public List<JAXBElement<?>> getRest() {
-        if (rest == null) {
-            rest = new ArrayList<JAXBElement<?>>();
-        }
-        return this.rest;
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    /**
+     * Sets the value of the identifier property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIdentifier(String value) {
+        this.identifier = value;
+    }
+
+    public boolean isSetIdentifier() {
+        return (this.identifier!= null);
+    }
+
+    /**
+     * Gets the value of the ownerName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    /**
+     * Sets the value of the ownerName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setOwnerName(String value) {
+        this.ownerName = value;
+    }
+
+    public boolean isSetOwnerName() {
+        return (this.ownerName!= null);
+    }
+
+    /**
+     * Gets the value of the ownerType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link CodeType }
+     *     
+     */
+    public CodeType getOwnerType() {
+        return ownerType;
+    }
+
+    /**
+     * Sets the value of the ownerType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link CodeType }
+     *     
+     */
+    public void setOwnerType(CodeType value) {
+        this.ownerType = value;
+    }
+
+    public boolean isSetOwnerType() {
+        return (this.ownerType!= null);
+    }
+
+    /**
+     * Gets the value of the landCategory property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getLandCategory() {
+        return landCategory;
+    }
+
+    /**
+     * Sets the value of the landCategory property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setLandCategory(String value) {
+        this.landCategory = value;
+    }
+
+    public boolean isSetLandCategory() {
+        return (this.landCategory!= null);
+    }
+
+    /**
+     * Gets the value of the area property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link MeasureType }
+     *     
+     */
+    public MeasureType getArea() {
+        return area;
+    }
+
+    /**
+     * Sets the value of the area property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link MeasureType }
+     *     
+     */
+    public void setArea(MeasureType value) {
+        this.area = value;
+    }
+
+    public boolean isSetArea() {
+        return (this.area!= null);
+    }
+
+    /**
+     * Gets the value of the status property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    /**
+     * Sets the value of the status property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setStatus(String value) {
+        this.status = value;
+    }
+
+    public boolean isSetStatus() {
+        return (this.status!= null);
+    }
+
+    /**
+     * Gets the value of the note property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNote() {
+        return note;
+    }
+
+    /**
+     * Sets the value of the note property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setNote(String value) {
+        this.note = value;
+    }
+
+    public boolean isSetNote() {
+        return (this.note!= null);
     }
 
 }

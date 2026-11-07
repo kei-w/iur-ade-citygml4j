@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 12:50:58 JST 2026
+// Generated: Sat Nov 07 16:43:46 JST 2026
 //
 
 
@@ -48,8 +48,8 @@ public class DmAttributePropertyType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link DmAnnotationType }{@code >}
      *     {@link JAXBElement }{@code <}{@link DmGeometricAttributeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DmAnnotationType }{@code >}
      *     {@link JAXBElement }{@code <}{@link DmAttributeType }{@code >}
      *     
      */
@@ -62,8 +62,8 @@ public class DmAttributePropertyType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link DmAnnotationType }{@code >}
      *     {@link JAXBElement }{@code <}{@link DmGeometricAttributeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link DmAnnotationType }{@code >}
      *     {@link JAXBElement }{@code <}{@link DmAttributeType }{@code >}
      *     
      */

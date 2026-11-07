@@ -96,6 +96,11 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                     .with(FloodingRiskAttributePropertyType.class, this::unmarshalFloodingRiskAttributeProperty)
                     .with(LandSlideRiskAttributeType.class, this::unmarshalLandSlideRiskAttribute)
                     .with(DisasterRiskAttributePropertyType.class, this::unmarshalDisasterRiskAttributeProperty)
+                    .with(DmGeometricAttributeType.class, this::unmarshalDmGeometricAttribute)
+                    .with(DmAnnotationType.class, this::unmarshalDmAnnotation)
+                    .with(DmAttributePropertyType.class, this::unmarshalDmAttributeProperty)
+                    .with(DmElementType.class, this::unmarshalDmElement)
+                    .with(DmElementPropertyType.class, this::unmarshalDmElementProperty)
                     .with(DataQualityAttributeType.class, this::unmarshalDataQualityAttribute)
                     .with(DataQualityAttributePropertyType.class, this::unmarshalDataQualityAttributeProperty)
                     .with(PublicSurveyDataQualityAttributeType.class, this::unmarshalPublicSurveyDataQualityAttribute)
@@ -186,6 +191,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new BridRiskAssessmentAttributePropertyElement(unmarshalConstructionRiskAssessmentAttributeProperty((ConstructionRiskAssessmentAttributePropertyType) value));
             case "bridDisasterRiskAttribute":
                 return new BridDisasterRiskAttributePropertyElement(unmarshalDisasterRiskAttributeProperty((DisasterRiskAttributePropertyType) value));
+            case "bridDmAttribute":
+                return new BridDmAttributePropertyElement(unmarshalDmAttributeProperty((DmAttributePropertyType) value));
             case "bridDataQualityAttribute":
                 return new BridDataQualityAttributePropertyElement(unmarshalDataQualityAttributeProperty((DataQualityAttributePropertyType) value));
             case "bridKeyValuePairAttribute":
@@ -208,6 +215,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new BldgFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
             case "bldgFacilityAttribute":
                 return new BldgFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
+            case "bldgDmAttribute":
+                return new BldgDmAttributePropertyElement(unmarshalDmAttributeProperty((DmAttributePropertyType) value));
             case "bldgRealEstateIDAttribute":
                 return new BldgRealEstateIDAttributePropertyElement(unmarshalRealEstateIDAttributeProperty((RealEstateIDAttributePropertyType) value));
             case "bldgUsecaseAttribute":
@@ -218,6 +227,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new FrnFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
             case "frnFacilityAttribute":
                 return new FrnFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
+            case "frnDmAttribute":
+                return new FrnDmAttributePropertyElement(unmarshalDmAttributeProperty((DmAttributePropertyType) value));
             case "cityFurnitureDetailAttribute":
                 return new CityFurnitureDetailAttributePropertyElement(unmarshalCityFurnitureDetailAttributeProperty((CityFurnitureDetailAttributePropertyType) value));
             case "frnDataQualityAttribute":
@@ -232,10 +243,14 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new LuseFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
             case "luseFacilityAttribute":
                 return new LuseFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
+            case "luseDmAttribute":
+                return new LuseDmAttributePropertyElement(unmarshalDmAttributeProperty((DmAttributePropertyType) value));
             case "luseDataQualityAttribute":
                 return new LuseDataQualityAttributePropertyElement(unmarshalDataQualityAttributeProperty((DataQualityAttributePropertyType) value));
             case "luseKeyValuePairAttribute":
                 return new LuseKeyValuePairAttributePropertyElement(unmarshalKeyValuePairAttributeProperty((KeyValuePairAttributePropertyType) value));
+            case "demDmAttribute":
+                return new DemDmAttributePropertyElement(unmarshalDmAttributeProperty((DmAttributePropertyType) value));
             case "demDataQualityAttribute":
                 return new DemDataQualityAttributePropertyElement(unmarshalDataQualityAttributeProperty((DataQualityAttributePropertyType) value));
             case "demKeyValuePairAttribute":
@@ -246,6 +261,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new TranFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
             case "tranFacilityAttribute":
                 return new TranFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
+            case "tranDmAttribute":
+                return new TranDmAttributePropertyElement(unmarshalDmAttributeProperty((DmAttributePropertyType) value));
             case "tranUsecaseAttribute":
                 return new TranUsecaseAttributePropertyElement(unmarshalTrafficObjectUsecaseAttributeProperty((TrafficObjectUsecaseAttributePropertyType) value));
             case "tranKeyValuePairAttribute":
@@ -278,6 +295,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new TunRiskAssessmentAttributePropertyElement(unmarshalConstructionRiskAssessmentAttributeProperty((ConstructionRiskAssessmentAttributePropertyType) value));
             case "tunDisasterRiskAttribute":
                 return new TunDisasterRiskAttributePropertyElement(unmarshalDisasterRiskAttributeProperty((DisasterRiskAttributePropertyType) value));
+            case "tunDmAttribute":
+                return new TunDmAttributePropertyElement(unmarshalDmAttributeProperty((DmAttributePropertyType) value));
             case "tunDataQualityAttribute":
                 return new TunDataQualityAttributePropertyElement(unmarshalDataQualityAttributeProperty((DataQualityAttributePropertyType) value));
             case "tunFacilityIdAttribute":
@@ -294,6 +313,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new VegFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
             case "vegFacilityAttribute":
                 return new VegFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
+            case "vegDmAttribute":
+                return new VegDmAttributePropertyElement(unmarshalDmAttributeProperty((DmAttributePropertyType) value));
             case "vegDataQualityAttribute":
                 return new VegDataQualityAttributePropertyElement(unmarshalDataQualityAttributeProperty((DataQualityAttributePropertyType) value));
             case "vegKeyValuePairAttribute":
@@ -306,6 +327,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new WtrFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
             case "wtrFacilityAttribute":
                 return new WtrFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
+            case "wtrDmAttribute":
+                return new WtrDmAttributePropertyElement(unmarshalDmAttributeProperty((DmAttributePropertyType) value));
             case "waterBodyDetailAttribute":
                 return new WaterBodyDetailAttributePropertyElement(unmarshalWaterBodyDetailAttributeProperty((WaterBodyDetailAttributePropertyType) value));
             case "wtrDataQualityAttribute":
@@ -1748,6 +1771,154 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
             if (object instanceof DisasterRiskAttribute)
                 dest.setObject((DisasterRiskAttribute) object);
         }
+
+        return dest;
+    }
+
+    private void unmarshalDmAttribute(DmAttributeType src, DmAttribute dest) throws MissingADESchemaException {
+        if (src.isSetDmCode())
+            dest.setDmCode(helper.getGMLUnmarshaller().unmarshalCode(src.getDmCode()));
+
+        if (src.isSetMeshCode())
+            dest.setMeshCode(helper.getGMLUnmarshaller().unmarshalCode(src.getMeshCode()));
+
+        if (src.isSetDmElement())
+            dest.setDmElement(unmarshalDmElementProperty(src.getDmElement()));
+    }
+
+    private DmGeometricAttribute unmarshalDmGeometricAttribute(DmGeometricAttributeType src) throws MissingADESchemaException {
+        DmGeometricAttribute dest = new DmGeometricAttribute();
+        unmarshalDmAttribute(src, dest);
+
+        if (src.isSetGeometryType())
+            dest.setGeometryType(helper.getGMLUnmarshaller().unmarshalCode(src.getGeometryType()));
+
+        if (src.isSetMapLevel())
+            dest.setMapLevel(helper.getGMLUnmarshaller().unmarshalCode(src.getMapLevel()));
+
+        if (src.isSetShapeType())
+            dest.setShapeType(helper.getGMLUnmarshaller().unmarshalCode(src.getShapeType()));
+
+        dest.setVisibility(src.isVisibility());
+        dest.setIs3d(src.isIs3D());
+        dest.setIsInstallation(src.isIsInstallation());
+        dest.setIsEdited(src.isIsEdited());
+        dest.setIsSupplementarySymbol(src.isIsSupplementarySymbol());
+        dest.setAngle(src.getAngle());
+
+        if (src.isSetElevation())
+            dest.setElevation(helper.getGMLUnmarshaller().unmarshalLength(src.getElevation()));
+
+        if (src.isSetLod0Geometry())
+            dest.setLod0Geometry(helper.getGMLUnmarshaller().unmarshalGeometryProperty(src.getLod0Geometry()));
+
+        return dest;
+    }
+
+    private DmAnnotation unmarshalDmAnnotation(DmAnnotationType src) throws MissingADESchemaException {
+        DmAnnotation dest = new DmAnnotation();
+        unmarshalDmAttribute(src, dest);
+
+        if (src.isSetGeometryType())
+            dest.setGeometryType(helper.getGMLUnmarshaller().unmarshalCode(src.getGeometryType()));
+
+        if (src.isSetShapeType())
+            dest.setShapeType(helper.getGMLUnmarshaller().unmarshalCode(src.getShapeType()));
+
+        dest.setLabel(src.getLabel());
+
+        if (src.isSetIsVertical())
+            dest.setIsVertical(src.isIsVertical());
+
+        if (src.isSetSize())
+            dest.setSize(src.getSize().intValue());
+
+        if (src.isSetOrientation())
+            dest.setOrientation(src.getOrientation().intValue());
+
+        if (src.isSetLinewidth())
+            dest.setLinewidth(src.getLinewidth().intValue());
+
+        if (src.isSetSpacing())
+            dest.setSpacing(src.getSpacing().intValue());
+
+        if (src.isSetLod0AnchorPoint())
+            dest.setLod0anchorPoint(helper.getGMLUnmarshaller().unmarshalGeometryProperty(src.getLod0AnchorPoint()));
+
+        return dest;
+    }
+
+    private DmAttributeProperty unmarshalDmAttributeProperty(DmAttributePropertyType src) throws MissingADESchemaException {
+        DmAttributeProperty dest = new DmAttributeProperty();
+
+        if (src.isSetDmAttribute()) {
+            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.getDmAttribute());
+            if (object instanceof DmAttribute)
+                dest.setObject((DmAttribute) object);
+        }
+
+        return dest;
+    }
+
+    private DmElement unmarshalDmElement(DmElementType src) throws MissingADESchemaException {
+        DmElement dest = new DmElement();
+
+        if (src.isSetLocationType())
+            dest.setLocationType(helper.getGMLUnmarshaller().unmarshalCode(src.getLocationType()));
+
+        if (src.isSetInfoType())
+            dest.setInfoType(helper.getGMLUnmarshaller().unmarshalCode(src.getInfoType()));
+
+        dest.setElementKey(src.getElementKey());
+        dest.setHierarchyLevel(src.getHierarchyLevel());
+
+        if (src.isSetDataType())
+            dest.setDataType(helper.getGMLUnmarshaller().unmarshalCode(src.getDataType()));
+
+        if (src.isSetAnnotationType())
+            dest.setAnnotationType(helper.getGMLUnmarshaller().unmarshalCode(src.getAnnotationType()));
+
+        if (src.isSetPrecisionType())
+            dest.setPrecisionType(helper.getGMLUnmarshaller().unmarshalCode(src.getPrecisionType()));
+
+        if (src.isSetDislocationType())
+            dest.setDislocationType(helper.getGMLUnmarshaller().unmarshalCode(src.getDislocationType()));
+
+        if (src.isSetBreakType())
+            dest.setBreakType(helper.getGMLUnmarshaller().unmarshalCode(src.getBreakType()));
+
+        dest.setAttributeValue(src.getAttributeValue());
+
+        if (src.isSetAttributeType())
+            dest.setAttributeType(helper.getGMLUnmarshaller().unmarshalCode(src.getAttributeType()));
+
+        dest.setAttributeValueType(src.getAttributeValueType());
+
+        if (src.isSetCreationDate()) {
+            LocalDate date = src.getCreationDate().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setCreationDate(YearMonth.of(date.getYear(), date.getMonthValue()));
+        }
+
+        if (src.isSetUpdateDate()) {
+            LocalDate date = src.getUpdateDate().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setUpdateDate(YearMonth.of(date.getYear(), date.getMonthValue()));
+        }
+
+        if (src.isSetTerminationDate()) {
+            LocalDate date = src.getTerminationDate().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setTerminationDate(YearMonth.of(date.getYear(), date.getMonthValue()));
+        }
+
+        dest.setFreeSpace(src.getFreeSpace());
+
+        return dest;
+    }
+
+    private DmElementProperty unmarshalDmElementProperty(DmElementPropertyType src) throws MissingADESchemaException {
+        DmElementProperty dest = new DmElementProperty();
+
+        if (src.isSetDmElement())
+            dest.setObject(unmarshalDmElement(src.getDmElement()));
 
         return dest;
     }

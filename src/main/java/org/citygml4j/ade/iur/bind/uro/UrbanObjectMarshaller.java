@@ -86,6 +86,9 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(HighTideRiskAttribute.class, this::createHighTideRiskAttribute)
                     .with(ReservoirFloodingRiskAttribute.class, this::createReservoirFloodingRiskAttribute)
                     .with(LandSlideRiskAttribute.class, this::createLandSlideRiskAttribute)
+                    .with(DmGeometricAttribute.class, this::createDmGeometricAttribute)
+                    .with(DmAnnotation.class, this::createDmAnnotation)
+                    .with(DmElement.class, this::createDmElement)
                     .with(DataQualityAttribute.class, this::createDataQualityAttribute)
                     .with(PublicSurveyDataQualityAttribute.class, this::createPublicSurveyDataQualityAttribute)
                     .with(KeyValuePairAttribute.class, this::createKeyValuePairAttribute)
@@ -124,6 +127,7 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(BridFunctionalAttributePropertyElement.class, this::createBridFunctionalAttributePropertyElement)
                     .with(BridRiskAssessmentAttributePropertyElement.class, this::createBridRiskAssessmentAttributePropertyElement)
                     .with(BridDisasterRiskAttributePropertyElement.class, this::createBridDisasterRiskAttributePropertyElement)
+                    .with(BridDmAttributePropertyElement.class, this::createBridDmAttributePropertyElement)
                     .with(BridDataQualityAttributePropertyElement.class, this::createBridDataQualityAttributePropertyElement)
                     .with(BridKeyValuePairAttributePropertyElement.class, this::createBridKeyValuePairAttributePropertyElement)
                     .with(BuildingIDAttributePropertyElement.class, this::createBuildingIDAttributePropertyElement)
@@ -135,11 +139,13 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(BldgFacilityIdAttributePropertyElement.class, this::createBldgFacilityIdAttributePropertyElement)
                     .with(BldgFacilityTypeAttributePropertyElement.class, this::createBldgFacilityTypeAttributePropertyElement)
                     .with(BldgFacilityAttributePropertyElement.class, this::createBldgFacilityAttributePropertyElement)
+                    .with(BldgDmAttributePropertyElement.class, this::createBldgDmAttributePropertyElement)
                     .with(BldgRealEstateIDAttributePropertyElement.class, this::createBldgRealEstateIDAttributePropertyElement)
                     .with(BldgUsecaseAttributePropertyElement.class, this::createBldgUsecaseAttributePropertyElement)
                     .with(FrnFacilityIdAttributePropertyElement.class, this::createFrnFacilityIdAttributePropertyElement)
                     .with(FrnFacilityTypeAttributePropertyElement.class, this::createFrnFacilityTypeAttributePropertyElement)
                     .with(FrnFacilityAttributePropertyElement.class, this::createFrnFacilityAttributePropertyElement)
+                    .with(FrnDmAttributePropertyElement.class, this::createFrnDmAttributePropertyElement)
                     .with(CityFurnitureDetailAttributePropertyElement.class, this::createCityFurnitureDetailAttributePropertyElement)
                     .with(FrnDataQualityAttributePropertyElement.class, this::createFrnDataQualityAttributePropertyElement)
                     .with(FrnKeyValuePairAttributePropertyElement.class, this::createFrnKeyValuePairAttributePropertyElement)
@@ -147,13 +153,16 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(LuseFacilityIdAttributePropertyElement.class, this::createLuseFacilityIdAttributePropertyElement)
                     .with(LuseFacilityTypeAttributePropertyElement.class, this::createLuseFacilityTypeAttributePropertyElement)
                     .with(LuseFacilityAttributePropertyElement.class, this::createLuseFacilityAttributePropertyElement)
+                    .with(LuseDmAttributePropertyElement.class, this::createLuseDmAttributePropertyElement)
                     .with(LuseDataQualityAttributePropertyElement.class, this::createLuseDataQualityAttributePropertyElement)
                     .with(LuseKeyValuePairAttributePropertyElement.class, this::createLuseKeyValuePairAttributePropertyElement)
+                    .with(DemDmAttributePropertyElement.class, this::createDemDmAttributePropertyElement)
                     .with(DemDataQualityAttributePropertyElement.class, this::createDemDataQualityAttributePropertyElement)
                     .with(DemKeyValuePairAttributePropertyElement.class, this::createDemKeyValuePairAttributePropertyElement)
                     .with(TranFacilityIdAttributePropertyElement.class, this::createTranFacilityIdAttributePropertyElement)
                     .with(TranFacilityTypeAttributePropertyElement.class, this::createTranFacilityTypeAttributePropertyElement)
                     .with(TranFacilityAttributePropertyElement.class, this::createTranFacilityAttributePropertyElement)
+                    .with(TranDmAttributePropertyElement.class, this::createTranDmAttributePropertyElement)
                     .with(TranUsecaseAttributePropertyElement.class, this::createTranUsecaseAttributePropertyElement)
                     .with(TranKeyValuePairAttributePropertyElement.class, this::createTranKeyValuePairAttributePropertyElement)
                     .with(TranDataQualityAttributePropertyElement.class, this::createTranDataQualityAttributePropertyElement)
@@ -170,6 +179,7 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(TunFunctionalAttributePropertyElement.class, this::createTunFunctionalAttributePropertyElement)
                     .with(TunRiskAssessmentAttributePropertyElement.class, this::createTunRiskAssessmentAttributePropertyElement)
                     .with(TunDisasterRiskAttributePropertyElement.class, this::createTunDisasterRiskAttributePropertyElement)
+                    .with(TunDmAttributePropertyElement.class, this::createTunDmAttributePropertyElement)
                     .with(TunDataQualityAttributePropertyElement.class, this::createTunDataQualityAttributePropertyElement)
                     .with(TunFacilityIdAttributePropertyElement.class, this::createTunFacilityIdAttributePropertyElement)
                     .with(TunFacilityTypeAttributePropertyElement.class, this::createTunFacilityTypeAttributePropertyElement)
@@ -178,12 +188,14 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(VegFacilityIdAttributePropertyElement.class, this::createVegFacilityIdAttributePropertyElement)
                     .with(VegFacilityTypeAttributePropertyElement.class, this::createVegFacilityTypeAttributePropertyElement)
                     .with(VegFacilityAttributePropertyElement.class, this::createVegFacilityAttributePropertyElement)
+                    .with(VegDmAttributePropertyElement.class, this::createVegDmAttributePropertyElement)
                     .with(VegDataQualityAttributePropertyElement.class, this::createVegDataQualityAttributePropertyElement)
                     .with(VegKeyValuePairAttributePropertyElement.class, this::createVegKeyValuePairAttributePropertyElement)
                     .with(FloodingRiskAttributePropertyElement.class, this::createFloodingRiskAttributePropertyElement)
                     .with(WtrFacilityIdAttributePropertyElement.class, this::createWtrFacilityIdAttributePropertyElement)
                     .with(WtrFacilityTypeAttributePropertyElement.class, this::createWtrFacilityTypeAttributePropertyElement)
                     .with(WtrFacilityAttributePropertyElement.class, this::createWtrFacilityAttributePropertyElement)
+                    .with(WtrDmAttributePropertyElement.class, this::createWtrDmAttributePropertyElement)
                     .with(WaterBodyDetailAttributePropertyElement.class, this::createWaterBodyDetailAttributePropertyElement)
                     .with(WtrDataQualityAttributePropertyElement.class, this::createWtrDataQualityAttributePropertyElement)
                     .with(WtrKeyValuePairAttributePropertyElement.class, this::createWtrKeyValuePairAttributePropertyElement)
@@ -248,6 +260,11 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(FloodingRiskAttributeProperty.class, this::marshalFloodingRiskAttributeProperty)
                     .with(LandSlideRiskAttribute.class, this::marshalLandSlideRiskAttribute)
                     .with(DisasterRiskAttributeProperty.class, this::marshalDisasterRiskAttributeProperty)
+                    .with(DmGeometricAttribute.class, this::marshalDmGeometricAttribute)
+                    .with(DmAnnotation.class, this::marshalDmAnnotation)
+                    .with(DmAttributeProperty.class, this::marshalDmAttributeProperty)
+                    .with(DmElement.class, this::marshalDmElement)
+                    .with(DmElementProperty.class, this::marshalDmElementProperty)
                     .with(DataQualityAttribute.class, this::marshalDataQualityAttribute)
                     .with(DataQualityAttributeProperty.class, this::marshalDataQualityAttributeProperty)
                     .with(PublicSurveyDataQualityAttribute.class, this::marshalPublicSurveyDataQualityAttribute)
@@ -1699,6 +1716,148 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return dest;
     }
 
+    private void marshalDmAttribute(DmAttribute src, DmAttributeType dest) {
+        if (src.getDmCode() != null)
+            dest.setDmCode(helper.getGMLMarshaller().marshalCode(src.getDmCode()));
+
+        if (src.getMeshCode() != null)
+            dest.setMeshCode(helper.getGMLMarshaller().marshalCode(src.getMeshCode()));
+
+        if (src.getDmElement() != null)
+            dest.setDmElement(marshalDmElementProperty(src.getDmElement()));
+    }
+
+    private DmGeometricAttributeType marshalDmGeometricAttribute(DmGeometricAttribute src) {
+        DmGeometricAttributeType dest = factory.createDmGeometricAttributeType();
+        marshalDmAttribute(src, dest);
+
+        if (src.getGeometryType() != null)
+            dest.setGeometryType(helper.getGMLMarshaller().marshalCode(src.getGeometryType()));
+
+        if (src.getMapLevel() != null)
+            dest.setMapLevel(helper.getGMLMarshaller().marshalCode(src.getMapLevel()));
+
+        if (src.getShapeType() != null)
+            dest.setShapeType(helper.getGMLMarshaller().marshalCode(src.getShapeType()));
+
+        dest.setVisibility(src.getVisibility());
+        dest.setIs3D(src.getIs3d());
+        dest.setIsInstallation(src.getIsInstallation());
+        dest.setIsEdited(src.getIsEdited());
+        dest.setIsSupplementarySymbol(src.getIsSupplementarySymbol());
+        dest.setAngle(src.getAngle());
+
+        if (src.getElevation() != null)
+            dest.setElevation(helper.getGMLMarshaller().marshalLength(src.getElevation()));
+
+        if (src.getLod0Geometry() != null)
+            dest.setLod0Geometry(helper.getGMLMarshaller().marshalGeometryProperty(src.getLod0Geometry()));
+
+        return dest;
+    }
+
+    private DmAnnotationType marshalDmAnnotation(DmAnnotation src) {
+        DmAnnotationType dest = factory.createDmAnnotationType();
+        marshalDmAttribute(src, dest);
+
+        if (src.getGeometryType() != null)
+            dest.setGeometryType(helper.getGMLMarshaller().marshalCode(src.getGeometryType()));
+
+        if (src.getShapeType() != null)
+            dest.setShapeType(helper.getGMLMarshaller().marshalCode(src.getShapeType()));
+
+        dest.setLabel(src.getLabel());
+
+        if (src.getIsVertical() != null)
+            dest.setIsVertical(src.getIsVertical());
+
+        if (src.getSize() != null)
+            dest.setSize(BigInteger.valueOf(src.getSize()));
+
+        if (src.getOrientation() != null)
+            dest.setOrientation(BigInteger.valueOf(src.getOrientation()));
+
+        if (src.getLinewidth() != null)
+            dest.setLinewidth(BigInteger.valueOf(src.getLinewidth()));
+
+        if (src.getSpacing() != null)
+            dest.setSpacing(BigInteger.valueOf(src.getSpacing()));
+
+        if (src.getLod0anchorPoint() != null)
+            dest.setLod0AnchorPoint(helper.getGMLMarshaller().marshalGeometryProperty(src.getLod0anchorPoint()));
+
+        return dest;
+    }
+
+    private DmAttributePropertyType marshalDmAttributeProperty(DmAttributeProperty src) {
+        DmAttributePropertyType dest = factory.createDmAttributePropertyType();
+
+        if (src.getObject() != null) {
+            JAXBElement<?> elem = helper.getJAXBMarshaller().marshalJAXBElement(src.getObject());
+            if (elem != null && elem.getValue() instanceof DmAttributeType)
+                dest.setDmAttribute((JAXBElement<? extends DmAttributeType>) elem);
+        }
+
+        return dest;
+    }
+
+    private DmElementType marshalDmElement(DmElement src) {
+        DmElementType dest = factory.createDmElementType();
+
+        if (src.getLocationType() != null)
+            dest.setLocationType(helper.getGMLMarshaller().marshalCode(src.getLocationType()));
+
+        if (src.getInfoType() != null)
+            dest.setInfoType(helper.getGMLMarshaller().marshalCode(src.getInfoType()));
+
+        dest.setElementKey(src.getElementKey());
+        dest.setHierarchyLevel(src.getHierarchyLevel());
+
+        if (src.getDataType() != null)
+            dest.setDataType(helper.getGMLMarshaller().marshalCode(src.getDataType()));
+
+        if (src.getAnnotationType() != null)
+            dest.setAnnotationType(helper.getGMLMarshaller().marshalCode(src.getAnnotationType()));
+
+        if (src.getPrecisionType() != null)
+            dest.setPrecisionType(helper.getGMLMarshaller().marshalCode(src.getPrecisionType()));
+
+        if (src.getDislocationType() != null)
+            dest.setDislocationType(helper.getGMLMarshaller().marshalCode(src.getDislocationType()));
+
+        if (src.getBreakType() != null)
+            dest.setBreakType(helper.getGMLMarshaller().marshalCode(src.getBreakType()));
+
+        dest.setAttributeValue(src.getAttributeValue());
+
+        if (src.getAttributeType() != null)
+            dest.setAttributeType(helper.getGMLMarshaller().marshalCode(src.getAttributeType()));
+
+        dest.setAttributeValueType(src.getAttributeValueType());
+
+        if (src.getCreationDate() != null)
+            dest.setCreationDate(marshaller.toCalendar(src.getCreationDate()));
+
+        if (src.getUpdateDate() != null)
+            dest.setUpdateDate(marshaller.toCalendar(src.getUpdateDate()));
+
+        if (src.getTerminationDate() != null)
+            dest.setTerminationDate(marshaller.toCalendar(src.getTerminationDate()));
+
+        dest.setFreeSpace(src.getFreeSpace());
+
+        return dest;
+    }
+
+    private DmElementPropertyType marshalDmElementProperty(DmElementProperty src) {
+        DmElementPropertyType dest = factory.createDmElementPropertyType();
+
+        if (src.isSetObject())
+            dest.setDmElement(marshalDmElement(src.getObject()));
+
+        return dest;
+    }
+
     private DataQualityAttributeType marshalDataQualityAttribute(DataQualityAttribute src) {
         DataQualityAttributeType dest = factory.createDataQualityAttributeType();
 
@@ -2915,6 +3074,18 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createLandSlideRiskAttribute(marshalLandSlideRiskAttribute(src));
     }
 
+    private JAXBElement<?> createDmGeometricAttribute(DmGeometricAttribute src) {
+        return factory.createDmGeometricAttribute(marshalDmGeometricAttribute(src));
+    }
+
+    private JAXBElement<?> createDmAnnotation(DmAnnotation src) {
+        return factory.createDmAnnotation(marshalDmAnnotation(src));
+    }
+
+    private JAXBElement<?> createDmElement(DmElement src) {
+        return factory.createDmElement(marshalDmElement(src));
+    }
+
     private JAXBElement<?> createDataQualityAttribute(DataQualityAttribute src) {
         return factory.createDataQualityAttribute(marshalDataQualityAttribute(src));
     }
@@ -3067,6 +3238,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createBridDisasterRiskAttribute(marshalDisasterRiskAttributeProperty(src.getValue()));
     }
 
+    private JAXBElement<?> createBridDmAttributePropertyElement(BridDmAttributePropertyElement src) {
+        return factory.createBridDmAttribute(marshalDmAttributeProperty(src.getValue()));
+    }
+
     private JAXBElement<?> createBridDataQualityAttributePropertyElement(BridDataQualityAttributePropertyElement src) {
         return factory.createBridDataQualityAttribute(marshalDataQualityAttributeProperty(src.getValue()));
     }
@@ -3111,6 +3286,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createBldgFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
     }
 
+    private JAXBElement<?> createBldgDmAttributePropertyElement(BldgDmAttributePropertyElement src) {
+        return factory.createBldgDmAttribute(marshalDmAttributeProperty(src.getValue()));
+    }
+
     private JAXBElement<?> createBldgRealEstateIDAttributePropertyElement(BldgRealEstateIDAttributePropertyElement src) {
         return factory.createBldgRealEstateIDAttribute(marshalRealEstateIDAttributeProperty(src.getValue()));
     }
@@ -3129,6 +3308,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
     private JAXBElement<?> createFrnFacilityAttributePropertyElement(FrnFacilityAttributePropertyElement src) {
         return factory.createFrnFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createFrnDmAttributePropertyElement(FrnDmAttributePropertyElement src) {
+        return factory.createFrnDmAttribute(marshalDmAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createCityFurnitureDetailAttributePropertyElement(CityFurnitureDetailAttributePropertyElement src) {
@@ -3159,12 +3342,20 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createLuseFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
     }
 
+    private JAXBElement<?> createLuseDmAttributePropertyElement(LuseDmAttributePropertyElement src) {
+        return factory.createLuseDmAttribute(marshalDmAttributeProperty(src.getValue()));
+    }
+
     private JAXBElement<?> createLuseDataQualityAttributePropertyElement(LuseDataQualityAttributePropertyElement src) {
         return factory.createLuseDataQualityAttribute(marshalDataQualityAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createLuseKeyValuePairAttributePropertyElement(LuseKeyValuePairAttributePropertyElement src) {
         return factory.createLuseKeyValuePairAttribute(marshalKeyValuePairAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createDemDmAttributePropertyElement(DemDmAttributePropertyElement src) {
+        return factory.createDemDmAttribute(marshalDmAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createDemDataQualityAttributePropertyElement(DemDataQualityAttributePropertyElement src) {
@@ -3185,6 +3376,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
     private JAXBElement<?> createTranFacilityAttributePropertyElement(TranFacilityAttributePropertyElement src) {
         return factory.createTranFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createTranDmAttributePropertyElement(TranDmAttributePropertyElement src) {
+        return factory.createTranDmAttribute(marshalDmAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createTranUsecaseAttributePropertyElement(TranUsecaseAttributePropertyElement src) {
@@ -3251,6 +3446,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createTunDisasterRiskAttribute(marshalDisasterRiskAttributeProperty(src.getValue()));
     }
 
+    private JAXBElement<?> createTunDmAttributePropertyElement(TunDmAttributePropertyElement src) {
+        return factory.createTunDmAttribute(marshalDmAttributeProperty(src.getValue()));
+    }
+
     private JAXBElement<?> createTunDataQualityAttributePropertyElement(TunDataQualityAttributePropertyElement src) {
         return factory.createTunDataQualityAttribute(marshalDataQualityAttributeProperty(src.getValue()));
     }
@@ -3283,6 +3482,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createVegFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
     }
 
+    private JAXBElement<?> createVegDmAttributePropertyElement(VegDmAttributePropertyElement src) {
+        return factory.createVegDmAttribute(marshalDmAttributeProperty(src.getValue()));
+    }
+
     private JAXBElement<?> createVegDataQualityAttributePropertyElement(VegDataQualityAttributePropertyElement src) {
         return factory.createVegDataQualityAttribute(marshalDataQualityAttributeProperty(src.getValue()));
     }
@@ -3305,6 +3508,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
     private JAXBElement<?> createWtrFacilityAttributePropertyElement(WtrFacilityAttributePropertyElement src) {
         return factory.createWtrFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createWtrDmAttributePropertyElement(WtrDmAttributePropertyElement src) {
+        return factory.createWtrDmAttribute(marshalDmAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createWaterBodyDetailAttributePropertyElement(WaterBodyDetailAttributePropertyElement src) {

@@ -19,6 +19,7 @@ Change Log
   (un)marshalled: facility, DM, ifc and indoor attributes of buildings and the attributes of bridges, tunnels, land use,
   city furniture, relief, transportation, vegetation, water bodies, city object groups and building interiors.
 * The `uro` model and binding classes are generated from the XSD (`poc/gen` in the PoC workspace).
+
 ##### Known limitations
 * ADE feature types (`uro:UndergroundBuilding`, `uro:OtherConstruction`, `uro:Waterway`, utility networks, ...) are not
   supported; `urf`, `urg` and `urt` remain at 1.4.

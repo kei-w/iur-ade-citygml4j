@@ -22,16 +22,16 @@
 
 package org.citygml4j.ade.iur.bind.uro;
 
-import jp.go.kantei.iur._1_4.uro.*;
+import jp.geospatial.iur._2_0.uro.*;
 import org.citygml4j.ade.iur.bind.Marshaller;
 import org.citygml4j.ade.iur.model.uro.*;
 import org.citygml4j.builder.jaxb.marshal.citygml.ade.ADEMarshallerHelper;
 import org.citygml4j.model.citygml.ade.binding.ADEMarshaller;
 import org.citygml4j.model.citygml.ade.binding.ADEModelObject;
+import org.citygml4j.model.gml.basicTypes.Code;
 import org.citygml4j.util.mapper.TypeMapper;
 
 import javax.xml.bind.JAXBElement;
-import javax.xml.datatype.DatatypeConstants;
 import java.math.BigInteger;
 
 public class UrbanObjectMarshaller implements ADEMarshaller {
@@ -48,30 +48,22 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
     private synchronized TypeMapper<JAXBElement<?>> getElementMapper() {
         if (elementMapper == null) {
             elementMapper = TypeMapper.<JAXBElement<?>>create()
-                    .with(BuildingDetails.class, this::createBuildingDetails)
-                    .with(BuildingDetailsPropertyElement.class, this::createBuildingDetailsPropertyElement)
-                    .with(LargeCustomerFacilities.class, this::createLargeCustomerFacilities)
-                    .with(LargeCustomerFacilitiesPropertyElement.class, this::createLargeCustomerFacilitiesPropertyElement)
-                    .with(KeyValuePair.class, this::createKeyValuePair)
-                    .with(ExtendedAttributeProperty.class, this::createExtendedAttribute)
-                    .with(NominalAreaProperty.class, this::createNominalAreaProperty)
-                    .with(OwnerTypeProperty.class, this::createOwnerTypeProperty)
-                    .with(OwnerProperty.class, this::createOwnerProperty)
-                    .with(AreaInSquareMeterProperty.class, this::createAreaInSquareMeterProperty)
-                    .with(AreaInHaProperty.class, this::createAreaInHaProperty)
-                    .with(UrbanPlanTypeProperty.class, this::createUrbanPlanTypeProperty)
-                    .with(DistrictsAndZonesTypeProperty.class, this::createDistrictsAndZonesTypeProperty)
-                    .with(LandUsePlanTypeProperty.class, this::createLandUsePlanTypeProperty)
-                    .with(AreaClassificationTypeProperty.class, this::createAreaClassificationTypeProperty)
-                    .with(PrefectureProperty.class, this::createPrefectureProperty)
-                    .with(CityProperty.class, this::createCityProperty)
-                    .with(ReferenceProperty.class, this::createReferenceProperty)
-                    .with(NoteProperty.class, this::createNoteProperty)
-                    .with(SurveyYearProperty.class, this::createSurveyYearProperty)
-                    .with(WidthProperty.class, this::createWidthProperty)
-                    .with(WidthTypeProperty.class, this::createWidthTypeProperty)
-                    .with(TrafficVolume.class, this::createTrafficVolume)
-                    .with(TrafficVolumePropertyElement.class, this::createTrafficVolumePropertyElement)
+                    .with(BuildingIDAttribute.class, this::createBuildingIDAttribute)
+                    .with(BuildingIDAttributePropertyElement.class, this::createBuildingIDAttributePropertyElement)
+                    .with(BuildingDetailAttribute.class, this::createBuildingDetailAttribute)
+                    .with(BuildingDetailAttributePropertyElement.class, this::createBuildingDetailAttributePropertyElement)
+                    .with(LargeCustomerFacilityAttribute.class, this::createLargeCustomerFacilityAttribute)
+                    .with(LargeCustomerFacilityAttributePropertyElement.class, this::createLargeCustomerFacilityAttributePropertyElement)
+                    .with(BuildingRiverFloodingRiskAttribute.class, this::createBuildingRiverFloodingRiskAttribute)
+                    .with(BuildingTsunamiRiskAttribute.class, this::createBuildingTsunamiRiskAttribute)
+                    .with(BuildingInlandFloodingRiskAttribute.class, this::createBuildingInlandFloodingRiskAttribute)
+                    .with(BuildingHighTideRiskAttribute.class, this::createBuildingHighTideRiskAttribute)
+                    .with(BuildingLandSlideRiskAttribute.class, this::createBuildingLandSlideRiskAttribute)
+                    .with(BuildingDisasterRiskAttributePropertyElement.class, this::createBuildingDisasterRiskAttributePropertyElement)
+                    .with(KeyValuePairAttribute.class, this::createKeyValuePairAttribute)
+                    .with(KeyValuePairAttributePropertyElement.class, this::createKeyValuePairAttributePropertyElement)
+                    .with(BuildingDataQualityAttribute.class, this::createBuildingDataQualityAttribute)
+                    .with(BuildingDataQualityAttributePropertyElement.class, this::createBuildingDataQualityAttributePropertyElement)
                     .with(FiscalYearOfPublicationProperty.class, this::createFiscalYearOfPublicationProperty)
                     .with(LanguageProperty.class, this::createLanguageProperty);
         }
@@ -82,14 +74,22 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
     private synchronized TypeMapper<Object> getTypeMapper() {
         if (typeMapper == null) {
             typeMapper = TypeMapper.create()
-                    .with(BuildingDetails.class, this::marshalBuildingDetails)
-                    .with(BuildingDetailsProperty.class, this::marshalBuildingDetailsProperty)
-                    .with(LargeCustomerFacilities.class, this::marshalLargeCustomerFacilities)
-                    .with(LargeCustomerFacilitiesProperty.class, this::marshalLargeCustomerFacilitiesProperty)
-                    .with(KeyValuePair.class, this::marshalKeyValuePair)
-                    .with(KeyValuePairProperty.class, this::marshalKeyValuePairProperty)
-                    .with(TrafficVolume.class, this::marshalTrafficVolume)
-                    .with(TrafficVolumeProperty.class, this::marshalTrafficVolumeProperty);
+                    .with(BuildingIDAttribute.class, this::marshalBuildingIDAttribute)
+                    .with(BuildingIDAttributeProperty.class, this::marshalBuildingIDAttributeProperty)
+                    .with(BuildingDetailAttribute.class, this::marshalBuildingDetailAttribute)
+                    .with(BuildingDetailAttributeProperty.class, this::marshalBuildingDetailAttributeProperty)
+                    .with(LargeCustomerFacilityAttribute.class, this::marshalLargeCustomerFacilityAttribute)
+                    .with(LargeCustomerFacilityAttributeProperty.class, this::marshalLargeCustomerFacilityAttributeProperty)
+                    .with(BuildingRiverFloodingRiskAttribute.class, this::marshalBuildingRiverFloodingRiskAttribute)
+                    .with(BuildingTsunamiRiskAttribute.class, this::marshalBuildingTsunamiRiskAttribute)
+                    .with(BuildingInlandFloodingRiskAttribute.class, this::marshalBuildingInlandFloodingRiskAttribute)
+                    .with(BuildingHighTideRiskAttribute.class, this::marshalBuildingHighTideRiskAttribute)
+                    .with(BuildingLandSlideRiskAttribute.class, this::marshalBuildingLandSlideRiskAttribute)
+                    .with(BuildingDisasterRiskAttributeProperty.class, this::marshalBuildingDisasterRiskAttributeProperty)
+                    .with(KeyValuePairAttribute.class, this::marshalKeyValuePairAttribute)
+                    .with(KeyValuePairAttributeProperty.class, this::marshalKeyValuePairAttributeProperty)
+                    .with(BuildingDataQualityAttribute.class, this::marshalBuildingDataQualityAttribute)
+                    .with(BuildingDataQualityAttributeProperty.class, this::marshalBuildingDataQualityAttributeProperty);
         }
 
         return typeMapper;
@@ -112,13 +112,45 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return typeMapper != null ? typeMapper.apply(src) : null;
     }
 
-    private BuildingDetailsType marshalBuildingDetails(BuildingDetails src) {
-        BuildingDetailsType dest = factory.createBuildingDetailsType();
+    private BuildingIDAttributeType marshalBuildingIDAttribute(BuildingIDAttribute src) {
+        BuildingIDAttributeType dest = factory.createBuildingIDAttributeType();
+
+        dest.setBuildingID(src.getBuildingID());
+
+        if (src.getBranchID() != null)
+            dest.setBranchID(BigInteger.valueOf(src.getBranchID()));
+
+        if (src.getPartID() != null)
+            dest.setPartID(BigInteger.valueOf(src.getPartID()));
+
+        if (src.getPrefecture() != null)
+            dest.setPrefecture(helper.getGMLMarshaller().marshalCode(src.getPrefecture()));
+
+        if (src.getCity() != null)
+            dest.setCity(helper.getGMLMarshaller().marshalCode(src.getCity()));
+
+        return dest;
+    }
+
+    private BuildingIDAttributePropertyType marshalBuildingIDAttributeProperty(BuildingIDAttributeProperty src) {
+        BuildingIDAttributePropertyType dest = factory.createBuildingIDAttributePropertyType();
+
+        if (src.isSetObject())
+            dest.setBuildingIDAttribute(marshalBuildingIDAttribute(src.getObject()));
+
+        return dest;
+    }
+
+    private BuildingDetailAttributeType marshalBuildingDetailAttribute(BuildingDetailAttribute src) {
+        BuildingDetailAttributeType dest = factory.createBuildingDetailAttributeType();
 
         dest.setSerialNumberOfBuildingCertification(src.getSerialNumberOfBuildingCertification());
 
         if (src.getSiteArea() != null)
             dest.setSiteArea(helper.getGMLMarshaller().marshalMeasure(src.getSiteArea()));
+
+        if (src.getTotalFloorArea() != null)
+            dest.setTotalFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getTotalFloorArea()));
 
         if (src.getBuildingFootprintArea() != null)
             dest.setBuildingFootprintArea(helper.getGMLMarshaller().marshalMeasure(src.getBuildingFootprintArea()));
@@ -129,11 +161,11 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         if (src.getDevelopmentArea() != null)
             dest.setDevelopmentArea(helper.getGMLMarshaller().marshalMeasure(src.getDevelopmentArea()));
 
-        if (src.getTotalFloorArea() != null)
-            dest.setTotalFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getTotalFloorArea()));
-
         if (src.getBuildingStructureType() != null)
             dest.setBuildingStructureType(helper.getGMLMarshaller().marshalCode(src.getBuildingStructureType()));
+
+        if (src.getBuildingStructureOrgType() != null)
+            dest.setBuildingStructureOrgType(helper.getGMLMarshaller().marshalCode(src.getBuildingStructureOrgType()));
 
         if (src.getFireproofStructureType() != null)
             dest.setFireproofStructureType(helper.getGMLMarshaller().marshalCode(src.getFireproofStructureType()));
@@ -143,25 +175,72 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         if (src.getUrbanPlanType() != null)
             dest.setUrbanPlanType(helper.getGMLMarshaller().marshalCode(src.getUrbanPlanType()));
 
-        if (src.getDistrictsAndZonesType() != null)
-            dest.setDistrictsAndZonesType(helper.getGMLMarshaller().marshalCode(src.getDistrictsAndZonesType()));
-
-        if (src.getLandUsePlanType() != null)
-            dest.setLandUsePlanType(helper.getGMLMarshaller().marshalCode(src.getLandUsePlanType()));
-
         if (src.getAreaClassificationType() != null)
             dest.setAreaClassificationType(helper.getGMLMarshaller().marshalCode(src.getAreaClassificationType()));
 
-        if (src.getPrefecture() != null)
-            dest.setPrefecture(helper.getGMLMarshaller().marshalCode(src.getPrefecture()));
+        for (Code districtsAndZonesType : src.getDistrictsAndZonesType())
+            dest.getDistrictsAndZonesType().add(helper.getGMLMarshaller().marshalCode(districtsAndZonesType));
 
-        if (src.getCity() != null)
-            dest.setCity(helper.getGMLMarshaller().marshalCode(src.getCity()));
+        if (src.getLandUseType() != null)
+            dest.setLandUseType(helper.getGMLMarshaller().marshalCode(src.getLandUseType()));
 
         dest.setReference(src.getReference());
 
-        if (src.getNote() != null)
-            dest.setNote(src.getNote());
+        if (src.getMajorUsage() != null)
+            dest.setMajorUsage(helper.getGMLMarshaller().marshalCode(src.getMajorUsage()));
+
+        if (src.getMajorUsage2() != null)
+            dest.setMajorUsage2(helper.getGMLMarshaller().marshalCode(src.getMajorUsage2()));
+
+        if (src.getOrgUsage() != null)
+            dest.setOrgUsage(helper.getGMLMarshaller().marshalCode(src.getOrgUsage()));
+
+        if (src.getOrgUsage2() != null)
+            dest.setOrgUsage2(helper.getGMLMarshaller().marshalCode(src.getOrgUsage2()));
+
+        if (src.getDetailedUsage() != null)
+            dest.setDetailedUsage(helper.getGMLMarshaller().marshalCode(src.getDetailedUsage()));
+
+        if (src.getDetailedUsage2() != null)
+            dest.setDetailedUsage2(helper.getGMLMarshaller().marshalCode(src.getDetailedUsage2()));
+
+        if (src.getDetailedUsage3() != null)
+            dest.setDetailedUsage3(helper.getGMLMarshaller().marshalCode(src.getDetailedUsage3()));
+
+        if (src.getGroundFloorUsage() != null)
+            dest.setGroundFloorUsage(helper.getGMLMarshaller().marshalCode(src.getGroundFloorUsage()));
+
+        if (src.getSecondFloorUsage() != null)
+            dest.setSecondFloorUsage(helper.getGMLMarshaller().marshalCode(src.getSecondFloorUsage()));
+
+        if (src.getThirdFloorUsage() != null)
+            dest.setThirdFloorUsage(helper.getGMLMarshaller().marshalCode(src.getThirdFloorUsage()));
+
+        if (src.getBasementUsage() != null)
+            dest.setBasementUsage(helper.getGMLMarshaller().marshalCode(src.getBasementUsage()));
+
+        if (src.getBasementFirstUsage() != null)
+            dest.setBasementFirstUsage(helper.getGMLMarshaller().marshalCode(src.getBasementFirstUsage()));
+
+        if (src.getBasementSecondUsage() != null)
+            dest.setBasementSecondUsage(helper.getGMLMarshaller().marshalCode(src.getBasementSecondUsage()));
+
+        if (src.getVacancy() != null)
+            dest.setVacancy(helper.getGMLMarshaller().marshalCode(src.getVacancy()));
+
+        dest.setBuildingCoverageRate(src.getBuildingCoverageRate());
+        dest.setFloorAreaRate(src.getFloorAreaRate());
+        dest.setSpecifiedBuildingCoverageRate(src.getSpecifiedBuildingCoverageRate());
+        dest.setSpecifiedFloorAreaRate(src.getSpecifiedFloorAreaRate());
+        dest.setStandardFloorAreaRate(src.getStandardFloorAreaRate());
+
+        if (src.getBuildingHeight() != null)
+            dest.setBuildingHeight(helper.getGMLMarshaller().marshalLength(src.getBuildingHeight()));
+
+        if (src.getEaveHeight() != null)
+            dest.setEaveHeight(helper.getGMLMarshaller().marshalLength(src.getEaveHeight()));
+
+        dest.setNote(src.getNote());
 
         if (src.getSurveyYear() != null)
             dest.setSurveyYear(marshaller.toCalendar(src.getSurveyYear()));
@@ -169,17 +248,17 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return dest;
     }
 
-    private BuildingDetailsPropertyType marshalBuildingDetailsProperty(BuildingDetailsProperty src) {
-        BuildingDetailsPropertyType dest = factory.createBuildingDetailsPropertyType();
+    private BuildingDetailAttributePropertyType marshalBuildingDetailAttributeProperty(BuildingDetailAttributeProperty src) {
+        BuildingDetailAttributePropertyType dest = factory.createBuildingDetailAttributePropertyType();
 
         if (src.isSetObject())
-            dest.setBuildingDetails(marshalBuildingDetails(src.getObject()));
+            dest.setBuildingDetailAttribute(marshalBuildingDetailAttribute(src.getObject()));
 
         return dest;
     }
 
-    private LargeCustomerFacilitiesType marshalLargeCustomerFacilities(LargeCustomerFacilities src) {
-        LargeCustomerFacilitiesType dest = factory.createLargeCustomerFacilitiesType();
+    private LargeCustomerFacilityAttributeType marshalLargeCustomerFacilityAttribute(LargeCustomerFacilityAttribute src) {
+        LargeCustomerFacilityAttributeType dest = factory.createLargeCustomerFacilityAttributeType();
 
         if (src.getClassifier() != null)
             dest.setClazz(helper.getGMLMarshaller().marshalCode(src.getClassifier()));
@@ -206,20 +285,14 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         if (src.getUrbanPlanType() != null)
             dest.setUrbanPlanType(helper.getGMLMarshaller().marshalCode(src.getUrbanPlanType()));
 
-        if (src.getDistrictsAndZonesType() != null)
-            dest.setDistrictsAndZonesType(helper.getGMLMarshaller().marshalCode(src.getDistrictsAndZonesType()));
-
-        if (src.getLandUsePlanType() != null)
-            dest.setLandUsePlanType(helper.getGMLMarshaller().marshalCode(src.getLandUsePlanType()));
-
         if (src.getAreaClassificationType() != null)
             dest.setAreaClassificationType(helper.getGMLMarshaller().marshalCode(src.getAreaClassificationType()));
 
-        if (src.getPrefecture() != null)
-            dest.setPrefecture(helper.getGMLMarshaller().marshalCode(src.getPrefecture()));
+        for (Code districtsAndZonesType : src.getDistrictsAndZonesType())
+            dest.getDistrictsAndZonesType().add(helper.getGMLMarshaller().marshalCode(districtsAndZonesType));
 
-        if (src.getCity() != null)
-            dest.setCity(helper.getGMLMarshaller().marshalCode(src.getCity()));
+        if (src.getLandUseType() != null)
+            dest.setLandUseType(helper.getGMLMarshaller().marshalCode(src.getLandUseType()));
 
         dest.setReference(src.getReference());
         dest.setNote(src.getNote());
@@ -230,29 +303,104 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return dest;
     }
 
-    private LargeCustomerFacilitiesPropertyType marshalLargeCustomerFacilitiesProperty(LargeCustomerFacilitiesProperty src) {
-        LargeCustomerFacilitiesPropertyType dest = factory.createLargeCustomerFacilitiesPropertyType();
+    private LargeCustomerFacilityAttributePropertyType marshalLargeCustomerFacilityAttributeProperty(LargeCustomerFacilityAttributeProperty src) {
+        LargeCustomerFacilityAttributePropertyType dest = factory.createLargeCustomerFacilityAttributePropertyType();
 
         if (src.isSetObject())
-            dest.setLargeCustomerFacilities(marshalLargeCustomerFacilities(src.getObject()));
+            dest.setLargeCustomerFacilityAttribute(marshalLargeCustomerFacilityAttribute(src.getObject()));
 
         return dest;
     }
 
-    private KeyValuePairType marshalKeyValuePair(KeyValuePair src) {
-        KeyValuePairType dest = factory.createKeyValuePairType();
+    private void marshalBuildingDisasterRiskAttribute(BuildingDisasterRiskAttribute src, BuildingDisasterRiskAttributeType dest) {
+        if (src.getDescription() != null)
+            dest.setDescription(helper.getGMLMarshaller().marshalCode(src.getDescription()));
+    }
+
+    private void marshalBuildingFloodingRiskAttribute(BuildingFloodingRiskAttribute src, BuildingFloodingRiskAttributeType dest) {
+        marshalBuildingDisasterRiskAttribute(src, dest);
+
+        if (src.getRank() != null)
+            dest.setRank(helper.getGMLMarshaller().marshalCode(src.getRank()));
+
+        if (src.getRankOrg() != null)
+            dest.setRankOrg(helper.getGMLMarshaller().marshalCode(src.getRankOrg()));
+
+        if (src.getDepth() != null)
+            dest.setDepth(helper.getGMLMarshaller().marshalLength(src.getDepth()));
+    }
+
+    private BuildingRiverFloodingRiskAttributeType marshalBuildingRiverFloodingRiskAttribute(BuildingRiverFloodingRiskAttribute src) {
+        BuildingRiverFloodingRiskAttributeType dest = factory.createBuildingRiverFloodingRiskAttributeType();
+        marshalBuildingFloodingRiskAttribute(src, dest);
+
+        if (src.getAdminType() != null)
+            dest.setAdminType(helper.getGMLMarshaller().marshalCode(src.getAdminType()));
+
+        if (src.getScale() != null)
+            dest.setScale(helper.getGMLMarshaller().marshalCode(src.getScale()));
+
+        if (src.getDuration() != null)
+            dest.setDuration(helper.getGMLMarshaller().marshalMeasure(src.getDuration()));
+
+        return dest;
+    }
+
+    private BuildingTsunamiRiskAttributeType marshalBuildingTsunamiRiskAttribute(BuildingTsunamiRiskAttribute src) {
+        BuildingTsunamiRiskAttributeType dest = factory.createBuildingTsunamiRiskAttributeType();
+        marshalBuildingFloodingRiskAttribute(src, dest);
+        return dest;
+    }
+
+    private BuildingInlandFloodingRiskAttributeType marshalBuildingInlandFloodingRiskAttribute(BuildingInlandFloodingRiskAttribute src) {
+        BuildingInlandFloodingRiskAttributeType dest = factory.createBuildingInlandFloodingRiskAttributeType();
+        marshalBuildingFloodingRiskAttribute(src, dest);
+        return dest;
+    }
+
+    private BuildingHighTideRiskAttributeType marshalBuildingHighTideRiskAttribute(BuildingHighTideRiskAttribute src) {
+        BuildingHighTideRiskAttributeType dest = factory.createBuildingHighTideRiskAttributeType();
+        marshalBuildingFloodingRiskAttribute(src, dest);
+        return dest;
+    }
+
+    private BuildingLandSlideRiskAttributeType marshalBuildingLandSlideRiskAttribute(BuildingLandSlideRiskAttribute src) {
+        BuildingLandSlideRiskAttributeType dest = factory.createBuildingLandSlideRiskAttributeType();
+        marshalBuildingDisasterRiskAttribute(src, dest);
+
+        if (src.getAreaType() != null)
+            dest.setAreaType(helper.getGMLMarshaller().marshalCode(src.getAreaType()));
+
+        return dest;
+    }
+
+    @SuppressWarnings("unchecked")
+    private BuildingDisasterRiskAttributePropertyType marshalBuildingDisasterRiskAttributeProperty(BuildingDisasterRiskAttributeProperty src) {
+        BuildingDisasterRiskAttributePropertyType dest = factory.createBuildingDisasterRiskAttributePropertyType();
+
+        if (src.getObject() != null) {
+            JAXBElement<?> elem = helper.getJAXBMarshaller().marshalJAXBElement(src.getObject());
+            if (elem != null && elem.getValue() instanceof BuildingDisasterRiskAttributeType)
+                dest.setBuildingDisasterRiskAttribute((JAXBElement<? extends BuildingDisasterRiskAttributeType>) elem);
+        }
+
+        return dest;
+    }
+
+    private KeyValuePairAttributeType marshalKeyValuePairAttribute(KeyValuePairAttribute src) {
+        KeyValuePairAttributeType dest = factory.createKeyValuePairAttributeType();
 
         if (src.getKey() != null)
             dest.setKey(helper.getGMLMarshaller().marshalCode(src.getKey()));
 
-        if (src.isSetStringValue())
+        if (src.isSetCodeValue())
+            dest.setCodeValue(helper.getGMLMarshaller().marshalCode(src.getCodeValue()));
+        else if (src.isSetStringValue())
             dest.setStringValue(src.getStringValue());
         else if (src.isSetIntValue())
             dest.setIntValue(BigInteger.valueOf(src.getIntValue()));
         else if (src.isSetDoubleValue())
             dest.setDoubleValue(src.getDoubleValue());
-        else if (src.isSetCodeValue())
-            dest.setCodeValue(helper.getGMLMarshaller().marshalCode(src.getCodeValue()));
         else if (src.isSetMeasuredValue())
             dest.setMeasuredValue(helper.getGMLMarshaller().marshalMeasure(src.getMeasuredValue()));
         else if (src.isSetDateValue())
@@ -263,165 +411,114 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return dest;
     }
 
-    private KeyValuePairPropertyType marshalKeyValuePairProperty(KeyValuePairProperty src) {
-        KeyValuePairPropertyType dest = factory.createKeyValuePairPropertyType();
+    private KeyValuePairAttributePropertyType marshalKeyValuePairAttributeProperty(KeyValuePairAttributeProperty src) {
+        KeyValuePairAttributePropertyType dest = factory.createKeyValuePairAttributePropertyType();
 
         if (src.isSetObject())
-            dest.setKeyValuePair(marshalKeyValuePair(src.getObject()));
+            dest.setKeyValuePairAttribute(marshalKeyValuePairAttribute(src.getObject()));
 
         return dest;
     }
 
-    private TrafficVolumeType marshalTrafficVolume(TrafficVolume src) {
-        TrafficVolumeType dest = factory.createTrafficVolumeType();
+    private BuildingDataQualityAttributeType marshalBuildingDataQualityAttribute(BuildingDataQualityAttribute src) {
+        BuildingDataQualityAttributeType dest = factory.createBuildingDataQualityAttributeType();
 
-        if (src.getWeekday12hourTrafficVolume() != null)
-            dest.setWeekday12HourTrafficVolume(BigInteger.valueOf(src.getWeekday12hourTrafficVolume()));
+        for (Code srcScale : src.getSrcScale())
+            dest.getSrcScale().add(helper.getGMLMarshaller().marshalCode(srcScale));
 
-        if (src.getWeekday24hourTrafficVolume() != null)
-            dest.setWeekday24HourTrafficVolume(BigInteger.valueOf(src.getWeekday24hourTrafficVolume()));
+        for (Code geometrySrcDesc : src.getGeometrySrcDesc())
+            dest.getGeometrySrcDesc().add(helper.getGMLMarshaller().marshalCode(geometrySrcDesc));
 
-        dest.setLargeVehicleRate(src.getLargeVehicleRate());
-        dest.setCongestionRate(src.getCongestionRate());
-        dest.setAverageTravelSpeedInCongestion(src.getAverageTravelSpeedInCongestion());
-        dest.setObservationPointName(src.getObservationPointName());
+        for (Code thematicSrcDesc : src.getThematicSrcDesc())
+            dest.getThematicSrcDesc().add(helper.getGMLMarshaller().marshalCode(thematicSrcDesc));
 
-        if (src.getUrbanPlanType() != null)
-            dest.setUrbanPlanType(helper.getGMLMarshaller().marshalCode(src.getUrbanPlanType()));
+        for (Code appearanceSrcDesc : src.getAppearanceSrcDesc())
+            dest.getAppearanceSrcDesc().add(helper.getGMLMarshaller().marshalCode(appearanceSrcDesc));
 
-        if (src.getAreaClassificationType() != null)
-            dest.setAreaClassificationType(helper.getGMLMarshaller().marshalCode(src.getAreaClassificationType()));
+        if (src.getLod1HeightType() != null)
+            dest.setLod1HeightType(helper.getGMLMarshaller().marshalCode(src.getLod1HeightType()));
 
-        if (src.getPrefecture() != null)
-            dest.setPrefecture(helper.getGMLMarshaller().marshalCode(src.getPrefecture()));
-
-        if (src.getCity() != null)
-            dest.setCity(helper.getGMLMarshaller().marshalCode(src.getCity()));
-
-        dest.setReference(src.getReference());
-        dest.setNote(src.getNote());
-
-        if (src.getSurveyYear() != null)
-            dest.setSurveyYear(marshaller.toCalendar(src.getSurveyYear()));
+        for (String lodType : src.getLodType())
+            dest.getLodType().add(lodType);
 
         return dest;
     }
 
-    private TrafficVolumePropertyType marshalTrafficVolumeProperty(TrafficVolumeProperty src) {
-        TrafficVolumePropertyType dest = factory.createTrafficVolumePropertyType();
+    private BuildingDataQualityAttributePropertyType marshalBuildingDataQualityAttributeProperty(BuildingDataQualityAttributeProperty src) {
+        BuildingDataQualityAttributePropertyType dest = factory.createBuildingDataQualityAttributePropertyType();
 
         if (src.isSetObject())
-            dest.setTrafficVolume(marshalTrafficVolume(src.getObject()));
+            dest.setBuildingDataQualityAttribute(marshalBuildingDataQualityAttribute(src.getObject()));
 
         return dest;
     }
 
-    private JAXBElement<?> createBuildingDetails(BuildingDetails src) {
-        return factory.createBuildingDetails(marshalBuildingDetails(src));
+    private JAXBElement<?> createBuildingIDAttribute(BuildingIDAttribute src) {
+        return factory.createBuildingIDAttribute(marshalBuildingIDAttribute(src));
     }
 
-    private JAXBElement<?> createBuildingDetailsPropertyElement(BuildingDetailsPropertyElement src) {
-        return factory.createBuildingDetailsProperty(marshalBuildingDetailsProperty(src.getValue()));
+    private JAXBElement<?> createBuildingIDAttributePropertyElement(BuildingIDAttributePropertyElement src) {
+        return factory.createBuildingIDAttributeProperty(marshalBuildingIDAttributeProperty(src.getValue()));
     }
 
-    private JAXBElement<?> createLargeCustomerFacilities(LargeCustomerFacilities src) {
-        return factory.createLargeCustomerFacilities(marshalLargeCustomerFacilities(src));
+    private JAXBElement<?> createBuildingDetailAttribute(BuildingDetailAttribute src) {
+        return factory.createBuildingDetailAttribute(marshalBuildingDetailAttribute(src));
     }
 
-    private JAXBElement<?> createLargeCustomerFacilitiesPropertyElement(LargeCustomerFacilitiesPropertyElement src) {
-        return factory.createLargeCustomerFacilitiesProperty(marshalLargeCustomerFacilitiesProperty(src.getValue()));
+    private JAXBElement<?> createBuildingDetailAttributePropertyElement(BuildingDetailAttributePropertyElement src) {
+        return factory.createBuildingDetailAttributeProperty(marshalBuildingDetailAttributeProperty(src.getValue()));
     }
 
-    private JAXBElement<?> createKeyValuePair(KeyValuePair src) {
-        return factory.createKeyValuePair(marshalKeyValuePair(src));
+    private JAXBElement<?> createLargeCustomerFacilityAttribute(LargeCustomerFacilityAttribute src) {
+        return factory.createLargeCustomerFacilityAttribute(marshalLargeCustomerFacilityAttribute(src));
     }
 
-    private JAXBElement<?> createExtendedAttribute(ExtendedAttributeProperty src) {
-        return factory.createExtendedAttribute(marshalKeyValuePairProperty(src.getValue()));
+    private JAXBElement<?> createLargeCustomerFacilityAttributePropertyElement(LargeCustomerFacilityAttributePropertyElement src) {
+        return factory.createLargeCustomerFacilityAttributeProperty(marshalLargeCustomerFacilityAttributeProperty(src.getValue()));
     }
 
-    private JAXBElement<?> createNominalAreaProperty(NominalAreaProperty src) {
-        return factory.createNominalArea(helper.getGMLMarshaller().marshalMeasure(src.getValue()));
+    private JAXBElement<?> createBuildingRiverFloodingRiskAttribute(BuildingRiverFloodingRiskAttribute src) {
+        return factory.createBuildingRiverFloodingRiskAttribute(marshalBuildingRiverFloodingRiskAttribute(src));
     }
 
-    private JAXBElement<?> createOwnerTypeProperty(OwnerTypeProperty src) {
-        return factory.createOwnerType(helper.getGMLMarshaller().marshalCode(src.getValue()));
+    private JAXBElement<?> createBuildingTsunamiRiskAttribute(BuildingTsunamiRiskAttribute src) {
+        return factory.createBuildingTsunamiRiskAttribute(marshalBuildingTsunamiRiskAttribute(src));
     }
 
-    private JAXBElement<?> createOwnerProperty(OwnerProperty src) {
-        return factory.createOwner(src.getValue());
+    private JAXBElement<?> createBuildingInlandFloodingRiskAttribute(BuildingInlandFloodingRiskAttribute src) {
+        return factory.createBuildingInlandFloodingRiskAttribute(marshalBuildingInlandFloodingRiskAttribute(src));
     }
 
-    private JAXBElement<?> createAreaInSquareMeterProperty(AreaInSquareMeterProperty src) {
-        return factory.createAreaInSquareMeter(helper.getGMLMarshaller().marshalMeasure(src.getValue()));
+    private JAXBElement<?> createBuildingHighTideRiskAttribute(BuildingHighTideRiskAttribute src) {
+        return factory.createBuildingHighTideRiskAttribute(marshalBuildingHighTideRiskAttribute(src));
     }
 
-    private JAXBElement<?> createAreaInHaProperty(AreaInHaProperty src) {
-        return factory.createAreaInHa(helper.getGMLMarshaller().marshalMeasure(src.getValue()));
+    private JAXBElement<?> createBuildingLandSlideRiskAttribute(BuildingLandSlideRiskAttribute src) {
+        return factory.createBuildingLandSlideRiskAttribute(marshalBuildingLandSlideRiskAttribute(src));
     }
 
-    private JAXBElement<?> createUrbanPlanTypeProperty(UrbanPlanTypeProperty src) {
-        return factory.createUrbanPlanType(helper.getGMLMarshaller().marshalCode(src.getValue()));
+    private JAXBElement<?> createBuildingDisasterRiskAttributePropertyElement(BuildingDisasterRiskAttributePropertyElement src) {
+        return factory.createBuildingDisasterRiskAttributeProperty(marshalBuildingDisasterRiskAttributeProperty(src.getValue()));
     }
 
-    private JAXBElement<?> createDistrictsAndZonesTypeProperty(DistrictsAndZonesTypeProperty src) {
-        return factory.createDistrictsAndZonesType(helper.getGMLMarshaller().marshalCode(src.getValue()));
+    private JAXBElement<?> createKeyValuePairAttribute(KeyValuePairAttribute src) {
+        return factory.createKeyValuePairAttribute(marshalKeyValuePairAttribute(src));
     }
 
-    private JAXBElement<?> createLandUsePlanTypeProperty(LandUsePlanTypeProperty src) {
-        return factory.createLandUsePlanType(helper.getGMLMarshaller().marshalCode(src.getValue()));
+    private JAXBElement<?> createKeyValuePairAttributePropertyElement(KeyValuePairAttributePropertyElement src) {
+        return factory.createKeyValuePairAttributeProperty(marshalKeyValuePairAttributeProperty(src.getValue()));
     }
 
-    private JAXBElement<?> createAreaClassificationTypeProperty(AreaClassificationTypeProperty src) {
-        return factory.createAreaClassificationType(helper.getGMLMarshaller().marshalCode(src.getValue()));
+    private JAXBElement<?> createBuildingDataQualityAttribute(BuildingDataQualityAttribute src) {
+        return factory.createBuildingDataQualityAttribute(marshalBuildingDataQualityAttribute(src));
     }
 
-    private JAXBElement<?> createPrefectureProperty(PrefectureProperty src) {
-        return factory.createPrefecture(helper.getGMLMarshaller().marshalCode(src.getValue()));
-    }
-
-    private JAXBElement<?> createCityProperty(CityProperty src) {
-        return factory.createCity(helper.getGMLMarshaller().marshalCode(src.getValue()));
-    }
-
-    private JAXBElement<?> createReferenceProperty(ReferenceProperty src) {
-        return factory.createReference(src.getValue());
-    }
-
-    private JAXBElement<?> createNoteProperty(NoteProperty src) {
-        return factory.createNote(src.getValue());
-    }
-
-    private JAXBElement<?> createSurveyYearProperty(SurveyYearProperty src) {
-        return factory.createSurveyYear(helper.getJAXBMarshaller().getDataTypeFactory()
-                .newXMLGregorianCalendarDate(src.getValue().getValue(),
-                        DatatypeConstants.FIELD_UNDEFINED,
-                        DatatypeConstants.FIELD_UNDEFINED,
-                        DatatypeConstants.FIELD_UNDEFINED));
-    }
-
-    private JAXBElement<?> createWidthProperty(WidthProperty src) {
-        return factory.createWidth(helper.getGMLMarshaller().marshalLength(src.getValue()));
-    }
-
-    private JAXBElement<?> createWidthTypeProperty(WidthTypeProperty src) {
-        return factory.createWidthType(helper.getGMLMarshaller().marshalCode(src.getValue()));
-    }
-
-    private JAXBElement<?> createTrafficVolume(TrafficVolume src) {
-        return factory.createTrafficVolume(marshalTrafficVolume(src));
-    }
-
-    private JAXBElement<?> createTrafficVolumePropertyElement(TrafficVolumePropertyElement src) {
-        return factory.createTrafficVolumeProperty(marshalTrafficVolumeProperty(src.getValue()));
+    private JAXBElement<?> createBuildingDataQualityAttributePropertyElement(BuildingDataQualityAttributePropertyElement src) {
+        return factory.createBuildingDataQualityAttributeProperty(marshalBuildingDataQualityAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createFiscalYearOfPublicationProperty(FiscalYearOfPublicationProperty src) {
-        return factory.createFiscalYearOfPublication(helper.getJAXBMarshaller().getDataTypeFactory()
-                .newXMLGregorianCalendarDate(src.getValue().getValue(),
-                        DatatypeConstants.FIELD_UNDEFINED,
-                        DatatypeConstants.FIELD_UNDEFINED,
-                        DatatypeConstants.FIELD_UNDEFINED));
+        return factory.createFiscalYearOfPublication(marshaller.toCalendar(src.getValue()));
     }
 
     private JAXBElement<?> createLanguageProperty(LanguageProperty src) {

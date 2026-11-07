@@ -53,6 +53,30 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(FacilityIdAttribute.class, this::createFacilityIdAttribute)
                     .with(RiverFacilityIdAttribute.class, this::createRiverFacilityIdAttribute)
                     .with(FacilityTypeAttribute.class, this::createFacilityTypeAttribute)
+                    .with(ParkFacilityLongevityPlanAttribute.class, this::createParkFacilityLongevityPlanAttribute)
+                    .with(NumberOfFacilities.class, this::createNumberOfFacilities)
+                    .with(RepairsBeforeParkHealthAssessment.class, this::createRepairsBeforeParkHealthAssessment)
+                    .with(ParkHealthAssessment.class, this::createParkHealthAssessment)
+                    .with(LongevityMeasures.class, this::createLongevityMeasures)
+                    .with(CountermeasuresCost.class, this::createCountermeasuresCost)
+                    .with(HarborFacility.class, this::createHarborFacility)
+                    .with(PortProtectiveFacility.class, this::createPortProtectiveFacility)
+                    .with(MooringFacility.class, this::createMooringFacility)
+                    .with(PortTransportationFacility.class, this::createPortTransportationFacility)
+                    .with(NavigationAssistanceFacility.class, this::createNavigationAssistanceFacility)
+                    .with(CargoHandlingFacility.class, this::createCargoHandlingFacility)
+                    .with(PortPassengerFacility.class, this::createPortPassengerFacility)
+                    .with(PortStorageFacility.class, this::createPortStorageFacility)
+                    .with(ShipServiceFacility.class, this::createShipServiceFacility)
+                    .with(PortWasteTreatmentFacility.class, this::createPortWasteTreatmentFacility)
+                    .with(PortEnvironmentalImprovementFacility.class, this::createPortEnvironmentalImprovementFacility)
+                    .with(PortPollutionControlFacility.class, this::createPortPollutionControlFacility)
+                    .with(PortWelfareFacility.class, this::createPortWelfareFacility)
+                    .with(PortManagementFacility.class, this::createPortManagementFacility)
+                    .with(CyberportMarinaAndPBS.class, this::createCyberportMarinaAndPBS)
+                    .with(FishingPortFacility.class, this::createFishingPortFacility)
+                    .with(FishingPortCapacity.class, this::createFishingPortCapacity)
+                    .with(MaintenanceHistoryAttribute.class, this::createMaintenanceHistoryAttribute)
                     .with(BridgeStructureAttribute.class, this::createBridgeStructureAttribute)
                     .with(BridgeFunctionalAttribute.class, this::createBridgeFunctionalAttribute)
                     .with(ConstructionRiskAssessmentAttribute.class, this::createConstructionRiskAssessmentAttribute)
@@ -95,6 +119,7 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(BridBaseAttributePropertyElement.class, this::createBridBaseAttributePropertyElement)
                     .with(BridFacilityIdAttributePropertyElement.class, this::createBridFacilityIdAttributePropertyElement)
                     .with(BridFacilityTypeAttributePropertyElement.class, this::createBridFacilityTypeAttributePropertyElement)
+                    .with(BridFacilityAttributePropertyElement.class, this::createBridFacilityAttributePropertyElement)
                     .with(BridStructureAttributePropertyElement.class, this::createBridStructureAttributePropertyElement)
                     .with(BridFunctionalAttributePropertyElement.class, this::createBridFunctionalAttributePropertyElement)
                     .with(BridRiskAssessmentAttributePropertyElement.class, this::createBridRiskAssessmentAttributePropertyElement)
@@ -109,22 +134,26 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(BldgDataQualityAttributePropertyElement.class, this::createBldgDataQualityAttributePropertyElement)
                     .with(BldgFacilityIdAttributePropertyElement.class, this::createBldgFacilityIdAttributePropertyElement)
                     .with(BldgFacilityTypeAttributePropertyElement.class, this::createBldgFacilityTypeAttributePropertyElement)
+                    .with(BldgFacilityAttributePropertyElement.class, this::createBldgFacilityAttributePropertyElement)
                     .with(BldgRealEstateIDAttributePropertyElement.class, this::createBldgRealEstateIDAttributePropertyElement)
                     .with(BldgUsecaseAttributePropertyElement.class, this::createBldgUsecaseAttributePropertyElement)
                     .with(FrnFacilityIdAttributePropertyElement.class, this::createFrnFacilityIdAttributePropertyElement)
                     .with(FrnFacilityTypeAttributePropertyElement.class, this::createFrnFacilityTypeAttributePropertyElement)
+                    .with(FrnFacilityAttributePropertyElement.class, this::createFrnFacilityAttributePropertyElement)
                     .with(CityFurnitureDetailAttributePropertyElement.class, this::createCityFurnitureDetailAttributePropertyElement)
                     .with(FrnDataQualityAttributePropertyElement.class, this::createFrnDataQualityAttributePropertyElement)
                     .with(FrnKeyValuePairAttributePropertyElement.class, this::createFrnKeyValuePairAttributePropertyElement)
                     .with(LandUseDetailAttributePropertyElement.class, this::createLandUseDetailAttributePropertyElement)
                     .with(LuseFacilityIdAttributePropertyElement.class, this::createLuseFacilityIdAttributePropertyElement)
                     .with(LuseFacilityTypeAttributePropertyElement.class, this::createLuseFacilityTypeAttributePropertyElement)
+                    .with(LuseFacilityAttributePropertyElement.class, this::createLuseFacilityAttributePropertyElement)
                     .with(LuseDataQualityAttributePropertyElement.class, this::createLuseDataQualityAttributePropertyElement)
                     .with(LuseKeyValuePairAttributePropertyElement.class, this::createLuseKeyValuePairAttributePropertyElement)
                     .with(DemDataQualityAttributePropertyElement.class, this::createDemDataQualityAttributePropertyElement)
                     .with(DemKeyValuePairAttributePropertyElement.class, this::createDemKeyValuePairAttributePropertyElement)
                     .with(TranFacilityIdAttributePropertyElement.class, this::createTranFacilityIdAttributePropertyElement)
                     .with(TranFacilityTypeAttributePropertyElement.class, this::createTranFacilityTypeAttributePropertyElement)
+                    .with(TranFacilityAttributePropertyElement.class, this::createTranFacilityAttributePropertyElement)
                     .with(TranUsecaseAttributePropertyElement.class, this::createTranUsecaseAttributePropertyElement)
                     .with(TranKeyValuePairAttributePropertyElement.class, this::createTranKeyValuePairAttributePropertyElement)
                     .with(TranDataQualityAttributePropertyElement.class, this::createTranDataQualityAttributePropertyElement)
@@ -144,14 +173,17 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(TunDataQualityAttributePropertyElement.class, this::createTunDataQualityAttributePropertyElement)
                     .with(TunFacilityIdAttributePropertyElement.class, this::createTunFacilityIdAttributePropertyElement)
                     .with(TunFacilityTypeAttributePropertyElement.class, this::createTunFacilityTypeAttributePropertyElement)
+                    .with(TunFacilityAttributePropertyElement.class, this::createTunFacilityAttributePropertyElement)
                     .with(TunKeyValuePairAttributePropertyElement.class, this::createTunKeyValuePairAttributePropertyElement)
                     .with(VegFacilityIdAttributePropertyElement.class, this::createVegFacilityIdAttributePropertyElement)
                     .with(VegFacilityTypeAttributePropertyElement.class, this::createVegFacilityTypeAttributePropertyElement)
+                    .with(VegFacilityAttributePropertyElement.class, this::createVegFacilityAttributePropertyElement)
                     .with(VegDataQualityAttributePropertyElement.class, this::createVegDataQualityAttributePropertyElement)
                     .with(VegKeyValuePairAttributePropertyElement.class, this::createVegKeyValuePairAttributePropertyElement)
                     .with(FloodingRiskAttributePropertyElement.class, this::createFloodingRiskAttributePropertyElement)
                     .with(WtrFacilityIdAttributePropertyElement.class, this::createWtrFacilityIdAttributePropertyElement)
                     .with(WtrFacilityTypeAttributePropertyElement.class, this::createWtrFacilityTypeAttributePropertyElement)
+                    .with(WtrFacilityAttributePropertyElement.class, this::createWtrFacilityAttributePropertyElement)
                     .with(WaterBodyDetailAttributePropertyElement.class, this::createWaterBodyDetailAttributePropertyElement)
                     .with(WtrDataQualityAttributePropertyElement.class, this::createWtrDataQualityAttributePropertyElement)
                     .with(WtrKeyValuePairAttributePropertyElement.class, this::createWtrKeyValuePairAttributePropertyElement)
@@ -172,6 +204,36 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(FacilityIdAttributeProperty.class, this::marshalFacilityIdAttributeProperty)
                     .with(FacilityTypeAttribute.class, this::marshalFacilityTypeAttribute)
                     .with(FacilityTypeAttributeProperty.class, this::marshalFacilityTypeAttributeProperty)
+                    .with(ParkFacilityLongevityPlanAttribute.class, this::marshalParkFacilityLongevityPlanAttribute)
+                    .with(NumberOfFacilities.class, this::marshalNumberOfFacilities)
+                    .with(NumberOfFacilitiesProperty.class, this::marshalNumberOfFacilitiesProperty)
+                    .with(RepairsBeforeParkHealthAssessment.class, this::marshalRepairsBeforeParkHealthAssessment)
+                    .with(RepairsBeforeParkHealthAssessmentProperty.class, this::marshalRepairsBeforeParkHealthAssessmentProperty)
+                    .with(ParkHealthAssessment.class, this::marshalParkHealthAssessment)
+                    .with(ParkHealthAssessmentProperty.class, this::marshalParkHealthAssessmentProperty)
+                    .with(LongevityMeasures.class, this::marshalLongevityMeasures)
+                    .with(LongevityMeasuresProperty.class, this::marshalLongevityMeasuresProperty)
+                    .with(CountermeasuresCost.class, this::marshalCountermeasuresCost)
+                    .with(CountermeasuresCostProperty.class, this::marshalCountermeasuresCostProperty)
+                    .with(HarborFacility.class, this::marshalHarborFacility)
+                    .with(PortProtectiveFacility.class, this::marshalPortProtectiveFacility)
+                    .with(MooringFacility.class, this::marshalMooringFacility)
+                    .with(PortTransportationFacility.class, this::marshalPortTransportationFacility)
+                    .with(NavigationAssistanceFacility.class, this::marshalNavigationAssistanceFacility)
+                    .with(CargoHandlingFacility.class, this::marshalCargoHandlingFacility)
+                    .with(PortPassengerFacility.class, this::marshalPortPassengerFacility)
+                    .with(PortStorageFacility.class, this::marshalPortStorageFacility)
+                    .with(ShipServiceFacility.class, this::marshalShipServiceFacility)
+                    .with(PortWasteTreatmentFacility.class, this::marshalPortWasteTreatmentFacility)
+                    .with(PortEnvironmentalImprovementFacility.class, this::marshalPortEnvironmentalImprovementFacility)
+                    .with(PortPollutionControlFacility.class, this::marshalPortPollutionControlFacility)
+                    .with(PortWelfareFacility.class, this::marshalPortWelfareFacility)
+                    .with(PortManagementFacility.class, this::marshalPortManagementFacility)
+                    .with(CyberportMarinaAndPBS.class, this::marshalCyberportMarinaAndPBS)
+                    .with(FishingPortFacility.class, this::marshalFishingPortFacility)
+                    .with(FishingPortCapacity.class, this::marshalFishingPortCapacity)
+                    .with(MaintenanceHistoryAttribute.class, this::marshalMaintenanceHistoryAttribute)
+                    .with(FacilityAttributeProperty.class, this::marshalFacilityAttributeProperty)
                     .with(BridgeStructureAttribute.class, this::marshalBridgeStructureAttribute)
                     .with(BridgeStructureAttributeProperty.class, this::marshalBridgeStructureAttributeProperty)
                     .with(BridgeFunctionalAttribute.class, this::marshalBridgeFunctionalAttribute)
@@ -420,6 +482,1032 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
         if (src.isSetObject())
             dest.setFacilityTypeAttribute(marshalFacilityTypeAttribute(src.getObject()));
+
+        return dest;
+    }
+
+    private void marshalFacilityAttribute(FacilityAttribute src, FacilityAttributeType dest) {
+        dest.setFacilityId(src.getFacilityId());
+    }
+
+    private ParkFacilityLongevityPlanAttributeType marshalParkFacilityLongevityPlanAttribute(ParkFacilityLongevityPlanAttribute src) {
+        ParkFacilityLongevityPlanAttributeType dest = factory.createParkFacilityLongevityPlanAttributeType();
+        marshalFacilityAttribute(src, dest);
+
+        if (src.getParkCode() != null)
+            dest.setParkCode(helper.getGMLMarshaller().marshalCode(src.getParkCode()));
+
+        if (src.getParkName() != null)
+            dest.setParkName(helper.getGMLMarshaller().marshalCode(src.getParkName()));
+
+        if (src.getParkType() != null)
+            dest.setParkType(helper.getGMLMarshaller().marshalCode(src.getParkType()));
+
+        if (src.getFacilityName() != null)
+            dest.setFacilityName(helper.getGMLMarshaller().marshalCode(src.getFacilityName()));
+
+        dest.setFacilityNameOptional(src.getFacilityNameOptional());
+        dest.setSpecificFacilityName(src.getSpecificFacilityName());
+
+        if (src.getNumberOfFacilities() != null)
+            dest.setNumberOfFacilities(marshalNumberOfFacilitiesProperty(src.getNumberOfFacilities()));
+
+        dest.setSize(src.getSize());
+
+        if (src.getMainMaterial() != null)
+            dest.setMainMaterial(helper.getGMLMarshaller().marshalCode(src.getMainMaterial()));
+
+        dest.setMainMaterialOptional(src.getMainMaterialOptional());
+
+        if (src.getInstallationYear() != null)
+            dest.setInstallationYear(marshaller.toCalendar(src.getInstallationYear()));
+
+        if (src.getDisposalLimitPeriod() != null)
+            dest.setDisposalLimitPeriod(BigInteger.valueOf(src.getDisposalLimitPeriod()));
+
+        if (src.getExpectedUsagePeriod() != null)
+            dest.setExpectedUsagePeriod(BigInteger.valueOf(src.getExpectedUsagePeriod()));
+
+        if (src.getRepairsBeforeParkHealthAssessment() != null)
+            dest.setRepairsBeforeParkHealthAssessment(marshalRepairsBeforeParkHealthAssessmentProperty(src.getRepairsBeforeParkHealthAssessment()));
+
+        for (ParkHealthAssessmentProperty parkHealthAssessment : src.getParkHealthAssessment())
+            dest.getParkHealthAssessment().add(marshalParkHealthAssessmentProperty(parkHealthAssessment));
+
+        if (src.getManagementType() != null)
+            dest.setManagementType(helper.getGMLMarshaller().marshalCode(src.getManagementType()));
+
+        if (src.getExpectedRenewalYearWithMeasures() != null)
+            dest.setExpectedRenewalYearWithMeasures(marshaller.toCalendar(src.getExpectedRenewalYearWithMeasures()));
+
+        for (LongevityMeasuresProperty longevityMeasures : src.getLongevityMeasures())
+            dest.getLongevityMeasures().add(marshalLongevityMeasuresProperty(longevityMeasures));
+
+        dest.setNoteForLongevity(src.getNoteForLongevity());
+
+        return dest;
+    }
+
+    private NumberOfFacilitiesType marshalNumberOfFacilities(NumberOfFacilities src) {
+        NumberOfFacilitiesType dest = factory.createNumberOfFacilitiesType();
+
+        if (src.getQuantity() != null)
+            dest.setQuantity(BigInteger.valueOf(src.getQuantity()));
+
+        if (src.getQuantityUnit() != null)
+            dest.setQuantityUnit(helper.getGMLMarshaller().marshalCode(src.getQuantityUnit()));
+
+        return dest;
+    }
+
+    private NumberOfFacilitiesPropertyType marshalNumberOfFacilitiesProperty(NumberOfFacilitiesProperty src) {
+        NumberOfFacilitiesPropertyType dest = factory.createNumberOfFacilitiesPropertyType();
+
+        if (src.isSetObject())
+            dest.setNumberOfFacilities(marshalNumberOfFacilities(src.getObject()));
+
+        return dest;
+    }
+
+    private RepairsBeforeParkHealthAssessmentType marshalRepairsBeforeParkHealthAssessment(RepairsBeforeParkHealthAssessment src) {
+        RepairsBeforeParkHealthAssessmentType dest = factory.createRepairsBeforeParkHealthAssessmentType();
+
+        if (src.getRepair() != null)
+            dest.setRepair(helper.getGMLMarshaller().marshalCode(src.getRepair()));
+
+        if (src.getRepairFiscalYear() != null)
+            dest.setRepairFiscalYear(marshaller.toCalendar(src.getRepairFiscalYear()));
+
+        return dest;
+    }
+
+    private RepairsBeforeParkHealthAssessmentPropertyType marshalRepairsBeforeParkHealthAssessmentProperty(RepairsBeforeParkHealthAssessmentProperty src) {
+        RepairsBeforeParkHealthAssessmentPropertyType dest = factory.createRepairsBeforeParkHealthAssessmentPropertyType();
+
+        if (src.isSetObject())
+            dest.setRepairsBeforeParkHealthAssessment(marshalRepairsBeforeParkHealthAssessment(src.getObject()));
+
+        return dest;
+    }
+
+    private ParkHealthAssessmentType marshalParkHealthAssessment(ParkHealthAssessment src) {
+        ParkHealthAssessmentType dest = factory.createParkHealthAssessmentType();
+
+        if (src.getAssessmentFiscalYear() != null)
+            dest.setAssessmentFiscalYear(marshaller.toCalendar(src.getAssessmentFiscalYear()));
+
+        dest.setDeteriorationStatus(src.getDeteriorationStatus());
+
+        if (src.getCondition() != null)
+            dest.setCondition(helper.getGMLMarshaller().marshalCode(src.getCondition()));
+
+        if (src.getUrgency() != null)
+            dest.setUrgency(helper.getGMLMarshaller().marshalCode(src.getUrgency()));
+
+        return dest;
+    }
+
+    private ParkHealthAssessmentPropertyType marshalParkHealthAssessmentProperty(ParkHealthAssessmentProperty src) {
+        ParkHealthAssessmentPropertyType dest = factory.createParkHealthAssessmentPropertyType();
+
+        if (src.isSetObject())
+            dest.setParkHealthAssessment(marshalParkHealthAssessment(src.getObject()));
+
+        return dest;
+    }
+
+    private LongevityMeasuresType marshalLongevityMeasures(LongevityMeasures src) {
+        LongevityMeasuresType dest = factory.createLongevityMeasuresType();
+
+        if (src.getFiscalYearForCountermeasures() != null)
+            dest.setFiscalYearForCountermeasures(marshaller.toCalendar(src.getFiscalYearForCountermeasures()));
+
+        if (src.getCountermeasuresCost() != null)
+            dest.setCountermeasuresCost(marshalCountermeasuresCostProperty(src.getCountermeasuresCost()));
+
+        dest.setDescription(src.getDescription());
+
+        return dest;
+    }
+
+    private LongevityMeasuresPropertyType marshalLongevityMeasuresProperty(LongevityMeasuresProperty src) {
+        LongevityMeasuresPropertyType dest = factory.createLongevityMeasuresPropertyType();
+
+        if (src.isSetObject())
+            dest.setLongevityMeasures(marshalLongevityMeasures(src.getObject()));
+
+        return dest;
+    }
+
+    private CountermeasuresCostType marshalCountermeasuresCost(CountermeasuresCost src) {
+        CountermeasuresCostType dest = factory.createCountermeasuresCostType();
+
+        if (src.getCost() != null)
+            dest.setCost(BigInteger.valueOf(src.getCost()));
+
+        dest.setCostUnit(src.getCostUnit());
+
+        return dest;
+    }
+
+    private CountermeasuresCostPropertyType marshalCountermeasuresCostProperty(CountermeasuresCostProperty src) {
+        CountermeasuresCostPropertyType dest = factory.createCountermeasuresCostPropertyType();
+
+        if (src.isSetObject())
+            dest.setCountermeasuresCost(marshalCountermeasuresCost(src.getObject()));
+
+        return dest;
+    }
+
+    private void marshalPortAttribute(PortAttribute src, PortAttributeType dest) {
+        marshalFacilityAttribute(src, dest);
+
+        if (src.getPortFacilityDetailsType() != null)
+            dest.setPortFacilityDetailsType(helper.getGMLMarshaller().marshalCode(src.getPortFacilityDetailsType()));
+
+        dest.setPortName(src.getPortName());
+
+        if (src.getPortStatus() != null)
+            dest.setPortStatus(helper.getGMLMarshaller().marshalCode(src.getPortStatus()));
+
+        dest.setDistrict(src.getDistrict());
+
+        if (src.getGrantType() != null)
+            dest.setGrantType(helper.getGMLMarshaller().marshalCode(src.getGrantType()));
+
+        dest.setIsDesignated(src.getIsDesignated());
+
+        if (src.getDegradationLevel() != null)
+            dest.setDegradationLevel(BigInteger.valueOf(src.getDegradationLevel()));
+    }
+
+    private HarborFacilityType marshalHarborFacility(HarborFacility src) {
+        HarborFacilityType dest = factory.createHarborFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getGeologicalType() != null)
+            dest.setGeologicalType(helper.getGMLMarshaller().marshalCode(src.getGeologicalType()));
+
+        dest.setObstructingStructures(src.getObstructingStructures());
+
+        if (src.getStructuralLimitations() != null)
+            dest.setStructuralLimitations(helper.getGMLMarshaller().marshalLength(src.getStructuralLimitations()));
+
+        if (src.getLength() != null)
+            dest.setLength(helper.getGMLMarshaller().marshalLength(src.getLength()));
+
+        if (src.getMinimumWidth() != null)
+            dest.setMinimumWidth(helper.getGMLMarshaller().marshalLength(src.getMinimumWidth()));
+
+        if (src.getMaximumWidth() != null)
+            dest.setMaximumWidth(helper.getGMLMarshaller().marshalLength(src.getMaximumWidth()));
+
+        if (src.getPlannedDepth() != null)
+            dest.setPlannedDepth(helper.getGMLMarshaller().marshalLength(src.getPlannedDepth()));
+
+        if (src.getCurrentDepth() != null)
+            dest.setCurrentDepth(helper.getGMLMarshaller().marshalLength(src.getCurrentDepth()));
+
+        dest.setIsDredged(src.getIsDredged());
+
+        if (src.getAreaType() != null)
+            dest.setAreaType(helper.getGMLMarshaller().marshalCode(src.getAreaType()));
+
+        if (src.getInnerArea() != null)
+            dest.setInnerArea(helper.getGMLMarshaller().marshalMeasure(src.getInnerArea()));
+
+        if (src.getOuterArea() != null)
+            dest.setOuterArea(helper.getGMLMarshaller().marshalMeasure(src.getOuterArea()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        if (src.getSubsidy() != null)
+            dest.setSubsidy(BigInteger.valueOf(src.getSubsidy()));
+
+        for (String note : src.getNote())
+            dest.getNote().add(note);
+
+        return dest;
+    }
+
+    private PortProtectiveFacilityType marshalPortProtectiveFacility(PortProtectiveFacility src) {
+        PortProtectiveFacilityType dest = factory.createPortProtectiveFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getStructureType() != null)
+            dest.setStructureType(helper.getGMLMarshaller().marshalCode(src.getStructureType()));
+
+        if (src.getMainMaterial() != null)
+            dest.setMainMaterial(helper.getGMLMarshaller().marshalCode(src.getMainMaterial()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        if (src.getSubsidy() != null)
+            dest.setSubsidy(BigInteger.valueOf(src.getSubsidy()));
+
+        for (String note : src.getNote())
+            dest.getNote().add(note);
+
+        return dest;
+    }
+
+    private MooringFacilityType marshalMooringFacility(MooringFacility src) {
+        MooringFacilityType dest = factory.createMooringFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getMainPartLength() != null)
+            dest.setMainPartLength(helper.getGMLMarshaller().marshalLength(src.getMainPartLength()));
+
+        if (src.getTotalLength() != null)
+            dest.setTotalLength(helper.getGMLMarshaller().marshalLength(src.getTotalLength()));
+
+        if (src.getFacilityWidth() != null)
+            dest.setFacilityWidth(helper.getGMLMarshaller().marshalLength(src.getFacilityWidth()));
+
+        if (src.getApronWidth() != null)
+            dest.setApronWidth(helper.getGMLMarshaller().marshalLength(src.getApronWidth()));
+
+        if (src.getPlannedDepth() != null)
+            dest.setPlannedDepth(helper.getGMLMarshaller().marshalLength(src.getPlannedDepth()));
+
+        if (src.getCurrentDepth() != null)
+            dest.setCurrentDepth(helper.getGMLMarshaller().marshalLength(src.getCurrentDepth()));
+
+        if (src.getArea() != null)
+            dest.setArea(helper.getGMLMarshaller().marshalMeasure(src.getArea()));
+
+        if (src.getCeilingHeight() != null)
+            dest.setCeilingHeight(helper.getGMLMarshaller().marshalLength(src.getCeilingHeight()));
+
+        if (src.getGravityResistant() != null)
+            dest.setGravityResistant(helper.getGMLMarshaller().marshalMeasure(src.getGravityResistant()));
+
+        if (src.getForm() != null)
+            dest.setForm(helper.getGMLMarshaller().marshalCode(src.getForm()));
+
+        if (src.getMainVessels() != null)
+            dest.setMainVessels(helper.getGMLMarshaller().marshalCode(src.getMainVessels()));
+
+        if (src.getMooringPostWeight() != null)
+            dest.setMooringPostWeight(helper.getGMLMarshaller().marshalMeasure(src.getMooringPostWeight()));
+
+        if (src.getNumberOfMooringPosts() != null)
+            dest.setNumberOfMooringPosts(BigInteger.valueOf(src.getNumberOfMooringPosts()));
+
+        if (src.getResistantMaterial() != null)
+            dest.setResistantMaterial(BigInteger.valueOf(src.getResistantMaterial()));
+
+        if (src.getLighting() != null)
+            dest.setLighting(BigInteger.valueOf(src.getLighting()));
+
+        if (src.getStairs() != null)
+            dest.setStairs(BigInteger.valueOf(src.getStairs()));
+
+        dest.setLifesavingAppliances(src.getLifesavingAppliances());
+
+        if (src.getNumberOfLifesavingAppliances() != null)
+            dest.setNumberOfLifesavingAppliances(BigInteger.valueOf(src.getNumberOfLifesavingAppliances()));
+
+        if (src.getBumper() != null)
+            dest.setBumper(helper.getGMLMarshaller().marshalLength(src.getBumper()));
+
+        if (src.getNumberOfVehicleBoardings() != null)
+            dest.setNumberOfVehicleBoardings(BigInteger.valueOf(src.getNumberOfVehicleBoardings()));
+
+        if (src.getVehicleBoardingWidth() != null)
+            dest.setVehicleBoardingWidth(helper.getGMLMarshaller().marshalLength(src.getVehicleBoardingWidth()));
+
+        dest.setShipType(src.getShipType());
+
+        if (src.getNumberOfSeats() != null)
+            dest.setNumberOfSeats(BigInteger.valueOf(src.getNumberOfSeats()));
+
+        if (src.getMainCargo() != null)
+            dest.setMainCargo(helper.getGMLMarshaller().marshalCode(src.getMainCargo()));
+
+        if (src.getStructureType() != null)
+            dest.setStructureType(helper.getGMLMarshaller().marshalCode(src.getStructureType()));
+
+        if (src.getMainMaterial() != null)
+            dest.setMainMaterial(helper.getGMLMarshaller().marshalCode(src.getMainMaterial()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        if (src.getSubsidy() != null)
+            dest.setSubsidy(BigInteger.valueOf(src.getSubsidy()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortTransportationFacilityType marshalPortTransportationFacility(PortTransportationFacility src) {
+        PortTransportationFacilityType dest = factory.createPortTransportationFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getStructureType() != null)
+            dest.setStructureType(helper.getGMLMarshaller().marshalCode(src.getStructureType()));
+
+        dest.setStartingPoint(src.getStartingPoint());
+
+        if (src.getLength() != null)
+            dest.setLength(helper.getGMLMarshaller().marshalLength(src.getLength()));
+
+        if (src.getArea() != null)
+            dest.setArea(helper.getGMLMarshaller().marshalMeasure(src.getArea()));
+
+        if (src.getBeddingWidth() != null)
+            dest.setBeddingWidth(helper.getGMLMarshaller().marshalLength(src.getBeddingWidth()));
+
+        if (src.getNumberOfLanes() != null)
+            dest.setNumberOfLanes(BigInteger.valueOf(src.getNumberOfLanes()));
+
+        if (src.getParkingLotCapacityOfBus() != null)
+            dest.setParkingLotCapacityOfBus(BigInteger.valueOf(src.getParkingLotCapacityOfBus()));
+
+        if (src.getParkingLotCapacityOfCars() != null)
+            dest.setParkingLotCapacityOfCars(BigInteger.valueOf(src.getParkingLotCapacityOfCars()));
+
+        if (src.getRouteType() != null)
+            dest.setRouteType(helper.getGMLMarshaller().marshalCode(src.getRouteType()));
+
+        if (src.getHeightToDigit() != null)
+            dest.setHeightToDigit(helper.getGMLMarshaller().marshalLength(src.getHeightToDigit()));
+
+        if (src.getHeightLimit() != null)
+            dest.setHeightLimit(helper.getGMLMarshaller().marshalLength(src.getHeightLimit()));
+
+        if (src.getMinimumWidth() != null)
+            dest.setMinimumWidth(helper.getGMLMarshaller().marshalLength(src.getMinimumWidth()));
+
+        if (src.getMinimumDepth() != null)
+            dest.setMinimumDepth(helper.getGMLMarshaller().marshalLength(src.getMinimumDepth()));
+
+        if (src.getNumberOfAircraftParkingSpaces() != null)
+            dest.setNumberOfAircraftParkingSpaces(BigInteger.valueOf(src.getNumberOfAircraftParkingSpaces()));
+
+        if (src.getPavementType() != null)
+            dest.setPavementType(helper.getGMLMarshaller().marshalCode(src.getPavementType()));
+
+        if (src.getMainCargo() != null)
+            dest.setMainCargo(helper.getGMLMarshaller().marshalCode(src.getMainCargo()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        if (src.getSubsidy() != null)
+            dest.setSubsidy(BigInteger.valueOf(src.getSubsidy()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private NavigationAssistanceFacilityType marshalNavigationAssistanceFacility(NavigationAssistanceFacility src) {
+        NavigationAssistanceFacilityType dest = factory.createNavigationAssistanceFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        dest.setSubsidy(src.getSubsidy());
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private CargoHandlingFacilityType marshalCargoHandlingFacility(CargoHandlingFacility src) {
+        CargoHandlingFacilityType dest = factory.createCargoHandlingFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getMainCargo() != null)
+            dest.setMainCargo(helper.getGMLMarshaller().marshalCode(src.getMainCargo()));
+
+        dest.setMooringFacility(src.getMooringFacility());
+
+        if (src.getLiftableLoad() != null)
+            dest.setLiftableLoad(helper.getGMLMarshaller().marshalMeasure(src.getLiftableLoad()));
+
+        if (src.getAbility() != null)
+            dest.setAbility(BigInteger.valueOf(src.getAbility()));
+
+        if (src.getPackingName() != null)
+            dest.setPackingName(helper.getGMLMarshaller().marshalCode(src.getPackingName()));
+
+        if (src.getAcquisitionYear() != null)
+            dest.setAcquisitionYear(marshaller.toCalendar(src.getAcquisitionYear()));
+
+        if (src.getInnerTotalFloorArea() != null)
+            dest.setInnerTotalFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getInnerTotalFloorArea()));
+
+        if (src.getInnerOfSiteArea() != null)
+            dest.setInnerOfSiteArea(helper.getGMLMarshaller().marshalMeasure(src.getInnerOfSiteArea()));
+
+        if (src.getOuterOfTotalFloorArea() != null)
+            dest.setOuterOfTotalFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getOuterOfTotalFloorArea()));
+
+        if (src.getOuterSiteArea() != null)
+            dest.setOuterSiteArea(helper.getGMLMarshaller().marshalMeasure(src.getOuterSiteArea()));
+
+        if (src.getMainMaterial() != null)
+            dest.setMainMaterial(helper.getGMLMarshaller().marshalCode(src.getMainMaterial()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortPassengerFacilityType marshalPortPassengerFacility(PortPassengerFacility src) {
+        PortPassengerFacilityType dest = factory.createPortPassengerFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getLength() != null)
+            dest.setLength(helper.getGMLMarshaller().marshalLength(src.getLength()));
+
+        if (src.getWidth() != null)
+            dest.setWidth(helper.getGMLMarshaller().marshalLength(src.getWidth()));
+
+        if (src.getMainMaterial() != null)
+            dest.setMainMaterial(helper.getGMLMarshaller().marshalCode(src.getMainMaterial()));
+
+        if (src.getTotalFloorArea() != null)
+            dest.setTotalFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getTotalFloorArea()));
+
+        if (src.getAcquisitionYear() != null)
+            dest.setAcquisitionYear(marshaller.toCalendar(src.getAcquisitionYear()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortStorageFacilityType marshalPortStorageFacility(PortStorageFacility src) {
+        PortStorageFacilityType dest = factory.createPortStorageFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getInnerTotalFloorArea() != null)
+            dest.setInnerTotalFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getInnerTotalFloorArea()));
+
+        if (src.getInnerOfSiteArea() != null)
+            dest.setInnerOfSiteArea(helper.getGMLMarshaller().marshalMeasure(src.getInnerOfSiteArea()));
+
+        if (src.getOuterOfTotalFloorArea() != null)
+            dest.setOuterOfTotalFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getOuterOfTotalFloorArea()));
+
+        if (src.getOuterSiteArea() != null)
+            dest.setOuterSiteArea(helper.getGMLMarshaller().marshalMeasure(src.getOuterSiteArea()));
+
+        if (src.getMainCargo() != null)
+            dest.setMainCargo(helper.getGMLMarshaller().marshalCode(src.getMainCargo()));
+
+        if (src.getStorageCapacity() != null)
+            dest.setStorageCapacity(BigInteger.valueOf(src.getStorageCapacity()));
+
+        if (src.getStorageCapacityUnit() != null)
+            dest.setStorageCapacityUnit(helper.getGMLMarshaller().marshalCode(src.getStorageCapacityUnit()));
+
+        if (src.getMainMaterial() != null)
+            dest.setMainMaterial(helper.getGMLMarshaller().marshalCode(src.getMainMaterial()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private ShipServiceFacilityType marshalShipServiceFacility(ShipServiceFacility src) {
+        ShipServiceFacilityType dest = factory.createShipServiceFacilityType();
+        marshalPortAttribute(src, dest);
+
+        dest.setShipType(src.getShipType());
+
+        if (src.getSupplyAbility() != null)
+            dest.setSupplyAbility(BigInteger.valueOf(src.getSupplyAbility()));
+
+        if (src.getSupplyAbilityUnit() != null)
+            dest.setSupplyAbilityUnit(helper.getGMLMarshaller().marshalCode(src.getSupplyAbilityUnit()));
+
+        dest.setMooringPlace(src.getMooringPlace());
+
+        if (src.getLength() != null)
+            dest.setLength(helper.getGMLMarshaller().marshalLength(src.getLength()));
+
+        if (src.getWidth() != null)
+            dest.setWidth(helper.getGMLMarshaller().marshalLength(src.getWidth()));
+
+        if (src.getArea() != null)
+            dest.setArea(helper.getGMLMarshaller().marshalMeasure(src.getArea()));
+
+        if (src.getAcquisitionYear() != null)
+            dest.setAcquisitionYear(marshaller.toCalendar(src.getAcquisitionYear()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortWasteTreatmentFacilityType marshalPortWasteTreatmentFacility(PortWasteTreatmentFacility src) {
+        PortWasteTreatmentFacilityType dest = factory.createPortWasteTreatmentFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getStructureType() != null)
+            dest.setStructureType(helper.getGMLMarshaller().marshalCode(src.getStructureType()));
+
+        if (src.getPerimeter() != null)
+            dest.setPerimeter(helper.getGMLMarshaller().marshalLength(src.getPerimeter()));
+
+        if (src.getMainPartLength() != null)
+            dest.setMainPartLength(helper.getGMLMarshaller().marshalLength(src.getMainPartLength()));
+
+        if (src.getInnerShoreLength() != null)
+            dest.setInnerShoreLength(helper.getGMLMarshaller().marshalLength(src.getInnerShoreLength()));
+
+        if (src.getCeilingHeight() != null)
+            dest.setCeilingHeight(helper.getGMLMarshaller().marshalLength(src.getCeilingHeight()));
+
+        if (src.getWaveDissipatorLength() != null)
+            dest.setWaveDissipatorLength(helper.getGMLMarshaller().marshalLength(src.getWaveDissipatorLength()));
+
+        if (src.getMainMaterial() != null)
+            dest.setMainMaterial(helper.getGMLMarshaller().marshalCode(src.getMainMaterial()));
+
+        if (src.getWasteType() != null)
+            dest.setWasteType(helper.getGMLMarshaller().marshalCode(src.getWasteType()));
+
+        if (src.getPlannedDisposalArea() != null)
+            dest.setPlannedDisposalArea(helper.getGMLMarshaller().marshalMeasure(src.getPlannedDisposalArea()));
+
+        if (src.getPlannedDisposalAmount() != null)
+            dest.setPlannedDisposalAmount(BigInteger.valueOf(src.getPlannedDisposalAmount()));
+
+        if (src.getReceivingCapacity() != null)
+            dest.setReceivingCapacity(BigInteger.valueOf(src.getReceivingCapacity()));
+
+        dest.setShipType(src.getShipType());
+
+        if (src.getUnitOfReceivingCapacity() != null)
+            dest.setUnitOfReceivingCapacity(helper.getGMLMarshaller().marshalCode(src.getUnitOfReceivingCapacity()));
+
+        if (src.getAcquisitionYear() != null)
+            dest.setAcquisitionYear(marshaller.toCalendar(src.getAcquisitionYear()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        if (src.getSubsidy() != null)
+            dest.setSubsidy(BigInteger.valueOf(src.getSubsidy()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortEnvironmentalImprovementFacilityType marshalPortEnvironmentalImprovementFacility(PortEnvironmentalImprovementFacility src) {
+        PortEnvironmentalImprovementFacilityType dest = factory.createPortEnvironmentalImprovementFacilityType();
+        marshalPortAttribute(src, dest);
+
+        dest.setUsage(src.getUsage());
+
+        if (src.getLength() != null)
+            dest.setLength(helper.getGMLMarshaller().marshalLength(src.getLength()));
+
+        if (src.getArea() != null)
+            dest.setArea(helper.getGMLMarshaller().marshalMeasure(src.getArea()));
+
+        if (src.getTotalFoorArea() != null)
+            dest.setTotalFoorArea(helper.getGMLMarshaller().marshalMeasure(src.getTotalFoorArea()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        if (src.getSubsidy() != null)
+            dest.setSubsidy(BigInteger.valueOf(src.getSubsidy()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortPollutionControlFacilityType marshalPortPollutionControlFacility(PortPollutionControlFacility src) {
+        PortPollutionControlFacilityType dest = factory.createPortPollutionControlFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getLength() != null)
+            dest.setLength(helper.getGMLMarshaller().marshalLength(src.getLength()));
+
+        if (src.getWidth() != null)
+            dest.setWidth(helper.getGMLMarshaller().marshalLength(src.getWidth()));
+
+        if (src.getCrossSectionalArea() != null)
+            dest.setCrossSectionalArea(helper.getGMLMarshaller().marshalMeasure(src.getCrossSectionalArea()));
+
+        if (src.getArea() != null)
+            dest.setArea(helper.getGMLMarshaller().marshalMeasure(src.getArea()));
+
+        if (src.getHeight() != null)
+            dest.setHeight(helper.getGMLMarshaller().marshalLength(src.getHeight()));
+
+        if (src.getMainMaterial() != null)
+            dest.setMainMaterial(helper.getGMLMarshaller().marshalCode(src.getMainMaterial()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        if (src.getSubsidy() != null)
+            dest.setSubsidy(BigInteger.valueOf(src.getSubsidy()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortWelfareFacilityType marshalPortWelfareFacility(PortWelfareFacility src) {
+        PortWelfareFacilityType dest = factory.createPortWelfareFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getTotalFloorArea() != null)
+            dest.setTotalFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getTotalFloorArea()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortManagementFacilityType marshalPortManagementFacility(PortManagementFacility src) {
+        PortManagementFacilityType dest = factory.createPortManagementFacilityType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getTotalFloorArea() != null)
+            dest.setTotalFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getTotalFloorArea()));
+
+        if (src.getNumberOfShipTypes() != null)
+            dest.setNumberOfShipTypes(BigInteger.valueOf(src.getNumberOfShipTypes()));
+
+        if (src.getUnitOfShipType() != null)
+            dest.setUnitOfShipType(helper.getGMLMarshaller().marshalCode(src.getUnitOfShipType()));
+
+        if (src.getLoadingCapacity() != null)
+            dest.setLoadingCapacity(BigInteger.valueOf(src.getLoadingCapacity()));
+
+        if (src.getAcquisitionYear() != null)
+            dest.setAcquisitionYear(marshaller.toCalendar(src.getAcquisitionYear()));
+
+        dest.setUsage(src.getUsage());
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        if (src.getSubsidy() != null)
+            dest.setSubsidy(BigInteger.valueOf(src.getSubsidy()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private CyberportMarinaAndPBSType marshalCyberportMarinaAndPBS(CyberportMarinaAndPBS src) {
+        CyberportMarinaAndPBSType dest = factory.createCyberportMarinaAndPBSType();
+        marshalPortAttribute(src, dest);
+
+        if (src.getGeologicalType() != null)
+            dest.setGeologicalType(helper.getGMLMarshaller().marshalCode(src.getGeologicalType()));
+
+        dest.setObstructingStructures(src.getObstructingStructures());
+
+        if (src.getMainPartLength() != null)
+            dest.setMainPartLength(helper.getGMLMarshaller().marshalLength(src.getMainPartLength()));
+
+        if (src.getTotalLength() != null)
+            dest.setTotalLength(helper.getGMLMarshaller().marshalLength(src.getTotalLength()));
+
+        if (src.getWaveDissipatorLength() != null)
+            dest.setWaveDissipatorLength(helper.getGMLMarshaller().marshalLength(src.getWaveDissipatorLength()));
+
+        if (src.getFacilityWidth() != null)
+            dest.setFacilityWidth(helper.getGMLMarshaller().marshalLength(src.getFacilityWidth()));
+
+        if (src.getApronWidth() != null)
+            dest.setApronWidth(helper.getGMLMarshaller().marshalLength(src.getApronWidth()));
+
+        dest.setRestrictionStructure(src.getRestrictionStructure());
+
+        if (src.getPlannedDepth() != null)
+            dest.setPlannedDepth(helper.getGMLMarshaller().marshalLength(src.getPlannedDepth()));
+
+        if (src.getCurrentDepth() != null)
+            dest.setCurrentDepth(helper.getGMLMarshaller().marshalLength(src.getCurrentDepth()));
+
+        if (src.getInnerTotalFloorArea() != null)
+            dest.setInnerTotalFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getInnerTotalFloorArea()));
+
+        if (src.getInnerOfSiteArea() != null)
+            dest.setInnerOfSiteArea(helper.getGMLMarshaller().marshalMeasure(src.getInnerOfSiteArea()));
+
+        if (src.getOuterOfTotalFloorArea() != null)
+            dest.setOuterOfTotalFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getOuterOfTotalFloorArea()));
+
+        if (src.getOuterSiteArea() != null)
+            dest.setOuterSiteArea(helper.getGMLMarshaller().marshalMeasure(src.getOuterSiteArea()));
+
+        if (src.getCeilingHeight() != null)
+            dest.setCeilingHeight(helper.getGMLMarshaller().marshalLength(src.getCeilingHeight()));
+
+        if (src.getGravityResistant() != null)
+            dest.setGravityResistant(helper.getGMLMarshaller().marshalMeasure(src.getGravityResistant()));
+
+        if (src.getForm() != null)
+            dest.setForm(helper.getGMLMarshaller().marshalCode(src.getForm()));
+
+        if (src.getAreaType() != null)
+            dest.setAreaType(helper.getGMLMarshaller().marshalCode(src.getAreaType()));
+
+        if (src.getMainVessels() != null)
+            dest.setMainVessels(helper.getGMLMarshaller().marshalCode(src.getMainVessels()));
+
+        dest.setIsDredged(src.getIsDredged());
+
+        if (src.getMooringPostWeight() != null)
+            dest.setMooringPostWeight(helper.getGMLMarshaller().marshalMeasure(src.getMooringPostWeight()));
+
+        if (src.getNumberOfMooringPosts() != null)
+            dest.setNumberOfMooringPosts(BigInteger.valueOf(src.getNumberOfMooringPosts()));
+
+        if (src.getResistantMaterial() != null)
+            dest.setResistantMaterial(BigInteger.valueOf(src.getResistantMaterial()));
+
+        if (src.getLighting() != null)
+            dest.setLighting(BigInteger.valueOf(src.getLighting()));
+
+        if (src.getStairs() != null)
+            dest.setStairs(BigInteger.valueOf(src.getStairs()));
+
+        dest.setLifesaving(src.getLifesaving());
+
+        if (src.getLifesavingNumber() != null)
+            dest.setLifesavingNumber(BigInteger.valueOf(src.getLifesavingNumber()));
+
+        if (src.getBumper() != null)
+            dest.setBumper(helper.getGMLMarshaller().marshalLength(src.getBumper()));
+
+        if (src.getNumberOfVehicleBoardings() != null)
+            dest.setNumberOfVehicleBoardings(BigInteger.valueOf(src.getNumberOfVehicleBoardings()));
+
+        if (src.getVehicleBoardingWidth() != null)
+            dest.setVehicleBoardingWidth(helper.getGMLMarshaller().marshalLength(src.getVehicleBoardingWidth()));
+
+        dest.setShipType(src.getShipType());
+
+        if (src.getNumberOfSeats() != null)
+            dest.setNumberOfSeats(BigInteger.valueOf(src.getNumberOfSeats()));
+
+        if (src.getMainCargo() != null)
+            dest.setMainCargo(helper.getGMLMarshaller().marshalCode(src.getMainCargo()));
+
+        if (src.getStorageCapacity() != null)
+            dest.setStorageCapacity(BigInteger.valueOf(src.getStorageCapacity()));
+
+        if (src.getStorageCapacityUnit() != null)
+            dest.setStorageCapacityUnit(helper.getGMLMarshaller().marshalCode(src.getStorageCapacityUnit()));
+
+        if (src.getStructureType() != null)
+            dest.setStructureType(helper.getGMLMarshaller().marshalCode(src.getStructureType()));
+
+        if (src.getMainMaterial() != null)
+            dest.setMainMaterial(helper.getGMLMarshaller().marshalCode(src.getMainMaterial()));
+
+        if (src.getTotalCost() != null)
+            dest.setTotalCost(BigInteger.valueOf(src.getTotalCost()));
+
+        if (src.getSubsidy() != null)
+            dest.setSubsidy(BigInteger.valueOf(src.getSubsidy()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private void marshalFishingPortAttribute(FishingPortAttribute src, FishingPortAttributeType dest) {
+        marshalFacilityAttribute(src, dest);
+    }
+
+    private FishingPortFacilityType marshalFishingPortFacility(FishingPortFacility src) {
+        FishingPortFacilityType dest = factory.createFishingPortFacilityType();
+        marshalFishingPortAttribute(src, dest);
+
+        if (src.getFacilityDetailsType() != null)
+            dest.setFacilityDetailsType(helper.getGMLMarshaller().marshalCode(src.getFacilityDetailsType()));
+
+        dest.setPortName(src.getPortName());
+
+        if (src.getPortType() != null)
+            dest.setPortType(helper.getGMLMarshaller().marshalCode(src.getPortType()));
+
+        dest.setAddress(src.getAddress());
+        dest.setDesignatedArea(src.getDesignatedArea());
+
+        for (String designation : src.getDesignation())
+            dest.getDesignation().add(designation);
+
+        for (String designatedAdministrator : src.getDesignatedAdministrator())
+            dest.getDesignatedAdministrator().add(designatedAdministrator);
+
+        for (String referenceNumber : src.getReferenceNumber())
+            dest.getReferenceNumber().add(referenceNumber);
+
+        if (src.getGrantType() != null)
+            dest.setGrantType(helper.getGMLMarshaller().marshalCode(src.getGrantType()));
+
+        dest.setAdministrator(src.getAdministrator());
+        dest.setFacilityManager(src.getFacilityManager());
+
+        if (src.getStructureType() != null)
+            dest.setStructureType(helper.getGMLMarshaller().marshalCode(src.getStructureType()));
+
+        if (src.getMainMaterial() != null)
+            dest.setMainMaterial(helper.getGMLMarshaller().marshalCode(src.getMainMaterial()));
+
+        dest.setOtherStructure(src.getOtherStructure());
+
+        if (src.getLength() != null)
+            dest.setLength(helper.getGMLMarshaller().marshalLength(src.getLength()));
+
+        if (src.getWidth() != null)
+            dest.setWidth(helper.getGMLMarshaller().marshalLength(src.getWidth()));
+
+        if (src.getCeilingHeight() != null)
+            dest.setCeilingHeight(helper.getGMLMarshaller().marshalLength(src.getCeilingHeight()));
+
+        if (src.getDepth() != null)
+            dest.setDepth(helper.getGMLMarshaller().marshalLength(src.getDepth()));
+
+        if (src.getArea() != null)
+            dest.setArea(helper.getGMLMarshaller().marshalMeasure(src.getArea()));
+
+        dest.setOtherSizeDescription(src.getOtherSizeDescription());
+
+        if (src.getDateOfConstructionOrAcquisition() != null)
+            dest.setDateOfConstructionOrAcquisition(marshaller.toCalendar(src.getDateOfConstructionOrAcquisition()));
+
+        if (src.getCost() != null)
+            dest.setCost(BigInteger.valueOf(src.getCost()));
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private FishingPortCapacityType marshalFishingPortCapacity(FishingPortCapacity src) {
+        FishingPortCapacityType dest = factory.createFishingPortCapacityType();
+        marshalFishingPortAttribute(src, dest);
+
+        dest.setCapacity(src.getCapacity());
+
+        if (src.getWeightCapacity() != null)
+            dest.setWeightCapacity(helper.getGMLMarshaller().marshalMeasure(src.getWeightCapacity()));
+
+        if (src.getHullForm() != null)
+            dest.setHullForm(BigInteger.valueOf(src.getHullForm()));
+
+        if (src.getShipNumber() != null)
+            dest.setShipNumber(BigInteger.valueOf(src.getShipNumber()));
+
+        if (src.getWaterDepth2m() != null)
+            dest.setWaterDepth2M(helper.getGMLMarshaller().marshalMeasure(src.getWaterDepth2m()));
+
+        if (src.getWaterDepth23m() != null)
+            dest.setWaterDepth23M(helper.getGMLMarshaller().marshalMeasure(src.getWaterDepth23m()));
+
+        if (src.getWaterDepth36m() != null)
+            dest.setWaterDepth36M(helper.getGMLMarshaller().marshalMeasure(src.getWaterDepth36m()));
+
+        if (src.getWaterDepth6m() != null)
+            dest.setWaterDepth6M(helper.getGMLMarshaller().marshalMeasure(src.getWaterDepth6m()));
+
+        if (src.getHeightAboveAWL() != null)
+            dest.setHeightAboveAWL(helper.getGMLMarshaller().marshalLength(src.getHeightAboveAWL()));
+
+        if (src.getHeightOnFoundations() != null)
+            dest.setHeightOnFoundations(helper.getGMLMarshaller().marshalLength(src.getHeightOnFoundations()));
+
+        if (src.getLuminousRange() != null)
+            dest.setLuminousRange(helper.getGMLMarshaller().marshalLength(src.getLuminousRange()));
+
+        dest.setLuminousColor(src.getLuminousColor());
+
+        if (src.getCandlePower() != null)
+            dest.setCandlePower(BigInteger.valueOf(src.getCandlePower()));
+
+        dest.setLightType(src.getLightType());
+        dest.setPeriod(src.getPeriod());
+
+        if (src.getMaximumGroundingWeight() != null)
+            dest.setMaximumGroundingWeight(BigInteger.valueOf(src.getMaximumGroundingWeight()));
+
+        if (src.getHandleablePower() != null)
+            dest.setHandleablePower(BigInteger.valueOf(src.getHandleablePower()));
+
+        if (src.getMaximumWaterSupply() != null)
+            dest.setMaximumWaterSupply(BigInteger.valueOf(src.getMaximumWaterSupply()));
+
+        dest.setMaximumRefueling(src.getMaximumRefueling());
+
+        if (src.getPeople() != null)
+            dest.setPeople(BigInteger.valueOf(src.getPeople()));
+
+        dest.setOther(src.getOther());
+
+        return dest;
+    }
+
+    private MaintenanceHistoryAttributeType marshalMaintenanceHistoryAttribute(MaintenanceHistoryAttribute src) {
+        MaintenanceHistoryAttributeType dest = factory.createMaintenanceHistoryAttributeType();
+        marshalFacilityAttribute(src, dest);
+
+        if (src.getMaintenanceType() != null)
+            dest.setMaintenanceType(helper.getGMLMarshaller().marshalCode(src.getMaintenanceType()));
+
+        if (src.getMaintenanceFiscalYear() != null)
+            dest.setMaintenanceFiscalYear(marshaller.toCalendar(src.getMaintenanceFiscalYear()));
+
+        if (src.getMaintenanceYear() != null)
+            dest.setMaintenanceYear(marshaller.toCalendar(src.getMaintenanceYear()));
+
+        if (src.getMaintenanceDate() != null)
+            dest.setMaintenanceDate(marshaller.toCalendar(src.getMaintenanceDate()));
+
+        dest.setStatus(src.getStatus());
+
+        if (src.getDescription() != null)
+            dest.setDescription(helper.getGMLMarshaller().marshalStringOrRef(src.getDescription()));
+
+        return dest;
+    }
+
+    private FacilityAttributePropertyType marshalFacilityAttributeProperty(FacilityAttributeProperty src) {
+        FacilityAttributePropertyType dest = factory.createFacilityAttributePropertyType();
+
+        if (src.getObject() != null) {
+            JAXBElement<?> elem = helper.getJAXBMarshaller().marshalJAXBElement(src.getObject());
+            if (elem != null && elem.getValue() instanceof FacilityAttributeType)
+                dest.setFacilityAttribute((JAXBElement<? extends FacilityAttributeType>) elem);
+        }
 
         return dest;
     }
@@ -1695,6 +2783,102 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createFacilityTypeAttribute(marshalFacilityTypeAttribute(src));
     }
 
+    private JAXBElement<?> createParkFacilityLongevityPlanAttribute(ParkFacilityLongevityPlanAttribute src) {
+        return factory.createParkFacilityLongevityPlanAttribute(marshalParkFacilityLongevityPlanAttribute(src));
+    }
+
+    private JAXBElement<?> createNumberOfFacilities(NumberOfFacilities src) {
+        return factory.createNumberOfFacilities(marshalNumberOfFacilities(src));
+    }
+
+    private JAXBElement<?> createRepairsBeforeParkHealthAssessment(RepairsBeforeParkHealthAssessment src) {
+        return factory.createRepairsBeforeParkHealthAssessment(marshalRepairsBeforeParkHealthAssessment(src));
+    }
+
+    private JAXBElement<?> createParkHealthAssessment(ParkHealthAssessment src) {
+        return factory.createParkHealthAssessment(marshalParkHealthAssessment(src));
+    }
+
+    private JAXBElement<?> createLongevityMeasures(LongevityMeasures src) {
+        return factory.createLongevityMeasures(marshalLongevityMeasures(src));
+    }
+
+    private JAXBElement<?> createCountermeasuresCost(CountermeasuresCost src) {
+        return factory.createCountermeasuresCost(marshalCountermeasuresCost(src));
+    }
+
+    private JAXBElement<?> createHarborFacility(HarborFacility src) {
+        return factory.createHarborFacility(marshalHarborFacility(src));
+    }
+
+    private JAXBElement<?> createPortProtectiveFacility(PortProtectiveFacility src) {
+        return factory.createPortProtectiveFacility(marshalPortProtectiveFacility(src));
+    }
+
+    private JAXBElement<?> createMooringFacility(MooringFacility src) {
+        return factory.createMooringFacility(marshalMooringFacility(src));
+    }
+
+    private JAXBElement<?> createPortTransportationFacility(PortTransportationFacility src) {
+        return factory.createPortTransportationFacility(marshalPortTransportationFacility(src));
+    }
+
+    private JAXBElement<?> createNavigationAssistanceFacility(NavigationAssistanceFacility src) {
+        return factory.createNavigationAssistanceFacility(marshalNavigationAssistanceFacility(src));
+    }
+
+    private JAXBElement<?> createCargoHandlingFacility(CargoHandlingFacility src) {
+        return factory.createCargoHandlingFacility(marshalCargoHandlingFacility(src));
+    }
+
+    private JAXBElement<?> createPortPassengerFacility(PortPassengerFacility src) {
+        return factory.createPortPassengerFacility(marshalPortPassengerFacility(src));
+    }
+
+    private JAXBElement<?> createPortStorageFacility(PortStorageFacility src) {
+        return factory.createPortStorageFacility(marshalPortStorageFacility(src));
+    }
+
+    private JAXBElement<?> createShipServiceFacility(ShipServiceFacility src) {
+        return factory.createShipServiceFacility(marshalShipServiceFacility(src));
+    }
+
+    private JAXBElement<?> createPortWasteTreatmentFacility(PortWasteTreatmentFacility src) {
+        return factory.createPortWasteTreatmentFacility(marshalPortWasteTreatmentFacility(src));
+    }
+
+    private JAXBElement<?> createPortEnvironmentalImprovementFacility(PortEnvironmentalImprovementFacility src) {
+        return factory.createPortEnvironmentalImprovementFacility(marshalPortEnvironmentalImprovementFacility(src));
+    }
+
+    private JAXBElement<?> createPortPollutionControlFacility(PortPollutionControlFacility src) {
+        return factory.createPortPollutionControlFacility(marshalPortPollutionControlFacility(src));
+    }
+
+    private JAXBElement<?> createPortWelfareFacility(PortWelfareFacility src) {
+        return factory.createPortWelfareFacility(marshalPortWelfareFacility(src));
+    }
+
+    private JAXBElement<?> createPortManagementFacility(PortManagementFacility src) {
+        return factory.createPortManagementFacility(marshalPortManagementFacility(src));
+    }
+
+    private JAXBElement<?> createCyberportMarinaAndPBS(CyberportMarinaAndPBS src) {
+        return factory.createCyberportMarinaAndPBS(marshalCyberportMarinaAndPBS(src));
+    }
+
+    private JAXBElement<?> createFishingPortFacility(FishingPortFacility src) {
+        return factory.createFishingPortFacility(marshalFishingPortFacility(src));
+    }
+
+    private JAXBElement<?> createFishingPortCapacity(FishingPortCapacity src) {
+        return factory.createFishingPortCapacity(marshalFishingPortCapacity(src));
+    }
+
+    private JAXBElement<?> createMaintenanceHistoryAttribute(MaintenanceHistoryAttribute src) {
+        return factory.createMaintenanceHistoryAttribute(marshalMaintenanceHistoryAttribute(src));
+    }
+
     private JAXBElement<?> createBridgeStructureAttribute(BridgeStructureAttribute src) {
         return factory.createBridgeStructureAttribute(marshalBridgeStructureAttribute(src));
     }
@@ -1863,6 +3047,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createBridFacilityTypeAttribute(marshalFacilityTypeAttributeProperty(src.getValue()));
     }
 
+    private JAXBElement<?> createBridFacilityAttributePropertyElement(BridFacilityAttributePropertyElement src) {
+        return factory.createBridFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
+    }
+
     private JAXBElement<?> createBridStructureAttributePropertyElement(BridStructureAttributePropertyElement src) {
         return factory.createBridStructureAttribute(marshalBridgeStructureAttributeProperty(src.getValue()));
     }
@@ -1919,6 +3107,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createBldgFacilityTypeAttribute(marshalFacilityTypeAttributeProperty(src.getValue()));
     }
 
+    private JAXBElement<?> createBldgFacilityAttributePropertyElement(BldgFacilityAttributePropertyElement src) {
+        return factory.createBldgFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
+    }
+
     private JAXBElement<?> createBldgRealEstateIDAttributePropertyElement(BldgRealEstateIDAttributePropertyElement src) {
         return factory.createBldgRealEstateIDAttribute(marshalRealEstateIDAttributeProperty(src.getValue()));
     }
@@ -1933,6 +3125,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
     private JAXBElement<?> createFrnFacilityTypeAttributePropertyElement(FrnFacilityTypeAttributePropertyElement src) {
         return factory.createFrnFacilityTypeAttribute(marshalFacilityTypeAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createFrnFacilityAttributePropertyElement(FrnFacilityAttributePropertyElement src) {
+        return factory.createFrnFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createCityFurnitureDetailAttributePropertyElement(CityFurnitureDetailAttributePropertyElement src) {
@@ -1959,6 +3155,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createLuseFacilityTypeAttribute(marshalFacilityTypeAttributeProperty(src.getValue()));
     }
 
+    private JAXBElement<?> createLuseFacilityAttributePropertyElement(LuseFacilityAttributePropertyElement src) {
+        return factory.createLuseFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
+    }
+
     private JAXBElement<?> createLuseDataQualityAttributePropertyElement(LuseDataQualityAttributePropertyElement src) {
         return factory.createLuseDataQualityAttribute(marshalDataQualityAttributeProperty(src.getValue()));
     }
@@ -1981,6 +3181,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
     private JAXBElement<?> createTranFacilityTypeAttributePropertyElement(TranFacilityTypeAttributePropertyElement src) {
         return factory.createTranFacilityTypeAttribute(marshalFacilityTypeAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createTranFacilityAttributePropertyElement(TranFacilityAttributePropertyElement src) {
+        return factory.createTranFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createTranUsecaseAttributePropertyElement(TranUsecaseAttributePropertyElement src) {
@@ -2059,6 +3263,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createTunFacilityTypeAttribute(marshalFacilityTypeAttributeProperty(src.getValue()));
     }
 
+    private JAXBElement<?> createTunFacilityAttributePropertyElement(TunFacilityAttributePropertyElement src) {
+        return factory.createTunFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
+    }
+
     private JAXBElement<?> createTunKeyValuePairAttributePropertyElement(TunKeyValuePairAttributePropertyElement src) {
         return factory.createTunKeyValuePairAttribute(marshalKeyValuePairAttributeProperty(src.getValue()));
     }
@@ -2069,6 +3277,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
     private JAXBElement<?> createVegFacilityTypeAttributePropertyElement(VegFacilityTypeAttributePropertyElement src) {
         return factory.createVegFacilityTypeAttribute(marshalFacilityTypeAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createVegFacilityAttributePropertyElement(VegFacilityAttributePropertyElement src) {
+        return factory.createVegFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createVegDataQualityAttributePropertyElement(VegDataQualityAttributePropertyElement src) {
@@ -2089,6 +3301,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
     private JAXBElement<?> createWtrFacilityTypeAttributePropertyElement(WtrFacilityTypeAttributePropertyElement src) {
         return factory.createWtrFacilityTypeAttribute(marshalFacilityTypeAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createWtrFacilityAttributePropertyElement(WtrFacilityAttributePropertyElement src) {
+        return factory.createWtrFacilityAttribute(marshalFacilityAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createWaterBodyDetailAttributePropertyElement(WaterBodyDetailAttributePropertyElement src) {

@@ -52,6 +52,36 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                     .with(FacilityIdAttributePropertyType.class, this::unmarshalFacilityIdAttributeProperty)
                     .with(FacilityTypeAttributeType.class, this::unmarshalFacilityTypeAttribute)
                     .with(FacilityTypeAttributePropertyType.class, this::unmarshalFacilityTypeAttributeProperty)
+                    .with(ParkFacilityLongevityPlanAttributeType.class, this::unmarshalParkFacilityLongevityPlanAttribute)
+                    .with(NumberOfFacilitiesType.class, this::unmarshalNumberOfFacilities)
+                    .with(NumberOfFacilitiesPropertyType.class, this::unmarshalNumberOfFacilitiesProperty)
+                    .with(RepairsBeforeParkHealthAssessmentType.class, this::unmarshalRepairsBeforeParkHealthAssessment)
+                    .with(RepairsBeforeParkHealthAssessmentPropertyType.class, this::unmarshalRepairsBeforeParkHealthAssessmentProperty)
+                    .with(ParkHealthAssessmentType.class, this::unmarshalParkHealthAssessment)
+                    .with(ParkHealthAssessmentPropertyType.class, this::unmarshalParkHealthAssessmentProperty)
+                    .with(LongevityMeasuresType.class, this::unmarshalLongevityMeasures)
+                    .with(LongevityMeasuresPropertyType.class, this::unmarshalLongevityMeasuresProperty)
+                    .with(CountermeasuresCostType.class, this::unmarshalCountermeasuresCost)
+                    .with(CountermeasuresCostPropertyType.class, this::unmarshalCountermeasuresCostProperty)
+                    .with(HarborFacilityType.class, this::unmarshalHarborFacility)
+                    .with(PortProtectiveFacilityType.class, this::unmarshalPortProtectiveFacility)
+                    .with(MooringFacilityType.class, this::unmarshalMooringFacility)
+                    .with(PortTransportationFacilityType.class, this::unmarshalPortTransportationFacility)
+                    .with(NavigationAssistanceFacilityType.class, this::unmarshalNavigationAssistanceFacility)
+                    .with(CargoHandlingFacilityType.class, this::unmarshalCargoHandlingFacility)
+                    .with(PortPassengerFacilityType.class, this::unmarshalPortPassengerFacility)
+                    .with(PortStorageFacilityType.class, this::unmarshalPortStorageFacility)
+                    .with(ShipServiceFacilityType.class, this::unmarshalShipServiceFacility)
+                    .with(PortWasteTreatmentFacilityType.class, this::unmarshalPortWasteTreatmentFacility)
+                    .with(PortEnvironmentalImprovementFacilityType.class, this::unmarshalPortEnvironmentalImprovementFacility)
+                    .with(PortPollutionControlFacilityType.class, this::unmarshalPortPollutionControlFacility)
+                    .with(PortWelfareFacilityType.class, this::unmarshalPortWelfareFacility)
+                    .with(PortManagementFacilityType.class, this::unmarshalPortManagementFacility)
+                    .with(CyberportMarinaAndPBSType.class, this::unmarshalCyberportMarinaAndPBS)
+                    .with(FishingPortFacilityType.class, this::unmarshalFishingPortFacility)
+                    .with(FishingPortCapacityType.class, this::unmarshalFishingPortCapacity)
+                    .with(MaintenanceHistoryAttributeType.class, this::unmarshalMaintenanceHistoryAttribute)
+                    .with(FacilityAttributePropertyType.class, this::unmarshalFacilityAttributeProperty)
                     .with(BridgeStructureAttributeType.class, this::unmarshalBridgeStructureAttribute)
                     .with(BridgeStructureAttributePropertyType.class, this::unmarshalBridgeStructureAttributeProperty)
                     .with(BridgeFunctionalAttributeType.class, this::unmarshalBridgeFunctionalAttribute)
@@ -146,6 +176,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new BridFacilityIdAttributePropertyElement(unmarshalFacilityIdAttributeProperty((FacilityIdAttributePropertyType) value));
             case "bridFacilityTypeAttribute":
                 return new BridFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
+            case "bridFacilityAttribute":
+                return new BridFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
             case "bridStructureAttribute":
                 return new BridStructureAttributePropertyElement(unmarshalBridgeStructureAttributeProperty((BridgeStructureAttributePropertyType) value));
             case "bridFunctionalAttribute":
@@ -174,6 +206,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new BldgFacilityIdAttributePropertyElement(unmarshalFacilityIdAttributeProperty((FacilityIdAttributePropertyType) value));
             case "bldgFacilityTypeAttribute":
                 return new BldgFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
+            case "bldgFacilityAttribute":
+                return new BldgFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
             case "bldgRealEstateIDAttribute":
                 return new BldgRealEstateIDAttributePropertyElement(unmarshalRealEstateIDAttributeProperty((RealEstateIDAttributePropertyType) value));
             case "bldgUsecaseAttribute":
@@ -182,6 +216,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new FrnFacilityIdAttributePropertyElement(unmarshalFacilityIdAttributeProperty((FacilityIdAttributePropertyType) value));
             case "frnFacilityTypeAttribute":
                 return new FrnFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
+            case "frnFacilityAttribute":
+                return new FrnFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
             case "cityFurnitureDetailAttribute":
                 return new CityFurnitureDetailAttributePropertyElement(unmarshalCityFurnitureDetailAttributeProperty((CityFurnitureDetailAttributePropertyType) value));
             case "frnDataQualityAttribute":
@@ -194,6 +230,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new LuseFacilityIdAttributePropertyElement(unmarshalFacilityIdAttributeProperty((FacilityIdAttributePropertyType) value));
             case "luseFacilityTypeAttribute":
                 return new LuseFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
+            case "luseFacilityAttribute":
+                return new LuseFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
             case "luseDataQualityAttribute":
                 return new LuseDataQualityAttributePropertyElement(unmarshalDataQualityAttributeProperty((DataQualityAttributePropertyType) value));
             case "luseKeyValuePairAttribute":
@@ -206,6 +244,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new TranFacilityIdAttributePropertyElement(unmarshalFacilityIdAttributeProperty((FacilityIdAttributePropertyType) value));
             case "tranFacilityTypeAttribute":
                 return new TranFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
+            case "tranFacilityAttribute":
+                return new TranFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
             case "tranUsecaseAttribute":
                 return new TranUsecaseAttributePropertyElement(unmarshalTrafficObjectUsecaseAttributeProperty((TrafficObjectUsecaseAttributePropertyType) value));
             case "tranKeyValuePairAttribute":
@@ -244,12 +284,16 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new TunFacilityIdAttributePropertyElement(unmarshalFacilityIdAttributeProperty((FacilityIdAttributePropertyType) value));
             case "tunFacilityTypeAttribute":
                 return new TunFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
+            case "tunFacilityAttribute":
+                return new TunFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
             case "tunKeyValuePairAttribute":
                 return new TunKeyValuePairAttributePropertyElement(unmarshalKeyValuePairAttributeProperty((KeyValuePairAttributePropertyType) value));
             case "vegFacilityIdAttribute":
                 return new VegFacilityIdAttributePropertyElement(unmarshalFacilityIdAttributeProperty((FacilityIdAttributePropertyType) value));
             case "vegFacilityTypeAttribute":
                 return new VegFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
+            case "vegFacilityAttribute":
+                return new VegFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
             case "vegDataQualityAttribute":
                 return new VegDataQualityAttributePropertyElement(unmarshalDataQualityAttributeProperty((DataQualityAttributePropertyType) value));
             case "vegKeyValuePairAttribute":
@@ -260,6 +304,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new WtrFacilityIdAttributePropertyElement(unmarshalFacilityIdAttributeProperty((FacilityIdAttributePropertyType) value));
             case "wtrFacilityTypeAttribute":
                 return new WtrFacilityTypeAttributePropertyElement(unmarshalFacilityTypeAttributeProperty((FacilityTypeAttributePropertyType) value));
+            case "wtrFacilityAttribute":
+                return new WtrFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
             case "waterBodyDetailAttribute":
                 return new WaterBodyDetailAttributePropertyElement(unmarshalWaterBodyDetailAttributeProperty((WaterBodyDetailAttributePropertyType) value));
             case "wtrDataQualityAttribute":
@@ -449,6 +495,1070 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
 
         if (src.isSetFacilityTypeAttribute())
             dest.setObject(unmarshalFacilityTypeAttribute(src.getFacilityTypeAttribute()));
+
+        return dest;
+    }
+
+    private void unmarshalFacilityAttribute(FacilityAttributeType src, FacilityAttribute dest) throws MissingADESchemaException {
+        dest.setFacilityId(src.getFacilityId());
+    }
+
+    private ParkFacilityLongevityPlanAttribute unmarshalParkFacilityLongevityPlanAttribute(ParkFacilityLongevityPlanAttributeType src) throws MissingADESchemaException {
+        ParkFacilityLongevityPlanAttribute dest = new ParkFacilityLongevityPlanAttribute();
+        unmarshalFacilityAttribute(src, dest);
+
+        if (src.isSetParkCode())
+            dest.setParkCode(helper.getGMLUnmarshaller().unmarshalCode(src.getParkCode()));
+
+        if (src.isSetParkName())
+            dest.setParkName(helper.getGMLUnmarshaller().unmarshalCode(src.getParkName()));
+
+        if (src.isSetParkType())
+            dest.setParkType(helper.getGMLUnmarshaller().unmarshalCode(src.getParkType()));
+
+        if (src.isSetFacilityName())
+            dest.setFacilityName(helper.getGMLUnmarshaller().unmarshalCode(src.getFacilityName()));
+
+        dest.setFacilityNameOptional(src.getFacilityNameOptional());
+        dest.setSpecificFacilityName(src.getSpecificFacilityName());
+
+        if (src.isSetNumberOfFacilities())
+            dest.setNumberOfFacilities(unmarshalNumberOfFacilitiesProperty(src.getNumberOfFacilities()));
+
+        dest.setSize(src.getSize());
+
+        if (src.isSetMainMaterial())
+            dest.setMainMaterial(helper.getGMLUnmarshaller().unmarshalCode(src.getMainMaterial()));
+
+        dest.setMainMaterialOptional(src.getMainMaterialOptional());
+
+        if (src.isSetInstallationYear()) {
+            LocalDate date = src.getInstallationYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setInstallationYear(Year.of(date.getYear()));
+        }
+
+        if (src.isSetDisposalLimitPeriod())
+            dest.setDisposalLimitPeriod(src.getDisposalLimitPeriod().intValue());
+
+        if (src.isSetExpectedUsagePeriod())
+            dest.setExpectedUsagePeriod(src.getExpectedUsagePeriod().intValue());
+
+        if (src.isSetRepairsBeforeParkHealthAssessment())
+            dest.setRepairsBeforeParkHealthAssessment(unmarshalRepairsBeforeParkHealthAssessmentProperty(src.getRepairsBeforeParkHealthAssessment()));
+
+        if (src.isSetParkHealthAssessment()) {
+            for (ParkHealthAssessmentPropertyType parkHealthAssessment : src.getParkHealthAssessment())
+                dest.getParkHealthAssessment().add(unmarshalParkHealthAssessmentProperty(parkHealthAssessment));
+        }
+
+        if (src.isSetManagementType())
+            dest.setManagementType(helper.getGMLUnmarshaller().unmarshalCode(src.getManagementType()));
+
+        if (src.isSetExpectedRenewalYearWithMeasures()) {
+            LocalDate date = src.getExpectedRenewalYearWithMeasures().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setExpectedRenewalYearWithMeasures(Year.of(date.getYear()));
+        }
+
+        if (src.isSetLongevityMeasures()) {
+            for (LongevityMeasuresPropertyType longevityMeasures : src.getLongevityMeasures())
+                dest.getLongevityMeasures().add(unmarshalLongevityMeasuresProperty(longevityMeasures));
+        }
+
+        dest.setNoteForLongevity(src.getNoteForLongevity());
+
+        return dest;
+    }
+
+    private NumberOfFacilities unmarshalNumberOfFacilities(NumberOfFacilitiesType src) throws MissingADESchemaException {
+        NumberOfFacilities dest = new NumberOfFacilities();
+
+        if (src.isSetQuantity())
+            dest.setQuantity(src.getQuantity().intValue());
+
+        if (src.isSetQuantityUnit())
+            dest.setQuantityUnit(helper.getGMLUnmarshaller().unmarshalCode(src.getQuantityUnit()));
+
+        return dest;
+    }
+
+    private NumberOfFacilitiesProperty unmarshalNumberOfFacilitiesProperty(NumberOfFacilitiesPropertyType src) throws MissingADESchemaException {
+        NumberOfFacilitiesProperty dest = new NumberOfFacilitiesProperty();
+
+        if (src.isSetNumberOfFacilities())
+            dest.setObject(unmarshalNumberOfFacilities(src.getNumberOfFacilities()));
+
+        return dest;
+    }
+
+    private RepairsBeforeParkHealthAssessment unmarshalRepairsBeforeParkHealthAssessment(RepairsBeforeParkHealthAssessmentType src) throws MissingADESchemaException {
+        RepairsBeforeParkHealthAssessment dest = new RepairsBeforeParkHealthAssessment();
+
+        if (src.isSetRepair())
+            dest.setRepair(helper.getGMLUnmarshaller().unmarshalCode(src.getRepair()));
+
+        if (src.isSetRepairFiscalYear()) {
+            LocalDate date = src.getRepairFiscalYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setRepairFiscalYear(Year.of(date.getYear()));
+        }
+
+        return dest;
+    }
+
+    private RepairsBeforeParkHealthAssessmentProperty unmarshalRepairsBeforeParkHealthAssessmentProperty(RepairsBeforeParkHealthAssessmentPropertyType src) throws MissingADESchemaException {
+        RepairsBeforeParkHealthAssessmentProperty dest = new RepairsBeforeParkHealthAssessmentProperty();
+
+        if (src.isSetRepairsBeforeParkHealthAssessment())
+            dest.setObject(unmarshalRepairsBeforeParkHealthAssessment(src.getRepairsBeforeParkHealthAssessment()));
+
+        return dest;
+    }
+
+    private ParkHealthAssessment unmarshalParkHealthAssessment(ParkHealthAssessmentType src) throws MissingADESchemaException {
+        ParkHealthAssessment dest = new ParkHealthAssessment();
+
+        if (src.isSetAssessmentFiscalYear()) {
+            LocalDate date = src.getAssessmentFiscalYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setAssessmentFiscalYear(Year.of(date.getYear()));
+        }
+
+        dest.setDeteriorationStatus(src.getDeteriorationStatus());
+
+        if (src.isSetCondition())
+            dest.setCondition(helper.getGMLUnmarshaller().unmarshalCode(src.getCondition()));
+
+        if (src.isSetUrgency())
+            dest.setUrgency(helper.getGMLUnmarshaller().unmarshalCode(src.getUrgency()));
+
+        return dest;
+    }
+
+    private ParkHealthAssessmentProperty unmarshalParkHealthAssessmentProperty(ParkHealthAssessmentPropertyType src) throws MissingADESchemaException {
+        ParkHealthAssessmentProperty dest = new ParkHealthAssessmentProperty();
+
+        if (src.isSetParkHealthAssessment())
+            dest.setObject(unmarshalParkHealthAssessment(src.getParkHealthAssessment()));
+
+        return dest;
+    }
+
+    private LongevityMeasures unmarshalLongevityMeasures(LongevityMeasuresType src) throws MissingADESchemaException {
+        LongevityMeasures dest = new LongevityMeasures();
+
+        if (src.isSetFiscalYearForCountermeasures()) {
+            LocalDate date = src.getFiscalYearForCountermeasures().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setFiscalYearForCountermeasures(Year.of(date.getYear()));
+        }
+
+        if (src.isSetCountermeasuresCost())
+            dest.setCountermeasuresCost(unmarshalCountermeasuresCostProperty(src.getCountermeasuresCost()));
+
+        dest.setDescription(src.getDescription());
+
+        return dest;
+    }
+
+    private LongevityMeasuresProperty unmarshalLongevityMeasuresProperty(LongevityMeasuresPropertyType src) throws MissingADESchemaException {
+        LongevityMeasuresProperty dest = new LongevityMeasuresProperty();
+
+        if (src.isSetLongevityMeasures())
+            dest.setObject(unmarshalLongevityMeasures(src.getLongevityMeasures()));
+
+        return dest;
+    }
+
+    private CountermeasuresCost unmarshalCountermeasuresCost(CountermeasuresCostType src) throws MissingADESchemaException {
+        CountermeasuresCost dest = new CountermeasuresCost();
+
+        if (src.isSetCost())
+            dest.setCost(src.getCost().intValue());
+
+        dest.setCostUnit(src.getCostUnit());
+
+        return dest;
+    }
+
+    private CountermeasuresCostProperty unmarshalCountermeasuresCostProperty(CountermeasuresCostPropertyType src) throws MissingADESchemaException {
+        CountermeasuresCostProperty dest = new CountermeasuresCostProperty();
+
+        if (src.isSetCountermeasuresCost())
+            dest.setObject(unmarshalCountermeasuresCost(src.getCountermeasuresCost()));
+
+        return dest;
+    }
+
+    private void unmarshalPortAttribute(PortAttributeType src, PortAttribute dest) throws MissingADESchemaException {
+        unmarshalFacilityAttribute(src, dest);
+
+        if (src.isSetPortFacilityDetailsType())
+            dest.setPortFacilityDetailsType(helper.getGMLUnmarshaller().unmarshalCode(src.getPortFacilityDetailsType()));
+
+        dest.setPortName(src.getPortName());
+
+        if (src.isSetPortStatus())
+            dest.setPortStatus(helper.getGMLUnmarshaller().unmarshalCode(src.getPortStatus()));
+
+        dest.setDistrict(src.getDistrict());
+
+        if (src.isSetGrantType())
+            dest.setGrantType(helper.getGMLUnmarshaller().unmarshalCode(src.getGrantType()));
+
+        dest.setIsDesignated(src.isIsDesignated());
+
+        if (src.isSetDegradationLevel())
+            dest.setDegradationLevel(src.getDegradationLevel().intValue());
+    }
+
+    private HarborFacility unmarshalHarborFacility(HarborFacilityType src) throws MissingADESchemaException {
+        HarborFacility dest = new HarborFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetGeologicalType())
+            dest.setGeologicalType(helper.getGMLUnmarshaller().unmarshalCode(src.getGeologicalType()));
+
+        dest.setObstructingStructures(src.getObstructingStructures());
+
+        if (src.isSetStructuralLimitations())
+            dest.setStructuralLimitations(helper.getGMLUnmarshaller().unmarshalLength(src.getStructuralLimitations()));
+
+        if (src.isSetLength())
+            dest.setLength(helper.getGMLUnmarshaller().unmarshalLength(src.getLength()));
+
+        if (src.isSetMinimumWidth())
+            dest.setMinimumWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getMinimumWidth()));
+
+        if (src.isSetMaximumWidth())
+            dest.setMaximumWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getMaximumWidth()));
+
+        if (src.isSetPlannedDepth())
+            dest.setPlannedDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getPlannedDepth()));
+
+        if (src.isSetCurrentDepth())
+            dest.setCurrentDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getCurrentDepth()));
+
+        dest.setIsDredged(src.isIsDredged());
+
+        if (src.isSetAreaType())
+            dest.setAreaType(helper.getGMLUnmarshaller().unmarshalCode(src.getAreaType()));
+
+        if (src.isSetInnerArea())
+            dest.setInnerArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getInnerArea()));
+
+        if (src.isSetOuterArea())
+            dest.setOuterArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getOuterArea()));
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        if (src.isSetSubsidy())
+            dest.setSubsidy(src.getSubsidy().intValue());
+
+        if (src.isSetNote()) {
+            for (String note : src.getNote())
+                dest.getNote().add(note);
+        }
+
+        return dest;
+    }
+
+    private PortProtectiveFacility unmarshalPortProtectiveFacility(PortProtectiveFacilityType src) throws MissingADESchemaException {
+        PortProtectiveFacility dest = new PortProtectiveFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetStructureType())
+            dest.setStructureType(helper.getGMLUnmarshaller().unmarshalCode(src.getStructureType()));
+
+        if (src.isSetMainMaterial())
+            dest.setMainMaterial(helper.getGMLUnmarshaller().unmarshalCode(src.getMainMaterial()));
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        if (src.isSetSubsidy())
+            dest.setSubsidy(src.getSubsidy().intValue());
+
+        if (src.isSetNote()) {
+            for (String note : src.getNote())
+                dest.getNote().add(note);
+        }
+
+        return dest;
+    }
+
+    private MooringFacility unmarshalMooringFacility(MooringFacilityType src) throws MissingADESchemaException {
+        MooringFacility dest = new MooringFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetMainPartLength())
+            dest.setMainPartLength(helper.getGMLUnmarshaller().unmarshalLength(src.getMainPartLength()));
+
+        if (src.isSetTotalLength())
+            dest.setTotalLength(helper.getGMLUnmarshaller().unmarshalLength(src.getTotalLength()));
+
+        if (src.isSetFacilityWidth())
+            dest.setFacilityWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getFacilityWidth()));
+
+        if (src.isSetApronWidth())
+            dest.setApronWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getApronWidth()));
+
+        if (src.isSetPlannedDepth())
+            dest.setPlannedDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getPlannedDepth()));
+
+        if (src.isSetCurrentDepth())
+            dest.setCurrentDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getCurrentDepth()));
+
+        if (src.isSetArea())
+            dest.setArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getArea()));
+
+        if (src.isSetCeilingHeight())
+            dest.setCeilingHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getCeilingHeight()));
+
+        if (src.isSetGravityResistant())
+            dest.setGravityResistant(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGravityResistant()));
+
+        if (src.isSetForm())
+            dest.setForm(helper.getGMLUnmarshaller().unmarshalCode(src.getForm()));
+
+        if (src.isSetMainVessels())
+            dest.setMainVessels(helper.getGMLUnmarshaller().unmarshalCode(src.getMainVessels()));
+
+        if (src.isSetMooringPostWeight())
+            dest.setMooringPostWeight(helper.getGMLUnmarshaller().unmarshalMeasure(src.getMooringPostWeight()));
+
+        if (src.isSetNumberOfMooringPosts())
+            dest.setNumberOfMooringPosts(src.getNumberOfMooringPosts().intValue());
+
+        if (src.isSetResistantMaterial())
+            dest.setResistantMaterial(src.getResistantMaterial().intValue());
+
+        if (src.isSetLighting())
+            dest.setLighting(src.getLighting().intValue());
+
+        if (src.isSetStairs())
+            dest.setStairs(src.getStairs().intValue());
+
+        dest.setLifesavingAppliances(src.getLifesavingAppliances());
+
+        if (src.isSetNumberOfLifesavingAppliances())
+            dest.setNumberOfLifesavingAppliances(src.getNumberOfLifesavingAppliances().intValue());
+
+        if (src.isSetBumper())
+            dest.setBumper(helper.getGMLUnmarshaller().unmarshalLength(src.getBumper()));
+
+        if (src.isSetNumberOfVehicleBoardings())
+            dest.setNumberOfVehicleBoardings(src.getNumberOfVehicleBoardings().intValue());
+
+        if (src.isSetVehicleBoardingWidth())
+            dest.setVehicleBoardingWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getVehicleBoardingWidth()));
+
+        dest.setShipType(src.getShipType());
+
+        if (src.isSetNumberOfSeats())
+            dest.setNumberOfSeats(src.getNumberOfSeats().intValue());
+
+        if (src.isSetMainCargo())
+            dest.setMainCargo(helper.getGMLUnmarshaller().unmarshalCode(src.getMainCargo()));
+
+        if (src.isSetStructureType())
+            dest.setStructureType(helper.getGMLUnmarshaller().unmarshalCode(src.getStructureType()));
+
+        if (src.isSetMainMaterial())
+            dest.setMainMaterial(helper.getGMLUnmarshaller().unmarshalCode(src.getMainMaterial()));
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        if (src.isSetSubsidy())
+            dest.setSubsidy(src.getSubsidy().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortTransportationFacility unmarshalPortTransportationFacility(PortTransportationFacilityType src) throws MissingADESchemaException {
+        PortTransportationFacility dest = new PortTransportationFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetStructureType())
+            dest.setStructureType(helper.getGMLUnmarshaller().unmarshalCode(src.getStructureType()));
+
+        dest.setStartingPoint(src.getStartingPoint());
+
+        if (src.isSetLength())
+            dest.setLength(helper.getGMLUnmarshaller().unmarshalLength(src.getLength()));
+
+        if (src.isSetArea())
+            dest.setArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getArea()));
+
+        if (src.isSetBeddingWidth())
+            dest.setBeddingWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getBeddingWidth()));
+
+        if (src.isSetNumberOfLanes())
+            dest.setNumberOfLanes(src.getNumberOfLanes().intValue());
+
+        if (src.isSetParkingLotCapacityOfBus())
+            dest.setParkingLotCapacityOfBus(src.getParkingLotCapacityOfBus().intValue());
+
+        if (src.isSetParkingLotCapacityOfCars())
+            dest.setParkingLotCapacityOfCars(src.getParkingLotCapacityOfCars().intValue());
+
+        if (src.isSetRouteType())
+            dest.setRouteType(helper.getGMLUnmarshaller().unmarshalCode(src.getRouteType()));
+
+        if (src.isSetHeightToDigit())
+            dest.setHeightToDigit(helper.getGMLUnmarshaller().unmarshalLength(src.getHeightToDigit()));
+
+        if (src.isSetHeightLimit())
+            dest.setHeightLimit(helper.getGMLUnmarshaller().unmarshalLength(src.getHeightLimit()));
+
+        if (src.isSetMinimumWidth())
+            dest.setMinimumWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getMinimumWidth()));
+
+        if (src.isSetMinimumDepth())
+            dest.setMinimumDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getMinimumDepth()));
+
+        if (src.isSetNumberOfAircraftParkingSpaces())
+            dest.setNumberOfAircraftParkingSpaces(src.getNumberOfAircraftParkingSpaces().intValue());
+
+        if (src.isSetPavementType())
+            dest.setPavementType(helper.getGMLUnmarshaller().unmarshalCode(src.getPavementType()));
+
+        if (src.isSetMainCargo())
+            dest.setMainCargo(helper.getGMLUnmarshaller().unmarshalCode(src.getMainCargo()));
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        if (src.isSetSubsidy())
+            dest.setSubsidy(src.getSubsidy().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private NavigationAssistanceFacility unmarshalNavigationAssistanceFacility(NavigationAssistanceFacilityType src) throws MissingADESchemaException {
+        NavigationAssistanceFacility dest = new NavigationAssistanceFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        dest.setSubsidy(src.getSubsidy());
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private CargoHandlingFacility unmarshalCargoHandlingFacility(CargoHandlingFacilityType src) throws MissingADESchemaException {
+        CargoHandlingFacility dest = new CargoHandlingFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetMainCargo())
+            dest.setMainCargo(helper.getGMLUnmarshaller().unmarshalCode(src.getMainCargo()));
+
+        dest.setMooringFacility(src.getMooringFacility());
+
+        if (src.isSetLiftableLoad())
+            dest.setLiftableLoad(helper.getGMLUnmarshaller().unmarshalMeasure(src.getLiftableLoad()));
+
+        if (src.isSetAbility())
+            dest.setAbility(src.getAbility().intValue());
+
+        if (src.isSetPackingName())
+            dest.setPackingName(helper.getGMLUnmarshaller().unmarshalCode(src.getPackingName()));
+
+        if (src.isSetAcquisitionYear()) {
+            LocalDate date = src.getAcquisitionYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setAcquisitionYear(Year.of(date.getYear()));
+        }
+
+        if (src.isSetInnerTotalFloorArea())
+            dest.setInnerTotalFloorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getInnerTotalFloorArea()));
+
+        if (src.isSetInnerOfSiteArea())
+            dest.setInnerOfSiteArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getInnerOfSiteArea()));
+
+        if (src.isSetOuterOfTotalFloorArea())
+            dest.setOuterOfTotalFloorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getOuterOfTotalFloorArea()));
+
+        if (src.isSetOuterSiteArea())
+            dest.setOuterSiteArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getOuterSiteArea()));
+
+        if (src.isSetMainMaterial())
+            dest.setMainMaterial(helper.getGMLUnmarshaller().unmarshalCode(src.getMainMaterial()));
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortPassengerFacility unmarshalPortPassengerFacility(PortPassengerFacilityType src) throws MissingADESchemaException {
+        PortPassengerFacility dest = new PortPassengerFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetLength())
+            dest.setLength(helper.getGMLUnmarshaller().unmarshalLength(src.getLength()));
+
+        if (src.isSetWidth())
+            dest.setWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getWidth()));
+
+        if (src.isSetMainMaterial())
+            dest.setMainMaterial(helper.getGMLUnmarshaller().unmarshalCode(src.getMainMaterial()));
+
+        if (src.isSetTotalFloorArea())
+            dest.setTotalFloorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getTotalFloorArea()));
+
+        if (src.isSetAcquisitionYear()) {
+            LocalDate date = src.getAcquisitionYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setAcquisitionYear(Year.of(date.getYear()));
+        }
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortStorageFacility unmarshalPortStorageFacility(PortStorageFacilityType src) throws MissingADESchemaException {
+        PortStorageFacility dest = new PortStorageFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetInnerTotalFloorArea())
+            dest.setInnerTotalFloorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getInnerTotalFloorArea()));
+
+        if (src.isSetInnerOfSiteArea())
+            dest.setInnerOfSiteArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getInnerOfSiteArea()));
+
+        if (src.isSetOuterOfTotalFloorArea())
+            dest.setOuterOfTotalFloorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getOuterOfTotalFloorArea()));
+
+        if (src.isSetOuterSiteArea())
+            dest.setOuterSiteArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getOuterSiteArea()));
+
+        if (src.isSetMainCargo())
+            dest.setMainCargo(helper.getGMLUnmarshaller().unmarshalCode(src.getMainCargo()));
+
+        if (src.isSetStorageCapacity())
+            dest.setStorageCapacity(src.getStorageCapacity().intValue());
+
+        if (src.isSetStorageCapacityUnit())
+            dest.setStorageCapacityUnit(helper.getGMLUnmarshaller().unmarshalCode(src.getStorageCapacityUnit()));
+
+        if (src.isSetMainMaterial())
+            dest.setMainMaterial(helper.getGMLUnmarshaller().unmarshalCode(src.getMainMaterial()));
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private ShipServiceFacility unmarshalShipServiceFacility(ShipServiceFacilityType src) throws MissingADESchemaException {
+        ShipServiceFacility dest = new ShipServiceFacility();
+        unmarshalPortAttribute(src, dest);
+
+        dest.setShipType(src.getShipType());
+
+        if (src.isSetSupplyAbility())
+            dest.setSupplyAbility(src.getSupplyAbility().intValue());
+
+        if (src.isSetSupplyAbilityUnit())
+            dest.setSupplyAbilityUnit(helper.getGMLUnmarshaller().unmarshalCode(src.getSupplyAbilityUnit()));
+
+        dest.setMooringPlace(src.getMooringPlace());
+
+        if (src.isSetLength())
+            dest.setLength(helper.getGMLUnmarshaller().unmarshalLength(src.getLength()));
+
+        if (src.isSetWidth())
+            dest.setWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getWidth()));
+
+        if (src.isSetArea())
+            dest.setArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getArea()));
+
+        if (src.isSetAcquisitionYear()) {
+            LocalDate date = src.getAcquisitionYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setAcquisitionYear(Year.of(date.getYear()));
+        }
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortWasteTreatmentFacility unmarshalPortWasteTreatmentFacility(PortWasteTreatmentFacilityType src) throws MissingADESchemaException {
+        PortWasteTreatmentFacility dest = new PortWasteTreatmentFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetStructureType())
+            dest.setStructureType(helper.getGMLUnmarshaller().unmarshalCode(src.getStructureType()));
+
+        if (src.isSetPerimeter())
+            dest.setPerimeter(helper.getGMLUnmarshaller().unmarshalLength(src.getPerimeter()));
+
+        if (src.isSetMainPartLength())
+            dest.setMainPartLength(helper.getGMLUnmarshaller().unmarshalLength(src.getMainPartLength()));
+
+        if (src.isSetInnerShoreLength())
+            dest.setInnerShoreLength(helper.getGMLUnmarshaller().unmarshalLength(src.getInnerShoreLength()));
+
+        if (src.isSetCeilingHeight())
+            dest.setCeilingHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getCeilingHeight()));
+
+        if (src.isSetWaveDissipatorLength())
+            dest.setWaveDissipatorLength(helper.getGMLUnmarshaller().unmarshalLength(src.getWaveDissipatorLength()));
+
+        if (src.isSetMainMaterial())
+            dest.setMainMaterial(helper.getGMLUnmarshaller().unmarshalCode(src.getMainMaterial()));
+
+        if (src.isSetWasteType())
+            dest.setWasteType(helper.getGMLUnmarshaller().unmarshalCode(src.getWasteType()));
+
+        if (src.isSetPlannedDisposalArea())
+            dest.setPlannedDisposalArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getPlannedDisposalArea()));
+
+        if (src.isSetPlannedDisposalAmount())
+            dest.setPlannedDisposalAmount(src.getPlannedDisposalAmount().intValue());
+
+        if (src.isSetReceivingCapacity())
+            dest.setReceivingCapacity(src.getReceivingCapacity().intValue());
+
+        dest.setShipType(src.getShipType());
+
+        if (src.isSetUnitOfReceivingCapacity())
+            dest.setUnitOfReceivingCapacity(helper.getGMLUnmarshaller().unmarshalCode(src.getUnitOfReceivingCapacity()));
+
+        if (src.isSetAcquisitionYear()) {
+            LocalDate date = src.getAcquisitionYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setAcquisitionYear(Year.of(date.getYear()));
+        }
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        if (src.isSetSubsidy())
+            dest.setSubsidy(src.getSubsidy().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortEnvironmentalImprovementFacility unmarshalPortEnvironmentalImprovementFacility(PortEnvironmentalImprovementFacilityType src) throws MissingADESchemaException {
+        PortEnvironmentalImprovementFacility dest = new PortEnvironmentalImprovementFacility();
+        unmarshalPortAttribute(src, dest);
+
+        dest.setUsage(src.getUsage());
+
+        if (src.isSetLength())
+            dest.setLength(helper.getGMLUnmarshaller().unmarshalLength(src.getLength()));
+
+        if (src.isSetArea())
+            dest.setArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getArea()));
+
+        if (src.isSetTotalFoorArea())
+            dest.setTotalFoorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getTotalFoorArea()));
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        if (src.isSetSubsidy())
+            dest.setSubsidy(src.getSubsidy().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortPollutionControlFacility unmarshalPortPollutionControlFacility(PortPollutionControlFacilityType src) throws MissingADESchemaException {
+        PortPollutionControlFacility dest = new PortPollutionControlFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetLength())
+            dest.setLength(helper.getGMLUnmarshaller().unmarshalLength(src.getLength()));
+
+        if (src.isSetWidth())
+            dest.setWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getWidth()));
+
+        if (src.isSetCrossSectionalArea())
+            dest.setCrossSectionalArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getCrossSectionalArea()));
+
+        if (src.isSetArea())
+            dest.setArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getArea()));
+
+        if (src.isSetHeight())
+            dest.setHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getHeight()));
+
+        if (src.isSetMainMaterial())
+            dest.setMainMaterial(helper.getGMLUnmarshaller().unmarshalCode(src.getMainMaterial()));
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        if (src.isSetSubsidy())
+            dest.setSubsidy(src.getSubsidy().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortWelfareFacility unmarshalPortWelfareFacility(PortWelfareFacilityType src) throws MissingADESchemaException {
+        PortWelfareFacility dest = new PortWelfareFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetTotalFloorArea())
+            dest.setTotalFloorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getTotalFloorArea()));
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private PortManagementFacility unmarshalPortManagementFacility(PortManagementFacilityType src) throws MissingADESchemaException {
+        PortManagementFacility dest = new PortManagementFacility();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetTotalFloorArea())
+            dest.setTotalFloorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getTotalFloorArea()));
+
+        if (src.isSetNumberOfShipTypes())
+            dest.setNumberOfShipTypes(src.getNumberOfShipTypes().intValue());
+
+        if (src.isSetUnitOfShipType())
+            dest.setUnitOfShipType(helper.getGMLUnmarshaller().unmarshalCode(src.getUnitOfShipType()));
+
+        if (src.isSetLoadingCapacity())
+            dest.setLoadingCapacity(src.getLoadingCapacity().intValue());
+
+        if (src.isSetAcquisitionYear()) {
+            LocalDate date = src.getAcquisitionYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setAcquisitionYear(Year.of(date.getYear()));
+        }
+
+        dest.setUsage(src.getUsage());
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        if (src.isSetSubsidy())
+            dest.setSubsidy(src.getSubsidy().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private CyberportMarinaAndPBS unmarshalCyberportMarinaAndPBS(CyberportMarinaAndPBSType src) throws MissingADESchemaException {
+        CyberportMarinaAndPBS dest = new CyberportMarinaAndPBS();
+        unmarshalPortAttribute(src, dest);
+
+        if (src.isSetGeologicalType())
+            dest.setGeologicalType(helper.getGMLUnmarshaller().unmarshalCode(src.getGeologicalType()));
+
+        dest.setObstructingStructures(src.getObstructingStructures());
+
+        if (src.isSetMainPartLength())
+            dest.setMainPartLength(helper.getGMLUnmarshaller().unmarshalLength(src.getMainPartLength()));
+
+        if (src.isSetTotalLength())
+            dest.setTotalLength(helper.getGMLUnmarshaller().unmarshalLength(src.getTotalLength()));
+
+        if (src.isSetWaveDissipatorLength())
+            dest.setWaveDissipatorLength(helper.getGMLUnmarshaller().unmarshalLength(src.getWaveDissipatorLength()));
+
+        if (src.isSetFacilityWidth())
+            dest.setFacilityWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getFacilityWidth()));
+
+        if (src.isSetApronWidth())
+            dest.setApronWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getApronWidth()));
+
+        dest.setRestrictionStructure(src.getRestrictionStructure());
+
+        if (src.isSetPlannedDepth())
+            dest.setPlannedDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getPlannedDepth()));
+
+        if (src.isSetCurrentDepth())
+            dest.setCurrentDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getCurrentDepth()));
+
+        if (src.isSetInnerTotalFloorArea())
+            dest.setInnerTotalFloorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getInnerTotalFloorArea()));
+
+        if (src.isSetInnerOfSiteArea())
+            dest.setInnerOfSiteArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getInnerOfSiteArea()));
+
+        if (src.isSetOuterOfTotalFloorArea())
+            dest.setOuterOfTotalFloorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getOuterOfTotalFloorArea()));
+
+        if (src.isSetOuterSiteArea())
+            dest.setOuterSiteArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getOuterSiteArea()));
+
+        if (src.isSetCeilingHeight())
+            dest.setCeilingHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getCeilingHeight()));
+
+        if (src.isSetGravityResistant())
+            dest.setGravityResistant(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGravityResistant()));
+
+        if (src.isSetForm())
+            dest.setForm(helper.getGMLUnmarshaller().unmarshalCode(src.getForm()));
+
+        if (src.isSetAreaType())
+            dest.setAreaType(helper.getGMLUnmarshaller().unmarshalCode(src.getAreaType()));
+
+        if (src.isSetMainVessels())
+            dest.setMainVessels(helper.getGMLUnmarshaller().unmarshalCode(src.getMainVessels()));
+
+        dest.setIsDredged(src.isIsDredged());
+
+        if (src.isSetMooringPostWeight())
+            dest.setMooringPostWeight(helper.getGMLUnmarshaller().unmarshalMeasure(src.getMooringPostWeight()));
+
+        if (src.isSetNumberOfMooringPosts())
+            dest.setNumberOfMooringPosts(src.getNumberOfMooringPosts().intValue());
+
+        if (src.isSetResistantMaterial())
+            dest.setResistantMaterial(src.getResistantMaterial().intValue());
+
+        if (src.isSetLighting())
+            dest.setLighting(src.getLighting().intValue());
+
+        if (src.isSetStairs())
+            dest.setStairs(src.getStairs().intValue());
+
+        dest.setLifesaving(src.getLifesaving());
+
+        if (src.isSetLifesavingNumber())
+            dest.setLifesavingNumber(src.getLifesavingNumber().intValue());
+
+        if (src.isSetBumper())
+            dest.setBumper(helper.getGMLUnmarshaller().unmarshalLength(src.getBumper()));
+
+        if (src.isSetNumberOfVehicleBoardings())
+            dest.setNumberOfVehicleBoardings(src.getNumberOfVehicleBoardings().intValue());
+
+        if (src.isSetVehicleBoardingWidth())
+            dest.setVehicleBoardingWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getVehicleBoardingWidth()));
+
+        dest.setShipType(src.getShipType());
+
+        if (src.isSetNumberOfSeats())
+            dest.setNumberOfSeats(src.getNumberOfSeats().intValue());
+
+        if (src.isSetMainCargo())
+            dest.setMainCargo(helper.getGMLUnmarshaller().unmarshalCode(src.getMainCargo()));
+
+        if (src.isSetStorageCapacity())
+            dest.setStorageCapacity(src.getStorageCapacity().intValue());
+
+        if (src.isSetStorageCapacityUnit())
+            dest.setStorageCapacityUnit(helper.getGMLUnmarshaller().unmarshalCode(src.getStorageCapacityUnit()));
+
+        if (src.isSetStructureType())
+            dest.setStructureType(helper.getGMLUnmarshaller().unmarshalCode(src.getStructureType()));
+
+        if (src.isSetMainMaterial())
+            dest.setMainMaterial(helper.getGMLUnmarshaller().unmarshalCode(src.getMainMaterial()));
+
+        if (src.isSetTotalCost())
+            dest.setTotalCost(src.getTotalCost().intValue());
+
+        if (src.isSetSubsidy())
+            dest.setSubsidy(src.getSubsidy().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private void unmarshalFishingPortAttribute(FishingPortAttributeType src, FishingPortAttribute dest) throws MissingADESchemaException {
+        unmarshalFacilityAttribute(src, dest);
+    }
+
+    private FishingPortFacility unmarshalFishingPortFacility(FishingPortFacilityType src) throws MissingADESchemaException {
+        FishingPortFacility dest = new FishingPortFacility();
+        unmarshalFishingPortAttribute(src, dest);
+
+        if (src.isSetFacilityDetailsType())
+            dest.setFacilityDetailsType(helper.getGMLUnmarshaller().unmarshalCode(src.getFacilityDetailsType()));
+
+        dest.setPortName(src.getPortName());
+
+        if (src.isSetPortType())
+            dest.setPortType(helper.getGMLUnmarshaller().unmarshalCode(src.getPortType()));
+
+        dest.setAddress(src.getAddress());
+        dest.setDesignatedArea(src.getDesignatedArea());
+
+        if (src.isSetDesignation()) {
+            for (String designation : src.getDesignation())
+                dest.getDesignation().add(designation);
+        }
+
+        if (src.isSetDesignatedAdministrator()) {
+            for (String designatedAdministrator : src.getDesignatedAdministrator())
+                dest.getDesignatedAdministrator().add(designatedAdministrator);
+        }
+
+        if (src.isSetReferenceNumber()) {
+            for (String referenceNumber : src.getReferenceNumber())
+                dest.getReferenceNumber().add(referenceNumber);
+        }
+
+        if (src.isSetGrantType())
+            dest.setGrantType(helper.getGMLUnmarshaller().unmarshalCode(src.getGrantType()));
+
+        dest.setAdministrator(src.getAdministrator());
+        dest.setFacilityManager(src.getFacilityManager());
+
+        if (src.isSetStructureType())
+            dest.setStructureType(helper.getGMLUnmarshaller().unmarshalCode(src.getStructureType()));
+
+        if (src.isSetMainMaterial())
+            dest.setMainMaterial(helper.getGMLUnmarshaller().unmarshalCode(src.getMainMaterial()));
+
+        dest.setOtherStructure(src.getOtherStructure());
+
+        if (src.isSetLength())
+            dest.setLength(helper.getGMLUnmarshaller().unmarshalLength(src.getLength()));
+
+        if (src.isSetWidth())
+            dest.setWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getWidth()));
+
+        if (src.isSetCeilingHeight())
+            dest.setCeilingHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getCeilingHeight()));
+
+        if (src.isSetDepth())
+            dest.setDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getDepth()));
+
+        if (src.isSetArea())
+            dest.setArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getArea()));
+
+        dest.setOtherSizeDescription(src.getOtherSizeDescription());
+
+        if (src.isSetDateOfConstructionOrAcquisition())
+            dest.setDateOfConstructionOrAcquisition(src.getDateOfConstructionOrAcquisition().toGregorianCalendar().toZonedDateTime().toLocalDate());
+
+        if (src.isSetCost())
+            dest.setCost(src.getCost().intValue());
+
+        dest.setNote(src.getNote());
+
+        return dest;
+    }
+
+    private FishingPortCapacity unmarshalFishingPortCapacity(FishingPortCapacityType src) throws MissingADESchemaException {
+        FishingPortCapacity dest = new FishingPortCapacity();
+        unmarshalFishingPortAttribute(src, dest);
+
+        dest.setCapacity(src.getCapacity());
+
+        if (src.isSetWeightCapacity())
+            dest.setWeightCapacity(helper.getGMLUnmarshaller().unmarshalMeasure(src.getWeightCapacity()));
+
+        if (src.isSetHullForm())
+            dest.setHullForm(src.getHullForm().intValue());
+
+        if (src.isSetShipNumber())
+            dest.setShipNumber(src.getShipNumber().intValue());
+
+        if (src.isSetWaterDepth2M())
+            dest.setWaterDepth2m(helper.getGMLUnmarshaller().unmarshalMeasure(src.getWaterDepth2M()));
+
+        if (src.isSetWaterDepth23M())
+            dest.setWaterDepth23m(helper.getGMLUnmarshaller().unmarshalMeasure(src.getWaterDepth23M()));
+
+        if (src.isSetWaterDepth36M())
+            dest.setWaterDepth36m(helper.getGMLUnmarshaller().unmarshalMeasure(src.getWaterDepth36M()));
+
+        if (src.isSetWaterDepth6M())
+            dest.setWaterDepth6m(helper.getGMLUnmarshaller().unmarshalMeasure(src.getWaterDepth6M()));
+
+        if (src.isSetHeightAboveAWL())
+            dest.setHeightAboveAWL(helper.getGMLUnmarshaller().unmarshalLength(src.getHeightAboveAWL()));
+
+        if (src.isSetHeightOnFoundations())
+            dest.setHeightOnFoundations(helper.getGMLUnmarshaller().unmarshalLength(src.getHeightOnFoundations()));
+
+        if (src.isSetLuminousRange())
+            dest.setLuminousRange(helper.getGMLUnmarshaller().unmarshalLength(src.getLuminousRange()));
+
+        dest.setLuminousColor(src.getLuminousColor());
+
+        if (src.isSetCandlePower())
+            dest.setCandlePower(src.getCandlePower().intValue());
+
+        dest.setLightType(src.getLightType());
+        dest.setPeriod(src.getPeriod());
+
+        if (src.isSetMaximumGroundingWeight())
+            dest.setMaximumGroundingWeight(src.getMaximumGroundingWeight().intValue());
+
+        if (src.isSetHandleablePower())
+            dest.setHandleablePower(src.getHandleablePower().intValue());
+
+        if (src.isSetMaximumWaterSupply())
+            dest.setMaximumWaterSupply(src.getMaximumWaterSupply().intValue());
+
+        dest.setMaximumRefueling(src.getMaximumRefueling());
+
+        if (src.isSetPeople())
+            dest.setPeople(src.getPeople().intValue());
+
+        dest.setOther(src.getOther());
+
+        return dest;
+    }
+
+    private MaintenanceHistoryAttribute unmarshalMaintenanceHistoryAttribute(MaintenanceHistoryAttributeType src) throws MissingADESchemaException {
+        MaintenanceHistoryAttribute dest = new MaintenanceHistoryAttribute();
+        unmarshalFacilityAttribute(src, dest);
+
+        if (src.isSetMaintenanceType())
+            dest.setMaintenanceType(helper.getGMLUnmarshaller().unmarshalCode(src.getMaintenanceType()));
+
+        if (src.isSetMaintenanceFiscalYear()) {
+            LocalDate date = src.getMaintenanceFiscalYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setMaintenanceFiscalYear(Year.of(date.getYear()));
+        }
+
+        if (src.isSetMaintenanceYear()) {
+            LocalDate date = src.getMaintenanceYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setMaintenanceYear(Year.of(date.getYear()));
+        }
+
+        if (src.isSetMaintenanceDate())
+            dest.setMaintenanceDate(src.getMaintenanceDate().toGregorianCalendar().toZonedDateTime().toLocalDate());
+
+        dest.setStatus(src.getStatus());
+
+        if (src.isSetDescription())
+            dest.setDescription(helper.getGMLUnmarshaller().unmarshalStringOrRef(src.getDescription()));
+
+        return dest;
+    }
+
+    private FacilityAttributeProperty unmarshalFacilityAttributeProperty(FacilityAttributePropertyType src) throws MissingADESchemaException {
+        FacilityAttributeProperty dest = new FacilityAttributeProperty();
+
+        if (src.isSetFacilityAttribute()) {
+            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.getFacilityAttribute());
+            if (object instanceof FacilityAttribute)
+                dest.setObject((FacilityAttribute) object);
+        }
 
         return dest;
     }

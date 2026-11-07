@@ -9,6 +9,17 @@ Change Log
   `RealEstateIDAttribute` is no longer a `BuildingAttribute` subtype.
 * JAXB classes for `uro` are generated into `jp.geospatial.iur._3_2.uro`.
 
+##### Changes (all uro attributes, 2026-11-07)
+* Every `uro` generic application property of every CityGML feature type defined by the i-UR 3.2 XSD is now modelled and
+  (un)marshalled: facility, DM, ifc and indoor attributes of buildings and the attributes of bridges, tunnels, land use,
+  city furniture, relief, transportation, vegetation, water bodies, city object groups and building interiors.
+* The `uro` model and binding classes are generated from the XSD (`poc/gen` in the PoC workspace).
+
+##### Known limitations
+* The feature-typed hook `uro:pointCloud` (`core:_GenericApplicationPropertyOfCityObject`) is not supported.
+* ADE feature types (`uro:UndergroundBuilding`, `uro:OtherConstruction`, `uro:Waterway`, utility networks, ...) are not
+  supported; `urf`, `urg` and `urt` remain at 1.4.
+
 ### 3.1.0 - 2026-11-07
 
 ##### Breaking changes

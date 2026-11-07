@@ -14,11 +14,14 @@ Change Log
 ##### Changes
 * Sources are compiled as UTF-8.
 
+##### Changes (all uro attributes, 2026-11-07)
+* Every `uro` generic application property of every CityGML feature type defined by the i-UR 3.1 XSD is now modelled and
+  (un)marshalled: facility, DM, ifc and indoor attributes of buildings and the attributes of bridges, tunnels, land use,
+  city furniture, relief, transportation, vegetation, water bodies, city object groups and building interiors.
+* The `uro` model and binding classes are generated from the XSD (`poc/gen` in the PoC workspace).
 ##### Known limitations
-* The 3.1 building properties `bldgFacilityIdAttribute`, `bldgFacilityTypeAttribute`, `bldgFacilityAttribute`,
-  `bldgDmAttribute`, `ifcBuildingAttribute` and `indoorBuildingAttribute` are not modelled yet, nor are the
-  `uro` attributes of other feature types.
-* The `urf`, `urg` and `urt` modules remain at i-UR 1.4.
+* ADE feature types (`uro:UndergroundBuilding`, `uro:OtherConstruction`, `uro:Waterway`, utility networks, ...) are not
+  supported; `urf`, `urg` and `urt` remain at 1.4.
 
 ### 2.0.0 - 2026-11-07
 

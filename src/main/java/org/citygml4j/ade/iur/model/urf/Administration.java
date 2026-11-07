@@ -22,9 +22,34 @@
 
 package org.citygml4j.ade.iur.model.urf;
 
+import org.citygml4j.ade.iur.model.uro.DmAttributeProperty;
 import org.citygml4j.builder.copy.CopyBuilder;
+import org.citygml4j.builder.copy.ObjectCopier;
+import org.citygml4j.model.common.base.ModelObjects;
+import org.citygml4j.model.common.child.ChildList;
+
+import java.util.List;
 
 public class Administration extends UrbanFunction {
+    private List<DmAttributeProperty> urfDmAttribute;
+
+    public List<DmAttributeProperty> getUrfDmAttribute() {
+        if (urfDmAttribute == null)
+            urfDmAttribute = new ChildList<>(this);
+
+        return urfDmAttribute;
+    }
+
+    public void setUrfDmAttribute(List<DmAttributeProperty> urfDmAttribute) {
+        this.urfDmAttribute = ModelObjects.setParent(urfDmAttribute, this);
+    }
+
+    @Override
+    public Object copyTo(Object target, CopyBuilder copyBuilder) {
+        Administration copy = target == null ? new Administration() : (Administration) target;
+        super.copyTo(copy, copyBuilder);
+        return ObjectCopier.copyTo(this, copy, copyBuilder);
+    }
 
     @Override
     public Object copy(CopyBuilder copyBuilder) {

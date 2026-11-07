@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 17:59:35 JST 2026
 //
 
 
@@ -20,9 +20,9 @@ import net.opengis.gml.MultiCurvePropertyType;
 
 
 /**
- * <p>Java-Klasse für RouteType complex type.
+ * <p>Java class for RouteType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="RouteType"&gt;
@@ -101,7 +101,7 @@ public class RouteType
     protected MultiCurvePropertyType lod0MultiCurve;
 
     /**
-     * Ruft den Wert der shortName-Eigenschaft ab.
+     * Gets the value of the shortName property.
      * 
      * @return
      *     possible object is
@@ -113,7 +113,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der shortName-Eigenschaft fest.
+     * Sets the value of the shortName property.
      * 
      * @param value
      *     allowed object is
@@ -129,7 +129,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der longName-Eigenschaft ab.
+     * Gets the value of the longName property.
      * 
      * @return
      *     possible object is
@@ -141,7 +141,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der longName-Eigenschaft fest.
+     * Sets the value of the longName property.
      * 
      * @param value
      *     allowed object is
@@ -157,7 +157,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der routeDescription-Eigenschaft ab.
+     * Gets the value of the routeDescription property.
      * 
      * @return
      *     possible object is
@@ -169,7 +169,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der routeDescription-Eigenschaft fest.
+     * Sets the value of the routeDescription property.
      * 
      * @param value
      *     allowed object is
@@ -185,7 +185,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der type-Eigenschaft ab.
+     * Gets the value of the type property.
      * 
      * @return
      *     possible object is
@@ -197,7 +197,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der type-Eigenschaft fest.
+     * Sets the value of the type property.
      * 
      * @param value
      *     allowed object is
@@ -213,7 +213,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der url-Eigenschaft ab.
+     * Gets the value of the url property.
      * 
      * @return
      *     possible object is
@@ -225,7 +225,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der url-Eigenschaft fest.
+     * Sets the value of the url property.
      * 
      * @param value
      *     allowed object is
@@ -241,7 +241,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der color-Eigenschaft ab.
+     * Gets the value of the color property.
      * 
      * @return
      *     possible object is
@@ -253,7 +253,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der color-Eigenschaft fest.
+     * Sets the value of the color property.
      * 
      * @param value
      *     allowed object is
@@ -269,7 +269,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der textColor-Eigenschaft ab.
+     * Gets the value of the textColor property.
      * 
      * @return
      *     possible object is
@@ -281,7 +281,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der textColor-Eigenschaft fest.
+     * Sets the value of the textColor property.
      * 
      * @param value
      *     allowed object is
@@ -297,7 +297,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der updateDate-Eigenschaft ab.
+     * Gets the value of the updateDate property.
      * 
      * @return
      *     possible object is
@@ -309,7 +309,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der updateDate-Eigenschaft fest.
+     * Sets the value of the updateDate property.
      * 
      * @param value
      *     allowed object is
@@ -325,7 +325,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der originStop-Eigenschaft ab.
+     * Gets the value of the originStop property.
      * 
      * @return
      *     possible object is
@@ -337,7 +337,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der originStop-Eigenschaft fest.
+     * Sets the value of the originStop property.
      * 
      * @param value
      *     allowed object is
@@ -353,7 +353,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der viaStop-Eigenschaft ab.
+     * Gets the value of the viaStop property.
      * 
      * @return
      *     possible object is
@@ -365,7 +365,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der viaStop-Eigenschaft fest.
+     * Sets the value of the viaStop property.
      * 
      * @param value
      *     allowed object is
@@ -381,7 +381,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der destinationStop-Eigenschaft ab.
+     * Gets the value of the destinationStop property.
      * 
      * @return
      *     possible object is
@@ -393,7 +393,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der destinationStop-Eigenschaft fest.
+     * Sets the value of the destinationStop property.
      * 
      * @param value
      *     allowed object is
@@ -409,7 +409,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der routeSortOrder-Eigenschaft ab.
+     * Gets the value of the routeSortOrder property.
      * 
      * @return
      *     possible object is
@@ -421,7 +421,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der routeSortOrder-Eigenschaft fest.
+     * Sets the value of the routeSortOrder property.
      * 
      * @param value
      *     allowed object is
@@ -437,7 +437,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der continuousPickup-Eigenschaft ab.
+     * Gets the value of the continuousPickup property.
      * 
      * @return
      *     possible object is
@@ -449,7 +449,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der continuousPickup-Eigenschaft fest.
+     * Sets the value of the continuousPickup property.
      * 
      * @param value
      *     allowed object is
@@ -465,7 +465,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der continuousDropOff-Eigenschaft ab.
+     * Gets the value of the continuousDropOff property.
      * 
      * @return
      *     possible object is
@@ -477,7 +477,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der continuousDropOff-Eigenschaft fest.
+     * Sets the value of the continuousDropOff property.
      * 
      * @param value
      *     allowed object is
@@ -493,7 +493,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der agency-Eigenschaft ab.
+     * Gets the value of the agency property.
      * 
      * @return
      *     possible object is
@@ -505,7 +505,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der agency-Eigenschaft fest.
+     * Sets the value of the agency property.
      * 
      * @param value
      *     allowed object is
@@ -521,7 +521,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der parentRoute-Eigenschaft ab.
+     * Gets the value of the parentRoute property.
      * 
      * @return
      *     possible object is
@@ -533,7 +533,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der parentRoute-Eigenschaft fest.
+     * Sets the value of the parentRoute property.
      * 
      * @param value
      *     allowed object is
@@ -549,7 +549,7 @@ public class RouteType
     }
 
     /**
-     * Ruft den Wert der lod0MultiCurve-Eigenschaft ab.
+     * Gets the value of the lod0MultiCurve property.
      * 
      * @return
      *     possible object is
@@ -561,7 +561,7 @@ public class RouteType
     }
 
     /**
-     * Legt den Wert der lod0MultiCurve-Eigenschaft fest.
+     * Sets the value of the lod0MultiCurve property.
      * 
      * @param value
      *     allowed object is

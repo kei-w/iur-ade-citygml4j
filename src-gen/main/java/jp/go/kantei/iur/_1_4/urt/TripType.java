@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 17:59:35 JST 2026
 //
 
 
@@ -17,9 +17,9 @@ import net.opengis.gml.MultiCurvePropertyType;
 
 
 /**
- * <p>Java-Klasse für TripType complex type.
+ * <p>Java class for TripType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="TripType"&gt;
@@ -83,7 +83,7 @@ public class TripType
     protected MultiCurvePropertyType lod0MultiCurve;
 
     /**
-     * Ruft den Wert der headsign-Eigenschaft ab.
+     * Gets the value of the headsign property.
      * 
      * @return
      *     possible object is
@@ -95,7 +95,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der headsign-Eigenschaft fest.
+     * Sets the value of the headsign property.
      * 
      * @param value
      *     allowed object is
@@ -111,7 +111,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der shortName-Eigenschaft ab.
+     * Gets the value of the shortName property.
      * 
      * @return
      *     possible object is
@@ -123,7 +123,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der shortName-Eigenschaft fest.
+     * Sets the value of the shortName property.
      * 
      * @param value
      *     allowed object is
@@ -139,7 +139,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der directionId-Eigenschaft ab.
+     * Gets the value of the directionId property.
      * 
      * @return
      *     possible object is
@@ -151,7 +151,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der directionId-Eigenschaft fest.
+     * Sets the value of the directionId property.
      * 
      * @param value
      *     allowed object is
@@ -167,7 +167,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der blockId-Eigenschaft ab.
+     * Gets the value of the blockId property.
      * 
      * @return
      *     possible object is
@@ -179,7 +179,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der blockId-Eigenschaft fest.
+     * Sets the value of the blockId property.
      * 
      * @param value
      *     allowed object is
@@ -195,7 +195,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der wheelchairAccessible-Eigenschaft ab.
+     * Gets the value of the wheelchairAccessible property.
      * 
      * @return
      *     possible object is
@@ -207,7 +207,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der wheelchairAccessible-Eigenschaft fest.
+     * Sets the value of the wheelchairAccessible property.
      * 
      * @param value
      *     allowed object is
@@ -223,7 +223,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der bikeAllowed-Eigenschaft ab.
+     * Gets the value of the bikeAllowed property.
      * 
      * @return
      *     possible object is
@@ -235,7 +235,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der bikeAllowed-Eigenschaft fest.
+     * Sets the value of the bikeAllowed property.
      * 
      * @param value
      *     allowed object is
@@ -251,7 +251,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der symbol-Eigenschaft ab.
+     * Gets the value of the symbol property.
      * 
      * @return
      *     possible object is
@@ -263,7 +263,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der symbol-Eigenschaft fest.
+     * Sets the value of the symbol property.
      * 
      * @param value
      *     allowed object is
@@ -279,7 +279,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der route-Eigenschaft ab.
+     * Gets the value of the route property.
      * 
      * @return
      *     possible object is
@@ -291,7 +291,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der route-Eigenschaft fest.
+     * Sets the value of the route property.
      * 
      * @param value
      *     allowed object is
@@ -307,7 +307,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der calendar-Eigenschaft ab.
+     * Gets the value of the calendar property.
      * 
      * @return
      *     possible object is
@@ -319,7 +319,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der calendar-Eigenschaft fest.
+     * Sets the value of the calendar property.
      * 
      * @param value
      *     allowed object is
@@ -335,7 +335,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der calendarDate-Eigenschaft ab.
+     * Gets the value of the calendarDate property.
      * 
      * @return
      *     possible object is
@@ -347,7 +347,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der calendarDate-Eigenschaft fest.
+     * Sets the value of the calendarDate property.
      * 
      * @param value
      *     allowed object is
@@ -363,7 +363,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der office-Eigenschaft ab.
+     * Gets the value of the office property.
      * 
      * @return
      *     possible object is
@@ -375,7 +375,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der office-Eigenschaft fest.
+     * Sets the value of the office property.
      * 
      * @param value
      *     allowed object is
@@ -391,7 +391,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der shape-Eigenschaft ab.
+     * Gets the value of the shape property.
      * 
      * @return
      *     possible object is
@@ -403,7 +403,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der shape-Eigenschaft fest.
+     * Sets the value of the shape property.
      * 
      * @param value
      *     allowed object is
@@ -419,7 +419,7 @@ public class TripType
     }
 
     /**
-     * Ruft den Wert der lod0MultiCurve-Eigenschaft ab.
+     * Gets the value of the lod0MultiCurve property.
      * 
      * @return
      *     possible object is
@@ -431,7 +431,7 @@ public class TripType
     }
 
     /**
-     * Legt den Wert der lod0MultiCurve-Eigenschaft fest.
+     * Sets the value of the lod0MultiCurve property.
      * 
      * @param value
      *     allowed object is

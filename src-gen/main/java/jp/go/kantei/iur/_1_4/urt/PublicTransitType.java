@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 17:59:35 JST 2026
 //
 
 
@@ -17,9 +17,9 @@ import net.opengis.citygml._2.AbstractCityObjectType;
 
 
 /**
- * <p>Java-Klasse für PublicTransitType complex type.
+ * <p>Java class for PublicTransitType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PublicTransitType"&gt;
@@ -65,7 +65,7 @@ public abstract class PublicTransitType
     protected TargetPropertyType target;
 
     /**
-     * Ruft den Wert der orgId-Eigenschaft ab.
+     * Gets the value of the orgId property.
      * 
      * @return
      *     possible object is
@@ -77,7 +77,7 @@ public abstract class PublicTransitType
     }
 
     /**
-     * Legt den Wert der orgId-Eigenschaft fest.
+     * Sets the value of the orgId property.
      * 
      * @param value
      *     allowed object is
@@ -93,7 +93,7 @@ public abstract class PublicTransitType
     }
 
     /**
-     * Ruft den Wert der target-Eigenschaft ab.
+     * Gets the value of the target property.
      * 
      * @return
      *     possible object is
@@ -105,7 +105,7 @@ public abstract class PublicTransitType
     }
 
     /**
-     * Legt den Wert der target-Eigenschaft fest.
+     * Sets the value of the target property.
      * 
      * @param value
      *     allowed object is

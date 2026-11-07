@@ -23,8 +23,38 @@
 package org.citygml4j.ade.iur.model.urf;
 
 import org.citygml4j.builder.copy.CopyBuilder;
+import org.citygml4j.builder.copy.ObjectCopier;
+import org.citygml4j.model.common.base.ModelObjects;
+import org.citygml4j.model.gml.basicTypes.Measure;
+
+import java.time.LocalDate;
 
 public class Agreement extends Zone {
+    private Measure applicableArea;
+    private LocalDate expiration;
+
+    public Measure getApplicableArea() {
+        return applicableArea;
+    }
+
+    public void setApplicableArea(Measure applicableArea) {
+        this.applicableArea = ModelObjects.setParent(applicableArea, this);
+    }
+
+    public LocalDate getExpiration() {
+        return expiration;
+    }
+
+    public void setExpiration(LocalDate expiration) {
+        this.expiration = expiration;
+    }
+
+    @Override
+    public Object copyTo(Object target, CopyBuilder copyBuilder) {
+        Agreement copy = target == null ? new Agreement() : (Agreement) target;
+        super.copyTo(copy, copyBuilder);
+        return ObjectCopier.copyTo(this, copy, copyBuilder);
+    }
 
     @Override
     public Object copy(CopyBuilder copyBuilder) {

@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 17:59:35 JST 2026
 //
 
 
@@ -17,9 +17,9 @@ import net.opengis.gml.CodeType;
 
 
 /**
- * <p>Java-Klasse für AgencyType complex type.
+ * <p>Java class for AgencyType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="AgencyType"&gt;
@@ -84,7 +84,7 @@ public class AgencyType
     protected String presidentName;
 
     /**
-     * Ruft den Wert der agencyName-Eigenschaft ab.
+     * Gets the value of the agencyName property.
      * 
      * @return
      *     possible object is
@@ -96,7 +96,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der agencyName-Eigenschaft fest.
+     * Sets the value of the agencyName property.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +112,7 @@ public class AgencyType
     }
 
     /**
-     * Ruft den Wert der url-Eigenschaft ab.
+     * Gets the value of the url property.
      * 
      * @return
      *     possible object is
@@ -124,7 +124,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der url-Eigenschaft fest.
+     * Sets the value of the url property.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +140,7 @@ public class AgencyType
     }
 
     /**
-     * Ruft den Wert der timeZone-Eigenschaft ab.
+     * Gets the value of the timeZone property.
      * 
      * @return
      *     possible object is
@@ -152,7 +152,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der timeZone-Eigenschaft fest.
+     * Sets the value of the timeZone property.
      * 
      * @param value
      *     allowed object is
@@ -168,7 +168,7 @@ public class AgencyType
     }
 
     /**
-     * Ruft den Wert der language-Eigenschaft ab.
+     * Gets the value of the language property.
      * 
      * @return
      *     possible object is
@@ -180,7 +180,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der language-Eigenschaft fest.
+     * Sets the value of the language property.
      * 
      * @param value
      *     allowed object is
@@ -196,7 +196,7 @@ public class AgencyType
     }
 
     /**
-     * Ruft den Wert der phone-Eigenschaft ab.
+     * Gets the value of the phone property.
      * 
      * @return
      *     possible object is
@@ -208,7 +208,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der phone-Eigenschaft fest.
+     * Sets the value of the phone property.
      * 
      * @param value
      *     allowed object is
@@ -224,7 +224,7 @@ public class AgencyType
     }
 
     /**
-     * Ruft den Wert der fareUrl-Eigenschaft ab.
+     * Gets the value of the fareUrl property.
      * 
      * @return
      *     possible object is
@@ -236,7 +236,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der fareUrl-Eigenschaft fest.
+     * Sets the value of the fareUrl property.
      * 
      * @param value
      *     allowed object is
@@ -252,7 +252,7 @@ public class AgencyType
     }
 
     /**
-     * Ruft den Wert der email-Eigenschaft ab.
+     * Gets the value of the email property.
      * 
      * @return
      *     possible object is
@@ -264,7 +264,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der email-Eigenschaft fest.
+     * Sets the value of the email property.
      * 
      * @param value
      *     allowed object is
@@ -280,7 +280,7 @@ public class AgencyType
     }
 
     /**
-     * Ruft den Wert der officialName-Eigenschaft ab.
+     * Gets the value of the officialName property.
      * 
      * @return
      *     possible object is
@@ -292,7 +292,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der officialName-Eigenschaft fest.
+     * Sets the value of the officialName property.
      * 
      * @param value
      *     allowed object is
@@ -308,7 +308,7 @@ public class AgencyType
     }
 
     /**
-     * Ruft den Wert der zipNumber-Eigenschaft ab.
+     * Gets the value of the zipNumber property.
      * 
      * @return
      *     possible object is
@@ -320,7 +320,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der zipNumber-Eigenschaft fest.
+     * Sets the value of the zipNumber property.
      * 
      * @param value
      *     allowed object is
@@ -336,7 +336,7 @@ public class AgencyType
     }
 
     /**
-     * Ruft den Wert der address-Eigenschaft ab.
+     * Gets the value of the address property.
      * 
      * @return
      *     possible object is
@@ -348,7 +348,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der address-Eigenschaft fest.
+     * Sets the value of the address property.
      * 
      * @param value
      *     allowed object is
@@ -364,7 +364,7 @@ public class AgencyType
     }
 
     /**
-     * Ruft den Wert der presidentPosition-Eigenschaft ab.
+     * Gets the value of the presidentPosition property.
      * 
      * @return
      *     possible object is
@@ -376,7 +376,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der presidentPosition-Eigenschaft fest.
+     * Sets the value of the presidentPosition property.
      * 
      * @param value
      *     allowed object is
@@ -392,7 +392,7 @@ public class AgencyType
     }
 
     /**
-     * Ruft den Wert der presidentName-Eigenschaft ab.
+     * Gets the value of the presidentName property.
      * 
      * @return
      *     possible object is
@@ -404,7 +404,7 @@ public class AgencyType
     }
 
     /**
-     * Legt den Wert der presidentName-Eigenschaft fest.
+     * Sets the value of the presidentName property.
      * 
      * @param value
      *     allowed object is

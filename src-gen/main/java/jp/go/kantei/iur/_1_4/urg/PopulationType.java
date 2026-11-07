@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 17:59:35 JST 2026
 //
 
 
@@ -19,9 +19,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * grid cell with population values
  * 
- * <p>Java-Klasse für PopulationType complex type.
+ * <p>Java class for PopulationType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PopulationType"&gt;
@@ -84,7 +84,7 @@ public class PopulationType
     protected List<PopulationByAgeAndSexPropertyType> populationByAgeAndSex;
 
     /**
-     * Ruft den Wert der total-Eigenschaft ab.
+     * Gets the value of the total property.
      * 
      * @return
      *     possible object is
@@ -96,7 +96,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der total-Eigenschaft fest.
+     * Sets the value of the total property.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +112,7 @@ public class PopulationType
     }
 
     /**
-     * Ruft den Wert der daytimePopulation-Eigenschaft ab.
+     * Gets the value of the daytimePopulation property.
      * 
      * @return
      *     possible object is
@@ -124,7 +124,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der daytimePopulation-Eigenschaft fest.
+     * Sets the value of the daytimePopulation property.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +140,7 @@ public class PopulationType
     }
 
     /**
-     * Ruft den Wert der daytimePopulationDensity-Eigenschaft ab.
+     * Gets the value of the daytimePopulationDensity property.
      * 
      * @return
      *     possible object is
@@ -152,7 +152,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der daytimePopulationDensity-Eigenschaft fest.
+     * Sets the value of the daytimePopulationDensity property.
      * 
      * @param value
      *     allowed object is
@@ -168,7 +168,7 @@ public class PopulationType
     }
 
     /**
-     * Ruft den Wert der naturalIncrease-Eigenschaft ab.
+     * Gets the value of the naturalIncrease property.
      * 
      * @return
      *     possible object is
@@ -180,7 +180,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der naturalIncrease-Eigenschaft fest.
+     * Sets the value of the naturalIncrease property.
      * 
      * @param value
      *     allowed object is
@@ -196,7 +196,7 @@ public class PopulationType
     }
 
     /**
-     * Ruft den Wert der births-Eigenschaft ab.
+     * Gets the value of the births property.
      * 
      * @return
      *     possible object is
@@ -208,7 +208,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der births-Eigenschaft fest.
+     * Sets the value of the births property.
      * 
      * @param value
      *     allowed object is
@@ -224,7 +224,7 @@ public class PopulationType
     }
 
     /**
-     * Ruft den Wert der deaths-Eigenschaft ab.
+     * Gets the value of the deaths property.
      * 
      * @return
      *     possible object is
@@ -236,7 +236,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der deaths-Eigenschaft fest.
+     * Sets the value of the deaths property.
      * 
      * @param value
      *     allowed object is
@@ -252,7 +252,7 @@ public class PopulationType
     }
 
     /**
-     * Ruft den Wert der socialIncrease-Eigenschaft ab.
+     * Gets the value of the socialIncrease property.
      * 
      * @return
      *     possible object is
@@ -264,7 +264,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der socialIncrease-Eigenschaft fest.
+     * Sets the value of the socialIncrease property.
      * 
      * @param value
      *     allowed object is
@@ -280,7 +280,7 @@ public class PopulationType
     }
 
     /**
-     * Ruft den Wert der moveFrom-Eigenschaft ab.
+     * Gets the value of the moveFrom property.
      * 
      * @return
      *     possible object is
@@ -292,7 +292,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der moveFrom-Eigenschaft fest.
+     * Sets the value of the moveFrom property.
      * 
      * @param value
      *     allowed object is
@@ -308,7 +308,7 @@ public class PopulationType
     }
 
     /**
-     * Ruft den Wert der moveTo-Eigenschaft ab.
+     * Gets the value of the moveTo property.
      * 
      * @return
      *     possible object is
@@ -320,7 +320,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der moveTo-Eigenschaft fest.
+     * Sets the value of the moveTo property.
      * 
      * @param value
      *     allowed object is
@@ -336,7 +336,7 @@ public class PopulationType
     }
 
     /**
-     * Ruft den Wert der increasement-Eigenschaft ab.
+     * Gets the value of the increasement property.
      * 
      * @return
      *     possible object is
@@ -348,7 +348,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der increasement-Eigenschaft fest.
+     * Sets the value of the increasement property.
      * 
      * @param value
      *     allowed object is
@@ -364,7 +364,7 @@ public class PopulationType
     }
 
     /**
-     * Ruft den Wert der malePopulation-Eigenschaft ab.
+     * Gets the value of the malePopulation property.
      * 
      * @return
      *     possible object is
@@ -376,7 +376,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der malePopulation-Eigenschaft fest.
+     * Sets the value of the malePopulation property.
      * 
      * @param value
      *     allowed object is
@@ -392,7 +392,7 @@ public class PopulationType
     }
 
     /**
-     * Ruft den Wert der femalePopulation-Eigenschaft ab.
+     * Gets the value of the femalePopulation property.
      * 
      * @return
      *     possible object is
@@ -404,7 +404,7 @@ public class PopulationType
     }
 
     /**
-     * Legt den Wert der femalePopulation-Eigenschaft fest.
+     * Sets the value of the femalePopulation property.
      * 
      * @param value
      *     allowed object is

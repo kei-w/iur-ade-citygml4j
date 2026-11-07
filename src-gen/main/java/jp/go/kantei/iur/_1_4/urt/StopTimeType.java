@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 17:59:35 JST 2026
 //
 
 
@@ -19,9 +19,9 @@ import net.opengis.gml.CodeType;
 
 
 /**
- * <p>Java-Klasse für StopTimeType complex type.
+ * <p>Java class for StopTimeType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="StopTimeType"&gt;
@@ -88,7 +88,7 @@ public class StopTimeType
     protected StopPropertyType stop;
 
     /**
-     * Ruft den Wert der arrivalTime-Eigenschaft ab.
+     * Gets the value of the arrivalTime property.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der arrivalTime-Eigenschaft fest.
+     * Sets the value of the arrivalTime property.
      * 
      * @param value
      *     allowed object is
@@ -116,7 +116,7 @@ public class StopTimeType
     }
 
     /**
-     * Ruft den Wert der departureTime-Eigenschaft ab.
+     * Gets the value of the departureTime property.
      * 
      * @return
      *     possible object is
@@ -128,7 +128,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der departureTime-Eigenschaft fest.
+     * Sets the value of the departureTime property.
      * 
      * @param value
      *     allowed object is
@@ -144,7 +144,7 @@ public class StopTimeType
     }
 
     /**
-     * Ruft den Wert der stopSequence-Eigenschaft ab.
+     * Gets the value of the stopSequence property.
      * 
      * @return
      *     possible object is
@@ -156,7 +156,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der stopSequence-Eigenschaft fest.
+     * Sets the value of the stopSequence property.
      * 
      * @param value
      *     allowed object is
@@ -172,7 +172,7 @@ public class StopTimeType
     }
 
     /**
-     * Ruft den Wert der headsign-Eigenschaft ab.
+     * Gets the value of the headsign property.
      * 
      * @return
      *     possible object is
@@ -184,7 +184,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der headsign-Eigenschaft fest.
+     * Sets the value of the headsign property.
      * 
      * @param value
      *     allowed object is
@@ -200,7 +200,7 @@ public class StopTimeType
     }
 
     /**
-     * Ruft den Wert der pickupType-Eigenschaft ab.
+     * Gets the value of the pickupType property.
      * 
      * @return
      *     possible object is
@@ -212,7 +212,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der pickupType-Eigenschaft fest.
+     * Sets the value of the pickupType property.
      * 
      * @param value
      *     allowed object is
@@ -228,7 +228,7 @@ public class StopTimeType
     }
 
     /**
-     * Ruft den Wert der dropoffType-Eigenschaft ab.
+     * Gets the value of the dropoffType property.
      * 
      * @return
      *     possible object is
@@ -240,7 +240,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der dropoffType-Eigenschaft fest.
+     * Sets the value of the dropoffType property.
      * 
      * @param value
      *     allowed object is
@@ -256,7 +256,7 @@ public class StopTimeType
     }
 
     /**
-     * Ruft den Wert der continuousPickupType-Eigenschaft ab.
+     * Gets the value of the continuousPickupType property.
      * 
      * @return
      *     possible object is
@@ -268,7 +268,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der continuousPickupType-Eigenschaft fest.
+     * Sets the value of the continuousPickupType property.
      * 
      * @param value
      *     allowed object is
@@ -284,7 +284,7 @@ public class StopTimeType
     }
 
     /**
-     * Ruft den Wert der continuousDropoffType-Eigenschaft ab.
+     * Gets the value of the continuousDropoffType property.
      * 
      * @return
      *     possible object is
@@ -296,7 +296,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der continuousDropoffType-Eigenschaft fest.
+     * Sets the value of the continuousDropoffType property.
      * 
      * @param value
      *     allowed object is
@@ -312,7 +312,7 @@ public class StopTimeType
     }
 
     /**
-     * Ruft den Wert der shapeDistanceTraveled-Eigenschaft ab.
+     * Gets the value of the shapeDistanceTraveled property.
      * 
      * @return
      *     possible object is
@@ -324,7 +324,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der shapeDistanceTraveled-Eigenschaft fest.
+     * Sets the value of the shapeDistanceTraveled property.
      * 
      * @param value
      *     allowed object is
@@ -340,7 +340,7 @@ public class StopTimeType
     }
 
     /**
-     * Ruft den Wert der timePoint-Eigenschaft ab.
+     * Gets the value of the timePoint property.
      * 
      * @return
      *     possible object is
@@ -352,7 +352,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der timePoint-Eigenschaft fest.
+     * Sets the value of the timePoint property.
      * 
      * @param value
      *     allowed object is
@@ -368,7 +368,7 @@ public class StopTimeType
     }
 
     /**
-     * Ruft den Wert der trip-Eigenschaft ab.
+     * Gets the value of the trip property.
      * 
      * @return
      *     possible object is
@@ -380,7 +380,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der trip-Eigenschaft fest.
+     * Sets the value of the trip property.
      * 
      * @param value
      *     allowed object is
@@ -396,7 +396,7 @@ public class StopTimeType
     }
 
     /**
-     * Ruft den Wert der stop-Eigenschaft ab.
+     * Gets the value of the stop property.
      * 
      * @return
      *     possible object is
@@ -408,7 +408,7 @@ public class StopTimeType
     }
 
     /**
-     * Legt den Wert der stop-Eigenschaft fest.
+     * Sets the value of the stop property.
      * 
      * @param value
      *     allowed object is

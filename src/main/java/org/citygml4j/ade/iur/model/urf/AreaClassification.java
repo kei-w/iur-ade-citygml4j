@@ -23,8 +23,25 @@
 package org.citygml4j.ade.iur.model.urf;
 
 import org.citygml4j.builder.copy.CopyBuilder;
+import org.citygml4j.builder.copy.ObjectCopier;
 
 public class AreaClassification extends Zone {
+    private Integer population;
+
+    public Integer getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(Integer population) {
+        this.population = population;
+    }
+
+    @Override
+    public Object copyTo(Object target, CopyBuilder copyBuilder) {
+        AreaClassification copy = target == null ? new AreaClassification() : (AreaClassification) target;
+        super.copyTo(copy, copyBuilder);
+        return ObjectCopier.copyTo(this, copy, copyBuilder);
+    }
 
     @Override
     public Object copy(CopyBuilder copyBuilder) {

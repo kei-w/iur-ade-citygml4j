@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 17:59:35 JST 2026
 //
 
 
@@ -16,9 +16,9 @@ import net.opengis.gml.CodeType;
 
 
 /**
- * <p>Java-Klasse für TranslationType complex type.
+ * <p>Java class for TranslationType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="TranslationType"&gt;
@@ -67,7 +67,7 @@ public class TranslationType
     protected String recordSubId;
 
     /**
-     * Ruft den Wert der tableName-Eigenschaft ab.
+     * Gets the value of the tableName property.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class TranslationType
     }
 
     /**
-     * Legt den Wert der tableName-Eigenschaft fest.
+     * Sets the value of the tableName property.
      * 
      * @param value
      *     allowed object is
@@ -95,7 +95,7 @@ public class TranslationType
     }
 
     /**
-     * Ruft den Wert der fieldName-Eigenschaft ab.
+     * Gets the value of the fieldName property.
      * 
      * @return
      *     possible object is
@@ -107,7 +107,7 @@ public class TranslationType
     }
 
     /**
-     * Legt den Wert der fieldName-Eigenschaft fest.
+     * Sets the value of the fieldName property.
      * 
      * @param value
      *     allowed object is
@@ -123,7 +123,7 @@ public class TranslationType
     }
 
     /**
-     * Ruft den Wert der language-Eigenschaft ab.
+     * Gets the value of the language property.
      * 
      * @return
      *     possible object is
@@ -135,7 +135,7 @@ public class TranslationType
     }
 
     /**
-     * Legt den Wert der language-Eigenschaft fest.
+     * Sets the value of the language property.
      * 
      * @param value
      *     allowed object is
@@ -151,7 +151,7 @@ public class TranslationType
     }
 
     /**
-     * Ruft den Wert der translation-Eigenschaft ab.
+     * Gets the value of the translation property.
      * 
      * @return
      *     possible object is
@@ -163,7 +163,7 @@ public class TranslationType
     }
 
     /**
-     * Legt den Wert der translation-Eigenschaft fest.
+     * Sets the value of the translation property.
      * 
      * @param value
      *     allowed object is
@@ -179,7 +179,7 @@ public class TranslationType
     }
 
     /**
-     * Ruft den Wert der fieldValue-Eigenschaft ab.
+     * Gets the value of the fieldValue property.
      * 
      * @return
      *     possible object is
@@ -191,7 +191,7 @@ public class TranslationType
     }
 
     /**
-     * Legt den Wert der fieldValue-Eigenschaft fest.
+     * Sets the value of the fieldValue property.
      * 
      * @param value
      *     allowed object is
@@ -207,7 +207,7 @@ public class TranslationType
     }
 
     /**
-     * Ruft den Wert der recordId-Eigenschaft ab.
+     * Gets the value of the recordId property.
      * 
      * @return
      *     possible object is
@@ -219,7 +219,7 @@ public class TranslationType
     }
 
     /**
-     * Legt den Wert der recordId-Eigenschaft fest.
+     * Sets the value of the recordId property.
      * 
      * @param value
      *     allowed object is
@@ -235,7 +235,7 @@ public class TranslationType
     }
 
     /**
-     * Ruft den Wert der recordSubId-Eigenschaft ab.
+     * Gets the value of the recordSubId property.
      * 
      * @return
      *     possible object is
@@ -247,7 +247,7 @@ public class TranslationType
     }
 
     /**
-     * Legt den Wert der recordSubId-Eigenschaft fest.
+     * Sets the value of the recordSubId property.
      * 
      * @param value
      *     allowed object is

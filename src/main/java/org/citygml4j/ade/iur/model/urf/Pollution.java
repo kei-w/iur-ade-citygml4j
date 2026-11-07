@@ -27,16 +27,29 @@ import org.citygml4j.builder.copy.ObjectCopier;
 import org.citygml4j.model.common.base.ModelObjects;
 import org.citygml4j.model.gml.basicTypes.Measure;
 
-public class Pollution extends UrbanFunction {
-    private Measure damagedArea;
-    private String cause;
+import java.time.Year;
 
-    public Measure getDamagedArea() {
-        return damagedArea;
+public class Pollution extends UrbanFunction {
+    private String identifier;
+    private Year year;
+    private String cause;
+    private Measure damagedArea;
+    private ObservationPointProperty observationPoint;
+
+    public String getIdentifier() {
+        return identifier;
     }
 
-    public void setDamagedArea(Measure damagedArea) {
-        this.damagedArea = ModelObjects.setParent(damagedArea, this);
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
+    public Year getYear() {
+        return year;
+    }
+
+    public void setYear(Year year) {
+        this.year = year;
     }
 
     public String getCause() {
@@ -47,10 +60,26 @@ public class Pollution extends UrbanFunction {
         this.cause = cause;
     }
 
+    public Measure getDamagedArea() {
+        return damagedArea;
+    }
+
+    public void setDamagedArea(Measure damagedArea) {
+        this.damagedArea = ModelObjects.setParent(damagedArea, this);
+    }
+
+    public ObservationPointProperty getObservationPoint() {
+        return observationPoint;
+    }
+
+    public void setObservationPoint(ObservationPointProperty observationPoint) {
+        this.observationPoint = ModelObjects.setParent(observationPoint, this);
+    }
+
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Pollution copy = target == null ? new Pollution() : (Pollution) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

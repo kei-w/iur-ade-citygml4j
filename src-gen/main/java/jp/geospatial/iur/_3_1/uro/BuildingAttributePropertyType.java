@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 17:18:22 JST 2026
+// Generated: Sat Nov 07 17:59:35 JST 2026
 //
 
 
@@ -48,11 +48,11 @@ public class BuildingAttributePropertyType {
      * 
      * @return
      *     possible object is
+     *     {@link JAXBElement }{@code <}{@link LargeCustomerFacilityAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingDetailAttributeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BuildingIDAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingUsecaseAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link RealEstateIDAttributeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LargeCustomerFacilityAttributeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingIDAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingAttributeType }{@code >}
      *     
      */
@@ -65,11 +65,11 @@ public class BuildingAttributePropertyType {
      * 
      * @param value
      *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link LargeCustomerFacilityAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingDetailAttributeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BuildingIDAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingUsecaseAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link RealEstateIDAttributeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link LargeCustomerFacilityAttributeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingIDAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingAttributeType }{@code >}
      *     
      */

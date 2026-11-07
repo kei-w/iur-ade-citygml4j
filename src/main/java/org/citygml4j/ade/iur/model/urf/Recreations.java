@@ -26,8 +26,17 @@ import org.citygml4j.builder.copy.CopyBuilder;
 import org.citygml4j.builder.copy.ObjectCopier;
 
 public class Recreations extends UrbanFunction {
+    private String identifier;
     private Integer capacity;
     private Integer numberOfUsers;
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
 
     public Integer getCapacity() {
         return capacity;
@@ -48,7 +57,7 @@ public class Recreations extends UrbanFunction {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Recreations copy = target == null ? new Recreations() : (Recreations) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

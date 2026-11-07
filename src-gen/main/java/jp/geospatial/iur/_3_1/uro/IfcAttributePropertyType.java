@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 17:18:22 JST 2026
+// Generated: Sat Nov 07 17:59:35 JST 2026
 //
 
 
@@ -48,39 +48,39 @@ public class IfcAttributePropertyType {
      * 
      * @return
      *     possible object is
+     *     {@link JAXBElement }{@code <}{@link IfcPsetSiteCommonType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcProjectedCRSType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcCoordinateReferenceSystemType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcMapConversionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcPsetDoorCommonType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcPsetBuildingCommonType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcPsetWindowCommonType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcClassificationReferenceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcPsetOpeningElementCommonType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcPsetSpaceCommonType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcZoneType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcGroupType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSpaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcBuildingStoreyType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcBuildingType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSiteType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSpatialStructureElementType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcFurnishingElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcOpeningElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcRoofType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcDoorType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcCurtainWallType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWallStandardCaseType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWallType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcRoofType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcCurtainWallType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWindowType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcBuildingElementType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcOpeningElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcFurnishingElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcBuildingStoreyType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSiteType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcBuildingType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSpaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSpatialStructureElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcProductType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcProjectType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcObjectType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcObjectDefinitionType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcRootType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcPsetWindowCommonType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcClassificationReferenceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcProjectedCRSType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcCoordinateReferenceSystemType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcPsetDoorCommonType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcPsetSiteCommonType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcSpaceBaseQuantityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcMapConversionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcPsetOpeningElementCommonType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcPsetBuildingCommonType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcAttributeType }{@code >}
      *     
      */
@@ -93,39 +93,39 @@ public class IfcAttributePropertyType {
      * 
      * @param value
      *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link IfcPsetSiteCommonType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcProjectedCRSType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcCoordinateReferenceSystemType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcMapConversionType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcPsetDoorCommonType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcPsetBuildingCommonType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcPsetWindowCommonType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcClassificationReferenceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcPsetOpeningElementCommonType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcPsetSpaceCommonType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcZoneType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcGroupType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSpaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcBuildingStoreyType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcBuildingType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSiteType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSpatialStructureElementType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcFurnishingElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcOpeningElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcRoofType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcDoorType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcCurtainWallType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWallStandardCaseType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWallType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcRoofType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcCurtainWallType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWindowType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcBuildingElementType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcOpeningElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcFurnishingElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcBuildingStoreyType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSiteType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcBuildingType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSpaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSpatialStructureElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcProductType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcProjectType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcObjectType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcObjectDefinitionType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcRootType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcPsetWindowCommonType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcClassificationReferenceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcProjectedCRSType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcCoordinateReferenceSystemType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcPsetDoorCommonType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcPsetSiteCommonType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcSpaceBaseQuantityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcMapConversionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcPsetOpeningElementCommonType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcPsetBuildingCommonType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcAttributeType }{@code >}
      *     
      */

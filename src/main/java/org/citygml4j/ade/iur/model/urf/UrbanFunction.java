@@ -22,6 +22,8 @@
 
 package org.citygml4j.ade.iur.model.urf;
 
+import org.citygml4j.ade.iur.model.uro.DataQualityAttributeProperty;
+import org.citygml4j.ade.iur.model.uro.KeyValuePairAttributeProperty;
 import org.citygml4j.builder.copy.CopyBuilder;
 import org.citygml4j.builder.copy.ObjectCopier;
 import org.citygml4j.model.citygml.ade.binding.ADEModelObject;
@@ -33,6 +35,7 @@ import org.citygml4j.model.common.visitor.FeatureFunctor;
 import org.citygml4j.model.common.visitor.FeatureVisitor;
 import org.citygml4j.model.common.visitor.GMLFunctor;
 import org.citygml4j.model.common.visitor.GMLVisitor;
+import org.citygml4j.model.gml.base.StringOrRef;
 import org.citygml4j.model.gml.basicTypes.Code;
 import org.citygml4j.model.gml.basicTypes.Measure;
 import org.citygml4j.model.gml.feature.BoundingShape;
@@ -48,33 +51,42 @@ import java.util.List;
 
 public abstract class UrbanFunction extends AbstractCityObject implements ADEModelObject {
     private Code classifier;
-    private List<Code> functions;
-    private LocalDate enactmentDate;
+    private List<Code> function;
+    private List<Code> usage;
+    private LocalDate validFrom;
+    private Code validFromType;
     private Year enactmentFiscalYear;
-    private LocalDate expirationDate;
+    private LocalDate validTo;
+    private Code validToType;
     private Year expirationFiscalYear;
-    private LegalGroundsProperty legalGrounds;
+    private String legalGrounds;
     private String custodian;
-    private Measure nominalArea;
-    private String _abstract;
-    private Boolean validity;
+    private String notificationNumber;
+    private LocalDate finalNotificationDate;
+    private String finalNotificationNumber;
     private Code urbanPlanType;
     private Code areaClassificationType;
+    private Measure nominalArea;
     private Code prefecture;
     private Code city;
     private String reference;
-    private String note;
+    private StringOrRef reason;
+    private StringOrRef note;
     private Year surveyYear;
+    private MultiSurfaceProperty lodMinus2MultiSurface;
+    private MultiSurfaceProperty lodMinus1MultiSurface;
     private MultiSurfaceProperty lod0MultiSurface;
     private MultiSurfaceProperty lod1MultiSurface;
-    private MultiSurfaceProperty lod2MultiSurface;
+    private MultiCurveProperty lodMinus2MultiCurve;
+    private MultiCurveProperty lodMinus1MultiCurve;
     private MultiCurveProperty lod0MultiCurve;
     private MultiCurveProperty lod1MultiCurve;
-    private MultiCurveProperty lod2MultiCurve;
+    private MultiPointProperty lodMinus2MultiPoint;
+    private MultiPointProperty lodMinus1MultiPoint;
     private MultiPointProperty lod0MultiPoint;
-    private MultiPointProperty lod1MultiPoint;
-    private MultiPointProperty lod2MultiPoint;
-    private List<TargetProperty> targets;
+    private List<TargetProperty> target;
+    private List<KeyValuePairAttributeProperty> keyValuePairAttribute;
+    private DataQualityAttributeProperty dataQualityAttribute;
 
     public Code getClassifier() {
         return classifier;
@@ -84,23 +96,42 @@ public abstract class UrbanFunction extends AbstractCityObject implements ADEMod
         this.classifier = ModelObjects.setParent(classifier, this);
     }
 
-    public List<Code> getFunctions() {
-        if (functions == null)
-            functions = new ChildList<>(this);
+    public List<Code> getFunction() {
+        if (function == null)
+            function = new ChildList<>(this);
 
-        return functions;
+        return function;
     }
 
-    public void setFunctions(List<Code> functions) {
-        this.functions = ModelObjects.setParent(functions, this);
+    public void setFunction(List<Code> function) {
+        this.function = ModelObjects.setParent(function, this);
     }
 
-    public LocalDate getEnactmentDate() {
-        return enactmentDate;
+    public List<Code> getUsage() {
+        if (usage == null)
+            usage = new ChildList<>(this);
+
+        return usage;
     }
 
-    public void setEnactmentDate(LocalDate enactmentDate) {
-        this.enactmentDate = enactmentDate;
+    public void setUsage(List<Code> usage) {
+        this.usage = ModelObjects.setParent(usage, this);
+    }
+
+    public LocalDate getValidFrom() {
+        return validFrom;
+    }
+
+    public void setValidFrom(LocalDate validFrom) {
+        this.validFrom = validFrom;
+    }
+
+    public Code getValidFromType() {
+        return validFromType;
+    }
+
+    public void setValidFromType(Code validFromType) {
+        this.validFromType = ModelObjects.setParent(validFromType, this);
     }
 
     public Year getEnactmentFiscalYear() {
@@ -111,12 +142,20 @@ public abstract class UrbanFunction extends AbstractCityObject implements ADEMod
         this.enactmentFiscalYear = enactmentFiscalYear;
     }
 
-    public LocalDate getExpirationDate() {
-        return expirationDate;
+    public LocalDate getValidTo() {
+        return validTo;
     }
 
-    public void setExpirationDate(LocalDate expirationDate) {
-        this.expirationDate = expirationDate;
+    public void setValidTo(LocalDate validTo) {
+        this.validTo = validTo;
+    }
+
+    public Code getValidToType() {
+        return validToType;
+    }
+
+    public void setValidToType(Code validToType) {
+        this.validToType = ModelObjects.setParent(validToType, this);
     }
 
     public Year getExpirationFiscalYear() {
@@ -127,12 +166,12 @@ public abstract class UrbanFunction extends AbstractCityObject implements ADEMod
         this.expirationFiscalYear = expirationFiscalYear;
     }
 
-    public LegalGroundsProperty getLegalGrounds() {
+    public String getLegalGrounds() {
         return legalGrounds;
     }
 
-    public void setLegalGrounds(LegalGroundsProperty legalGrounds) {
-        this.legalGrounds = ModelObjects.setParent(legalGrounds, this);
+    public void setLegalGrounds(String legalGrounds) {
+        this.legalGrounds = legalGrounds;
     }
 
     public String getCustodian() {
@@ -143,28 +182,28 @@ public abstract class UrbanFunction extends AbstractCityObject implements ADEMod
         this.custodian = custodian;
     }
 
-    public Measure getNominalArea() {
-        return nominalArea;
+    public String getNotificationNumber() {
+        return notificationNumber;
     }
 
-    public void setNominalArea(Measure nominalArea) {
-        this.nominalArea = ModelObjects.setParent(nominalArea, this);
+    public void setNotificationNumber(String notificationNumber) {
+        this.notificationNumber = notificationNumber;
     }
 
-    public String getAbstract() {
-        return _abstract;
+    public LocalDate getFinalNotificationDate() {
+        return finalNotificationDate;
     }
 
-    public void setAbstract(String _abstract) {
-        this._abstract = _abstract;
+    public void setFinalNotificationDate(LocalDate finalNotificationDate) {
+        this.finalNotificationDate = finalNotificationDate;
     }
 
-    public Boolean getValidity() {
-        return validity;
+    public String getFinalNotificationNumber() {
+        return finalNotificationNumber;
     }
 
-    public void setValidity(Boolean validity) {
-        this.validity = validity;
+    public void setFinalNotificationNumber(String finalNotificationNumber) {
+        this.finalNotificationNumber = finalNotificationNumber;
     }
 
     public Code getUrbanPlanType() {
@@ -181,6 +220,14 @@ public abstract class UrbanFunction extends AbstractCityObject implements ADEMod
 
     public void setAreaClassificationType(Code areaClassificationType) {
         this.areaClassificationType = ModelObjects.setParent(areaClassificationType, this);
+    }
+
+    public Measure getNominalArea() {
+        return nominalArea;
+    }
+
+    public void setNominalArea(Measure nominalArea) {
+        this.nominalArea = ModelObjects.setParent(nominalArea, this);
     }
 
     public Code getPrefecture() {
@@ -207,12 +254,20 @@ public abstract class UrbanFunction extends AbstractCityObject implements ADEMod
         this.reference = reference;
     }
 
-    public String getNote() {
+    public StringOrRef getReason() {
+        return reason;
+    }
+
+    public void setReason(StringOrRef reason) {
+        this.reason = ModelObjects.setParent(reason, this);
+    }
+
+    public StringOrRef getNote() {
         return note;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setNote(StringOrRef note) {
+        this.note = ModelObjects.setParent(note, this);
     }
 
     public Year getSurveyYear() {
@@ -221,6 +276,22 @@ public abstract class UrbanFunction extends AbstractCityObject implements ADEMod
 
     public void setSurveyYear(Year surveyYear) {
         this.surveyYear = surveyYear;
+    }
+
+    public MultiSurfaceProperty getLodMinus2MultiSurface() {
+        return lodMinus2MultiSurface;
+    }
+
+    public void setLodMinus2MultiSurface(MultiSurfaceProperty lodMinus2MultiSurface) {
+        this.lodMinus2MultiSurface = ModelObjects.setParent(lodMinus2MultiSurface, this);
+    }
+
+    public MultiSurfaceProperty getLodMinus1MultiSurface() {
+        return lodMinus1MultiSurface;
+    }
+
+    public void setLodMinus1MultiSurface(MultiSurfaceProperty lodMinus1MultiSurface) {
+        this.lodMinus1MultiSurface = ModelObjects.setParent(lodMinus1MultiSurface, this);
     }
 
     public MultiSurfaceProperty getLod0MultiSurface() {
@@ -239,12 +310,20 @@ public abstract class UrbanFunction extends AbstractCityObject implements ADEMod
         this.lod1MultiSurface = ModelObjects.setParent(lod1MultiSurface, this);
     }
 
-    public MultiSurfaceProperty getLod2MultiSurface() {
-        return lod2MultiSurface;
+    public MultiCurveProperty getLodMinus2MultiCurve() {
+        return lodMinus2MultiCurve;
     }
 
-    public void setLod2MultiSurface(MultiSurfaceProperty lod2MultiSurface) {
-        this.lod2MultiSurface = ModelObjects.setParent(lod2MultiSurface, this);
+    public void setLodMinus2MultiCurve(MultiCurveProperty lodMinus2MultiCurve) {
+        this.lodMinus2MultiCurve = ModelObjects.setParent(lodMinus2MultiCurve, this);
+    }
+
+    public MultiCurveProperty getLodMinus1MultiCurve() {
+        return lodMinus1MultiCurve;
+    }
+
+    public void setLodMinus1MultiCurve(MultiCurveProperty lodMinus1MultiCurve) {
+        this.lodMinus1MultiCurve = ModelObjects.setParent(lodMinus1MultiCurve, this);
     }
 
     public MultiCurveProperty getLod0MultiCurve() {
@@ -263,12 +342,20 @@ public abstract class UrbanFunction extends AbstractCityObject implements ADEMod
         this.lod1MultiCurve = ModelObjects.setParent(lod1MultiCurve, this);
     }
 
-    public MultiCurveProperty getLod2MultiCurve() {
-        return lod2MultiCurve;
+    public MultiPointProperty getLodMinus2MultiPoint() {
+        return lodMinus2MultiPoint;
     }
 
-    public void setLod2MultiCurve(MultiCurveProperty lod2MultiCurve) {
-        this.lod2MultiCurve = ModelObjects.setParent(lod2MultiCurve, this);
+    public void setLodMinus2MultiPoint(MultiPointProperty lodMinus2MultiPoint) {
+        this.lodMinus2MultiPoint = ModelObjects.setParent(lodMinus2MultiPoint, this);
+    }
+
+    public MultiPointProperty getLodMinus1MultiPoint() {
+        return lodMinus1MultiPoint;
+    }
+
+    public void setLodMinus1MultiPoint(MultiPointProperty lodMinus1MultiPoint) {
+        this.lodMinus1MultiPoint = ModelObjects.setParent(lodMinus1MultiPoint, this);
     }
 
     public MultiPointProperty getLod0MultiPoint() {
@@ -279,31 +366,34 @@ public abstract class UrbanFunction extends AbstractCityObject implements ADEMod
         this.lod0MultiPoint = ModelObjects.setParent(lod0MultiPoint, this);
     }
 
-    public MultiPointProperty getLod1MultiPoint() {
-        return lod1MultiPoint;
+    public List<TargetProperty> getTarget() {
+        if (target == null)
+            target = new ChildList<>(this);
+
+        return target;
     }
 
-    public void setLod1MultiPoint(MultiPointProperty lod1MultiPoint) {
-        this.lod1MultiPoint = ModelObjects.setParent(lod1MultiPoint, this);
+    public void setTarget(List<TargetProperty> target) {
+        this.target = ModelObjects.setParent(target, this);
     }
 
-    public MultiPointProperty getLod2MultiPoint() {
-        return lod2MultiPoint;
+    public List<KeyValuePairAttributeProperty> getKeyValuePairAttribute() {
+        if (keyValuePairAttribute == null)
+            keyValuePairAttribute = new ChildList<>(this);
+
+        return keyValuePairAttribute;
     }
 
-    public void setLod2MultiPoint(MultiPointProperty lod2MultiPoint) {
-        this.lod2MultiPoint = ModelObjects.setParent(lod2MultiPoint, this);
+    public void setKeyValuePairAttribute(List<KeyValuePairAttributeProperty> keyValuePairAttribute) {
+        this.keyValuePairAttribute = ModelObjects.setParent(keyValuePairAttribute, this);
     }
 
-    public List<TargetProperty> getTargets() {
-        if (targets == null)
-            targets = new ChildList<>(this);
-
-        return targets;
+    public DataQualityAttributeProperty getDataQualityAttribute() {
+        return dataQualityAttribute;
     }
 
-    public void setTargets(List<TargetProperty> targets) {
-        this.targets = ModelObjects.setParent(targets, this);
+    public void setDataQualityAttribute(DataQualityAttributeProperty dataQualityAttribute) {
+        this.dataQualityAttribute = ModelObjects.setParent(dataQualityAttribute, this);
     }
 
     @Override
@@ -315,15 +405,10 @@ public abstract class UrbanFunction extends AbstractCityObject implements ADEMod
     public LodRepresentation getLodRepresentation() {
         LodRepresentation lodRepresentation = new LodRepresentation();
         lodRepresentation.addRepresentation(0, lod0MultiSurface);
+        lodRepresentation.addRepresentation(1, lod1MultiSurface);
         lodRepresentation.addRepresentation(0, lod0MultiCurve);
+        lodRepresentation.addRepresentation(1, lod1MultiCurve);
         lodRepresentation.addRepresentation(0, lod0MultiPoint);
-
-        lodRepresentation.addRepresentation(lod1MultiSurface);
-        lodRepresentation.addRepresentation(lod2MultiSurface);
-        lodRepresentation.addRepresentation(lod1MultiCurve);
-        lodRepresentation.addRepresentation(lod2MultiCurve);
-        lodRepresentation.addRepresentation(lod1MultiPoint);
-        lodRepresentation.addRepresentation(lod2MultiPoint);
 
         return lodRepresentation;
     }

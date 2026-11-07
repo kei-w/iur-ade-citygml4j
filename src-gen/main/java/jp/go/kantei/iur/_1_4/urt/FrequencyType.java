@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 19:58:08 JST 2026
 //
 
 
@@ -19,9 +19,9 @@ import net.opengis.gml.CodeType;
 
 
 /**
- * <p>Java-Klasse für FrequencyType complex type.
+ * <p>Java class for FrequencyType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="FrequencyType"&gt;
@@ -66,7 +66,7 @@ public class FrequencyType
     protected TripPropertyType trip;
 
     /**
-     * Ruft den Wert der startTime-Eigenschaft ab.
+     * Gets the value of the startTime property.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class FrequencyType
     }
 
     /**
-     * Legt den Wert der startTime-Eigenschaft fest.
+     * Sets the value of the startTime property.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class FrequencyType
     }
 
     /**
-     * Ruft den Wert der endTime-Eigenschaft ab.
+     * Gets the value of the endTime property.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class FrequencyType
     }
 
     /**
-     * Legt den Wert der endTime-Eigenschaft fest.
+     * Sets the value of the endTime property.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +122,7 @@ public class FrequencyType
     }
 
     /**
-     * Ruft den Wert der headwaySecs-Eigenschaft ab.
+     * Gets the value of the headwaySecs property.
      * 
      * @return
      *     possible object is
@@ -134,7 +134,7 @@ public class FrequencyType
     }
 
     /**
-     * Legt den Wert der headwaySecs-Eigenschaft fest.
+     * Sets the value of the headwaySecs property.
      * 
      * @param value
      *     allowed object is
@@ -150,7 +150,7 @@ public class FrequencyType
     }
 
     /**
-     * Ruft den Wert der exactTimes-Eigenschaft ab.
+     * Gets the value of the exactTimes property.
      * 
      * @return
      *     possible object is
@@ -162,7 +162,7 @@ public class FrequencyType
     }
 
     /**
-     * Legt den Wert der exactTimes-Eigenschaft fest.
+     * Sets the value of the exactTimes property.
      * 
      * @param value
      *     allowed object is
@@ -178,7 +178,7 @@ public class FrequencyType
     }
 
     /**
-     * Ruft den Wert der trip-Eigenschaft ab.
+     * Gets the value of the trip property.
      * 
      * @return
      *     possible object is
@@ -190,7 +190,7 @@ public class FrequencyType
     }
 
     /**
-     * Legt den Wert der trip-Eigenschaft fest.
+     * Sets the value of the trip property.
      * 
      * @param value
      *     allowed object is

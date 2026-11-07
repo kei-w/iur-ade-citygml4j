@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 16:43:46 JST 2026
+// Generated: Sat Nov 07 19:58:08 JST 2026
 //
 
 
@@ -71,18 +71,18 @@ public class UtilityNetworkElementPropertyType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link AppurtenanceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UtilityNodeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TelecommunicationsCableType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ElectricityCableType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TelecommunicationsCableType }{@code >}
      *     {@link JAXBElement }{@code <}{@link CableType }{@code >}
      *     {@link JAXBElement }{@code <}{@link DuctType }{@code >}
      *     {@link JAXBElement }{@code <}{@link OilGasChemicalsPipeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WaterPipeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ThermalPipeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link SewerPipeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WaterPipeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PipeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link UtilityLinkType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AppurtenanceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UtilityNodeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link HandholeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ManholeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link UtilityNodeContainerType }{@code >}
@@ -98,18 +98,18 @@ public class UtilityNetworkElementPropertyType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link AppurtenanceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link UtilityNodeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TelecommunicationsCableType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ElectricityCableType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TelecommunicationsCableType }{@code >}
      *     {@link JAXBElement }{@code <}{@link CableType }{@code >}
      *     {@link JAXBElement }{@code <}{@link DuctType }{@code >}
      *     {@link JAXBElement }{@code <}{@link OilGasChemicalsPipeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link WaterPipeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ThermalPipeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link SewerPipeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link WaterPipeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PipeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link UtilityLinkType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link AppurtenanceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UtilityNodeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link HandholeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link ManholeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link UtilityNodeContainerType }{@code >}

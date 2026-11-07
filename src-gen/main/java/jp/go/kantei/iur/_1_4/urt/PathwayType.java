@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 19:58:08 JST 2026
 //
 
 
@@ -18,9 +18,9 @@ import net.opengis.gml.LengthType;
 
 
 /**
- * <p>Java-Klasse für PathwayType complex type.
+ * <p>Java class for PathwayType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PathwayType"&gt;
@@ -80,7 +80,7 @@ public class PathwayType
     protected StopPropertyType to;
 
     /**
-     * Ruft den Wert der mode-Eigenschaft ab.
+     * Gets the value of the mode property.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class PathwayType
     }
 
     /**
-     * Legt den Wert der mode-Eigenschaft fest.
+     * Sets the value of the mode property.
      * 
      * @param value
      *     allowed object is
@@ -108,7 +108,7 @@ public class PathwayType
     }
 
     /**
-     * Ruft den Wert der isBidirectional-Eigenschaft ab.
+     * Gets the value of the isBidirectional property.
      * 
      * @return
      *     possible object is
@@ -120,7 +120,7 @@ public class PathwayType
     }
 
     /**
-     * Legt den Wert der isBidirectional-Eigenschaft fest.
+     * Sets the value of the isBidirectional property.
      * 
      * @param value
      *     allowed object is
@@ -136,7 +136,7 @@ public class PathwayType
     }
 
     /**
-     * Ruft den Wert der length-Eigenschaft ab.
+     * Gets the value of the length property.
      * 
      * @return
      *     possible object is
@@ -148,7 +148,7 @@ public class PathwayType
     }
 
     /**
-     * Legt den Wert der length-Eigenschaft fest.
+     * Sets the value of the length property.
      * 
      * @param value
      *     allowed object is
@@ -164,7 +164,7 @@ public class PathwayType
     }
 
     /**
-     * Ruft den Wert der traversalTime-Eigenschaft ab.
+     * Gets the value of the traversalTime property.
      * 
      * @return
      *     possible object is
@@ -176,7 +176,7 @@ public class PathwayType
     }
 
     /**
-     * Legt den Wert der traversalTime-Eigenschaft fest.
+     * Sets the value of the traversalTime property.
      * 
      * @param value
      *     allowed object is
@@ -192,7 +192,7 @@ public class PathwayType
     }
 
     /**
-     * Ruft den Wert der stairCount-Eigenschaft ab.
+     * Gets the value of the stairCount property.
      * 
      * @return
      *     possible object is
@@ -204,7 +204,7 @@ public class PathwayType
     }
 
     /**
-     * Legt den Wert der stairCount-Eigenschaft fest.
+     * Sets the value of the stairCount property.
      * 
      * @param value
      *     allowed object is
@@ -220,7 +220,7 @@ public class PathwayType
     }
 
     /**
-     * Ruft den Wert der maxSlope-Eigenschaft ab.
+     * Gets the value of the maxSlope property.
      * 
      * @return
      *     possible object is
@@ -232,7 +232,7 @@ public class PathwayType
     }
 
     /**
-     * Legt den Wert der maxSlope-Eigenschaft fest.
+     * Sets the value of the maxSlope property.
      * 
      * @param value
      *     allowed object is
@@ -248,7 +248,7 @@ public class PathwayType
     }
 
     /**
-     * Ruft den Wert der minWidth-Eigenschaft ab.
+     * Gets the value of the minWidth property.
      * 
      * @return
      *     possible object is
@@ -260,7 +260,7 @@ public class PathwayType
     }
 
     /**
-     * Legt den Wert der minWidth-Eigenschaft fest.
+     * Sets the value of the minWidth property.
      * 
      * @param value
      *     allowed object is
@@ -276,7 +276,7 @@ public class PathwayType
     }
 
     /**
-     * Ruft den Wert der signpostedAs-Eigenschaft ab.
+     * Gets the value of the signpostedAs property.
      * 
      * @return
      *     possible object is
@@ -288,7 +288,7 @@ public class PathwayType
     }
 
     /**
-     * Legt den Wert der signpostedAs-Eigenschaft fest.
+     * Sets the value of the signpostedAs property.
      * 
      * @param value
      *     allowed object is
@@ -304,7 +304,7 @@ public class PathwayType
     }
 
     /**
-     * Ruft den Wert der reversedSignpostedAs-Eigenschaft ab.
+     * Gets the value of the reversedSignpostedAs property.
      * 
      * @return
      *     possible object is
@@ -316,7 +316,7 @@ public class PathwayType
     }
 
     /**
-     * Legt den Wert der reversedSignpostedAs-Eigenschaft fest.
+     * Sets the value of the reversedSignpostedAs property.
      * 
      * @param value
      *     allowed object is
@@ -332,7 +332,7 @@ public class PathwayType
     }
 
     /**
-     * Ruft den Wert der from-Eigenschaft ab.
+     * Gets the value of the from property.
      * 
      * @return
      *     possible object is
@@ -344,7 +344,7 @@ public class PathwayType
     }
 
     /**
-     * Legt den Wert der from-Eigenschaft fest.
+     * Sets the value of the from property.
      * 
      * @param value
      *     allowed object is
@@ -360,7 +360,7 @@ public class PathwayType
     }
 
     /**
-     * Ruft den Wert der to-Eigenschaft ab.
+     * Gets the value of the to property.
      * 
      * @return
      *     possible object is
@@ -372,7 +372,7 @@ public class PathwayType
     }
 
     /**
-     * Legt den Wert der to-Eigenschaft fest.
+     * Sets the value of the to property.
      * 
      * @param value
      *     allowed object is

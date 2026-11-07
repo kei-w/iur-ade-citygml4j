@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 19:58:08 JST 2026
 //
 
 
@@ -17,9 +17,9 @@ import net.opengis.gml.CodeType;
 
 
 /**
- * <p>Java-Klasse für FareAttributeType complex type.
+ * <p>Java class for FareAttributeType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="FareAttributeType"&gt;
@@ -64,7 +64,7 @@ public class FareAttributeType
     protected AgencyPropertyType agency;
 
     /**
-     * Ruft den Wert der price-Eigenschaft ab.
+     * Gets the value of the price property.
      * 
      */
     public double getPrice() {
@@ -72,7 +72,7 @@ public class FareAttributeType
     }
 
     /**
-     * Legt den Wert der price-Eigenschaft fest.
+     * Sets the value of the price property.
      * 
      */
     public void setPrice(double value) {
@@ -84,7 +84,7 @@ public class FareAttributeType
     }
 
     /**
-     * Ruft den Wert der currencyType-Eigenschaft ab.
+     * Gets the value of the currencyType property.
      * 
      * @return
      *     possible object is
@@ -96,7 +96,7 @@ public class FareAttributeType
     }
 
     /**
-     * Legt den Wert der currencyType-Eigenschaft fest.
+     * Sets the value of the currencyType property.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +112,7 @@ public class FareAttributeType
     }
 
     /**
-     * Ruft den Wert der paymentMethod-Eigenschaft ab.
+     * Gets the value of the paymentMethod property.
      * 
      * @return
      *     possible object is
@@ -124,7 +124,7 @@ public class FareAttributeType
     }
 
     /**
-     * Legt den Wert der paymentMethod-Eigenschaft fest.
+     * Sets the value of the paymentMethod property.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +140,7 @@ public class FareAttributeType
     }
 
     /**
-     * Ruft den Wert der transfers-Eigenschaft ab.
+     * Gets the value of the transfers property.
      * 
      * @return
      *     possible object is
@@ -152,7 +152,7 @@ public class FareAttributeType
     }
 
     /**
-     * Legt den Wert der transfers-Eigenschaft fest.
+     * Sets the value of the transfers property.
      * 
      * @param value
      *     allowed object is
@@ -168,7 +168,7 @@ public class FareAttributeType
     }
 
     /**
-     * Ruft den Wert der transferDuration-Eigenschaft ab.
+     * Gets the value of the transferDuration property.
      * 
      * @return
      *     possible object is
@@ -180,7 +180,7 @@ public class FareAttributeType
     }
 
     /**
-     * Legt den Wert der transferDuration-Eigenschaft fest.
+     * Sets the value of the transferDuration property.
      * 
      * @param value
      *     allowed object is
@@ -196,7 +196,7 @@ public class FareAttributeType
     }
 
     /**
-     * Ruft den Wert der agency-Eigenschaft ab.
+     * Gets the value of the agency property.
      * 
      * @return
      *     possible object is
@@ -208,7 +208,7 @@ public class FareAttributeType
     }
 
     /**
-     * Legt den Wert der agency-Eigenschaft fest.
+     * Sets the value of the agency property.
      * 
      * @param value
      *     allowed object is

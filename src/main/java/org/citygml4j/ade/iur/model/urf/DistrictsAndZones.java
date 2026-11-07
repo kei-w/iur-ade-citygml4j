@@ -23,8 +23,27 @@
 package org.citygml4j.ade.iur.model.urf;
 
 import org.citygml4j.builder.copy.CopyBuilder;
+import org.citygml4j.builder.copy.ObjectCopier;
+import org.citygml4j.model.common.base.ModelObjects;
+import org.citygml4j.model.gml.basicTypes.Measure;
 
 public class DistrictsAndZones extends Zone {
+    private Measure areaInTotal;
+
+    public Measure getAreaInTotal() {
+        return areaInTotal;
+    }
+
+    public void setAreaInTotal(Measure areaInTotal) {
+        this.areaInTotal = ModelObjects.setParent(areaInTotal, this);
+    }
+
+    @Override
+    public Object copyTo(Object target, CopyBuilder copyBuilder) {
+        DistrictsAndZones copy = target == null ? new DistrictsAndZones() : (DistrictsAndZones) target;
+        super.copyTo(copy, copyBuilder);
+        return ObjectCopier.copyTo(this, copy, DistrictsAndZones.class, copyBuilder);
+    }
 
     @Override
     public Object copy(CopyBuilder copyBuilder) {

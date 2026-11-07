@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 19:58:08 JST 2026
 //
 
 
@@ -21,9 +21,9 @@ import org.w3._1999.xlink.TypeType;
 
 
 /**
- * <p>Java-Klasse für PublicTransitPropertyType complex type.
+ * <p>Java class for PublicTransitPropertyType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="PublicTransitPropertyType"&gt;
@@ -67,23 +67,23 @@ public class PublicTransitPropertyType {
     protected ActuateType actuate;
 
     /**
-     * Ruft den Wert der _PublicTransit-Eigenschaft ab.
+     * Gets the value of the _PublicTransit property.
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link LevelType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RouteType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PathwayType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AgencyType }{@code >}
      *     {@link JAXBElement }{@code <}{@link StopType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OfficeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ShapeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link CalendarType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CalendarDateType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PathwayType }{@code >}
      *     {@link JAXBElement }{@code <}{@link FareAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AttributionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TranslationJPType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RouteType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LevelType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CalendarDateType }{@code >}
      *     {@link JAXBElement }{@code <}{@link TripType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ShapeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link OfficeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TranslationJPType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PublicTransitType }{@code >}
      *     
      */
@@ -92,23 +92,23 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Legt den Wert der _PublicTransit-Eigenschaft fest.
+     * Sets the value of the _PublicTransit property.
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link LevelType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RouteType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PathwayType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AgencyType }{@code >}
      *     {@link JAXBElement }{@code <}{@link StopType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link OfficeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ShapeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link CalendarType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CalendarDateType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PathwayType }{@code >}
      *     {@link JAXBElement }{@code <}{@link FareAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link AttributionType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link TranslationJPType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link RouteType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link LevelType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CalendarDateType }{@code >}
      *     {@link JAXBElement }{@code <}{@link TripType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ShapeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link OfficeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link TranslationJPType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PublicTransitType }{@code >}
      *     
      */
@@ -121,7 +121,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Ruft den Wert der remoteSchema-Eigenschaft ab.
+     * Gets the value of the remoteSchema property.
      * 
      * @return
      *     possible object is
@@ -133,7 +133,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Legt den Wert der remoteSchema-Eigenschaft fest.
+     * Sets the value of the remoteSchema property.
      * 
      * @param value
      *     allowed object is
@@ -149,7 +149,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Ruft den Wert der type-Eigenschaft ab.
+     * Gets the value of the type property.
      * 
      * @return
      *     possible object is
@@ -165,7 +165,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Legt den Wert der type-Eigenschaft fest.
+     * Sets the value of the type property.
      * 
      * @param value
      *     allowed object is
@@ -181,7 +181,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Ruft den Wert der href-Eigenschaft ab.
+     * Gets the value of the href property.
      * 
      * @return
      *     possible object is
@@ -193,7 +193,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Legt den Wert der href-Eigenschaft fest.
+     * Sets the value of the href property.
      * 
      * @param value
      *     allowed object is
@@ -209,7 +209,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Ruft den Wert der role-Eigenschaft ab.
+     * Gets the value of the role property.
      * 
      * @return
      *     possible object is
@@ -221,7 +221,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Legt den Wert der role-Eigenschaft fest.
+     * Sets the value of the role property.
      * 
      * @param value
      *     allowed object is
@@ -237,7 +237,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Ruft den Wert der arcrole-Eigenschaft ab.
+     * Gets the value of the arcrole property.
      * 
      * @return
      *     possible object is
@@ -249,7 +249,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Legt den Wert der arcrole-Eigenschaft fest.
+     * Sets the value of the arcrole property.
      * 
      * @param value
      *     allowed object is
@@ -265,7 +265,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Ruft den Wert der title-Eigenschaft ab.
+     * Gets the value of the title property.
      * 
      * @return
      *     possible object is
@@ -277,7 +277,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Legt den Wert der title-Eigenschaft fest.
+     * Sets the value of the title property.
      * 
      * @param value
      *     allowed object is
@@ -293,7 +293,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Ruft den Wert der show-Eigenschaft ab.
+     * Gets the value of the show property.
      * 
      * @return
      *     possible object is
@@ -305,7 +305,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Legt den Wert der show-Eigenschaft fest.
+     * Sets the value of the show property.
      * 
      * @param value
      *     allowed object is
@@ -321,7 +321,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Ruft den Wert der actuate-Eigenschaft ab.
+     * Gets the value of the actuate property.
      * 
      * @return
      *     possible object is
@@ -333,7 +333,7 @@ public class PublicTransitPropertyType {
     }
 
     /**
-     * Legt den Wert der actuate-Eigenschaft fest.
+     * Sets the value of the actuate property.
      * 
      * @param value
      *     allowed object is

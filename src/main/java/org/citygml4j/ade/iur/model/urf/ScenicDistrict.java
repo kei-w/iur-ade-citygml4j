@@ -1,0 +1,79 @@
+/*
+ * iur-ade-citygml4j - i-Urban Revitalization ADE module for citygml4j
+ * https://github.com/citygml4j/iur-ade-citygml4j
+ *
+ * iur-ade-citygml4j is part of the citygml4j project
+ *
+ * Copyright 2019-2024 Virtual City Systems
+ * https://vc.systems/
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package org.citygml4j.ade.iur.model.urf;
+
+import org.citygml4j.builder.copy.CopyBuilder;
+import org.citygml4j.builder.copy.ObjectCopier;
+import org.citygml4j.model.common.base.ModelObjects;
+import org.citygml4j.model.gml.measures.Length;
+
+public class ScenicDistrict extends DistrictsAndZones {
+    private Integer buildingCoverageRate;
+    private Length buildingHeightLimits;
+    private Length wallSetbackDistanceWithRoad;
+    private Length wallSetbackDistanceWithAdjoiningLand;
+
+    public Integer getBuildingCoverageRate() {
+        return buildingCoverageRate;
+    }
+
+    public void setBuildingCoverageRate(Integer buildingCoverageRate) {
+        this.buildingCoverageRate = buildingCoverageRate;
+    }
+
+    public Length getBuildingHeightLimits() {
+        return buildingHeightLimits;
+    }
+
+    public void setBuildingHeightLimits(Length buildingHeightLimits) {
+        this.buildingHeightLimits = ModelObjects.setParent(buildingHeightLimits, this);
+    }
+
+    public Length getWallSetbackDistanceWithRoad() {
+        return wallSetbackDistanceWithRoad;
+    }
+
+    public void setWallSetbackDistanceWithRoad(Length wallSetbackDistanceWithRoad) {
+        this.wallSetbackDistanceWithRoad = ModelObjects.setParent(wallSetbackDistanceWithRoad, this);
+    }
+
+    public Length getWallSetbackDistanceWithAdjoiningLand() {
+        return wallSetbackDistanceWithAdjoiningLand;
+    }
+
+    public void setWallSetbackDistanceWithAdjoiningLand(Length wallSetbackDistanceWithAdjoiningLand) {
+        this.wallSetbackDistanceWithAdjoiningLand = ModelObjects.setParent(wallSetbackDistanceWithAdjoiningLand, this);
+    }
+
+    @Override
+    public Object copyTo(Object target, CopyBuilder copyBuilder) {
+        ScenicDistrict copy = target == null ? new ScenicDistrict() : (ScenicDistrict) target;
+        super.copyTo(copy, copyBuilder);
+        return ObjectCopier.copyTo(this, copy, copyBuilder);
+    }
+
+    @Override
+    public Object copy(CopyBuilder copyBuilder) {
+        return copyTo(new ScenicDistrict(), copyBuilder);
+    }
+}

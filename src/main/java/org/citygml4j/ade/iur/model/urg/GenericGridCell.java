@@ -30,23 +30,23 @@ import org.citygml4j.model.common.child.ChildList;
 import java.util.List;
 
 public class GenericGridCell extends StatisticalGrid {
-    private List<KeyValuePairProperty> genericValues;
+    private List<KeyValuePairProperty> genericValue;
 
-    public List<KeyValuePairProperty> getGenericValues() {
-        if (genericValues == null)
-            genericValues = new ChildList<>(this);
+    public List<KeyValuePairProperty> getGenericValue() {
+        if (genericValue == null)
+            genericValue = new ChildList<>(this);
 
-        return genericValues;
+        return genericValue;
     }
 
-    public void setGenericValues(List<KeyValuePairProperty> genericValues) {
-        this.genericValues = ModelObjects.setParent(genericValues, this);
+    public void setGenericValue(List<KeyValuePairProperty> genericValue) {
+        this.genericValue = ModelObjects.setParent(genericValue, this);
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         GenericGridCell copy = target == null ? new GenericGridCell() : (GenericGridCell) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

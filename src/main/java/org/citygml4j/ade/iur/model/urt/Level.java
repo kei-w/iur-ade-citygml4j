@@ -26,20 +26,20 @@ import org.citygml4j.builder.copy.CopyBuilder;
 import org.citygml4j.builder.copy.ObjectCopier;
 
 public class Level extends PublicTransit {
-    private double index;
+    private Double index;
 
-    public double getIndex() {
+    public Double getIndex() {
         return index;
     }
 
-    public void setIndex(double index) {
+    public void setIndex(Double index) {
         this.index = index;
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Level copy = target == null ? new Level() : (Level) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

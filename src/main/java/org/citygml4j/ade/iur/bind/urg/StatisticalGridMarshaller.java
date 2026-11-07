@@ -22,18 +22,16 @@
 
 package org.citygml4j.ade.iur.bind.urg;
 
-import jp.go.kantei.iur._1_4.urg.*;
+import jp.geospatial.iur._3_2.urg.*;
 import org.citygml4j.ade.iur.bind.Marshaller;
 import org.citygml4j.ade.iur.model.urg.*;
 import org.citygml4j.builder.jaxb.marshal.citygml.ade.ADEMarshallerHelper;
 import org.citygml4j.model.citygml.ade.binding.ADEMarshaller;
 import org.citygml4j.model.citygml.ade.binding.ADEModelObject;
 import org.citygml4j.util.mapper.TypeMapper;
-import org.w3c.dom.Element;
 
-import javax.xml.bind.JAXBElement;
-import javax.xml.datatype.DatatypeConstants;
 import java.math.BigInteger;
+import javax.xml.bind.JAXBElement;
 
 public class StatisticalGridMarshaller implements ADEMarshaller {
     private final Marshaller marshaller;
@@ -49,22 +47,23 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
     private synchronized TypeMapper<JAXBElement<?>> getElementMapper() {
         if (elementMapper == null) {
             elementMapper = TypeMapper.<JAXBElement<?>>create()
-                    .with(Households.class, this::createHouseholds)
+                    .with(Population.class, this::createPopulation)
+                    .with(PopulationByAgeAndSex.class, this::createPopulationByAgeAndSex)
+                    .with(PublicTransitAccessibility.class, this::createPublicTransitAccessibility)
                     .with(LandPrice.class, this::createLandPrice)
                     .with(LandPricePerLandUse.class, this::createLandPricePerLandUse)
                     .with(LandUseDiversion.class, this::createLandUseDiversion)
                     .with(NumberOfAnnualDiversions.class, this::createNumberOfAnnualDiversions)
                     .with(AreaOfAnnualDiversions.class, this::createAreaOfAnnualDiversions)
+                    .with(Households.class, this::createHouseholds)
                     .with(NumberOfHouseholds.class, this::createNumberOfHouseholds)
                     .with(OfficesAndEmployees.class, this::createOfficesAndEmployees)
-                    .with(Population.class, this::createPopulation)
-                    .with(PopulationByAgeAndSex.class, this::createPopulationByAgeAndSex)
-                    .with(PublicTransitAccessibility.class, this::createPublicTransitAccessibility)
                     .with(GenericGridCell.class, this::createGenericGridCell)
                     .with(KeyValuePair.class, this::createKeyValuePair)
+                    .with(StatusOfSiteSeeing.class, this::createStatusOfSiteSeeing)
+                    .with(LandslideDisaster.class, this::createLandslideDisaster)
                     .with(FiscalYearOfPublicationProperty.class, this::createFiscalYearOfPublicationProperty)
                     .with(LanguageProperty.class, this::createLanguageProperty);
-            ;
         }
 
         return elementMapper;
@@ -73,7 +72,10 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
     private synchronized TypeMapper<Object> getTypeMapper() {
         if (typeMapper == null) {
             typeMapper = TypeMapper.create()
-                    .with(Households.class, this::marshalHouseholds)
+                    .with(Population.class, this::marshalPopulation)
+                    .with(PopulationByAgeAndSex.class, this::marshalPopulationByAgeAndSex)
+                    .with(PopulationByAgeAndSexProperty.class, this::marshalPopulationByAgeAndSexProperty)
+                    .with(PublicTransitAccessibility.class, this::marshalPublicTransitAccessibility)
                     .with(LandPrice.class, this::marshalLandPrice)
                     .with(LandPricePerLandUse.class, this::marshalLandPricePerLandUse)
                     .with(LandPricePerLandUseProperty.class, this::marshalLandPricePerLandUseProperty)
@@ -82,16 +84,15 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
                     .with(NumberOfAnnualDiversionsProperty.class, this::marshalNumberOfAnnualDiversionsProperty)
                     .with(AreaOfAnnualDiversions.class, this::marshalAreaOfAnnualDiversions)
                     .with(AreaOfAnnualDiversionsProperty.class, this::marshalAreaOfAnnualDiversionsProperty)
+                    .with(Households.class, this::marshalHouseholds)
                     .with(NumberOfHouseholds.class, this::marshalNumberOfHouseholds)
                     .with(NumberOfHouseholdsProperty.class, this::marshalNumberOfHouseholdsProperty)
                     .with(OfficesAndEmployees.class, this::marshalOfficesAndEmployees)
-                    .with(Population.class, this::marshalPopulation)
-                    .with(PopulationByAgeAndSex.class, this::marshalPopulationByAgeAndSex)
-                    .with(PopulationByAgeAndSexProperty.class, this::marshalPopulationByAgeAndSexProperty)
-                    .with(PublicTransitAccessibility.class, this::marshalPublicTransitAccessibility)
                     .with(GenericGridCell.class, this::marshalGenericGridCell)
                     .with(KeyValuePair.class, this::marshalKeyValuePair)
-                    .with(KeyValuePairProperty.class, this::marshalKeyValuePairProperty);
+                    .with(KeyValuePairProperty.class, this::marshalKeyValuePairProperty)
+                    .with(StatusOfSiteSeeing.class, this::marshalStatusOfSiteSeeing)
+                    .with(LandslideDisaster.class, this::marshalLandslideDisaster);
         }
 
         return typeMapper;
@@ -120,9 +121,6 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
         if (src.getClassifier() != null)
             dest.setClazz(helper.getGMLMarshaller().marshalCode(src.getClassifier()));
 
-        for (Element value : src.getValues())
-            dest.getValue().add(value);
-
         if (src.getUrbanPlanType() != null)
             dest.setUrbanPlanType(helper.getGMLMarshaller().marshalCode(src.getUrbanPlanType()));
 
@@ -138,29 +136,105 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
         if (src.getSurveyYear() != null)
             dest.setSurveyYear(marshaller.toCalendar(src.getSurveyYear()));
 
-        if (src.getLod1MultiSurface() != null)
-            dest.setLod1MultiSurface(helper.getGMLMarshaller().marshalMultiSurfaceProperty(src.getLod1MultiSurface()));
+        if (src.getReferenceDate() != null)
+            dest.setReferenceDate(marshaller.toCalendar(src.getReferenceDate()));
 
-        if (src.getLod2MultiSurface() != null)
-            dest.setLod2MultiSurface(helper.getGMLMarshaller().marshalMultiSurfaceProperty(src.getLod2MultiSurface()));
+        if (src.getLodMinus1MultiSurface() != null)
+            dest.setLodMinus1MultiSurface(helper.getGMLMarshaller().marshalMultiSurfaceProperty(src.getLodMinus1MultiSurface()));
+
+        if (src.getLodMinus2MultiSurface() != null)
+            dest.setLodMinus2MultiSurface(helper.getGMLMarshaller().marshalMultiSurfaceProperty(src.getLodMinus2MultiSurface()));
     }
 
-    private HouseholdsType marshalHouseholds(Households src) {
-        HouseholdsType dest = factory.createHouseholdsType();
+    private PopulationType marshalPopulation(Population src) {
+        PopulationType dest = factory.createPopulationType();
         marshalStatisticalGrid(src, dest);
 
-        if (src.getNumberOfOrdinaryHouseholds() != null)
-            dest.setNumberOfOrdinaryHousehold(BigInteger.valueOf(src.getNumberOfOrdinaryHouseholds()));
+        if (src.getTotal() != null)
+            dest.setTotal(BigInteger.valueOf(src.getTotal()));
 
-        for (NumberOfHouseholdsProperty property : src.getNumberOfHouseholdsByOwnership()) {
-            dest.getNumberOfHouseholdsByOwnership().add(marshalNumberOfHouseholdsProperty(property));
-        }
+        if (src.getDaytimePopulation() != null)
+            dest.setDaytimePopulation(BigInteger.valueOf(src.getDaytimePopulation()));
 
-        for (NumberOfHouseholdsProperty property : src.getNumberOfHouseholdsByStructure())
-            dest.getNumberOfHouseholdsByStructure().add(marshalNumberOfHouseholdsProperty(property));
+        dest.setDaytimePopulationDensity(src.getDaytimePopulationDensity());
 
-        if (src.getNumberOfMainHouseholds() != null)
-            dest.setNumberOfMainHousehold(BigInteger.valueOf(src.getNumberOfMainHouseholds()));
+        if (src.getDaytimeOfficeCommuter() != null)
+            dest.setDaytimeOfficeCommuter(BigInteger.valueOf(src.getDaytimeOfficeCommuter()));
+
+        if (src.getDaytimeSchoolCommuter() != null)
+            dest.setDaytimeSchoolCommuter(BigInteger.valueOf(src.getDaytimeSchoolCommuter()));
+
+        if (src.getDaytimeUnder15() != null)
+            dest.setDaytimeUnder15(BigInteger.valueOf(src.getDaytimeUnder15()));
+
+        if (src.getDaytimeOver15() != null)
+            dest.setDaytimeOver15(BigInteger.valueOf(src.getDaytimeOver15()));
+
+        if (src.getAgriculturalWorker() != null)
+            dest.setAgriculturalWorker(BigInteger.valueOf(src.getAgriculturalWorker()));
+
+        if (src.getNonCommuter() != null)
+            dest.setNonCommuter(BigInteger.valueOf(src.getNonCommuter()));
+
+        if (src.getNaturalIncrease() != null)
+            dest.setNaturalIncrease(BigInteger.valueOf(src.getNaturalIncrease()));
+
+        if (src.getBirths() != null)
+            dest.setBirths(BigInteger.valueOf(src.getBirths()));
+
+        if (src.getDeaths() != null)
+            dest.setDeaths(BigInteger.valueOf(src.getDeaths()));
+
+        if (src.getSocialIncrease() != null)
+            dest.setSocialIncrease(BigInteger.valueOf(src.getSocialIncrease()));
+
+        if (src.getMoveFrom() != null)
+            dest.setMoveFrom(BigInteger.valueOf(src.getMoveFrom()));
+
+        if (src.getMoveTo() != null)
+            dest.setMoveTo(BigInteger.valueOf(src.getMoveTo()));
+
+        if (src.getIncreasement() != null)
+            dest.setIncreasement(BigInteger.valueOf(src.getIncreasement()));
+
+        if (src.getMalePopulation() != null)
+            dest.setMalePopulation(BigInteger.valueOf(src.getMalePopulation()));
+
+        if (src.getFemalePopulation() != null)
+            dest.setFemalePopulation(BigInteger.valueOf(src.getFemalePopulation()));
+
+        for (PopulationByAgeAndSexProperty populationByAgeAndSex : src.getPopulationByAgeAndSex())
+            dest.getPopulationByAgeAndSex().add(marshalPopulationByAgeAndSexProperty(populationByAgeAndSex));
+
+        return dest;
+    }
+
+    private PopulationByAgeAndSexType marshalPopulationByAgeAndSex(PopulationByAgeAndSex src) {
+        PopulationByAgeAndSexType dest = factory.createPopulationByAgeAndSexType();
+
+        if (src.getAgeAndSex() != null)
+            dest.setAgeAndSex(helper.getGMLMarshaller().marshalCode(src.getAgeAndSex()));
+
+        if (src.getNumber() != null)
+            dest.setNumber(BigInteger.valueOf(src.getNumber()));
+
+        return dest;
+    }
+
+    private PopulationByAgeAndSexPropertyType marshalPopulationByAgeAndSexProperty(PopulationByAgeAndSexProperty src) {
+        PopulationByAgeAndSexPropertyType dest = factory.createPopulationByAgeAndSexPropertyType();
+
+        if (src.isSetObject())
+            dest.setPopulationByAgeAndSex(marshalPopulationByAgeAndSex(src.getObject()));
+
+        return dest;
+    }
+
+    private PublicTransitAccessibilityType marshalPublicTransitAccessibility(PublicTransitAccessibility src) {
+        PublicTransitAccessibilityType dest = factory.createPublicTransitAccessibilityType();
+        marshalStatisticalGrid(src, dest);
+
+        dest.setAvailability(src.getAvailability());
 
         return dest;
     }
@@ -169,8 +243,8 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
         LandPriceType dest = factory.createLandPriceType();
         marshalStatisticalGrid(src, dest);
 
-        for (LandPricePerLandUseProperty property : src.getLandPrices())
-            dest.getLandPrice().add(marshalLandPricePerLandUseProperty(property));
+        for (LandPricePerLandUseProperty landPrice : src.getLandPrice())
+            dest.getLandPrice().add(marshalLandPricePerLandUseProperty(landPrice));
 
         if (src.getCurrencyUnit() != null)
             dest.setCurrencyUnit(helper.getGMLMarshaller().marshalCode(src.getCurrencyUnit()));
@@ -203,11 +277,11 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
         LandUseDiversionType dest = factory.createLandUseDiversionType();
         marshalStatisticalGrid(src, dest);
 
-        for (NumberOfAnnualDiversionsProperty property : src.getNumberOfAnnualDiversions())
-            dest.getNumberOfAnnualDiversion().add(marshalNumberOfAnnualDiversionsProperty(property));
+        for (NumberOfAnnualDiversionsProperty numberOfAnnualDiversion : src.getNumberOfAnnualDiversion())
+            dest.getNumberOfAnnualDiversion().add(marshalNumberOfAnnualDiversionsProperty(numberOfAnnualDiversion));
 
-        for (AreaOfAnnualDiversionsProperty property : src.getAreaOfAnnualDiversions())
-            dest.getAreaOfAnnualDiversion().add(marshalAreaOfAnnualDiversionsProperty(property));
+        for (AreaOfAnnualDiversionsProperty areaOfAnnualDiversion : src.getAreaOfAnnualDiversion())
+            dest.getAreaOfAnnualDiversion().add(marshalAreaOfAnnualDiversionsProperty(areaOfAnnualDiversion));
 
         return dest;
     }
@@ -254,6 +328,25 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
         return dest;
     }
 
+    private HouseholdsType marshalHouseholds(Households src) {
+        HouseholdsType dest = factory.createHouseholdsType();
+        marshalStatisticalGrid(src, dest);
+
+        if (src.getNumberOfOrdinaryHousehold() != null)
+            dest.setNumberOfOrdinaryHousehold(BigInteger.valueOf(src.getNumberOfOrdinaryHousehold()));
+
+        for (NumberOfHouseholdsProperty numberOfHouseholdsByOwnership : src.getNumberOfHouseholdsByOwnership())
+            dest.getNumberOfHouseholdsByOwnership().add(marshalNumberOfHouseholdsProperty(numberOfHouseholdsByOwnership));
+
+        for (NumberOfHouseholdsProperty numberOfHouseholdsByStructure : src.getNumberOfHouseholdsByStructure())
+            dest.getNumberOfHouseholdsByStructure().add(marshalNumberOfHouseholdsProperty(numberOfHouseholdsByStructure));
+
+        if (src.getNumberOfMainHousehold() != null)
+            dest.setNumberOfMainHousehold(BigInteger.valueOf(src.getNumberOfMainHousehold()));
+
+        return dest;
+    }
+
     private NumberOfHouseholdsType marshalNumberOfHouseholds(NumberOfHouseholds src) {
         NumberOfHouseholdsType dest = factory.createNumberOfHouseholdsType();
 
@@ -285,80 +378,8 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
         if (src.getNumberOfEmployees() != null)
             dest.setNumberOfEmployees(BigInteger.valueOf(src.getNumberOfEmployees()));
 
-        return dest;
-    }
-
-    private PopulationType marshalPopulation(Population src) {
-        PopulationType dest = factory.createPopulationType();
-        marshalStatisticalGrid(src, dest);
-
-        if (src.getTotal() != null)
-            dest.setTotal(BigInteger.valueOf(src.getTotal()));
-
-        if (src.getDaytimePopulation() != null)
-            dest.setDaytimePopulation(BigInteger.valueOf(src.getDaytimePopulation()));
-
-        dest.setDaytimePopulationDensity(src.getDaytimePopulationDensity());
-
-        if (src.getNaturalIncrease() != null)
-            dest.setNaturalIncrease(BigInteger.valueOf(src.getNaturalIncrease()));
-
-        if (src.getBirths() != null)
-            dest.setBirths(BigInteger.valueOf(src.getBirths()));
-
-        if (src.getDeaths() != null)
-            dest.setDeaths(BigInteger.valueOf(src.getDeaths()));
-
-        if (src.getSocialIncrease() != null)
-            dest.setSocialIncrease(BigInteger.valueOf(src.getSocialIncrease()));
-
-        if (src.getMoveFrom() != null)
-            dest.setMoveFrom(BigInteger.valueOf(src.getMoveFrom()));
-
-        if (src.getMoveTo() != null)
-            dest.setMoveTo(BigInteger.valueOf(src.getMoveTo()));
-
-        if (src.getIncreasement() != null)
-            dest.setIncreasement(BigInteger.valueOf(src.getIncreasement()));
-
-        if (src.getMalePopulation() != null)
-            dest.setMalePopulation(BigInteger.valueOf(src.getMalePopulation()));
-
-        if (src.getFemalePopulation() != null)
-            dest.setFemalePopulation(BigInteger.valueOf(src.getFemalePopulation()));
-
-        for (PopulationByAgeAndSexProperty property : src.getPopulationByAgeAndSex())
-            dest.getPopulationByAgeAndSex().add(marshalPopulationByAgeAndSexProperty(property));
-
-        return dest;
-    }
-
-    private PopulationByAgeAndSexType marshalPopulationByAgeAndSex(PopulationByAgeAndSex src) {
-        PopulationByAgeAndSexType dest = factory.createPopulationByAgeAndSexType();
-
-        if (src.getAgeAndSex() != null)
-            dest.setAgeAndSex(helper.getGMLMarshaller().marshalCode(src.getAgeAndSex()));
-
-        if (src.getNumber() != null)
-            dest.setNumber(BigInteger.valueOf(src.getNumber()));
-
-        return dest;
-    }
-
-    private PopulationByAgeAndSexPropertyType marshalPopulationByAgeAndSexProperty(PopulationByAgeAndSexProperty src) {
-        PopulationByAgeAndSexPropertyType dest = factory.createPopulationByAgeAndSexPropertyType();
-
-        if (src.isSetObject())
-            dest.setPopulationByAgeAndSex(marshalPopulationByAgeAndSex(src.getObject()));
-
-        return dest;
-    }
-
-    private PublicTransitAccessibilityType marshalPublicTransitAccessibility(PublicTransitAccessibility src) {
-        PublicTransitAccessibilityType dest = factory.createPublicTransitAccessibilityType();
-        marshalStatisticalGrid(src, dest);
-
-        dest.setAvailability(src.getAvailability());
+        if (src.getSalesAmount() != null)
+            dest.setSalesAmount(BigInteger.valueOf(src.getSalesAmount()));
 
         return dest;
     }
@@ -367,8 +388,8 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
         GenericGridCellType dest = factory.createGenericGridCellType();
         marshalStatisticalGrid(src, dest);
 
-        for (KeyValuePairProperty property : src.getGenericValues())
-            dest.getGenericValue().add(marshalKeyValuePairProperty(property));
+        for (KeyValuePairProperty genericValue : src.getGenericValue())
+            dest.getGenericValue().add(marshalKeyValuePairProperty(genericValue));
 
         return dest;
     }
@@ -379,20 +400,23 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
         if (src.getKey() != null)
             dest.setKey(helper.getGMLMarshaller().marshalCode(src.getKey()));
 
-        if (src.isSetStringValue())
-            dest.setStringValue(src.getStringValue());
-        else if (src.isSetIntValue())
+        dest.setStringValue(src.getStringValue());
+
+        if (src.getIntValue() != null)
             dest.setIntValue(BigInteger.valueOf(src.getIntValue()));
-        else if (src.isSetDoubleValue())
-            dest.setDoubleValue(src.getDoubleValue());
-        else if (src.isSetCodeValue())
+
+        dest.setDoubleValue(src.getDoubleValue());
+
+        if (src.getCodeValue() != null)
             dest.setCodeValue(helper.getGMLMarshaller().marshalCode(src.getCodeValue()));
-        else if (src.isSetMeasuredValue())
+
+        if (src.getMeasuredValue() != null)
             dest.setMeasuredValue(helper.getGMLMarshaller().marshalMeasure(src.getMeasuredValue()));
-        else if (src.isSetDateValue())
+
+        if (src.getDateValue() != null)
             dest.setDateValue(marshaller.toCalendar(src.getDateValue()));
-        else if (src.isSetUriValue())
-            dest.setUriValue(src.getUriValue());
+
+        dest.setUriValue(src.getUriValue());
 
         return dest;
     }
@@ -406,8 +430,90 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
         return dest;
     }
 
-    private JAXBElement<?> createHouseholds(Households src) {
-        return factory.createHouseholds(marshalHouseholds(src));
+    private StatusOfSiteSeeingType marshalStatusOfSiteSeeing(StatusOfSiteSeeing src) {
+        StatusOfSiteSeeingType dest = factory.createStatusOfSiteSeeingType();
+        marshalStatisticalGrid(src, dest);
+
+        if (src.getNumOfHotels() != null)
+            dest.setNumOfHotels(BigInteger.valueOf(src.getNumOfHotels()));
+
+        if (src.getNumOfRyokan() != null)
+            dest.setNumOfRyokan(BigInteger.valueOf(src.getNumOfRyokan()));
+
+        if (src.getNumOfPublicInn() != null)
+            dest.setNumOfPublicInn(BigInteger.valueOf(src.getNumOfPublicInn()));
+
+        if (src.getNumOfInn() != null)
+            dest.setNumOfInn(BigInteger.valueOf(src.getNumOfInn()));
+
+        if (src.getNumOfCotage() != null)
+            dest.setNumOfCotage(BigInteger.valueOf(src.getNumOfCotage()));
+
+        if (src.getNumOfTempleHotel() != null)
+            dest.setNumOfTempleHotel(BigInteger.valueOf(src.getNumOfTempleHotel()));
+
+        if (src.getNumOfRentaVilla() != null)
+            dest.setNumOfRentaVilla(BigInteger.valueOf(src.getNumOfRentaVilla()));
+
+        if (src.getNumOfYouthHostel() != null)
+            dest.setNumOfYouthHostel(BigInteger.valueOf(src.getNumOfYouthHostel()));
+
+        if (src.getNumOfCapsuleHotel() != null)
+            dest.setNumOfCapsuleHotel(BigInteger.valueOf(src.getNumOfCapsuleHotel()));
+
+        if (src.getNumOfTrainingCenter() != null)
+            dest.setNumOfTrainingCenter(BigInteger.valueOf(src.getNumOfTrainingCenter()));
+
+        if (src.getTotalAccomodations() != null)
+            dest.setTotalAccomodations(BigInteger.valueOf(src.getTotalAccomodations()));
+
+        if (src.getTotalCapacity() != null)
+            dest.setTotalCapacity(BigInteger.valueOf(src.getTotalCapacity()));
+
+        if (src.getTotalRooms() != null)
+            dest.setTotalRooms(BigInteger.valueOf(src.getTotalRooms()));
+
+        return dest;
+    }
+
+    private LandslideDisasterType marshalLandslideDisaster(LandslideDisaster src) {
+        LandslideDisasterType dest = factory.createLandslideDisasterType();
+        marshalStatisticalGrid(src, dest);
+
+        if (src.getDateOfOccurence() != null)
+            dest.setDateOfOccurence(marshaller.toCalendar(src.getDateOfOccurence()));
+
+        if (src.getLandSlideType() != null)
+            dest.setLandSlideType(jp.geospatial.iur._3_2.urg.LandSlideTypeValue.fromValue(src.getLandSlideType().value()));
+
+        if (src.getMaximumRainfallPerDay() != null)
+            dest.setMaximumRainfallPerDay(helper.getGMLMarshaller().marshalLength(src.getMaximumRainfallPerDay()));
+
+        if (src.getMaximumRainfallPerHour() != null)
+            dest.setMaximumRainfallPerHour(helper.getGMLMarshaller().marshalLength(src.getMaximumRainfallPerHour()));
+
+        if (src.getSlope() != null)
+            dest.setSlope(BigInteger.valueOf(src.getSlope()));
+
+        if (src.getSedimentDischarge() != null)
+            dest.setSedimentDischarge(BigInteger.valueOf(src.getSedimentDischarge()));
+
+        if (src.getLength() != null)
+            dest.setLength(helper.getGMLMarshaller().marshalLength(src.getLength()));
+
+        return dest;
+    }
+
+    private JAXBElement<?> createPopulation(Population src) {
+        return factory.createPopulation(marshalPopulation(src));
+    }
+
+    private JAXBElement<?> createPopulationByAgeAndSex(PopulationByAgeAndSex src) {
+        return factory.createPopulationByAgeAndSex(marshalPopulationByAgeAndSex(src));
+    }
+
+    private JAXBElement<?> createPublicTransitAccessibility(PublicTransitAccessibility src) {
+        return factory.createPublicTransitAccessibility(marshalPublicTransitAccessibility(src));
     }
 
     private JAXBElement<?> createLandPrice(LandPrice src) {
@@ -430,24 +536,16 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
         return factory.createAreaOfAnnualDiversions(marshalAreaOfAnnualDiversions(src));
     }
 
+    private JAXBElement<?> createHouseholds(Households src) {
+        return factory.createHouseholds(marshalHouseholds(src));
+    }
+
     private JAXBElement<?> createNumberOfHouseholds(NumberOfHouseholds src) {
         return factory.createNumberOfHouseholds(marshalNumberOfHouseholds(src));
     }
 
     private JAXBElement<?> createOfficesAndEmployees(OfficesAndEmployees src) {
         return factory.createOfficesAndEmployees(marshalOfficesAndEmployees(src));
-    }
-
-    private JAXBElement<?> createPopulation(Population src) {
-        return factory.createPopulation(marshalPopulation(src));
-    }
-
-    private JAXBElement<?> createPopulationByAgeAndSex(PopulationByAgeAndSex src) {
-        return factory.createPopulationByAgeAndSex(marshalPopulationByAgeAndSex(src));
-    }
-
-    private JAXBElement<?> createPublicTransitAccessibility(PublicTransitAccessibility src) {
-        return factory.createPublicTransitAccessibility(marshalPublicTransitAccessibility(src));
     }
 
     private JAXBElement<?> createGenericGridCell(GenericGridCell src) {
@@ -458,12 +556,16 @@ public class StatisticalGridMarshaller implements ADEMarshaller {
         return factory.createKeyValuePair(marshalKeyValuePair(src));
     }
 
+    private JAXBElement<?> createStatusOfSiteSeeing(StatusOfSiteSeeing src) {
+        return factory.createStatusOfSiteSeeing(marshalStatusOfSiteSeeing(src));
+    }
+
+    private JAXBElement<?> createLandslideDisaster(LandslideDisaster src) {
+        return factory.createLandslideDisaster(marshalLandslideDisaster(src));
+    }
+
     private JAXBElement<?> createFiscalYearOfPublicationProperty(FiscalYearOfPublicationProperty src) {
-        return factory.createFiscalYearOfPublication(helper.getJAXBMarshaller().getDataTypeFactory()
-                .newXMLGregorianCalendarDate(src.getValue().getValue(),
-                        DatatypeConstants.FIELD_UNDEFINED,
-                        DatatypeConstants.FIELD_UNDEFINED,
-                        DatatypeConstants.FIELD_UNDEFINED));
+        return factory.createFiscalYearOfPublication(marshaller.toCalendar(src.getValue()));
     }
 
     private JAXBElement<?> createLanguageProperty(LanguageProperty src) {

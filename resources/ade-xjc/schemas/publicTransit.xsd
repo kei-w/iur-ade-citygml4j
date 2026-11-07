@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:urt="http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/urt/1.4" xmlns:core="http://www.opengis.net/citygml/2.0" xmlns:grp="http://www.opengis.net/citygml/cityobjectgroup/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/urt/1.4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.4">
+<xs:schema xmlns:urt="https://www.geospatial.jp/iur/urt/3.2" xmlns:core="http://www.opengis.net/citygml/2.0" xmlns:grp="http://www.opengis.net/citygml/cityobjectgroup/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" targetNamespace="https://www.geospatial.jp/iur/urt/3.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.2.0">
 	<xs:annotation>
 		<xs:documentation>XML Schema for Public Transit module</xs:documentation>
+		<xs:documentation>v3.2 バージョン情報のみ更新</xs:documentation>
 	</xs:annotation>
 	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../../schemas/gml/3.1.1/base/gml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/citygml/2.0" schemaLocation="../../schemas/citygml/2.0.0/cityGMLBase.xsd"/>
@@ -87,13 +88,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Route" type="urt:RouteType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="Route" type="urt:RouteType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="RoutePropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:Route"/>
@@ -167,13 +162,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Agency" type="urt:AgencyType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="Agency" type="urt:AgencyType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="AgencyPropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:Agency"/>
@@ -202,13 +191,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Stop" type="urt:StopType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="Stop" type="urt:StopType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="StopPropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:Stop"/>
@@ -225,13 +208,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Level" type="urt:LevelType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="Level" type="urt:LevelType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="LevelPropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:Level"/>
@@ -272,13 +249,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Trip" type="urt:TripType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="Trip" type="urt:TripType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="TripPropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:Trip"/>
@@ -286,13 +257,7 @@
 		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
 	</xs:complexType>
 	<!-- ===================================================================== -->
-	<xs:element name="Shape" type="urt:ShapeType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="Shape" type="urt:ShapeType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="ShapeType">
 		<xs:complexContent>
 			<xs:extension base="urt:PublicTransitType">
@@ -339,13 +304,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Office" type="urt:OfficeType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="Office" type="urt:OfficeType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="OfficePropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:Office"/>
@@ -370,13 +329,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Calendar" type="urt:CalendarType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="Calendar" type="urt:CalendarType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="CalendarPropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:Calendar"/>
@@ -395,13 +348,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="CalendarDate" type="urt:CalendarDateType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="CalendarDate" type="urt:CalendarDateType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="CalendarDatePropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:CalendarDate"/>
@@ -423,13 +370,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="FareAttribute" type="urt:FareAttributeType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="FareAttribute" type="urt:FareAttributeType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="FareAttributePropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:FareAttribute"/>
@@ -456,13 +397,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Pathway" type="urt:PathwayType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="Pathway" type="urt:PathwayType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="PathwayPropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:Pathway"/>
@@ -483,13 +418,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="TranslationJP" type="urt:TranslationJPType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="TranslationJP" type="urt:TranslationJPType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="TranslationJPPropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:TranslationJP"/>
@@ -515,13 +444,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="Attribution" type="urt:AttributionType" substitutionGroup="urt:_PublicTransit">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="topLevel">true</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="Attribution" type="urt:AttributionType" substitutionGroup="urt:_PublicTransit"/>
 	<xs:complexType name="AttributionPropertyType">
 		<xs:sequence minOccurs="0">
 			<xs:element ref="urt:Attribution"/>

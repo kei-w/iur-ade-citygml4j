@@ -28,7 +28,7 @@ import org.citygml4j.model.common.base.ModelObjects;
 import org.citygml4j.model.gml.basicTypes.Code;
 
 public class Agency extends PublicTransit {
-    private String name;
+    private String agencyName;
     private String url;
     private Code timeZone;
     private Code language;
@@ -42,11 +42,11 @@ public class Agency extends PublicTransit {
     private String presidentName;
 
     public String getAgencyName() {
-        return name;
+        return agencyName;
     }
 
-    public void setAgencyName(String name) {
-        this.name = name;
+    public void setAgencyName(String agencyName) {
+        this.agencyName = agencyName;
     }
 
     public String getUrl() {
@@ -140,7 +140,7 @@ public class Agency extends PublicTransit {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Agency copy = target == null ? new Agency() : (Agency) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

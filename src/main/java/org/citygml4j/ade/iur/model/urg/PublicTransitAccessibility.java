@@ -39,7 +39,7 @@ public class PublicTransitAccessibility extends StatisticalGrid {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         PublicTransitAccessibility copy = target == null ? new PublicTransitAccessibility() : (PublicTransitAccessibility) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

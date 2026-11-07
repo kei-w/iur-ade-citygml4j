@@ -28,69 +28,69 @@ import org.citygml4j.builder.copy.ObjectCopier;
 import java.time.LocalDate;
 
 public class Calendar extends PublicTransit {
-    private boolean monday;
-    private boolean tuesday;
-    private boolean wednesday;
-    private boolean thursday;
-    private boolean friday;
-    private boolean saturday;
-    private boolean sunday;
+    private Boolean monday;
+    private Boolean tuesday;
+    private Boolean wednesday;
+    private Boolean thursday;
+    private Boolean friday;
+    private Boolean saturday;
+    private Boolean sunday;
     private LocalDate startDate;
     private LocalDate endDate;
 
-    public boolean isMonday() {
+    public Boolean getMonday() {
         return monday;
     }
 
-    public void setMonday(boolean monday) {
+    public void setMonday(Boolean monday) {
         this.monday = monday;
     }
 
-    public boolean isTuesday() {
+    public Boolean getTuesday() {
         return tuesday;
     }
 
-    public void setTuesday(boolean tuesday) {
+    public void setTuesday(Boolean tuesday) {
         this.tuesday = tuesday;
     }
 
-    public boolean isWednesday() {
+    public Boolean getWednesday() {
         return wednesday;
     }
 
-    public void setWednesday(boolean wednesday) {
+    public void setWednesday(Boolean wednesday) {
         this.wednesday = wednesday;
     }
 
-    public boolean isThursday() {
+    public Boolean getThursday() {
         return thursday;
     }
 
-    public void setThursday(boolean thursday) {
+    public void setThursday(Boolean thursday) {
         this.thursday = thursday;
     }
 
-    public boolean isFriday() {
+    public Boolean getFriday() {
         return friday;
     }
 
-    public void setFriday(boolean friday) {
+    public void setFriday(Boolean friday) {
         this.friday = friday;
     }
 
-    public boolean isSaturday() {
+    public Boolean getSaturday() {
         return saturday;
     }
 
-    public void setSaturday(boolean saturday) {
+    public void setSaturday(Boolean saturday) {
         this.saturday = saturday;
     }
 
-    public boolean isSunday() {
+    public Boolean getSunday() {
         return sunday;
     }
 
-    public void setSunday(boolean sunday) {
+    public void setSunday(Boolean sunday) {
         this.sunday = sunday;
     }
 
@@ -112,13 +112,13 @@ public class Calendar extends PublicTransit {
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
-        Level copy = target == null ? new Level() : (Level) target;
-        super.copyTo(target, copyBuilder);
+        Calendar copy = target == null ? new Calendar() : (Calendar) target;
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 
     @Override
     public Object copy(CopyBuilder copyBuilder) {
-        return copyTo(new Level(), copyBuilder);
+        return copyTo(new Calendar(), copyBuilder);
     }
 }

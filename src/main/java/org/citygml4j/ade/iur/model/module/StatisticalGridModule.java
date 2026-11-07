@@ -22,37 +22,47 @@
 
 package org.citygml4j.ade.iur.model.module;
 
-import org.citygml4j.ade.iur.model.urf.LandUseDiversion;
-import org.citygml4j.ade.iur.model.urg.*;
+import org.citygml4j.ade.iur.model.urg.GenericGridCell;
+import org.citygml4j.ade.iur.model.urg.Households;
+import org.citygml4j.ade.iur.model.urg.LandPrice;
+import org.citygml4j.ade.iur.model.urg.LandUseDiversion;
+import org.citygml4j.ade.iur.model.urg.LandslideDisaster;
+import org.citygml4j.ade.iur.model.urg.OfficesAndEmployees;
+import org.citygml4j.ade.iur.model.urg.Population;
+import org.citygml4j.ade.iur.model.urg.PublicTransitAccessibility;
+import org.citygml4j.ade.iur.model.urg.StatusOfSiteSeeing;
 import org.citygml4j.model.gml.feature.AbstractFeature;
 import org.citygml4j.model.module.ade.ADEModule;
 import org.citygml4j.model.module.citygml.CityGMLVersion;
 
-import javax.xml.namespace.QName;
 import java.net.URL;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.xml.namespace.QName;
 
 public class StatisticalGridModule extends ADEModule {
-    public static final StatisticalGridModule v1_4 = new StatisticalGridModule();
+    public static final StatisticalGridModule v3_2 = new StatisticalGridModule();
+
     private final Map<String, Class<? extends AbstractFeature>> features;
 
     private StatisticalGridModule() {
-        super("http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/urg/1.4",
+        super("https://www.geospatial.jp/iur/urg/3.2",
                 "urg",
-                "https://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/schemas/urg/1.4/statisticalGrid.xsd",
+                "https://www.geospatial.jp/iur/schemas/urg/3.2/statisticalGrid.xsd",
                 CityGMLVersion.v2_0_0);
 
         features = new HashMap<>();
-        features.put("Households", Households.class);
-        features.put("LandPrice", LandPrice.class);
-        features.put("LandUseDiversion", LandUseDiversion.class);
-        features.put("OfficesAndEmployees", OfficesAndEmployees.class);
         features.put("Population", Population.class);
         features.put("PublicTransitAccessibility", PublicTransitAccessibility.class);
+        features.put("LandPrice", LandPrice.class);
+        features.put("LandUseDiversion", LandUseDiversion.class);
+        features.put("Households", Households.class);
+        features.put("OfficesAndEmployees", OfficesAndEmployees.class);
         features.put("GenericGridCell", GenericGridCell.class);
+        features.put("StatusOfSiteSeeing", StatusOfSiteSeeing.class);
+        features.put("LandslideDisaster", LandslideDisaster.class);
     }
 
     @Override
@@ -62,7 +72,7 @@ public class StatisticalGridModule extends ADEModule {
 
     @Override
     public List<String> getJAXBPackageNames() {
-        return Collections.singletonList("jp.go.kantei.iur._1_4.urg");
+        return Collections.singletonList("jp.geospatial.iur._3_2.urg");
     }
 
     public String getModelPackageName() {
@@ -101,6 +111,6 @@ public class StatisticalGridModule extends ADEModule {
 
     @Override
     public boolean isTopLevelFeature(String name) {
-        return true;
+        return "GenericGridCell".equals(name) || "Households".equals(name) || "LandPrice".equals(name) || "LandUseDiversion".equals(name) || "LandslideDisaster".equals(name) || "OfficesAndEmployees".equals(name) || "Population".equals(name) || "PublicTransitAccessibility".equals(name) || "StatusOfSiteSeeing".equals(name);
     }
 }

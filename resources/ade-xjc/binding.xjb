@@ -130,16 +130,22 @@
   
   <jaxb:bindings schemaLocation="schemas/statisticalGrid.xsd" node="/xs:schema">
     <jaxb:schemaBindings>
-      <jaxb:package name="jp.go.kantei.iur._1_4.urg"/>
+      <jaxb:package name="jp.geospatial.iur._3_2.urg"/>
     </jaxb:schemaBindings>
     <jaxb:bindings>
       <namespace:prefix name="urg"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="//xs:element[@name='lod-1MultiSurface']" multiple="true">
+      <jaxb:property name="lodMinus1MultiSurface"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="//xs:element[@name='lod-2MultiSurface']" multiple="true">
+      <jaxb:property name="lodMinus2MultiSurface"/>
     </jaxb:bindings>
   </jaxb:bindings>
   
   <jaxb:bindings schemaLocation="schemas/publicTransit.xsd" node="/xs:schema">
     <jaxb:schemaBindings>
-      <jaxb:package name="jp.go.kantei.iur._1_4.urt"/>
+      <jaxb:package name="jp.geospatial.iur._3_2.urt"/>
     </jaxb:schemaBindings>
     <jaxb:bindings>
       <namespace:prefix name="urt"/>

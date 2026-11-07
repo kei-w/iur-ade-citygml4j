@@ -24,7 +24,6 @@ package org.citygml4j.ade.iur.model.urt;
 
 import org.citygml4j.builder.copy.CopyBuilder;
 import org.citygml4j.builder.copy.ObjectCopier;
-import org.citygml4j.model.citygml.core.LodRepresentation;
 import org.citygml4j.model.common.base.ModelObjects;
 import org.citygml4j.model.gml.basicTypes.Code;
 import org.citygml4j.model.gml.geometry.primitives.PointProperty;
@@ -149,16 +148,9 @@ public class Stop extends PublicTransit {
     }
 
     @Override
-    public LodRepresentation getLodRepresentation() {
-        LodRepresentation lodRepresentation = new LodRepresentation();
-        lodRepresentation.addRepresentation(point);
-        return lodRepresentation;
-    }
-
-    @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Stop copy = target == null ? new Stop() : (Stop) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

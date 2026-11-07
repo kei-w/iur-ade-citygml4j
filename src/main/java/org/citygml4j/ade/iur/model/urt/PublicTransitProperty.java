@@ -29,6 +29,7 @@ import org.citygml4j.model.gml.feature.FeatureProperty;
 public class PublicTransitProperty extends FeatureProperty<PublicTransit> implements ADEModelObject {
 
     public PublicTransitProperty() {
+        super();
     }
 
     public PublicTransitProperty(PublicTransit object) {

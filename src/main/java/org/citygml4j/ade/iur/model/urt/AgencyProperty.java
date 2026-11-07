@@ -29,6 +29,7 @@ import org.citygml4j.model.gml.feature.FeatureProperty;
 public class AgencyProperty extends FeatureProperty<Agency> implements ADEModelObject {
 
     public AgencyProperty() {
+        super();
     }
 
     public AgencyProperty(Agency object) {

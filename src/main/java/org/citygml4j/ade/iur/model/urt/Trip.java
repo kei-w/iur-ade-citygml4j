@@ -150,15 +150,16 @@ public class Trip extends PublicTransit {
 
     @Override
     public LodRepresentation getLodRepresentation() {
-        LodRepresentation lodRepresentation = new LodRepresentation();
+        LodRepresentation lodRepresentation = super.getLodRepresentation();
         lodRepresentation.addRepresentation(0, lod0MultiCurve);
+
         return lodRepresentation;
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Trip copy = target == null ? new Trip() : (Trip) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

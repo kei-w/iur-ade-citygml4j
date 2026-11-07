@@ -33,6 +33,12 @@ public class Population extends StatisticalGrid {
     private Integer total;
     private Integer daytimePopulation;
     private Double daytimePopulationDensity;
+    private Integer daytimeOfficeCommuter;
+    private Integer daytimeSchoolCommuter;
+    private Integer daytimeUnder15;
+    private Integer daytimeOver15;
+    private Integer agriculturalWorker;
+    private Integer nonCommuter;
     private Integer naturalIncrease;
     private Integer births;
     private Integer deaths;
@@ -66,6 +72,54 @@ public class Population extends StatisticalGrid {
 
     public void setDaytimePopulationDensity(Double daytimePopulationDensity) {
         this.daytimePopulationDensity = daytimePopulationDensity;
+    }
+
+    public Integer getDaytimeOfficeCommuter() {
+        return daytimeOfficeCommuter;
+    }
+
+    public void setDaytimeOfficeCommuter(Integer daytimeOfficeCommuter) {
+        this.daytimeOfficeCommuter = daytimeOfficeCommuter;
+    }
+
+    public Integer getDaytimeSchoolCommuter() {
+        return daytimeSchoolCommuter;
+    }
+
+    public void setDaytimeSchoolCommuter(Integer daytimeSchoolCommuter) {
+        this.daytimeSchoolCommuter = daytimeSchoolCommuter;
+    }
+
+    public Integer getDaytimeUnder15() {
+        return daytimeUnder15;
+    }
+
+    public void setDaytimeUnder15(Integer daytimeUnder15) {
+        this.daytimeUnder15 = daytimeUnder15;
+    }
+
+    public Integer getDaytimeOver15() {
+        return daytimeOver15;
+    }
+
+    public void setDaytimeOver15(Integer daytimeOver15) {
+        this.daytimeOver15 = daytimeOver15;
+    }
+
+    public Integer getAgriculturalWorker() {
+        return agriculturalWorker;
+    }
+
+    public void setAgriculturalWorker(Integer agriculturalWorker) {
+        this.agriculturalWorker = agriculturalWorker;
+    }
+
+    public Integer getNonCommuter() {
+        return nonCommuter;
+    }
+
+    public void setNonCommuter(Integer nonCommuter) {
+        this.nonCommuter = nonCommuter;
     }
 
     public Integer getNaturalIncrease() {
@@ -154,7 +208,7 @@ public class Population extends StatisticalGrid {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Population copy = target == null ? new Population() : (Population) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

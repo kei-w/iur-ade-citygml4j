@@ -142,6 +142,7 @@ public class StopTime extends PublicTransitDataType {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         StopTime copy = target == null ? new StopTime() : (StopTime) target;
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

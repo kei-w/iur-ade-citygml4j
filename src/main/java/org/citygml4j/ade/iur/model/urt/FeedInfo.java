@@ -124,6 +124,7 @@ public class FeedInfo extends PublicTransitDataType {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         FeedInfo copy = target == null ? new FeedInfo() : (FeedInfo) target;
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

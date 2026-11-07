@@ -77,6 +77,7 @@ public class FareRule extends PublicTransitDataType {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         FareRule copy = target == null ? new FareRule() : (FareRule) target;
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

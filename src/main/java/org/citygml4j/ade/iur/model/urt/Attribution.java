@@ -50,24 +50,24 @@ public class Attribution extends PublicTransit {
         return isProducer;
     }
 
-    public void setIsProducer(Boolean producer) {
-        isProducer = producer;
+    public void setIsProducer(Boolean isProducer) {
+        this.isProducer = isProducer;
     }
 
     public Boolean getIsOperator() {
         return isOperator;
     }
 
-    public void setIsOperator(Boolean operator) {
-        isOperator = operator;
+    public void setIsOperator(Boolean isOperator) {
+        this.isOperator = isOperator;
     }
 
     public Boolean getIsAuthority() {
         return isAuthority;
     }
 
-    public void setIsAuthority(Boolean authority) {
-        isAuthority = authority;
+    public void setIsAuthority(Boolean isAuthority) {
+        this.isAuthority = isAuthority;
     }
 
     public String getUrl() {
@@ -121,7 +121,7 @@ public class Attribution extends PublicTransit {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Attribution copy = target == null ? new Attribution() : (Attribution) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

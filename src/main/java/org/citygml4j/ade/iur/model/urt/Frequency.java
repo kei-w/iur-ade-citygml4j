@@ -79,6 +79,7 @@ public class Frequency extends PublicTransitDataType {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Frequency copy = target == null ? new Frequency() : (Frequency) target;
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

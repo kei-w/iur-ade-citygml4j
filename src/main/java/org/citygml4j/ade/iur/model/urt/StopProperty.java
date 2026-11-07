@@ -29,6 +29,7 @@ import org.citygml4j.model.gml.feature.FeatureProperty;
 public class StopProperty extends FeatureProperty<Stop> implements ADEModelObject {
 
     public StopProperty() {
+        super();
     }
 
     public StopProperty(Stop object) {

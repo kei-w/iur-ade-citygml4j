@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:urg="http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/urg/1.4" xmlns:core="http://www.opengis.net/citygml/2.0" xmlns:grp="http://www.opengis.net/citygml/cityobjectgroup/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.kantei.go.jp/jp/singi/tiiki/toshisaisei/itoshisaisei/iur/urg/1.4" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.4">
+<xs:schema xmlns:urg="https://www.geospatial.jp/iur/urg/3.0" xmlns:core="http://www.opengis.net/citygml/2.0" xmlns:grp="http://www.opengis.net/citygml/cityobjectgroup/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" targetNamespace="https://www.geospatial.jp/iur/urg/3.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0">
 	<xs:annotation>
 		<xs:documentation>XML Schema for Statistical Grid module</xs:documentation>
+		<xs:documentation>Updated on 2023/03/23</xs:documentation>
 	</xs:annotation>
 	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/>
 	<xs:import namespace="http://www.opengis.net/citygml/2.0" schemaLocation="http://schemas.opengis.net/citygml/2.0/cityGMLBase.xsd"/>
@@ -20,6 +21,7 @@
 					<xs:element name="prefecture" type="gml:CodeType" minOccurs="0"/>
 					<xs:element name="city" type="gml:CodeType" minOccurs="0"/>
 					<xs:element name="surveyYear" type="xs:gYear" minOccurs="0"/>
+					<xs:element name="referenceDate" type="xs:date" minOccurs="0"/>
 					<xs:element name="lod-1MultiSurface" type="gml:MultiSurfacePropertyType" minOccurs="0"/>
 					<xs:element name="lod-2MultiSurface" type="gml:MultiSurfacePropertyType" minOccurs="0"/>
 				</xs:sequence>
@@ -44,6 +46,12 @@
 					<xs:element name="total" type="xs:integer" minOccurs="0"/>
 					<xs:element name="daytimePopulation" type="xs:integer" minOccurs="0"/>
 					<xs:element name="daytimePopulationDensity" type="xs:double" minOccurs="0"/>
+					<xs:element name="daytimeOfficeCommuter" type="xs:integer" minOccurs="0"/>
+					<xs:element name="daytimeSchoolCommuter" type="xs:integer" minOccurs="0"/>
+					<xs:element name="daytimeUnder15" type="xs:integer" minOccurs="0"/>
+					<xs:element name="daytimeOver15" type="xs:integer" minOccurs="0"/>
+					<xs:element name="agriculturalWorker" type="xs:integer" minOccurs="0"/>
+					<xs:element name="nonCommuter" type="xs:integer" minOccurs="0"/>
 					<xs:element name="naturalIncrease" type="xs:integer" minOccurs="0"/>
 					<xs:element name="births" type="xs:integer" minOccurs="0"/>
 					<xs:element name="deaths" type="xs:integer" minOccurs="0"/>
@@ -220,8 +228,9 @@
 		<xs:complexContent>
 			<xs:extension base="urg:StatisticalGridType">
 				<xs:sequence>
-					<xs:element name="numberOfOffices" type="xs:nonNegativeInteger" minOccurs="0"/>
-					<xs:element name="numberOfEmployees" type="xs:nonNegativeInteger" minOccurs="0"/>
+					<xs:element name="numberOfOffices" type="xs:integer" minOccurs="0"/>
+					<xs:element name="numberOfEmployees" type="xs:integer" minOccurs="0"/>
+					<xs:element name="salesAmount" type="xs:integer" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -279,4 +288,81 @@
 	<!-- =================== Extended attribute for CityObjectGroup ================= -->
 	<xs:element name="fiscalYearOfPublication" type="xs:gYear" substitutionGroup="grp:_GenericApplicationPropertyOfCityObjectGroup"/>
 	<xs:element name="language" type="gml:CodeType" substitutionGroup="grp:_GenericApplicationPropertyOfCityObjectGroup"/>
+	<!-- ===================================================================== -->
+	<xs:complexType name="StatusOfSiteSeeingType">
+		<xs:complexContent>
+			<xs:extension base="urg:StatisticalGridType">
+				<xs:sequence>
+					<xs:element name="numOfHotels" type="xs:integer" minOccurs="0"/>
+					<xs:element name="numOfRyokan" type="xs:integer" minOccurs="0"/>
+					<xs:element name="numOfPublicInn" type="xs:integer" minOccurs="0"/>
+					<xs:element name="numOfInn" type="xs:integer" minOccurs="0"/>
+					<xs:element name="numOfCotage" type="xs:integer" minOccurs="0"/>
+					<xs:element name="numOfTempleHotel" type="xs:integer" minOccurs="0"/>
+					<xs:element name="numOfRentaVilla" type="xs:integer" minOccurs="0"/>
+					<xs:element name="numOfYouthHostel" type="xs:integer" minOccurs="0"/>
+					<xs:element name="numOfCapsuleHotel" type="xs:integer" minOccurs="0"/>
+					<xs:element name="numOfTrainingCenter" type="xs:integer" minOccurs="0"/>
+					<xs:element name="totalAccomodations" type="xs:integer" minOccurs="0"/>
+					<xs:element name="totalCapacity" type="xs:integer" minOccurs="0"/>
+					<xs:element name="totalRooms" type="xs:integer" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="StatusOfSiteSeeing" type="urg:StatusOfSiteSeeingType" substitutionGroup="urg:_StatisticalGrid"/>
+	<xs:complexType name="StatusOfSiteSeeingPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="urg:StatusOfSiteSeeing"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</xs:complexType>
+	<!-- ===================================================================== -->
+	<xs:complexType name="LandslideDisasterType">
+		<xs:complexContent>
+			<xs:extension base="urg:StatisticalGridType">
+				<xs:sequence>
+					<xs:element name="dateOfOccurence" type="xs:date" minOccurs="0"/>
+					<xs:element name="landSlideType" type="urg:LandSlideTypeValue" minOccurs="0"/>
+					<xs:element name="maximumRainfallPerDay" type="gml:LengthType" minOccurs="0"/>
+					<xs:element name="maximumRainfallPerHour" type="gml:LengthType" minOccurs="0"/>
+					<xs:element name="slope" type="xs:integer" minOccurs="0"/>
+					<xs:element name="sedimentDischarge" type="xs:integer" minOccurs="0"/>
+					<xs:element name="length" type="gml:LengthType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="LandslideDisaster" type="urg:LandslideDisasterType" substitutionGroup="urg:_StatisticalGrid"/>
+	<xs:complexType name="LandslideDisasterPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="urg:LandslideDisaster"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</xs:complexType>
+		<xs:simpleType name="LandSlideTypeValue">
+
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="土石流"/>
+			<xs:enumeration value="土石流（土砂流）"/>
+			<xs:enumeration value="土石流（山腹崩壊・土砂流）"/>
+			<xs:enumeration value="土石流（山腹崩壊）"/>
+			<xs:enumeration value="土石流（山林火災）"/>
+			<xs:enumeration value="土石流（流木堆積、えん堤基礎部損傷）"/>
+			<xs:enumeration value="土石流（噴火）"/>
+			<xs:enumeration value="土石流（施設災害）"/>
+			<xs:enumeration value="土石流（その他（民地盛土河川流出）"/>
+			<xs:enumeration value="土石流（その他（洪水））"/>
+			<xs:enumeration value="土石流（その他（河道内堆積物の泥流化）"/>
+			<xs:enumeration value="土石流（その他）"/>
+			<xs:enumeration value="がけ崩れ"/>
+			<xs:enumeration value="地すべり）"/>
+			<xs:enumeration value="雪崩（表層）"/>
+			<xs:enumeration value="雪崩（全層傷）"/>
+			<xs:enumeration value="雪崩"/>
+			<xs:enumeration value="山林火災（計上なし）"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- ===================================================================== -->
 </xs:schema>

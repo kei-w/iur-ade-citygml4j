@@ -65,11 +65,11 @@ public class Marshaller implements ADEMarshaller {
 
         if (UrbanFunctionModule.v3_0.getModelPackageName().equals(packageName))
             return urbanFunction.marshalJAXBElement(src);
-        else if (StatisticalGridModule.v1_4.getModelPackageName().equals(packageName))
+        else if (StatisticalGridModule.v3_0.getModelPackageName().equals(packageName))
             return statisticalGrid.marshalJAXBElement(src);
         else if (UrbanObjectModule.v3_0.getModelPackageName().equals(packageName))
             return urbanObject.marshalJAXBElement(src);
-        else if (PublicTransitModule.v1_4.getModelPackageName().equals(packageName))
+        else if (PublicTransitModule.v3_0.getModelPackageName().equals(packageName))
             return publicTransit.marshalJAXBElement(src);
 
         return null;
@@ -81,11 +81,11 @@ public class Marshaller implements ADEMarshaller {
 
         if (UrbanFunctionModule.v3_0.getModelPackageName().equals(packageName))
             return urbanFunction.marshal(src);
-        else if (StatisticalGridModule.v1_4.getModelPackageName().equals(packageName))
+        else if (StatisticalGridModule.v3_0.getModelPackageName().equals(packageName))
             return statisticalGrid.marshal(src);
         else if (UrbanObjectModule.v3_0.getModelPackageName().equals(packageName))
             return urbanObject.marshal(src);
-        else if (PublicTransitModule.v1_4.getModelPackageName().equals(packageName))
+        else if (PublicTransitModule.v3_0.getModelPackageName().equals(packageName))
             return publicTransit.marshal(src);
 
         return null;

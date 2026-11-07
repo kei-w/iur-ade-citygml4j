@@ -22,62 +22,93 @@
 
 package org.citygml4j.ade.iur.model.urg;
 
-import org.citygml4j.ade.iur.model.common.AbstractKeyValuePair;
+import org.citygml4j.ade.iur.model.common.AbstractDataType;
 import org.citygml4j.builder.copy.CopyBuilder;
+import org.citygml4j.builder.copy.ObjectCopier;
+import org.citygml4j.model.common.base.ModelObjects;
 import org.citygml4j.model.gml.basicTypes.Code;
 import org.citygml4j.model.gml.basicTypes.Measure;
 
 import java.time.LocalDate;
 
-public class KeyValuePair extends AbstractKeyValuePair {
+public class KeyValuePair extends AbstractDataType {
+    private Code key;
+    private String stringValue;
+    private Integer intValue;
+    private Double doubleValue;
+    private Code codeValue;
+    private Measure measuredValue;
+    private LocalDate dateValue;
+    private String uriValue;
 
-    public KeyValuePair() {
+    public Code getKey() {
+        return key;
     }
 
-    public KeyValuePair(Code key) {
-        super(key);
+    public void setKey(Code key) {
+        this.key = ModelObjects.setParent(key, this);
     }
 
-    public static KeyValuePair ofStringValue(Code key, String value) {
-        KeyValuePair keyValuePair = new KeyValuePair(key);
-        keyValuePair.setStringValue(value);
-        return keyValuePair;
+    public String getStringValue() {
+        return stringValue;
     }
 
-    public static KeyValuePair ofIntValue(Code key, int value) {
-        KeyValuePair keyValuePair = new KeyValuePair(key);
-        keyValuePair.setIntValue(value);
-        return keyValuePair;
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
     }
 
-    public static KeyValuePair ofDoubleValue(Code key, double value) {
-        KeyValuePair keyValuePair = new KeyValuePair(key);
-        keyValuePair.setDoubleValue(value);
-        return keyValuePair;
+    public Integer getIntValue() {
+        return intValue;
     }
 
-    public static KeyValuePair ofCodeValue(Code key, Code value) {
-        KeyValuePair keyValuePair = new KeyValuePair(key);
-        keyValuePair.setCodeValue(value);
-        return keyValuePair;
+    public void setIntValue(Integer intValue) {
+        this.intValue = intValue;
     }
 
-    public static KeyValuePair ofMeasuredValue(Code key, Measure value) {
-        KeyValuePair keyValuePair = new KeyValuePair(key);
-        keyValuePair.setMeasuredValue(value);
-        return keyValuePair;
+    public Double getDoubleValue() {
+        return doubleValue;
     }
 
-    public static KeyValuePair ofDateValue(Code key, LocalDate value) {
-        KeyValuePair keyValuePair = new KeyValuePair(key);
-        keyValuePair.setDateValue(value);
-        return keyValuePair;
+    public void setDoubleValue(Double doubleValue) {
+        this.doubleValue = doubleValue;
     }
 
-    public static KeyValuePair ofUriValue(Code key, String value) {
-        KeyValuePair keyValuePair = new KeyValuePair(key);
-        keyValuePair.setUriValue(value);
-        return keyValuePair;
+    public Code getCodeValue() {
+        return codeValue;
+    }
+
+    public void setCodeValue(Code codeValue) {
+        this.codeValue = ModelObjects.setParent(codeValue, this);
+    }
+
+    public Measure getMeasuredValue() {
+        return measuredValue;
+    }
+
+    public void setMeasuredValue(Measure measuredValue) {
+        this.measuredValue = ModelObjects.setParent(measuredValue, this);
+    }
+
+    public LocalDate getDateValue() {
+        return dateValue;
+    }
+
+    public void setDateValue(LocalDate dateValue) {
+        this.dateValue = dateValue;
+    }
+
+    public String getUriValue() {
+        return uriValue;
+    }
+
+    public void setUriValue(String uriValue) {
+        this.uriValue = uriValue;
+    }
+
+    @Override
+    public Object copyTo(Object target, CopyBuilder copyBuilder) {
+        KeyValuePair copy = target == null ? new KeyValuePair() : (KeyValuePair) target;
+        return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 
     @Override

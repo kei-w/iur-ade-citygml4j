@@ -29,6 +29,7 @@ import org.citygml4j.model.gml.feature.FeatureProperty;
 public class RouteProperty extends FeatureProperty<Route> implements ADEModelObject {
 
     public RouteProperty() {
+        super();
     }
 
     public RouteProperty(Route object) {

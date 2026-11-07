@@ -68,6 +68,7 @@ public class Transfer extends PublicTransitDataType {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Transfer copy = target == null ? new Transfer() : (Transfer) target;
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

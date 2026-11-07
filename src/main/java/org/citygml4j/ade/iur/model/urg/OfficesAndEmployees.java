@@ -28,13 +28,14 @@ import org.citygml4j.builder.copy.ObjectCopier;
 public class OfficesAndEmployees extends StatisticalGrid {
     private Integer numberOfOffices;
     private Integer numberOfEmployees;
+    private Integer salesAmount;
 
     public Integer getNumberOfOffices() {
         return numberOfOffices;
     }
 
     public void setNumberOfOffices(Integer numberOfOffices) {
-        this.numberOfOffices = numberOfOffices != null && numberOfOffices >= 0 ? numberOfOffices : null;
+        this.numberOfOffices = numberOfOffices;
     }
 
     public Integer getNumberOfEmployees() {
@@ -42,13 +43,21 @@ public class OfficesAndEmployees extends StatisticalGrid {
     }
 
     public void setNumberOfEmployees(Integer numberOfEmployees) {
-        this.numberOfEmployees = numberOfEmployees != null && numberOfEmployees >= 0 ? numberOfEmployees : null;
+        this.numberOfEmployees = numberOfEmployees;
+    }
+
+    public Integer getSalesAmount() {
+        return salesAmount;
+    }
+
+    public void setSalesAmount(Integer salesAmount) {
+        this.salesAmount = salesAmount;
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         OfficesAndEmployees copy = target == null ? new OfficesAndEmployees() : (OfficesAndEmployees) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

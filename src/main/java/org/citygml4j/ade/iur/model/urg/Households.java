@@ -30,17 +30,17 @@ import org.citygml4j.model.common.child.ChildList;
 import java.util.List;
 
 public class Households extends StatisticalGrid {
-    private Integer numberOfOrdinaryHouseholds;
+    private Integer numberOfOrdinaryHousehold;
     private List<NumberOfHouseholdsProperty> numberOfHouseholdsByOwnership;
     private List<NumberOfHouseholdsProperty> numberOfHouseholdsByStructure;
-    private Integer numberOfMainHouseholds;
+    private Integer numberOfMainHousehold;
 
-    public Integer getNumberOfOrdinaryHouseholds() {
-        return numberOfOrdinaryHouseholds;
+    public Integer getNumberOfOrdinaryHousehold() {
+        return numberOfOrdinaryHousehold;
     }
 
-    public void setNumberOfOrdinaryHouseholds(Integer numberOfOrdinaryHouseholds) {
-        this.numberOfOrdinaryHouseholds = numberOfOrdinaryHouseholds;
+    public void setNumberOfOrdinaryHousehold(Integer numberOfOrdinaryHousehold) {
+        this.numberOfOrdinaryHousehold = numberOfOrdinaryHousehold;
     }
 
     public List<NumberOfHouseholdsProperty> getNumberOfHouseholdsByOwnership() {
@@ -65,18 +65,18 @@ public class Households extends StatisticalGrid {
         this.numberOfHouseholdsByStructure = ModelObjects.setParent(numberOfHouseholdsByStructure, this);
     }
 
-    public Integer getNumberOfMainHouseholds() {
-        return numberOfMainHouseholds;
+    public Integer getNumberOfMainHousehold() {
+        return numberOfMainHousehold;
     }
 
-    public void setNumberOfMainHouseholds(Integer numberOfMainHouseholds) {
-        this.numberOfMainHouseholds = numberOfMainHouseholds;
+    public void setNumberOfMainHousehold(Integer numberOfMainHousehold) {
+        this.numberOfMainHousehold = numberOfMainHousehold;
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Households copy = target == null ? new Households() : (Households) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

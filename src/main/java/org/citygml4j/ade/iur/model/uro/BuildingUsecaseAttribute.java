@@ -60,7 +60,7 @@ public class BuildingUsecaseAttribute extends BuildingAttribute {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         BuildingUsecaseAttribute copy = target == null ? new BuildingUsecaseAttribute() : (BuildingUsecaseAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

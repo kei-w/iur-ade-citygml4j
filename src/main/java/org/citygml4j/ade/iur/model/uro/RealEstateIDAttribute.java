@@ -93,7 +93,7 @@ public class RealEstateIDAttribute extends BuildingAttribute {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         RealEstateIDAttribute copy = target == null ? new RealEstateIDAttribute() : (RealEstateIDAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

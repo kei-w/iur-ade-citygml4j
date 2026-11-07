@@ -29,7 +29,7 @@ public class HighTideRiskAttribute extends FloodingRiskAttribute {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         HighTideRiskAttribute copy = target == null ? new HighTideRiskAttribute() : (HighTideRiskAttribute) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

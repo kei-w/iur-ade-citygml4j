@@ -45,7 +45,7 @@ public class NumberOfAnnualDiversions extends AbstractDataType {
     }
 
     public void setCount(Integer count) {
-        this.count = count != null && count >= 0 ? count : null;
+        this.count = count;
     }
 
     @Override

@@ -29,6 +29,7 @@ import org.citygml4j.model.gml.feature.FeatureProperty;
 public class LevelProperty extends FeatureProperty<Level> implements ADEModelObject {
 
     public LevelProperty() {
+        super();
     }
 
     public LevelProperty(Level object) {

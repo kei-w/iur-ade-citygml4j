@@ -45,10 +45,25 @@ Change Log
 * The top-level `Unmarshaller` dispatches JAXB objects by their JAXB package, so `urf` properties of `uro` types
   (`keyValuePairAttribute`, `dataQualityAttribute`, `urfDmAttribute`) are unmarshalled.
 
+##### Changes (Statistical Grid and Public Transit modules, 2026-11-08)
+* **Breaking:** the Statistical Grid module (`urg`) and the Public Transit module (`urt`) are updated to version 3.1
+  of the i-UR ADE (`https://www.geospatial.jp/iur/urg/3.1`, `https://www.geospatial.jp/iur/urt/3.1`): 10 urg feature
+  types and 6 urg data types, 14 urt feature types and 9 urt data types generated from the schemas published on
+  geospatial.jp replace the hand-written 1.4 model, binding and walker classes; the JAXB classes are generated into
+  `jp.geospatial.iur._3_1.urg` and `jp.geospatial.iur._3_1.urt` (the `jp.go.kantei.iur._1_4` packages are gone).
+* Every concrete `urg` and `urt` feature is registered as a top-level feature (the grids are city object members, the
+  public transit features are group members referring to each other by xlink); `urt:target` and the references
+  between public transit features are feature properties that carry an xlink.
+* `xs:time` elements (`urt:StopTime/arrivalTime`, ...) are modelled as `LocalTime`; the hyphenated `urg` geometries
+  (`lod-1MultiSurface`, ...) are bound under `lodMinusN...` like the `urf` ones.
+* The walkers now visit the feature references and geometries of derived feature types (`urt:Stop/parentStation`,
+  `urt:Stop/point`, ...) and, in the GML walkers, those of the public transit data types held by
+  `urt:dataType`; the generated `urf` walker methods of derived types gain the same visits.
+
 ##### Known limitations
 * `gml:pos` values (`uro:Elevation/elevationValue`, `uro:OffsetDepth/pos`) keep their coordinates only; `srsName` and
   `srsDimension` are not stored.
-* `urg` and `urt` remain at 1.4.
+* `urg:StatisticalGrid/urg:value` (`xs:anyType`) is not supported.
 
 ### 2.0.0 - 2026-11-07
 

@@ -23,6 +23,16 @@
 package org.citygml4j.ade.iur.model.urt;
 
 import org.citygml4j.ade.iur.model.common.AbstractDataType;
+import org.citygml4j.builder.copy.CopyBuilder;
+import org.citygml4j.builder.copy.ObjectCopier;
 
 public abstract class PublicTransitDataType extends AbstractDataType {
+    @Override
+    public Object copyTo(Object target, CopyBuilder copyBuilder) {
+        if (target == null)
+            throw new IllegalArgumentException("Target argument must not be null for abstract copyable classes.");
+
+        PublicTransitDataType copy = (PublicTransitDataType) target;
+        return ObjectCopier.copyTo(this, copy, PublicTransitDataType.class, copyBuilder);
+    }
 }

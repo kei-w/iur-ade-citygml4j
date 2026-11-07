@@ -26,16 +26,16 @@ import org.citygml4j.builder.copy.CopyBuilder;
 import org.citygml4j.builder.copy.ObjectCopier;
 
 public class Office extends PublicTransit {
-    private String name;
+    private String officeName;
     private String url;
     private String phone;
 
     public String getOfficeName() {
-        return name;
+        return officeName;
     }
 
-    public void setOfficeName(String name) {
-        this.name = name;
+    public void setOfficeName(String officeName) {
+        this.officeName = officeName;
     }
 
     public String getUrl() {
@@ -57,7 +57,7 @@ public class Office extends PublicTransit {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Office copy = target == null ? new Office() : (Office) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

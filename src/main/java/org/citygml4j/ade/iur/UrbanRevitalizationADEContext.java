@@ -45,8 +45,8 @@ public class UrbanRevitalizationADEContext implements ADEContext {
     private final List<ADEModule> modules = Arrays.asList(
             UrbanObjectModule.v3_1,
             UrbanFunctionModule.v3_1,
-            StatisticalGridModule.v1_4,
-            PublicTransitModule.v1_4
+            StatisticalGridModule.v3_1,
+            PublicTransitModule.v3_1
     );
 
     @Override
@@ -59,8 +59,8 @@ public class UrbanRevitalizationADEContext implements ADEContext {
         return Arrays.asList(
                 UrbanObjectModule.v3_1.getModelPackageName(),
                 UrbanFunctionModule.v3_1.getModelPackageName(),
-                StatisticalGridModule.v1_4.getModelPackageName(),
-                PublicTransitModule.v1_4.getModelPackageName()
+                StatisticalGridModule.v3_1.getModelPackageName(),
+                PublicTransitModule.v3_1.getModelPackageName()
         );
     }
 

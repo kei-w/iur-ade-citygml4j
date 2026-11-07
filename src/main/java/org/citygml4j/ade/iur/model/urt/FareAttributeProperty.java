@@ -29,6 +29,7 @@ import org.citygml4j.model.gml.feature.FeatureProperty;
 public class FareAttributeProperty extends FeatureProperty<FareAttribute> implements ADEModelObject {
 
     public FareAttributeProperty() {
+        super();
     }
 
     public FareAttributeProperty(FareAttribute object) {

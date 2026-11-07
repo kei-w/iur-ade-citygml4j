@@ -95,6 +95,7 @@ public class Translation extends PublicTransitDataType {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         Translation copy = target == null ? new Translation() : (Translation) target;
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

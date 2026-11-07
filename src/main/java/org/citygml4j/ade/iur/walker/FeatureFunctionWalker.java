@@ -70,11 +70,9 @@ import org.citygml4j.ade.iur.model.urf.HistoricSceneryMaintenanceAndImprovementD
 import org.citygml4j.ade.iur.model.urf.HousingControlArea;
 import org.citygml4j.ade.iur.model.urf.HubCity;
 import org.citygml4j.ade.iur.model.urf.IndustrialParkDevelopmentProject;
-import org.citygml4j.ade.iur.model.urf.LandPrice;
 import org.citygml4j.ade.iur.model.urf.LandReadjustmentProject;
 import org.citygml4j.ade.iur.model.urf.LandReadjustmentPromotionArea;
 import org.citygml4j.ade.iur.model.urf.LandReadjustmentPromotionAreasForCoreBusinessUrbanDevelopment;
-import org.citygml4j.ade.iur.model.urf.LandUseDiversion;
 import org.citygml4j.ade.iur.model.urf.LandscapeZone;
 import org.citygml4j.ade.iur.model.urf.MarketsSlaughterhousesCrematoria;
 import org.citygml4j.ade.iur.model.urf.MedicalFacility;
@@ -163,7 +161,14 @@ import org.citygml4j.ade.iur.model.urf.ZonalDisasterPreventionFacility;
 import org.citygml4j.ade.iur.model.urf.ZonalDisasterPreventionFacilityProperty;
 import org.citygml4j.ade.iur.model.urf.Zone;
 import org.citygml4j.ade.iur.model.urf.ZoneForPreservationOfHistoricalLandscape;
-import org.citygml4j.ade.iur.model.urg.*;
+import org.citygml4j.ade.iur.model.urg.GenericGridCell;
+import org.citygml4j.ade.iur.model.urg.Households;
+import org.citygml4j.ade.iur.model.urg.LandslideDisaster;
+import org.citygml4j.ade.iur.model.urg.OfficesAndEmployees;
+import org.citygml4j.ade.iur.model.urg.Population;
+import org.citygml4j.ade.iur.model.urg.PublicTransitAccessibility;
+import org.citygml4j.ade.iur.model.urg.StatisticalGrid;
+import org.citygml4j.ade.iur.model.urg.StatusOfSightseeing;
 import org.citygml4j.ade.iur.model.uro.AbstractBoundarySurface;
 import org.citygml4j.ade.iur.model.uro.AbstractBoundarySurfaceProperty;
 import org.citygml4j.ade.iur.model.uro.AbstractConstruction;
@@ -177,7 +182,20 @@ import org.citygml4j.ade.iur.model.uro.OuterFloorSurface;
 import org.citygml4j.ade.iur.model.uro.RoofSurface;
 import org.citygml4j.ade.iur.model.uro.UndergroundBuilding;
 import org.citygml4j.ade.iur.model.uro.WallSurface;
-import org.citygml4j.ade.iur.model.urt.*;
+import org.citygml4j.ade.iur.model.urt.Agency;
+import org.citygml4j.ade.iur.model.urt.Attribution;
+import org.citygml4j.ade.iur.model.urt.Calendar;
+import org.citygml4j.ade.iur.model.urt.CalendarDate;
+import org.citygml4j.ade.iur.model.urt.FareAttribute;
+import org.citygml4j.ade.iur.model.urt.Level;
+import org.citygml4j.ade.iur.model.urt.Office;
+import org.citygml4j.ade.iur.model.urt.Pathway;
+import org.citygml4j.ade.iur.model.urt.PublicTransit;
+import org.citygml4j.ade.iur.model.urt.Route;
+import org.citygml4j.ade.iur.model.urt.Shape;
+import org.citygml4j.ade.iur.model.urt.Stop;
+import org.citygml4j.ade.iur.model.urt.TranslationJP;
+import org.citygml4j.ade.iur.model.urt.Trip;
 import org.citygml4j.model.citygml.ade.binding.ADEWalker;
 import org.citygml4j.model.citygml.building.AbstractBuilding;
 import org.citygml4j.model.citygml.core.AbstractCityObject;
@@ -191,200 +209,6 @@ public class FeatureFunctionWalker<T> implements ADEWalker<org.citygml4j.util.wa
     @Override
     public void setParentWalker(org.citygml4j.util.walker.FeatureFunctionWalker<T> walker) {
         this.walker = walker;
-    }
-
-    public T apply(StatisticalGrid statisticalGrid) {
-        return walker.apply((AbstractCityObject) statisticalGrid);
-    }
-
-    public T apply(Households households) {
-        return apply((StatisticalGrid) households);
-    }
-
-    public T apply(org.citygml4j.ade.iur.model.urg.LandUseDiversion landUseDiversion) {
-        return apply((StatisticalGrid) landUseDiversion);
-    }
-
-    public T apply(OfficesAndEmployees officesAndEmployees) {
-        return apply((StatisticalGrid) officesAndEmployees);
-    }
-
-    public T apply(Population population) {
-        return apply((StatisticalGrid) population);
-    }
-
-    public T apply(PublicTransitAccessibility publicTransitAccessibility) {
-        return apply((StatisticalGrid) publicTransitAccessibility);
-    }
-
-    public T apply(GenericGridCell genericGridCell) {
-        return apply((StatisticalGrid) genericGridCell);
-    }
-
-    public T apply(PublicTransit publicTransit) {
-        T object = walker.apply((AbstractCityObject) publicTransit);
-        if (object != null)
-            return object;
-
-        if (publicTransit.getTarget() != null)
-            return walker.apply((FeatureProperty<?>) publicTransit.getTarget());
-
-        return null;
-    }
-
-    public T apply(Agency agency) {
-        return apply((PublicTransit) agency);
-    }
-
-    public T apply(Attribution attribution) {
-        T object = apply((PublicTransit) attribution);
-        if (object != null)
-            return object;
-
-        if (attribution.getAgency() != null) {
-            object = walker.apply((FeatureProperty<?>) attribution.getAgency());
-            if (object != null)
-                return object;
-        }
-
-        if (attribution.getRoute() != null) {
-            object = walker.apply((FeatureProperty<?>) attribution.getRoute());
-            if (object != null)
-                return object;
-        }
-
-        if (attribution.getTrip() != null)
-            return walker.apply((FeatureProperty<?>) attribution.getTrip());
-
-        return null;
-    }
-
-    public T apply(Calendar calendar) {
-        return apply((PublicTransit) calendar);
-    }
-
-    public T apply(CalendarDate calendarDate) {
-        T object = apply((PublicTransit) calendarDate);
-        if (object != null)
-            return object;
-
-        if (calendarDate.getCalendar() != null)
-            return walker.apply((FeatureProperty<?>) calendarDate.getCalendar());
-
-        return null;
-    }
-
-    public T apply(FareAttribute fareAttribute) {
-        T object = apply((PublicTransit) fareAttribute);
-        if (object != null)
-            return object;
-
-        if (fareAttribute.getAgency() != null)
-            return walker.apply((FeatureProperty<?>) fareAttribute.getAgency());
-
-        return null;
-    }
-
-    public T apply(Level level) {
-        return apply((PublicTransit) level);
-    }
-
-    public T apply(Office office) {
-        return apply((PublicTransit) office);
-    }
-
-    public T apply(Pathway pathway) {
-        T object = apply((PublicTransit) pathway);
-        if (object != null)
-            return object;
-
-        if (pathway.getFrom() != null) {
-            object = walker.apply((FeatureProperty<?>) pathway.getFrom());
-            if (object != null)
-                return object;
-        }
-
-        if (pathway.getTo() != null)
-            return walker.apply((FeatureProperty<?>) pathway.getTo());
-
-        return null;
-    }
-
-    public T apply(Route route) {
-        T object = apply((PublicTransit) route);
-        if (object != null)
-            return object;
-
-        if (route.getAgency() != null) {
-            object = walker.apply((FeatureProperty<?>) route.getAgency());
-            if (object != null)
-                return object;
-        }
-
-        if (route.getParentRoute() != null)
-            return walker.apply((FeatureProperty<?>) route.getParentRoute());
-
-        return null;
-    }
-
-    public T apply(Shape shape) {
-        return apply((PublicTransit) shape);
-    }
-
-    public T apply(Stop stop) {
-        T object = apply((PublicTransit) stop);
-        if (object != null)
-            return object;
-
-        if (stop.getParentStation() != null) {
-            object = walker.apply((FeatureProperty<?>) stop.getParentStation());
-            if (object != null)
-                return object;
-        }
-
-        if (stop.getLevel() != null)
-            return walker.apply((FeatureProperty<?>) stop.getLevel());
-
-        return null;
-    }
-
-    public T apply(TranslationJP translationJP) {
-        return apply((PublicTransit) translationJP);
-    }
-
-    public T apply(Trip trip) {
-        T object = apply((PublicTransit) trip);
-        if (object != null)
-            return object;
-
-        if (trip.getRoute() != null) {
-            object = walker.apply((FeatureProperty<?>) trip.getRoute());
-            if (object != null)
-                return object;
-        }
-
-        if (trip.getCalendar() != null) {
-            object = walker.apply((FeatureProperty<?>) trip.getCalendar());
-            if (object != null)
-                return object;
-        }
-
-        if (trip.getCalendarDate() != null) {
-            object = walker.apply((FeatureProperty<?>) trip.getCalendarDate());
-            if (object != null)
-                return object;
-        }
-
-        if (trip.getOffice() != null) {
-            object = walker.apply((FeatureProperty<?>) trip.getOffice());
-            if (object != null)
-                return object;
-        }
-
-        if (trip.getShape() != null)
-            return walker.apply((FeatureProperty<?>) trip.getShape());
-
-        return null;
     }
 
     // uro feature types (generated)
@@ -693,7 +517,17 @@ public class FeatureFunctionWalker<T> implements ADEWalker<org.citygml4j.util.wa
     }
 
     public T apply(UrbanFacility urbanFacility) {
-        return apply((Zone) urbanFacility);
+        T object = apply((Zone) urbanFacility);
+        if (object != null)
+            return object;
+
+        for (ThreeDimensionalExtentProperty property : new ArrayList<>(urbanFacility.getThreeDimensionalExtent())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        return null;
     }
 
     public T apply(TrafficFacility trafficFacility) {
@@ -793,7 +627,23 @@ public class FeatureFunctionWalker<T> implements ADEWalker<org.citygml4j.util.wa
     }
 
     public T apply(AbstractDistrictPlan abstractDistrictPlan) {
-        return apply((Zone) abstractDistrictPlan);
+        T object = apply((Zone) abstractDistrictPlan);
+        if (object != null)
+            return object;
+
+        for (DistrictDevelopmentPlanProperty property : new ArrayList<>(abstractDistrictPlan.getDistrictDevelopmentPlan())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        for (PromotionDistrictProperty property : new ArrayList<>(abstractDistrictPlan.getPromotionDistrict())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        return null;
     }
 
     public T apply(DistrictPlan districtPlan) {
@@ -801,7 +651,17 @@ public class FeatureFunctionWalker<T> implements ADEWalker<org.citygml4j.util.wa
     }
 
     public T apply(DisasterPreventionBlockImprovementZonePlan disasterPreventionBlockImprovementZonePlan) {
-        return apply((AbstractDistrictPlan) disasterPreventionBlockImprovementZonePlan);
+        T object = apply((AbstractDistrictPlan) disasterPreventionBlockImprovementZonePlan);
+        if (object != null)
+            return object;
+
+        for (ZonalDisasterPreventionFacilityProperty property : new ArrayList<>(disasterPreventionBlockImprovementZonePlan.getZonalDisasterPreventionFacilities())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        return null;
     }
 
     public T apply(HistoricSceneryMaintenanceAndImprovementDistrictPlan historicSceneryMaintenanceAndImprovementDistrictPlan) {
@@ -817,7 +677,23 @@ public class FeatureFunctionWalker<T> implements ADEWalker<org.citygml4j.util.wa
     }
 
     public T apply(DistrictDevelopmentPlan districtDevelopmentPlan) {
-        return apply((Zone) districtDevelopmentPlan);
+        T object = apply((Zone) districtDevelopmentPlan);
+        if (object != null)
+            return object;
+
+        for (DistrictFacilityProperty property : new ArrayList<>(districtDevelopmentPlan.getDistrictFacility())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        for (DistrictProperty property : new ArrayList<>(districtDevelopmentPlan.getDistrict())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        return null;
     }
 
     public T apply(SpecifiedBuildingZoneImprovementPlan specifiedBuildingZoneImprovementPlan) {
@@ -865,11 +741,43 @@ public class FeatureFunctionWalker<T> implements ADEWalker<org.citygml4j.util.wa
     }
 
     public T apply(UrgentUrbanRenewalArea urgentUrbanRenewalArea) {
-        return apply((Zone) urgentUrbanRenewalArea);
+        T object = apply((Zone) urgentUrbanRenewalArea);
+        if (object != null)
+            return object;
+
+        for (PrivateUrbanRenewalProjectPlanProperty property : new ArrayList<>(urgentUrbanRenewalArea.getPrivateProject())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        for (SpecifiedUrgentUrbanRenewalAreaProperty property : new ArrayList<>(urgentUrbanRenewalArea.getSpecifiedArea())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        for (SpecialUrbanRenaissanceDistrictProperty property : new ArrayList<>(urgentUrbanRenewalArea.getSpecialDistrict())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        return null;
     }
 
     public T apply(SpecifiedUrgentUrbanRenewalArea specifiedUrgentUrbanRenewalArea) {
-        return apply((UrgentUrbanRenewalArea) specifiedUrgentUrbanRenewalArea);
+        T object = apply((UrgentUrbanRenewalArea) specifiedUrgentUrbanRenewalArea);
+        if (object != null)
+            return object;
+
+        for (GlobalHubCityDevelopmentProjectProperty property : new ArrayList<>(specifiedUrgentUrbanRenewalArea.getDevelopmentProject())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        return null;
     }
 
     public T apply(PrivateUrbanRenewalProjectPlan privateUrbanRenewalProjectPlan) {
@@ -912,7 +820,7 @@ public class FeatureFunctionWalker<T> implements ADEWalker<org.citygml4j.util.wa
         return apply((UrbanFunction) hubCity);
     }
 
-    public T apply(LandUseDiversion landUseDiversion) {
+    public T apply(org.citygml4j.ade.iur.model.urf.LandUseDiversion landUseDiversion) {
         return apply((UrbanFunction) landUseDiversion);
     }
 
@@ -964,7 +872,7 @@ public class FeatureFunctionWalker<T> implements ADEWalker<org.citygml4j.util.wa
         return apply((UrbanFunction) publicTransitFacility);
     }
 
-    public T apply(LandPrice landPrice) {
+    public T apply(org.citygml4j.ade.iur.model.urf.LandPrice landPrice) {
         return apply((UrbanFunction) landPrice);
     }
 
@@ -986,5 +894,233 @@ public class FeatureFunctionWalker<T> implements ADEWalker<org.citygml4j.util.wa
 
     public T apply(ScenicResource scenicResource) {
         return apply((UrbanFunction) scenicResource);
+    }
+
+    public T apply(StatisticalGrid statisticalGrid) {
+        T object = walker.apply((AbstractCityObject) statisticalGrid);
+        if (object != null)
+            return object;
+
+        return null;
+    }
+
+    public T apply(Population population) {
+        return apply((StatisticalGrid) population);
+    }
+
+    public T apply(PublicTransitAccessibility publicTransitAccessibility) {
+        return apply((StatisticalGrid) publicTransitAccessibility);
+    }
+
+    public T apply(org.citygml4j.ade.iur.model.urg.LandPrice landPrice) {
+        return apply((StatisticalGrid) landPrice);
+    }
+
+    public T apply(org.citygml4j.ade.iur.model.urg.LandUseDiversion landUseDiversion) {
+        return apply((StatisticalGrid) landUseDiversion);
+    }
+
+    public T apply(Households households) {
+        return apply((StatisticalGrid) households);
+    }
+
+    public T apply(OfficesAndEmployees officesAndEmployees) {
+        return apply((StatisticalGrid) officesAndEmployees);
+    }
+
+    public T apply(GenericGridCell genericGridCell) {
+        return apply((StatisticalGrid) genericGridCell);
+    }
+
+    public T apply(StatusOfSightseeing statusOfSightseeing) {
+        return apply((StatisticalGrid) statusOfSightseeing);
+    }
+
+    public T apply(LandslideDisaster landslideDisaster) {
+        return apply((StatisticalGrid) landslideDisaster);
+    }
+
+    public T apply(PublicTransit publicTransit) {
+        T object = walker.apply((AbstractCityObject) publicTransit);
+        if (object != null)
+            return object;
+
+        return null;
+    }
+
+    public T apply(Route route) {
+        T object = apply((PublicTransit) route);
+        if (object != null)
+            return object;
+
+        if (route.getAgency() != null) {
+            object = walker.apply((FeatureProperty<?>) route.getAgency());
+            if (object != null)
+                return object;
+        }
+
+        if (route.getParentRoute() != null) {
+            object = walker.apply((FeatureProperty<?>) route.getParentRoute());
+            if (object != null)
+                return object;
+        }
+
+        return null;
+    }
+
+    public T apply(Agency agency) {
+        return apply((PublicTransit) agency);
+    }
+
+    public T apply(Stop stop) {
+        T object = apply((PublicTransit) stop);
+        if (object != null)
+            return object;
+
+        if (stop.getParentStation() != null) {
+            object = walker.apply((FeatureProperty<?>) stop.getParentStation());
+            if (object != null)
+                return object;
+        }
+
+        if (stop.getLevel() != null) {
+            object = walker.apply((FeatureProperty<?>) stop.getLevel());
+            if (object != null)
+                return object;
+        }
+
+        return null;
+    }
+
+    public T apply(Level level) {
+        return apply((PublicTransit) level);
+    }
+
+    public T apply(Trip trip) {
+        T object = apply((PublicTransit) trip);
+        if (object != null)
+            return object;
+
+        if (trip.getRoute() != null) {
+            object = walker.apply((FeatureProperty<?>) trip.getRoute());
+            if (object != null)
+                return object;
+        }
+
+        if (trip.getCalendar() != null) {
+            object = walker.apply((FeatureProperty<?>) trip.getCalendar());
+            if (object != null)
+                return object;
+        }
+
+        if (trip.getCalendarDate() != null) {
+            object = walker.apply((FeatureProperty<?>) trip.getCalendarDate());
+            if (object != null)
+                return object;
+        }
+
+        if (trip.getOffice() != null) {
+            object = walker.apply((FeatureProperty<?>) trip.getOffice());
+            if (object != null)
+                return object;
+        }
+
+        if (trip.getShape() != null) {
+            object = walker.apply((FeatureProperty<?>) trip.getShape());
+            if (object != null)
+                return object;
+        }
+
+        return null;
+    }
+
+    public T apply(Shape shape) {
+        return apply((PublicTransit) shape);
+    }
+
+    public T apply(Office office) {
+        return apply((PublicTransit) office);
+    }
+
+    public T apply(Calendar calendar) {
+        return apply((PublicTransit) calendar);
+    }
+
+    public T apply(CalendarDate calendarDate) {
+        T object = apply((PublicTransit) calendarDate);
+        if (object != null)
+            return object;
+
+        if (calendarDate.getCalendar() != null) {
+            object = walker.apply((FeatureProperty<?>) calendarDate.getCalendar());
+            if (object != null)
+                return object;
+        }
+
+        return null;
+    }
+
+    public T apply(FareAttribute fareAttribute) {
+        T object = apply((PublicTransit) fareAttribute);
+        if (object != null)
+            return object;
+
+        if (fareAttribute.getAgency() != null) {
+            object = walker.apply((FeatureProperty<?>) fareAttribute.getAgency());
+            if (object != null)
+                return object;
+        }
+
+        return null;
+    }
+
+    public T apply(Pathway pathway) {
+        T object = apply((PublicTransit) pathway);
+        if (object != null)
+            return object;
+
+        if (pathway.getFrom() != null) {
+            object = walker.apply((FeatureProperty<?>) pathway.getFrom());
+            if (object != null)
+                return object;
+        }
+
+        if (pathway.getTo() != null) {
+            object = walker.apply((FeatureProperty<?>) pathway.getTo());
+            if (object != null)
+                return object;
+        }
+
+        return null;
+    }
+
+    public T apply(TranslationJP translationJP) {
+        return apply((PublicTransit) translationJP);
+    }
+
+    public T apply(Attribution attribution) {
+        T object = apply((PublicTransit) attribution);
+        if (object != null)
+            return object;
+
+        if (attribution.getAgency() != null) {
+            object = walker.apply((FeatureProperty<?>) attribution.getAgency());
+            if (object != null)
+                return object;
+        }
+
+        if (attribution.getRoute() != null) {
+            object = walker.apply((FeatureProperty<?>) attribution.getRoute());
+            if (object != null)
+                return object;
+        }
+
+        if (attribution.getTrip() != null) {
+            object = walker.apply((FeatureProperty<?>) attribution.getTrip());
+            if (object != null)
+                return object;
+        }
+
+        return null;
     }
 }

@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:08:29 JST 2026
 //
 
 
@@ -18,9 +18,9 @@ import javax.xml.bind.annotation.XmlType;
 /**
  * grid cell with the number and area of land use diversion
  * 
- * <p>Java-Klasse für LandUseDiversionType complex type.
+ * <p>Java class for LandUseDiversionType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="LandUseDiversionType"&gt;

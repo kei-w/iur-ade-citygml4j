@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 17:21:15 JST 2026
+// Generated: Sat Nov 07 20:08:29 JST 2026
 //
 
 
@@ -48,21 +48,21 @@ public class PortAttributePropertyType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link PortProtectiveFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PortWasteTreatmentFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HarborFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CargoHandlingFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PortTransportationFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ShipServiceFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PortWelfareFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link NavigationAssistanceFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PortManagementFacilityType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PortEnvironmentalImprovementFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortWelfareFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortManagementFacilityType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PortPassengerFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CyberportMarinaAndPBSType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortWasteTreatmentFacilityType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PortPollutionControlFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link MooringFacilityType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PortStorageFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link MooringFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CyberportMarinaAndPBSType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortTransportationFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortProtectiveFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CargoHandlingFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HarborFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link NavigationAssistanceFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ShipServiceFacilityType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PortAttributeType }{@code >}
      *     
      */
@@ -75,21 +75,21 @@ public class PortAttributePropertyType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link PortProtectiveFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PortWasteTreatmentFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link HarborFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CargoHandlingFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PortTransportationFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link ShipServiceFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PortWelfareFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link NavigationAssistanceFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link PortManagementFacilityType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PortEnvironmentalImprovementFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortWelfareFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortManagementFacilityType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PortPassengerFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link CyberportMarinaAndPBSType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortWasteTreatmentFacilityType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PortPollutionControlFacilityType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link MooringFacilityType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PortStorageFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link MooringFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CyberportMarinaAndPBSType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortTransportationFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link PortProtectiveFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link CargoHandlingFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link HarborFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link NavigationAssistanceFacilityType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ShipServiceFacilityType }{@code >}
      *     {@link JAXBElement }{@code <}{@link PortAttributeType }{@code >}
      *     
      */

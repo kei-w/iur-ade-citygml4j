@@ -25,76 +25,58 @@ package org.citygml4j.ade.iur.model.urf;
 import org.citygml4j.builder.copy.CopyBuilder;
 import org.citygml4j.builder.copy.ObjectCopier;
 import org.citygml4j.model.common.base.ModelObjects;
-import org.citygml4j.model.common.child.ChildList;
-
-import java.util.List;
 
 public class CensusBlock extends UrbanFunction {
-    private Integer daytimePopulation;
-    private Double daytimePopulationDensity;
-    private Integer numberOfOrdinaryHouseholds;
-    private List<NumberOfHouseholdsProperty> numberOfHouseholdsByOwnership;
-    private Integer numberOfMainHouseholds;
-    private List<NumberOfHouseholdsProperty> numberOfHouseholdsByStructure;
+    private String townName;
+    private String blockName;
+    private PopulationTypeProperty populationType;
+    private DaytimePopulationTypeProperty daytimePopulationType;
+    private EconomicActivityTypeProperty economicActivityType;
 
-    public Integer getDaytimePopulation() {
-        return daytimePopulation;
+    public String getTownName() {
+        return townName;
     }
 
-    public void setDaytimePopulation(Integer daytimePopulation) {
-        this.daytimePopulation = daytimePopulation;
+    public void setTownName(String townName) {
+        this.townName = townName;
     }
 
-    public Double getDaytimePopulationDensity() {
-        return daytimePopulationDensity;
+    public String getBlockName() {
+        return blockName;
     }
 
-    public void setDaytimePopulationDensity(Double daytimePopulationDensity) {
-        this.daytimePopulationDensity = daytimePopulationDensity;
+    public void setBlockName(String blockName) {
+        this.blockName = blockName;
     }
 
-    public Integer getNumberOfOrdinaryHouseholds() {
-        return numberOfOrdinaryHouseholds;
+    public PopulationTypeProperty getPopulationType() {
+        return populationType;
     }
 
-    public void setNumberOfOrdinaryHouseholds(Integer numberOfOrdinaryHouseholds) {
-        this.numberOfOrdinaryHouseholds = numberOfOrdinaryHouseholds;
+    public void setPopulationType(PopulationTypeProperty populationType) {
+        this.populationType = ModelObjects.setParent(populationType, this);
     }
 
-    public List<NumberOfHouseholdsProperty> getNumberOfHouseholdsByOwnership() {
-        if (numberOfHouseholdsByOwnership == null)
-            numberOfHouseholdsByOwnership = new ChildList<>(this);
-
-        return numberOfHouseholdsByOwnership;
+    public DaytimePopulationTypeProperty getDaytimePopulationType() {
+        return daytimePopulationType;
     }
 
-    public void setNumberOfHouseholdsByOwnership(List<NumberOfHouseholdsProperty> numberOfHouseholdsByOwnership) {
-        this.numberOfHouseholdsByOwnership = ModelObjects.setParent(numberOfHouseholdsByOwnership, this);
+    public void setDaytimePopulationType(DaytimePopulationTypeProperty daytimePopulationType) {
+        this.daytimePopulationType = ModelObjects.setParent(daytimePopulationType, this);
     }
 
-    public Integer getNumberOfMainHouseholds() {
-        return numberOfMainHouseholds;
+    public EconomicActivityTypeProperty getEconomicActivityType() {
+        return economicActivityType;
     }
 
-    public void setNumberOfMainHouseholds(Integer numberOfMainHouseholds) {
-        this.numberOfMainHouseholds = numberOfMainHouseholds;
-    }
-
-    public List<NumberOfHouseholdsProperty> getNumberOfHouseholdsByStructure() {
-        if (numberOfHouseholdsByStructure == null)
-            numberOfHouseholdsByStructure = new ChildList<>(this);
-
-        return numberOfHouseholdsByStructure;
-    }
-
-    public void setNumberOfHouseholdsByStructure(List<NumberOfHouseholdsProperty> numberOfHouseholdsByStructure) {
-        this.numberOfHouseholdsByStructure = ModelObjects.setParent(numberOfHouseholdsByStructure, this);
+    public void setEconomicActivityType(EconomicActivityTypeProperty economicActivityType) {
+        this.economicActivityType = ModelObjects.setParent(economicActivityType, this);
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         CensusBlock copy = target == null ? new CensusBlock() : (CensusBlock) target;
-        super.copyTo(target, copyBuilder);
+        super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

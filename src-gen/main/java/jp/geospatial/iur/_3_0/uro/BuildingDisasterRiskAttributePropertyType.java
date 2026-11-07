@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 17:21:15 JST 2026
+// Generated: Sat Nov 07 20:08:29 JST 2026
 //
 
 
@@ -48,12 +48,12 @@ public class BuildingDisasterRiskAttributePropertyType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link BuildingLandSlideRiskAttributeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BuildingRiverFloodingRiskAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingInlandFloodingRiskAttributeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingRiverFloodingRiskAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingTsunamiRiskAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingHighTideRiskAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingFloodingRiskAttributeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingLandSlideRiskAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingDisasterRiskAttributeType }{@code >}
      *     
      */
@@ -66,12 +66,12 @@ public class BuildingDisasterRiskAttributePropertyType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link BuildingLandSlideRiskAttributeType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link BuildingRiverFloodingRiskAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingInlandFloodingRiskAttributeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingRiverFloodingRiskAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingTsunamiRiskAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingHighTideRiskAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingFloodingRiskAttributeType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link BuildingLandSlideRiskAttributeType }{@code >}
      *     {@link JAXBElement }{@code <}{@link BuildingDisasterRiskAttributeType }{@code >}
      *     
      */

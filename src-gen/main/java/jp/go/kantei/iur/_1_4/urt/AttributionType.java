@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:08:29 JST 2026
 //
 
 
@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für AttributionType complex type.
+ * <p>Java class for AttributionType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="AttributionType"&gt;
@@ -74,7 +74,7 @@ public class AttributionType
     protected TripPropertyType trip;
 
     /**
-     * Ruft den Wert der organizationName-Eigenschaft ab.
+     * Gets the value of the organizationName property.
      * 
      * @return
      *     possible object is
@@ -86,7 +86,7 @@ public class AttributionType
     }
 
     /**
-     * Legt den Wert der organizationName-Eigenschaft fest.
+     * Sets the value of the organizationName property.
      * 
      * @param value
      *     allowed object is
@@ -102,7 +102,7 @@ public class AttributionType
     }
 
     /**
-     * Ruft den Wert der isProducer-Eigenschaft ab.
+     * Gets the value of the isProducer property.
      * 
      * @return
      *     possible object is
@@ -114,7 +114,7 @@ public class AttributionType
     }
 
     /**
-     * Legt den Wert der isProducer-Eigenschaft fest.
+     * Sets the value of the isProducer property.
      * 
      * @param value
      *     allowed object is
@@ -130,7 +130,7 @@ public class AttributionType
     }
 
     /**
-     * Ruft den Wert der isOperator-Eigenschaft ab.
+     * Gets the value of the isOperator property.
      * 
      * @return
      *     possible object is
@@ -142,7 +142,7 @@ public class AttributionType
     }
 
     /**
-     * Legt den Wert der isOperator-Eigenschaft fest.
+     * Sets the value of the isOperator property.
      * 
      * @param value
      *     allowed object is
@@ -158,7 +158,7 @@ public class AttributionType
     }
 
     /**
-     * Ruft den Wert der isAuthority-Eigenschaft ab.
+     * Gets the value of the isAuthority property.
      * 
      * @return
      *     possible object is
@@ -170,7 +170,7 @@ public class AttributionType
     }
 
     /**
-     * Legt den Wert der isAuthority-Eigenschaft fest.
+     * Sets the value of the isAuthority property.
      * 
      * @param value
      *     allowed object is
@@ -186,7 +186,7 @@ public class AttributionType
     }
 
     /**
-     * Ruft den Wert der url-Eigenschaft ab.
+     * Gets the value of the url property.
      * 
      * @return
      *     possible object is
@@ -198,7 +198,7 @@ public class AttributionType
     }
 
     /**
-     * Legt den Wert der url-Eigenschaft fest.
+     * Sets the value of the url property.
      * 
      * @param value
      *     allowed object is
@@ -214,7 +214,7 @@ public class AttributionType
     }
 
     /**
-     * Ruft den Wert der email-Eigenschaft ab.
+     * Gets the value of the email property.
      * 
      * @return
      *     possible object is
@@ -226,7 +226,7 @@ public class AttributionType
     }
 
     /**
-     * Legt den Wert der email-Eigenschaft fest.
+     * Sets the value of the email property.
      * 
      * @param value
      *     allowed object is
@@ -242,7 +242,7 @@ public class AttributionType
     }
 
     /**
-     * Ruft den Wert der phoneNumber-Eigenschaft ab.
+     * Gets the value of the phoneNumber property.
      * 
      * @return
      *     possible object is
@@ -254,7 +254,7 @@ public class AttributionType
     }
 
     /**
-     * Legt den Wert der phoneNumber-Eigenschaft fest.
+     * Sets the value of the phoneNumber property.
      * 
      * @param value
      *     allowed object is
@@ -270,7 +270,7 @@ public class AttributionType
     }
 
     /**
-     * Ruft den Wert der agency-Eigenschaft ab.
+     * Gets the value of the agency property.
      * 
      * @return
      *     possible object is
@@ -282,7 +282,7 @@ public class AttributionType
     }
 
     /**
-     * Legt den Wert der agency-Eigenschaft fest.
+     * Sets the value of the agency property.
      * 
      * @param value
      *     allowed object is
@@ -298,7 +298,7 @@ public class AttributionType
     }
 
     /**
-     * Ruft den Wert der route-Eigenschaft ab.
+     * Gets the value of the route property.
      * 
      * @return
      *     possible object is
@@ -310,7 +310,7 @@ public class AttributionType
     }
 
     /**
-     * Legt den Wert der route-Eigenschaft fest.
+     * Sets the value of the route property.
      * 
      * @param value
      *     allowed object is
@@ -326,7 +326,7 @@ public class AttributionType
     }
 
     /**
-     * Ruft den Wert der trip-Eigenschaft ab.
+     * Gets the value of the trip property.
      * 
      * @return
      *     possible object is
@@ -338,7 +338,7 @@ public class AttributionType
     }
 
     /**
-     * Legt den Wert der trip-Eigenschaft fest.
+     * Sets the value of the trip property.
      * 
      * @param value
      *     allowed object is

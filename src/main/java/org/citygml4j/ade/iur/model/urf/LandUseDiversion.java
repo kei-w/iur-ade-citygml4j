@@ -23,8 +23,35 @@
 package org.citygml4j.ade.iur.model.urf;
 
 import org.citygml4j.builder.copy.CopyBuilder;
+import org.citygml4j.builder.copy.ObjectCopier;
+import org.citygml4j.model.common.base.ModelObjects;
 
 public class LandUseDiversion extends UrbanFunction {
+    private FarmlandConversionTypeProperty farmlandConversionType;
+    private ForestConversionTypeProperty forestConversionType;
+
+    public FarmlandConversionTypeProperty getFarmlandConversionType() {
+        return farmlandConversionType;
+    }
+
+    public void setFarmlandConversionType(FarmlandConversionTypeProperty farmlandConversionType) {
+        this.farmlandConversionType = ModelObjects.setParent(farmlandConversionType, this);
+    }
+
+    public ForestConversionTypeProperty getForestConversionType() {
+        return forestConversionType;
+    }
+
+    public void setForestConversionType(ForestConversionTypeProperty forestConversionType) {
+        this.forestConversionType = ModelObjects.setParent(forestConversionType, this);
+    }
+
+    @Override
+    public Object copyTo(Object target, CopyBuilder copyBuilder) {
+        LandUseDiversion copy = target == null ? new LandUseDiversion() : (LandUseDiversion) target;
+        super.copyTo(copy, copyBuilder);
+        return ObjectCopier.copyTo(this, copy, copyBuilder);
+    }
 
     @Override
     public Object copy(CopyBuilder copyBuilder) {

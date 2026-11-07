@@ -24,36 +24,43 @@ package org.citygml4j.ade.iur.model.urf;
 
 import org.citygml4j.builder.copy.CopyBuilder;
 import org.citygml4j.builder.copy.ObjectCopier;
+import org.citygml4j.model.common.base.ModelObjects;
+import org.citygml4j.model.common.child.ChildList;
 
-import java.time.LocalDate;
+import java.util.List;
 
-public abstract class Zone extends UrbanFunction {
-    private LocalDate finalPublicationDate;
-    private String areaApplied;
+public class Zone extends UrbanFunction {
+    private List<BoundaryProperty> boundary;
+    private String locationDescription;
 
-    public LocalDate getFinalPublicationDate() {
-        return finalPublicationDate;
+    public List<BoundaryProperty> getBoundary() {
+        if (boundary == null)
+            boundary = new ChildList<>(this);
+
+        return boundary;
     }
 
-    public void setFinalPublicationDate(LocalDate finalPublicationDate) {
-        this.finalPublicationDate = finalPublicationDate;
+    public void setBoundary(List<BoundaryProperty> boundary) {
+        this.boundary = ModelObjects.setParent(boundary, this);
     }
 
-    public String getAreaApplied() {
-        return areaApplied;
+    public String getLocationDescription() {
+        return locationDescription;
     }
 
-    public void setAreaApplied(String areaApplied) {
-        this.areaApplied = areaApplied;
+    public void setLocationDescription(String locationDescription) {
+        this.locationDescription = locationDescription;
     }
 
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
-        if (target == null)
-            throw new IllegalArgumentException("Target argument must not be null for abstract copyable classes.");
-
-        Zone copy = (Zone) target;
+        Zone copy = target == null ? new Zone() : (Zone) target;
         super.copyTo(copy, copyBuilder);
         return ObjectCopier.copyTo(this, copy, Zone.class, copyBuilder);
+    }
+
+    @Override
+    public Object copy(CopyBuilder copyBuilder) {
+        return copyTo(new Zone(), copyBuilder);
     }
 }

@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:08:29 JST 2026
 //
 
 
@@ -15,9 +15,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für DescriptionType complex type.
+ * <p>Java class for DescriptionType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="DescriptionType"&gt;
@@ -48,7 +48,7 @@ public class DescriptionType {
     protected BigInteger numberOfCustomers;
 
     /**
-     * Ruft den Wert der description-Eigenschaft ab.
+     * Gets the value of the description property.
      * 
      * @return
      *     possible object is
@@ -60,7 +60,7 @@ public class DescriptionType {
     }
 
     /**
-     * Legt den Wert der description-Eigenschaft fest.
+     * Sets the value of the description property.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class DescriptionType {
     }
 
     /**
-     * Ruft den Wert der frequencyOfService-Eigenschaft ab.
+     * Gets the value of the frequencyOfService property.
      * 
      * @return
      *     possible object is
@@ -88,7 +88,7 @@ public class DescriptionType {
     }
 
     /**
-     * Legt den Wert der frequencyOfService-Eigenschaft fest.
+     * Sets the value of the frequencyOfService property.
      * 
      * @param value
      *     allowed object is
@@ -104,7 +104,7 @@ public class DescriptionType {
     }
 
     /**
-     * Ruft den Wert der numberOfCustomers-Eigenschaft ab.
+     * Gets the value of the numberOfCustomers property.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class DescriptionType {
     }
 
     /**
-     * Legt den Wert der numberOfCustomers-Eigenschaft fest.
+     * Sets the value of the numberOfCustomers property.
      * 
      * @param value
      *     allowed object is

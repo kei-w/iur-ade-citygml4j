@@ -1,8 +1,8 @@
 //
-// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.9.0
+// Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Wed Sep 09 19:42:42 CEST 2020
+// Generated: Sat Nov 07 20:08:29 JST 2026
 //
 
 
@@ -15,9 +15,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für NumberOfAnnualDiversionsPropertyType complex type.
+ * <p>Java class for NumberOfAnnualDiversionsPropertyType complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="NumberOfAnnualDiversionsPropertyType"&gt;
@@ -43,7 +43,7 @@ public class NumberOfAnnualDiversionsPropertyType {
     protected NumberOfAnnualDiversionsType numberOfAnnualDiversions;
 
     /**
-     * Ruft den Wert der numberOfAnnualDiversions-Eigenschaft ab.
+     * Gets the value of the numberOfAnnualDiversions property.
      * 
      * @return
      *     possible object is
@@ -55,7 +55,7 @@ public class NumberOfAnnualDiversionsPropertyType {
     }
 
     /**
-     * Legt den Wert der numberOfAnnualDiversions-Eigenschaft fest.
+     * Sets the value of the numberOfAnnualDiversions property.
      * 
      * @param value
      *     allowed object is

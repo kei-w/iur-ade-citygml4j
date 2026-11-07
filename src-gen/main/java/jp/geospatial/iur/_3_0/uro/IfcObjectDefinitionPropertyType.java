@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 17:21:15 JST 2026
+// Generated: Sat Nov 07 20:08:29 JST 2026
 //
 
 
@@ -48,25 +48,25 @@ public class IfcObjectDefinitionPropertyType {
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link IfcZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcGroupType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcDoorType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcRoofType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSpaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSiteType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcBuildingStoreyType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcBuildingType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSpatialStructureElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcOpeningElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWindowType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcRoofType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWallStandardCaseType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWallType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcCurtainWallType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcDoorType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcBuildingElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcFurnishingElementType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcOpeningElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcElementType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSpaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcBuildingStoreyType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSiteType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcBuildingType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSpatialStructureElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcProductType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcGroupType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcObjectType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcObjectDefinitionType }{@code >}
      *     
@@ -80,25 +80,25 @@ public class IfcObjectDefinitionPropertyType {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link IfcZoneType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcGroupType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcDoorType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcRoofType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSpaceType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSiteType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcBuildingStoreyType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcBuildingType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcSpatialStructureElementType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcOpeningElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWindowType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcRoofType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWallStandardCaseType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcWallType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcCurtainWallType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcDoorType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcBuildingElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcFurnishingElementType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcOpeningElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcElementType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSpaceType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcBuildingStoreyType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSiteType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcBuildingType }{@code >}
-     *     {@link JAXBElement }{@code <}{@link IfcSpatialStructureElementType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcProductType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcProjectType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcZoneType }{@code >}
+     *     {@link JAXBElement }{@code <}{@link IfcGroupType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcObjectType }{@code >}
      *     {@link JAXBElement }{@code <}{@link IfcObjectDefinitionType }{@code >}
      *     

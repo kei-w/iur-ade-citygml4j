@@ -23,8 +23,15 @@
 package org.citygml4j.ade.iur.model.urf;
 
 import org.citygml4j.builder.copy.CopyBuilder;
+import org.citygml4j.builder.copy.ObjectCopier;
 
 public class HubCity extends UrbanFunction {
+    @Override
+    public Object copyTo(Object target, CopyBuilder copyBuilder) {
+        HubCity copy = target == null ? new HubCity() : (HubCity) target;
+        super.copyTo(copy, copyBuilder);
+        return ObjectCopier.copyTo(this, copy, copyBuilder);
+    }
 
     @Override
     public Object copy(CopyBuilder copyBuilder) {

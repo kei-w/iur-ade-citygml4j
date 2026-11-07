@@ -3597,13 +3597,7 @@
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="buildingDisasterRiskAttribute" type="uro:BuildingDisasterRiskAttributePropertyType" substitutionGroup="bldg:_GenericApplicationPropertyOfAbstractBuilding"/>
-	<xs:element name="keyValuePairAttribute" type="uro:KeyValuePairAttributePropertyType" substitutionGroup="bldg:_GenericApplicationPropertyOfAbstractBuilding">
-		<xs:annotation>
-			<xs:appinfo>
-				<taggedValue tag="maxOccurs">1</taggedValue>
-			</xs:appinfo>
-		</xs:annotation>
-	</xs:element>
+	<xs:element name="keyValuePairAttribute" type="uro:KeyValuePairAttributePropertyType" substitutionGroup="bldg:_GenericApplicationPropertyOfAbstractBuilding"/>
 	<xs:element name="buildingDataQualityAttribute" type="uro:BuildingDataQualityAttributePropertyType" substitutionGroup="bldg:_GenericApplicationPropertyOfAbstractBuilding">
 		<xs:annotation>
 			<xs:appinfo>

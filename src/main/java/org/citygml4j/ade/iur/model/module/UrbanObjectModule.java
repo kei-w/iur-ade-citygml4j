@@ -33,12 +33,12 @@ import java.util.List;
 import java.util.Map;
 
 public class UrbanObjectModule extends ADEModule {
-    public static final UrbanObjectModule v3_1 = new UrbanObjectModule();
+    public static final UrbanObjectModule v3_2 = new UrbanObjectModule();
 
     private UrbanObjectModule() {
-        super("https://www.geospatial.jp/iur/uro/3.1",
+        super("https://www.geospatial.jp/iur/uro/3.2",
                 "uro",
-                "https://www.geospatial.jp/iur/schemas/uro/3.1/urbanObject.xsd",
+                "https://www.geospatial.jp/iur/schemas/uro/3.2/urbanObject.xsd",
                 CityGMLVersion.v2_0_0);
     }
 
@@ -49,7 +49,7 @@ public class UrbanObjectModule extends ADEModule {
 
     @Override
     public List<String> getJAXBPackageNames() {
-        return Collections.singletonList("jp.geospatial.iur._3_1.uro");
+        return Collections.singletonList("jp.geospatial.iur._3_2.uro");
     }
 
     public String getModelPackageName() {

@@ -22,7 +22,7 @@
 
 package org.citygml4j.ade.iur.bind.uro;
 
-import jp.geospatial.iur._3_1.uro.*;
+import jp.geospatial.iur._3_2.uro.*;
 import net.opengis.gml.CodeType;
 import org.citygml4j.ade.iur.model.uro.*;
 import org.citygml4j.builder.jaxb.unmarshal.citygml.ade.ADEUnmarshallerHelper;

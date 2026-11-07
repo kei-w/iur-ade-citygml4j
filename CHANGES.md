@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+### 3.2.0 - 2026-11-07
+
+##### Breaking changes
+* Updated the Urban Object module (`uro`) to version 3.2 of the i-UR ADE
+  (`https://www.geospatial.jp/iur/uro/3.2`). The building attributes are the same as in 3.1;
+  `RealEstateIDAttribute` is no longer a `BuildingAttribute` subtype.
+* JAXB classes for `uro` are generated into `jp.geospatial.iur._3_2.uro`.
+
 ### 3.1.0 - 2026-11-07
 
 ##### Breaking changes

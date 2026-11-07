@@ -22,13 +22,14 @@
 
 package org.citygml4j.ade.iur.model.uro;
 
+import org.citygml4j.ade.iur.model.common.AbstractDataType;
 import org.citygml4j.builder.copy.CopyBuilder;
 import org.citygml4j.builder.copy.ObjectCopier;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RealEstateIDAttribute extends BuildingAttribute {
+public class RealEstateIDAttribute extends AbstractDataType {
     private String realEstateIDOfBuilding;
     private Integer numberOfBuildingUnitOwnership;
     private List<String> realEstateIDOfBuildingUnitOwnership;
@@ -93,7 +94,6 @@ public class RealEstateIDAttribute extends BuildingAttribute {
     @Override
     public Object copyTo(Object target, CopyBuilder copyBuilder) {
         RealEstateIDAttribute copy = target == null ? new RealEstateIDAttribute() : (RealEstateIDAttribute) target;
-        super.copyTo(target, copyBuilder);
         return ObjectCopier.copyTo(this, copy, copyBuilder);
     }
 

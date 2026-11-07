@@ -4,7 +4,7 @@
   
   <jaxb:bindings schemaLocation="schemas/urbanObject.xsd" node="/xs:schema">
     <jaxb:schemaBindings>
-      <jaxb:package name="jp.geospatial.iur._3_1.uro"/>
+      <jaxb:package name="jp.geospatial.iur._3_2.uro"/>
     </jaxb:schemaBindings>
     <jaxb:bindings>
       <namespace:prefix name="uro"/>
@@ -29,6 +29,9 @@
     </jaxb:bindings>
     <jaxb:bindings node="xs:element[@name='largeCustomerFacilityAttribute']">
       <jaxb:factoryMethod name="LargeCustomerFacilityAttributeProperty"/>
+    </jaxb:bindings>
+    <jaxb:bindings node="xs:element[@name='pointCloud']">
+      <jaxb:factoryMethod name="PointCloudProperty"/>
     </jaxb:bindings>
     <jaxb:bindings node="xs:element[@name='railwayRouteAttribute']">
       <jaxb:factoryMethod name="RailwayRouteAttributeProperty"/>

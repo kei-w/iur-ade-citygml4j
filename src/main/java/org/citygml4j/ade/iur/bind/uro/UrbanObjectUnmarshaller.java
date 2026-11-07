@@ -29,6 +29,9 @@ import org.citygml4j.builder.jaxb.unmarshal.citygml.ade.ADEUnmarshallerHelper;
 import org.citygml4j.model.citygml.ade.binding.ADEModelObject;
 import org.citygml4j.model.citygml.ade.binding.ADEUnmarshaller;
 import org.citygml4j.model.common.base.ModelObject;
+import org.citygml4j.model.gml.xlink.XLinkActuate;
+import org.citygml4j.model.gml.xlink.XLinkShow;
+import org.citygml4j.model.gml.xlink.XLinkType;
 import org.citygml4j.util.mapper.CheckedTypeMapper;
 import org.citygml4j.xml.io.reader.MissingADESchemaException;
 
@@ -207,7 +210,53 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                     .with(TunnelFunctionalAttributeType.class, this::unmarshalTunnelFunctionalAttribute)
                     .with(TunnelFunctionalAttributePropertyType.class, this::unmarshalTunnelFunctionalAttributeProperty)
                     .with(WaterBodyDetailAttributeType.class, this::unmarshalWaterBodyDetailAttribute)
-                    .with(WaterBodyDetailAttributePropertyType.class, this::unmarshalWaterBodyDetailAttributeProperty);
+                    .with(WaterBodyDetailAttributePropertyType.class, this::unmarshalWaterBodyDetailAttributeProperty)
+                    .with(WaterwayType.class, this::unmarshalWaterway)
+                    .with(WaterwayDetailAttributeType.class, this::unmarshalWaterwayDetailAttribute)
+                    .with(WaterwayDetailAttributePropertyType.class, this::unmarshalWaterwayDetailAttributeProperty)
+                    .with(AbstractConstructionType.class, this::unmarshalAbstractConstruction)
+                    .with(OtherConstructionType.class, this::unmarshalOtherConstruction)
+                    .with(ConstructionEventType.class, this::unmarshalConstructionEvent)
+                    .with(ConstructionEventPropertyType.class, this::unmarshalConstructionEventProperty)
+                    .with(ElevationType.class, this::unmarshalElevation)
+                    .with(ElevationPropertyType.class, this::unmarshalElevationProperty)
+                    .with(HeightType.class, this::unmarshalHeight)
+                    .with(HeightPropertyType.class, this::unmarshalHeightProperty)
+                    .with(OccupancyType.class, this::unmarshalOccupancy)
+                    .with(OccupancyPropertyType.class, this::unmarshalOccupancyProperty)
+                    .with(ConstructionStructureAttributeType.class, this::unmarshalConstructionStructureAttribute)
+                    .with(EmbankmentAttributeType.class, this::unmarshalEmbankmentAttribute)
+                    .with(DamAttributeType.class, this::unmarshalDamAttribute)
+                    .with(ConstructionStructureAttributePropertyType.class, this::unmarshalConstructionStructureAttributeProperty)
+                    .with(RoofSurfaceType.class, this::unmarshalRoofSurface)
+                    .with(WallSurfaceType.class, this::unmarshalWallSurface)
+                    .with(GroundSurfaceType.class, this::unmarshalGroundSurface)
+                    .with(OuterCeilingSurfaceType.class, this::unmarshalOuterCeilingSurface)
+                    .with(OuterFloorSurfaceType.class, this::unmarshalOuterFloorSurface)
+                    .with(ClosureSurfaceType.class, this::unmarshalClosureSurface)
+                    .with(_BoundarySurfacePropertyType.class, this::unmarshalAbstractBoundarySurfaceProperty)
+                    .with(ConstructionInstallationType.class, this::unmarshalConstructionInstallation)
+                    .with(ConstructionInstallationPropertyType.class, this::unmarshalConstructionInstallationProperty)
+                    .with(UndergroundBuildingType.class, this::unmarshalUndergroundBuilding)
+                    .with(PipeType.class, this::unmarshalPipe)
+                    .with(SewerPipeType.class, this::unmarshalSewerPipe)
+                    .with(ThermalPipeType.class, this::unmarshalThermalPipe)
+                    .with(WaterPipeType.class, this::unmarshalWaterPipe)
+                    .with(OilGasChemicalsPipeType.class, this::unmarshalOilGasChemicalsPipe)
+                    .with(DuctType.class, this::unmarshalDuct)
+                    .with(CableType.class, this::unmarshalCable)
+                    .with(ElectricityCableType.class, this::unmarshalElectricityCable)
+                    .with(TelecommunicationsCableType.class, this::unmarshalTelecommunicationsCable)
+                    .with(LengthAttributeType.class, this::unmarshalLengthAttribute)
+                    .with(LengthAttributePropertyType.class, this::unmarshalLengthAttributeProperty)
+                    .with(AppurtenanceType.class, this::unmarshalAppurtenance)
+                    .with(ManholeType.class, this::unmarshalManhole)
+                    .with(HandholeType.class, this::unmarshalHandhole)
+                    .with(OffsetDepthType.class, this::unmarshalOffsetDepth)
+                    .with(OffsetDepthPropertyType.class, this::unmarshalOffsetDepthProperty)
+                    .with(ThematicShapeType.class, this::unmarshalThematicShape)
+                    .with(ThematicShapePropertyType.class, this::unmarshalThematicShapeProperty)
+                    .with(PublicLandType.class, this::unmarshalPublicLand);
         }
 
         return typeMapper;
@@ -3936,6 +3985,798 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
 
         if (src.isSetWaterBodyDetailAttribute())
             dest.setObject(unmarshalWaterBodyDetailAttribute(src.getWaterBodyDetailAttribute()));
+
+        return dest;
+    }
+
+    private Waterway unmarshalWaterway(WaterwayType src) throws MissingADESchemaException {
+        Waterway dest = new Waterway();
+        helper.getTransportation200Unmarshaller().unmarshalTransportationComplex(src, dest);
+
+        if (src.isSetWaterwayDetailAttribute())
+            dest.setWaterwayDetailAttribute(unmarshalWaterwayDetailAttributeProperty(src.getWaterwayDetailAttribute()));
+
+        return dest;
+    }
+
+    private WaterwayDetailAttribute unmarshalWaterwayDetailAttribute(WaterwayDetailAttributeType src) throws MissingADESchemaException {
+        WaterwayDetailAttribute dest = new WaterwayDetailAttribute();
+
+        dest.setRouteId(src.getRouteId());
+
+        if (src.isSetRouteDirection())
+            dest.setRouteDirection(helper.getGMLUnmarshaller().unmarshalCode(src.getRouteDirection()));
+
+        if (src.isSetMinimumWidth())
+            dest.setMinimumWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getMinimumWidth()));
+
+        if (src.isSetMaximumWidth())
+            dest.setMaximumWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getMaximumWidth()));
+
+        if (src.isSetLength())
+            dest.setLength(helper.getGMLUnmarshaller().unmarshalLength(src.getLength()));
+
+        dest.setNavigation(src.getNavigation());
+
+        if (src.isSetPlannedDepth())
+            dest.setPlannedDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getPlannedDepth()));
+
+        if (src.isSetSpeedLimit())
+            dest.setSpeedLimit(helper.getGMLUnmarshaller().unmarshalMeasure(src.getSpeedLimit()));
+
+        if (src.isSetTargetShipType()) {
+            for (String targetShipType : src.getTargetShipType())
+                dest.getTargetShipType().add(targetShipType);
+        }
+
+        return dest;
+    }
+
+    private WaterwayDetailAttributeProperty unmarshalWaterwayDetailAttributeProperty(WaterwayDetailAttributePropertyType src) throws MissingADESchemaException {
+        WaterwayDetailAttributeProperty dest = new WaterwayDetailAttributeProperty();
+
+        if (src.isSetWaterwayDetailAttribute())
+            dest.setObject(unmarshalWaterwayDetailAttribute(src.getWaterwayDetailAttribute()));
+
+        return dest;
+    }
+
+    private void unmarshalAbstractConstruction(AbstractConstructionType src, AbstractConstruction dest) throws MissingADESchemaException {
+        helper.getCore200Unmarshaller().unmarshalAbstractCityObject(src, dest);
+
+        if (src.isSetConditionOfConstruction())
+            dest.setConditionOfConstruction(org.citygml4j.ade.iur.model.uro.ConditionOfConstructionValue.fromValue(src.getConditionOfConstruction().value()));
+
+        if (src.isSetDateOfConstruction())
+            dest.setDateOfConstruction(src.getDateOfConstruction().toGregorianCalendar().toZonedDateTime().toLocalDate());
+
+        if (src.isSetDateOfDemolition())
+            dest.setDateOfDemolition(src.getDateOfDemolition().toGregorianCalendar().toZonedDateTime().toLocalDate());
+
+        if (src.isSetConstructionEvent()) {
+            for (ConstructionEventPropertyType constructionEvent : src.getConstructionEvent())
+                dest.getConstructionEvent().add(unmarshalConstructionEventProperty(constructionEvent));
+        }
+
+        if (src.isSetElevation()) {
+            for (ElevationPropertyType elevation : src.getElevation())
+                dest.getElevation().add(unmarshalElevationProperty(elevation));
+        }
+
+        if (src.isSetHeight()) {
+            for (HeightPropertyType height : src.getHeight())
+                dest.getHeight().add(unmarshalHeightProperty(height));
+        }
+
+        if (src.isSetOccupancy()) {
+            for (OccupancyPropertyType occupancy : src.getOccupancy())
+                dest.getOccupancy().add(unmarshalOccupancyProperty(occupancy));
+        }
+
+        if (src.isSetConsFacilityTypeAttribute()) {
+            for (FacilityTypeAttributePropertyType consFacilityTypeAttribute : src.getConsFacilityTypeAttribute())
+                dest.getConsFacilityTypeAttribute().add(unmarshalFacilityTypeAttributeProperty(consFacilityTypeAttribute));
+        }
+
+        if (src.isSetConsFacilityIdAttribute())
+            dest.setConsFacilityIdAttribute(unmarshalFacilityIdAttributeProperty(src.getConsFacilityIdAttribute()));
+
+        if (src.isSetConsFacilityAttribute()) {
+            for (FacilityAttributePropertyType consFacilityAttribute : src.getConsFacilityAttribute())
+                dest.getConsFacilityAttribute().add(unmarshalFacilityAttributeProperty(consFacilityAttribute));
+        }
+
+        if (src.isSetConsBaseAttribute())
+            dest.setConsBaseAttribute(unmarshalConstructionBaseAttributeProperty(src.getConsBaseAttribute()));
+
+        if (src.isSetConsStructureAttribute())
+            dest.setConsStructureAttribute(unmarshalConstructionStructureAttributeProperty(src.getConsStructureAttribute()));
+
+        if (src.isSetConsDisasterRiskAttribute()) {
+            for (DisasterRiskAttributePropertyType consDisasterRiskAttribute : src.getConsDisasterRiskAttribute())
+                dest.getConsDisasterRiskAttribute().add(unmarshalDisasterRiskAttributeProperty(consDisasterRiskAttribute));
+        }
+
+        if (src.isSetConsDmAttribute()) {
+            for (DmAttributePropertyType consDmAttribute : src.getConsDmAttribute())
+                dest.getConsDmAttribute().add(unmarshalDmAttributeProperty(consDmAttribute));
+        }
+
+        if (src.isSetConsDataQualityAttribute())
+            dest.setConsDataQualityAttribute(unmarshalDataQualityAttributeProperty(src.getConsDataQualityAttribute()));
+
+        if (src.isSetConsKeyValuePairAttribute()) {
+            for (KeyValuePairAttributePropertyType consKeyValuePairAttribute : src.getConsKeyValuePairAttribute())
+                dest.getConsKeyValuePairAttribute().add(unmarshalKeyValuePairAttributeProperty(consKeyValuePairAttribute));
+        }
+
+        if (src.isSetLod0Geometry())
+            dest.setLod0Geometry(helper.getGMLUnmarshaller().unmarshalGeometryProperty(src.getLod0Geometry()));
+
+        if (src.isSetLod1Geometry())
+            dest.setLod1Geometry(helper.getGMLUnmarshaller().unmarshalGeometryProperty(src.getLod1Geometry()));
+
+        if (src.isSetLod2Geometry())
+            dest.setLod2Geometry(helper.getGMLUnmarshaller().unmarshalGeometryProperty(src.getLod2Geometry()));
+
+        if (src.isSetLod3Geometry())
+            dest.setLod3Geometry(helper.getGMLUnmarshaller().unmarshalGeometryProperty(src.getLod3Geometry()));
+
+        if (src.isSetLod4Geometry())
+            dest.setLod4Geometry(helper.getGMLUnmarshaller().unmarshalGeometryProperty(src.getLod4Geometry()));
+
+        if (src.isSetBoundedBySurface()) {
+            for (_BoundarySurfacePropertyType boundedBySurface : src.getBoundedBySurface())
+                dest.getBoundedBySurface().add(unmarshalAbstractBoundarySurfaceProperty(boundedBySurface));
+        }
+
+        if (src.isSetConstructionInstallation()) {
+            for (ConstructionInstallationPropertyType constructionInstallation : src.getConstructionInstallation())
+                dest.getConstructionInstallation().add(unmarshalConstructionInstallationProperty(constructionInstallation));
+        }
+    }
+
+    private AbstractConstruction unmarshalAbstractConstruction(AbstractConstructionType src) throws MissingADESchemaException {
+        AbstractConstruction dest = new AbstractConstruction();
+        unmarshalAbstractConstruction(src, dest);
+        return dest;
+    }
+
+    private OtherConstruction unmarshalOtherConstruction(OtherConstructionType src) throws MissingADESchemaException {
+        OtherConstruction dest = new OtherConstruction();
+        unmarshalAbstractConstruction(src, dest);
+
+        if (src.isSetClazz())
+            dest.setClassifier(helper.getGMLUnmarshaller().unmarshalCode(src.getClazz()));
+
+        if (src.isSetFunction()) {
+            for (CodeType function : src.getFunction())
+                dest.getFunction().add(helper.getGMLUnmarshaller().unmarshalCode(function));
+        }
+
+        if (src.isSetUsage()) {
+            for (CodeType usage : src.getUsage())
+                dest.getUsage().add(helper.getGMLUnmarshaller().unmarshalCode(usage));
+        }
+
+        return dest;
+    }
+
+    private ConstructionEvent unmarshalConstructionEvent(ConstructionEventType src) throws MissingADESchemaException {
+        ConstructionEvent dest = new ConstructionEvent();
+
+        if (src.isSetEvent())
+            dest.setEvent(helper.getGMLUnmarshaller().unmarshalCode(src.getEvent()));
+
+        if (src.isSetDateOfEvent())
+            dest.setDateOfEvent(src.getDateOfEvent().toGregorianCalendar().toZonedDateTime().toLocalDate());
+
+        dest.setDescription(src.getDescription());
+
+        return dest;
+    }
+
+    private ConstructionEventProperty unmarshalConstructionEventProperty(ConstructionEventPropertyType src) throws MissingADESchemaException {
+        ConstructionEventProperty dest = new ConstructionEventProperty();
+
+        if (src.isSetConstructionEvent())
+            dest.setObject(unmarshalConstructionEvent(src.getConstructionEvent()));
+
+        return dest;
+    }
+
+    private Elevation unmarshalElevation(ElevationType src) throws MissingADESchemaException {
+        Elevation dest = new Elevation();
+
+        if (src.isSetElevationReference())
+            dest.setElevationReference(helper.getGMLUnmarshaller().unmarshalCode(src.getElevationReference()));
+
+        if (src.isSetElevationValue())
+            dest.setElevationValue(helper.getGMLUnmarshaller().unmarshalDirectPosition(src.getElevationValue()));
+
+        return dest;
+    }
+
+    private ElevationProperty unmarshalElevationProperty(ElevationPropertyType src) throws MissingADESchemaException {
+        ElevationProperty dest = new ElevationProperty();
+
+        if (src.isSetElevation())
+            dest.setObject(unmarshalElevation(src.getElevation()));
+
+        return dest;
+    }
+
+    private Height unmarshalHeight(HeightType src) throws MissingADESchemaException {
+        Height dest = new Height();
+
+        if (src.isSetHighReference())
+            dest.setHighReference(helper.getGMLUnmarshaller().unmarshalCode(src.getHighReference()));
+
+        if (src.isSetLowReference())
+            dest.setLowReference(helper.getGMLUnmarshaller().unmarshalCode(src.getLowReference()));
+
+        if (src.isSetStatus())
+            dest.setStatus(org.citygml4j.ade.iur.model.uro.HeightStatusValue.fromValue(src.getStatus().value()));
+
+        if (src.isSetValue())
+            dest.setValue(helper.getGMLUnmarshaller().unmarshalLength(src.getValue()));
+
+        return dest;
+    }
+
+    private HeightProperty unmarshalHeightProperty(HeightPropertyType src) throws MissingADESchemaException {
+        HeightProperty dest = new HeightProperty();
+
+        if (src.isSetHeight())
+            dest.setObject(unmarshalHeight(src.getHeight()));
+
+        return dest;
+    }
+
+    private Occupancy unmarshalOccupancy(OccupancyType src) throws MissingADESchemaException {
+        Occupancy dest = new Occupancy();
+
+        if (src.isSetInterval())
+            dest.setInterval(helper.getGMLUnmarshaller().unmarshalCode(src.getInterval()));
+
+        if (src.isSetNumberOfOccupants())
+            dest.setNumberOfOccupants(src.getNumberOfOccupants().intValue());
+
+        if (src.isSetOccupantType())
+            dest.setOccupantType(helper.getGMLUnmarshaller().unmarshalCode(src.getOccupantType()));
+
+        return dest;
+    }
+
+    private OccupancyProperty unmarshalOccupancyProperty(OccupancyPropertyType src) throws MissingADESchemaException {
+        OccupancyProperty dest = new OccupancyProperty();
+
+        if (src.isSetOccupancy())
+            dest.setObject(unmarshalOccupancy(src.getOccupancy()));
+
+        return dest;
+    }
+
+    private void unmarshalConstructionStructureAttribute(ConstructionStructureAttributeType src, ConstructionStructureAttribute dest) throws MissingADESchemaException {
+        if (src.isSetStructureType())
+            dest.setStructureType(helper.getGMLUnmarshaller().unmarshalCode(src.getStructureType()));
+
+        if (src.isSetLength())
+            dest.setLength(helper.getGMLUnmarshaller().unmarshalLength(src.getLength()));
+
+        if (src.isSetWidth())
+            dest.setWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getWidth()));
+
+        if (src.isSetDepth())
+            dest.setDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getDepth()));
+
+        if (src.isSetVolume())
+            dest.setVolume(helper.getGMLUnmarshaller().unmarshalMeasure(src.getVolume()));
+    }
+
+    private ConstructionStructureAttribute unmarshalConstructionStructureAttribute(ConstructionStructureAttributeType src) throws MissingADESchemaException {
+        ConstructionStructureAttribute dest = new ConstructionStructureAttribute();
+        unmarshalConstructionStructureAttribute(src, dest);
+        return dest;
+    }
+
+    private EmbankmentAttribute unmarshalEmbankmentAttribute(EmbankmentAttributeType src) throws MissingADESchemaException {
+        EmbankmentAttribute dest = new EmbankmentAttribute();
+        unmarshalConstructionStructureAttribute(src, dest);
+
+        if (src.isSetMainPartLength())
+            dest.setMainPartLength(helper.getGMLUnmarshaller().unmarshalLength(src.getMainPartLength()));
+
+        if (src.isSetCeilingHeight())
+            dest.setCeilingHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getCeilingHeight()));
+
+        if (src.isSetWaveDissipatorLength())
+            dest.setWaveDissipatorLength(helper.getGMLUnmarshaller().unmarshalLength(src.getWaveDissipatorLength()));
+
+        return dest;
+    }
+
+    private DamAttribute unmarshalDamAttribute(DamAttributeType src) throws MissingADESchemaException {
+        DamAttribute dest = new DamAttribute();
+        unmarshalConstructionStructureAttribute(src, dest);
+
+        if (src.isSetDamCode())
+            dest.setDamCode(helper.getGMLUnmarshaller().unmarshalCode(src.getDamCode()));
+
+        if (src.isSetTotalWaterStorage())
+            dest.setTotalWaterStorage(helper.getGMLUnmarshaller().unmarshalMeasure(src.getTotalWaterStorage()));
+
+        return dest;
+    }
+
+    private ConstructionStructureAttributeProperty unmarshalConstructionStructureAttributeProperty(ConstructionStructureAttributePropertyType src) throws MissingADESchemaException {
+        ConstructionStructureAttributeProperty dest = new ConstructionStructureAttributeProperty();
+
+        if (src.isSetConstructionStructureAttribute()) {
+            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.getConstructionStructureAttribute());
+            if (object instanceof ConstructionStructureAttribute)
+                dest.setObject((ConstructionStructureAttribute) object);
+        }
+
+        return dest;
+    }
+
+    private void unmarshalAbstractBoundarySurface(_BoundarySurfaceType src, AbstractBoundarySurface dest) throws MissingADESchemaException {
+        helper.getCore200Unmarshaller().unmarshalAbstractCityObject(src, dest);
+
+        if (src.isSetLod2MultiSurface())
+            dest.setLod2MultiSurface(helper.getGMLUnmarshaller().unmarshalMultiSurfaceProperty(src.getLod2MultiSurface()));
+
+        if (src.isSetLod3MultiSurface())
+            dest.setLod3MultiSurface(helper.getGMLUnmarshaller().unmarshalMultiSurfaceProperty(src.getLod3MultiSurface()));
+    }
+
+    private RoofSurface unmarshalRoofSurface(RoofSurfaceType src) throws MissingADESchemaException {
+        RoofSurface dest = new RoofSurface();
+        unmarshalAbstractBoundarySurface(src, dest);
+        return dest;
+    }
+
+    private WallSurface unmarshalWallSurface(WallSurfaceType src) throws MissingADESchemaException {
+        WallSurface dest = new WallSurface();
+        unmarshalAbstractBoundarySurface(src, dest);
+        return dest;
+    }
+
+    private GroundSurface unmarshalGroundSurface(GroundSurfaceType src) throws MissingADESchemaException {
+        GroundSurface dest = new GroundSurface();
+        unmarshalAbstractBoundarySurface(src, dest);
+        return dest;
+    }
+
+    private OuterCeilingSurface unmarshalOuterCeilingSurface(OuterCeilingSurfaceType src) throws MissingADESchemaException {
+        OuterCeilingSurface dest = new OuterCeilingSurface();
+        unmarshalAbstractBoundarySurface(src, dest);
+        return dest;
+    }
+
+    private OuterFloorSurface unmarshalOuterFloorSurface(OuterFloorSurfaceType src) throws MissingADESchemaException {
+        OuterFloorSurface dest = new OuterFloorSurface();
+        unmarshalAbstractBoundarySurface(src, dest);
+        return dest;
+    }
+
+    private ClosureSurface unmarshalClosureSurface(ClosureSurfaceType src) throws MissingADESchemaException {
+        ClosureSurface dest = new ClosureSurface();
+        unmarshalAbstractBoundarySurface(src, dest);
+        return dest;
+    }
+
+    private AbstractBoundarySurfaceProperty unmarshalAbstractBoundarySurfaceProperty(_BoundarySurfacePropertyType src) throws MissingADESchemaException {
+        AbstractBoundarySurfaceProperty dest = new AbstractBoundarySurfaceProperty();
+
+        if (src.isSet_BoundarySurface()) {
+            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.get_BoundarySurface());
+            if (object instanceof AbstractBoundarySurface)
+                dest.setObject((AbstractBoundarySurface) object);
+        }
+
+        dest.setRemoteSchema(src.getRemoteSchema());
+
+        if (src.isSetType())
+            dest.setType(XLinkType.fromValue(src.getType().value()));
+
+        dest.setHref(src.getHref());
+        dest.setRole(src.getRole());
+        dest.setArcrole(src.getArcrole());
+        dest.setTitle(src.getTitle());
+
+        if (src.isSetShow())
+            dest.setShow(XLinkShow.fromValue(src.getShow().value()));
+
+        if (src.isSetActuate())
+            dest.setActuate(XLinkActuate.fromValue(src.getActuate().value()));
+
+        return dest;
+    }
+
+    private ConstructionInstallation unmarshalConstructionInstallation(ConstructionInstallationType src) throws MissingADESchemaException {
+        ConstructionInstallation dest = new ConstructionInstallation();
+        helper.getCore200Unmarshaller().unmarshalAbstractCityObject(src, dest);
+
+        if (src.isSetClazz())
+            dest.setClassifier(helper.getGMLUnmarshaller().unmarshalCode(src.getClazz()));
+
+        if (src.isSetFunction()) {
+            for (CodeType function : src.getFunction())
+                dest.getFunction().add(helper.getGMLUnmarshaller().unmarshalCode(function));
+        }
+
+        if (src.isSetUsage()) {
+            for (CodeType usage : src.getUsage())
+                dest.getUsage().add(helper.getGMLUnmarshaller().unmarshalCode(usage));
+        }
+
+        if (src.isSetLod2Geometry())
+            dest.setLod2Geometry(helper.getGMLUnmarshaller().unmarshalGeometryProperty(src.getLod2Geometry()));
+
+        if (src.isSetLod3Geometry())
+            dest.setLod3Geometry(helper.getGMLUnmarshaller().unmarshalGeometryProperty(src.getLod3Geometry()));
+
+        return dest;
+    }
+
+    private ConstructionInstallationProperty unmarshalConstructionInstallationProperty(ConstructionInstallationPropertyType src) throws MissingADESchemaException {
+        ConstructionInstallationProperty dest = new ConstructionInstallationProperty();
+
+        if (src.isSetConstructionInstallation())
+            dest.setObject(unmarshalConstructionInstallation(src.getConstructionInstallation()));
+
+        dest.setRemoteSchema(src.getRemoteSchema());
+
+        if (src.isSetType())
+            dest.setType(XLinkType.fromValue(src.getType().value()));
+
+        dest.setHref(src.getHref());
+        dest.setRole(src.getRole());
+        dest.setArcrole(src.getArcrole());
+        dest.setTitle(src.getTitle());
+
+        if (src.isSetShow())
+            dest.setShow(XLinkShow.fromValue(src.getShow().value()));
+
+        if (src.isSetActuate())
+            dest.setActuate(XLinkActuate.fromValue(src.getActuate().value()));
+
+        return dest;
+    }
+
+    private UndergroundBuilding unmarshalUndergroundBuilding(UndergroundBuildingType src) throws MissingADESchemaException {
+        UndergroundBuilding dest = new UndergroundBuilding();
+        helper.getBuilding200Unmarshaller().unmarshalAbstractBuilding(src, dest);
+        return dest;
+    }
+
+    private void unmarshalUtilityNetworkElement(UtilityNetworkElementType src, UtilityNetworkElement dest) throws MissingADESchemaException {
+        helper.getCityFurniture200Unmarshaller().unmarshalCityFurniture(src, dest);
+
+        if (src.isSetOccupierType())
+            dest.setOccupierType(helper.getGMLUnmarshaller().unmarshalCode(src.getOccupierType()));
+
+        if (src.isSetOccupierName())
+            dest.setOccupierName(helper.getGMLUnmarshaller().unmarshalCode(src.getOccupierName()));
+
+        if (src.isSetYear()) {
+            LocalDate date = src.getYear().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setYear(Year.of(date.getYear()));
+        }
+
+        if (src.isSetYearType())
+            dest.setYearType(helper.getGMLUnmarshaller().unmarshalCode(src.getYearType()));
+
+        if (src.isSetAdministrator())
+            dest.setAdministrator(helper.getGMLUnmarshaller().unmarshalCode(src.getAdministrator()));
+
+        if (src.isSetOffsetDepth()) {
+            for (OffsetDepthPropertyType offsetDepth : src.getOffsetDepth())
+                dest.getOffsetDepth().add(unmarshalOffsetDepthProperty(offsetDepth));
+        }
+
+        if (src.isSetThematicShape()) {
+            for (ThematicShapePropertyType thematicShape : src.getThematicShape())
+                dest.getThematicShape().add(unmarshalThematicShapeProperty(thematicShape));
+        }
+    }
+
+    private void unmarshalUtilityLink(UtilityLinkType src, UtilityLink dest) throws MissingADESchemaException {
+        unmarshalUtilityNetworkElement(src, dest);
+
+        dest.setRouteStartNode(src.getRouteStartNode());
+        dest.setStartNode(src.getStartNode());
+        dest.setRouteEndNode(src.getRouteEndNode());
+        dest.setEndNode(src.getEndNode());
+
+        if (src.isSetDepth())
+            dest.setDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getDepth()));
+
+        if (src.isSetMinDepth())
+            dest.setMinDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getMinDepth()));
+
+        if (src.isSetMaxDepth())
+            dest.setMaxDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getMaxDepth()));
+
+        if (src.isSetMaxWidth())
+            dest.setMaxWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getMaxWidth()));
+
+        if (src.isSetOffset())
+            dest.setOffset(helper.getGMLUnmarshaller().unmarshalLength(src.getOffset()));
+
+        if (src.isSetMaterial())
+            dest.setMaterial(helper.getGMLUnmarshaller().unmarshalCode(src.getMaterial()));
+
+        if (src.isSetLengthAttribute()) {
+            for (LengthAttributePropertyType lengthAttribute : src.getLengthAttribute())
+                dest.getLengthAttribute().add(unmarshalLengthAttributeProperty(lengthAttribute));
+        }
+    }
+
+    private void unmarshalPipe(PipeType src, Pipe dest) throws MissingADESchemaException {
+        unmarshalUtilityLink(src, dest);
+
+        if (src.isSetInnerDiameter())
+            dest.setInnerDiameter(helper.getGMLUnmarshaller().unmarshalLength(src.getInnerDiameter()));
+
+        if (src.isSetOuterDiameter())
+            dest.setOuterDiameter(helper.getGMLUnmarshaller().unmarshalLength(src.getOuterDiameter()));
+
+        if (src.isSetSleeveType())
+            dest.setSleeveType(helper.getGMLUnmarshaller().unmarshalCode(src.getSleeveType()));
+    }
+
+    private Pipe unmarshalPipe(PipeType src) throws MissingADESchemaException {
+        Pipe dest = new Pipe();
+        unmarshalPipe(src, dest);
+        return dest;
+    }
+
+    private SewerPipe unmarshalSewerPipe(SewerPipeType src) throws MissingADESchemaException {
+        SewerPipe dest = new SewerPipe();
+        unmarshalPipe(src, dest);
+
+        if (src.isSetSlope())
+            dest.setSlope(helper.getGMLUnmarshaller().unmarshalMeasure(src.getSlope()));
+
+        if (src.isSetInvertElevationUpstream())
+            dest.setInvertElevationUpstream(helper.getGMLUnmarshaller().unmarshalLength(src.getInvertElevationUpstream()));
+
+        if (src.isSetInvertElevationDownstream())
+            dest.setInvertElevationDownstream(helper.getGMLUnmarshaller().unmarshalLength(src.getInvertElevationDownstream()));
+
+        dest.setFlowDirection(src.isFlowDirection());
+
+        return dest;
+    }
+
+    private ThermalPipe unmarshalThermalPipe(ThermalPipeType src) throws MissingADESchemaException {
+        ThermalPipe dest = new ThermalPipe();
+        unmarshalPipe(src, dest);
+        return dest;
+    }
+
+    private WaterPipe unmarshalWaterPipe(WaterPipeType src) throws MissingADESchemaException {
+        WaterPipe dest = new WaterPipe();
+        unmarshalPipe(src, dest);
+        return dest;
+    }
+
+    private OilGasChemicalsPipe unmarshalOilGasChemicalsPipe(OilGasChemicalsPipeType src) throws MissingADESchemaException {
+        OilGasChemicalsPipe dest = new OilGasChemicalsPipe();
+        unmarshalPipe(src, dest);
+        return dest;
+    }
+
+    private Duct unmarshalDuct(DuctType src) throws MissingADESchemaException {
+        Duct dest = new Duct();
+        unmarshalUtilityLink(src, dest);
+
+        if (src.isSetWidth())
+            dest.setWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getWidth()));
+
+        return dest;
+    }
+
+    private void unmarshalCable(CableType src, Cable dest) throws MissingADESchemaException {
+        unmarshalUtilityLink(src, dest);
+
+        if (src.isSetColumns())
+            dest.setColumns(src.getColumns().intValue());
+
+        if (src.isSetRows())
+            dest.setRows(src.getRows().intValue());
+
+        if (src.isSetCables())
+            dest.setCables(src.getCables().intValue());
+    }
+
+    private Cable unmarshalCable(CableType src) throws MissingADESchemaException {
+        Cable dest = new Cable();
+        unmarshalCable(src, dest);
+        return dest;
+    }
+
+    private ElectricityCable unmarshalElectricityCable(ElectricityCableType src) throws MissingADESchemaException {
+        ElectricityCable dest = new ElectricityCable();
+        unmarshalCable(src, dest);
+        return dest;
+    }
+
+    private TelecommunicationsCable unmarshalTelecommunicationsCable(TelecommunicationsCableType src) throws MissingADESchemaException {
+        TelecommunicationsCable dest = new TelecommunicationsCable();
+        unmarshalCable(src, dest);
+        return dest;
+    }
+
+    private LengthAttribute unmarshalLengthAttribute(LengthAttributeType src) throws MissingADESchemaException {
+        LengthAttribute dest = new LengthAttribute();
+
+        if (src.isSetLength())
+            dest.setLength(helper.getGMLUnmarshaller().unmarshalLength(src.getLength()));
+
+        if (src.isSetMeasureType())
+            dest.setMeasureType(helper.getGMLUnmarshaller().unmarshalCode(src.getMeasureType()));
+
+        if (src.isSetPhaseType())
+            dest.setPhaseType(helper.getGMLUnmarshaller().unmarshalCode(src.getPhaseType()));
+
+        return dest;
+    }
+
+    private LengthAttributeProperty unmarshalLengthAttributeProperty(LengthAttributePropertyType src) throws MissingADESchemaException {
+        LengthAttributeProperty dest = new LengthAttributeProperty();
+
+        if (src.isSetLengthAttribute())
+            dest.setObject(unmarshalLengthAttribute(src.getLengthAttribute()));
+
+        return dest;
+    }
+
+    private void unmarshalUtilityNode(UtilityNodeType src, UtilityNode dest) throws MissingADESchemaException {
+        unmarshalUtilityNetworkElement(src, dest);
+
+        if (src.isSetPreviousLink()) {
+            for (String previousLink : src.getPreviousLink())
+                dest.getPreviousLink().add(previousLink);
+        }
+
+        if (src.isSetNextLink()) {
+            for (String nextLink : src.getNextLink())
+                dest.getNextLink().add(nextLink);
+        }
+
+        dest.setRotationAngle(src.getRotationAngle());
+    }
+
+    private Appurtenance unmarshalAppurtenance(AppurtenanceType src) throws MissingADESchemaException {
+        Appurtenance dest = new Appurtenance();
+        unmarshalUtilityNode(src, dest);
+
+        if (src.isSetAppurtenanceType())
+            dest.setAppurtenanceType(helper.getGMLUnmarshaller().unmarshalCode(src.getAppurtenanceType()));
+
+        return dest;
+    }
+
+    private void unmarshalUtilityNodeContainer(UtilityNodeContainerType src, UtilityNodeContainer dest) throws MissingADESchemaException {
+        unmarshalUtilityNetworkElement(src, dest);
+
+        if (src.isSetContainerType())
+            dest.setContainerType(helper.getGMLUnmarshaller().unmarshalCode(src.getContainerType()));
+
+        if (src.isSetInnerDiameterLong())
+            dest.setInnerDiameterLong(helper.getGMLUnmarshaller().unmarshalLength(src.getInnerDiameterLong()));
+
+        if (src.isSetOuterDiameterLong())
+            dest.setOuterDiameterLong(helper.getGMLUnmarshaller().unmarshalLength(src.getOuterDiameterLong()));
+
+        if (src.isSetInnerDiameterShort())
+            dest.setInnerDiameterShort(helper.getGMLUnmarshaller().unmarshalLength(src.getInnerDiameterShort()));
+
+        if (src.isSetOuterDiameterShort())
+            dest.setOuterDiameterShort(helper.getGMLUnmarshaller().unmarshalLength(src.getOuterDiameterShort()));
+
+        if (src.isSetDepth())
+            dest.setDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getDepth()));
+
+        if (src.isSetAppurtenance()) {
+            for (String appurtenance : src.getAppurtenance())
+                dest.getAppurtenance().add(appurtenance);
+        }
+
+        dest.setRotationAngle(src.getRotationAngle());
+    }
+
+    private Manhole unmarshalManhole(ManholeType src) throws MissingADESchemaException {
+        Manhole dest = new Manhole();
+        unmarshalUtilityNodeContainer(src, dest);
+
+        if (src.isSetElevation())
+            dest.setElevation(helper.getGMLUnmarshaller().unmarshalLength(src.getElevation()));
+
+        return dest;
+    }
+
+    private Handhole unmarshalHandhole(HandholeType src) throws MissingADESchemaException {
+        Handhole dest = new Handhole();
+        unmarshalUtilityNodeContainer(src, dest);
+        return dest;
+    }
+
+    private OffsetDepth unmarshalOffsetDepth(OffsetDepthType src) throws MissingADESchemaException {
+        OffsetDepth dest = new OffsetDepth();
+
+        if (src.isSetPos())
+            dest.setPos(helper.getGMLUnmarshaller().unmarshalDirectPosition(src.getPos()));
+
+        if (src.isSetOffset())
+            dest.setOffset(helper.getGMLUnmarshaller().unmarshalLength(src.getOffset()));
+
+        if (src.isSetDepth())
+            dest.setDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getDepth()));
+
+        if (src.isSetMinDepth())
+            dest.setMinDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getMinDepth()));
+
+        if (src.isSetMaxDepth())
+            dest.setMaxDepth(helper.getGMLUnmarshaller().unmarshalLength(src.getMaxDepth()));
+
+        return dest;
+    }
+
+    private OffsetDepthProperty unmarshalOffsetDepthProperty(OffsetDepthPropertyType src) throws MissingADESchemaException {
+        OffsetDepthProperty dest = new OffsetDepthProperty();
+
+        if (src.isSetOffsetDepth())
+            dest.setObject(unmarshalOffsetDepth(src.getOffsetDepth()));
+
+        return dest;
+    }
+
+    private ThematicShape unmarshalThematicShape(ThematicShapeType src) throws MissingADESchemaException {
+        ThematicShape dest = new ThematicShape();
+
+        if (src.isSetHorizontalType())
+            dest.setHorizontalType(helper.getGMLUnmarshaller().unmarshalCode(src.getHorizontalType()));
+
+        if (src.isSetHeightType())
+            dest.setHeightType(helper.getGMLUnmarshaller().unmarshalCode(src.getHeightType()));
+
+        if (src.isSetShape())
+            dest.setShape(helper.getGMLUnmarshaller().unmarshalGeometryProperty(src.getShape()));
+
+        return dest;
+    }
+
+    private ThematicShapeProperty unmarshalThematicShapeProperty(ThematicShapePropertyType src) throws MissingADESchemaException {
+        ThematicShapeProperty dest = new ThematicShapeProperty();
+
+        if (src.isSetThematicShape())
+            dest.setObject(unmarshalThematicShape(src.getThematicShape()));
+
+        return dest;
+    }
+
+    private PublicLand unmarshalPublicLand(PublicLandType src) throws MissingADESchemaException {
+        PublicLand dest = new PublicLand();
+        helper.getLandUse200Unmarshaller().unmarshalLandUse(src, dest);
+
+        dest.setIdentifier(src.getIdentifier());
+        dest.setOwnerName(src.getOwnerName());
+
+        if (src.isSetOwnerType())
+            dest.setOwnerType(helper.getGMLUnmarshaller().unmarshalCode(src.getOwnerType()));
+
+        dest.setLandCategory(src.getLandCategory());
+
+        if (src.isSetArea())
+            dest.setArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getArea()));
+
+        dest.setStatus(src.getStatus());
+        dest.setNote(src.getNote());
 
         return dest;
     }

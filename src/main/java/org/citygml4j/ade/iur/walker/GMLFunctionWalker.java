@@ -22,12 +22,26 @@
 
 package org.citygml4j.ade.iur.walker;
 
+import org.citygml4j.ade.iur.model.urf.*;
 import org.citygml4j.ade.iur.model.urf.LandUseDiversion;
 import org.citygml4j.ade.iur.model.urf.TargetProperty;
-import org.citygml4j.ade.iur.model.urf.*;
 import org.citygml4j.ade.iur.model.urg.*;
+import org.citygml4j.ade.iur.model.uro.AbstractBoundarySurface;
+import org.citygml4j.ade.iur.model.uro.AbstractBoundarySurfaceProperty;
+import org.citygml4j.ade.iur.model.uro.AbstractConstruction;
+import org.citygml4j.ade.iur.model.uro.ClosureSurface;
+import org.citygml4j.ade.iur.model.uro.ConstructionInstallation;
+import org.citygml4j.ade.iur.model.uro.ConstructionInstallationProperty;
+import org.citygml4j.ade.iur.model.uro.GroundSurface;
+import org.citygml4j.ade.iur.model.uro.OtherConstruction;
+import org.citygml4j.ade.iur.model.uro.OuterCeilingSurface;
+import org.citygml4j.ade.iur.model.uro.OuterFloorSurface;
+import org.citygml4j.ade.iur.model.uro.RoofSurface;
+import org.citygml4j.ade.iur.model.uro.UndergroundBuilding;
+import org.citygml4j.ade.iur.model.uro.WallSurface;
 import org.citygml4j.ade.iur.model.urt.*;
 import org.citygml4j.model.citygml.ade.binding.ADEWalker;
+import org.citygml4j.model.citygml.building.AbstractBuilding;
 import org.citygml4j.model.citygml.core.AbstractCityObject;
 import org.citygml4j.model.gml.feature.FeatureProperty;
 
@@ -470,5 +484,132 @@ public class GMLFunctionWalker<T> implements ADEWalker<org.citygml4j.util.walker
         return translation.getRecordId() != null ?
                 walker.apply((FeatureProperty<?>) translation.getRecordId()) :
                 null;
+    }
+
+    // uro feature types (generated)
+    public T apply(AbstractConstruction abstractConstruction) {
+        T object = walker.apply((AbstractCityObject) abstractConstruction);
+        if (object != null)
+            return object;
+
+        if (abstractConstruction.getLod0Geometry() != null) {
+            object = walker.apply(abstractConstruction.getLod0Geometry());
+            if (object != null)
+                return object;
+        }
+
+        if (abstractConstruction.getLod1Geometry() != null) {
+            object = walker.apply(abstractConstruction.getLod1Geometry());
+            if (object != null)
+                return object;
+        }
+
+        if (abstractConstruction.getLod2Geometry() != null) {
+            object = walker.apply(abstractConstruction.getLod2Geometry());
+            if (object != null)
+                return object;
+        }
+
+        if (abstractConstruction.getLod3Geometry() != null) {
+            object = walker.apply(abstractConstruction.getLod3Geometry());
+            if (object != null)
+                return object;
+        }
+
+        if (abstractConstruction.getLod4Geometry() != null) {
+            object = walker.apply(abstractConstruction.getLod4Geometry());
+            if (object != null)
+                return object;
+        }
+
+        for (AbstractBoundarySurfaceProperty property : new ArrayList<>(abstractConstruction.getBoundedBySurface())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        for (ConstructionInstallationProperty property : new ArrayList<>(abstractConstruction.getConstructionInstallation())) {
+            object = walker.apply((FeatureProperty<?>) property);
+            if (object != null)
+                return object;
+        }
+
+        return null;
+    }
+
+    public T apply(OtherConstruction otherConstruction) {
+        return apply((AbstractConstruction) otherConstruction);
+    }
+
+    public T apply(AbstractBoundarySurface abstractBoundarySurface) {
+        T object = walker.apply((AbstractCityObject) abstractBoundarySurface);
+        if (object != null)
+            return object;
+
+        if (abstractBoundarySurface.getLod2MultiSurface() != null) {
+            object = walker.apply(abstractBoundarySurface.getLod2MultiSurface());
+            if (object != null)
+                return object;
+        }
+
+        if (abstractBoundarySurface.getLod3MultiSurface() != null) {
+            object = walker.apply(abstractBoundarySurface.getLod3MultiSurface());
+            if (object != null)
+                return object;
+        }
+
+        return null;
+    }
+
+    public T apply(RoofSurface roofSurface) {
+        return apply((AbstractBoundarySurface) roofSurface);
+    }
+
+    public T apply(WallSurface wallSurface) {
+        return apply((AbstractBoundarySurface) wallSurface);
+    }
+
+    public T apply(GroundSurface groundSurface) {
+        return apply((AbstractBoundarySurface) groundSurface);
+    }
+
+    public T apply(OuterCeilingSurface outerCeilingSurface) {
+        return apply((AbstractBoundarySurface) outerCeilingSurface);
+    }
+
+    public T apply(OuterFloorSurface outerFloorSurface) {
+        return apply((AbstractBoundarySurface) outerFloorSurface);
+    }
+
+    public T apply(ClosureSurface closureSurface) {
+        return apply((AbstractBoundarySurface) closureSurface);
+    }
+
+    public T apply(ConstructionInstallation constructionInstallation) {
+        T object = walker.apply((AbstractCityObject) constructionInstallation);
+        if (object != null)
+            return object;
+
+        if (constructionInstallation.getLod2Geometry() != null) {
+            object = walker.apply(constructionInstallation.getLod2Geometry());
+            if (object != null)
+                return object;
+        }
+
+        if (constructionInstallation.getLod3Geometry() != null) {
+            object = walker.apply(constructionInstallation.getLod3Geometry());
+            if (object != null)
+                return object;
+        }
+
+        return null;
+    }
+
+    public T apply(UndergroundBuilding undergroundBuilding) {
+        T object = walker.apply((AbstractBuilding) undergroundBuilding);
+        if (object != null)
+            return object;
+
+        return null;
     }
 }

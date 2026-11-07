@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 12:03:47 JST 2026
+// Generated: Sat Nov 07 17:18:22 JST 2026
 //
 
 
@@ -10,11 +10,10 @@ package jp.geospatial.iur._3_1.uro;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementRefs;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -65,7 +64,29 @@ import net.opengis.gml.GeometryPropertyType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AbstractConstructionType", propOrder = {
-    "rest"
+    "conditionOfConstruction",
+    "dateOfConstruction",
+    "dateOfDemolition",
+    "constructionEvent",
+    "elevation",
+    "height",
+    "occupancy",
+    "consFacilityTypeAttribute",
+    "consFacilityIdAttribute",
+    "consFacilityAttribute",
+    "consBaseAttribute",
+    "consStructureAttribute",
+    "consDisasterRiskAttribute",
+    "consDmAttribute",
+    "consDataQualityAttribute",
+    "consKeyValuePairAttribute",
+    "lod0Geometry",
+    "lod1Geometry",
+    "lod2Geometry",
+    "lod3Geometry",
+    "lod4Geometry",
+    "boundedBySurface",
+    "constructionInstallation"
 })
 @XmlSeeAlso({
     OtherConstructionType.class
@@ -74,92 +95,775 @@ public class AbstractConstructionType
     extends AbstractCityObjectType
 {
 
-    @XmlElementRefs({
-        @XmlElementRef(name = "conditionOfConstruction", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "dateOfConstruction", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "dateOfDemolition", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "constructionEvent", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "elevation", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "height", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "occupancy", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "consFacilityTypeAttribute", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "consFacilityIdAttribute", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "consFacilityAttribute", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "consBaseAttribute", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "consStructureAttribute", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "consDisasterRiskAttribute", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "consDmAttribute", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "consDataQualityAttribute", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "consKeyValuePairAttribute", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "lod0Geometry", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "lod1Geometry", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "lod2Geometry", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "lod3Geometry", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "lod4Geometry", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "boundedBy", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "constructionInstallation", namespace = "https://www.geospatial.jp/iur/uro/3.1", type = JAXBElement.class, required = false)
-    })
-    protected List<JAXBElement<?>> rest;
+    @XmlSchemaType(name = "string")
+    protected ConditionOfConstructionValue conditionOfConstruction;
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar dateOfConstruction;
+    @XmlSchemaType(name = "date")
+    protected XMLGregorianCalendar dateOfDemolition;
+    protected List<ConstructionEventPropertyType> constructionEvent;
+    protected List<ElevationPropertyType> elevation;
+    protected List<HeightPropertyType> height;
+    protected List<OccupancyPropertyType> occupancy;
+    protected List<FacilityTypeAttributePropertyType> consFacilityTypeAttribute;
+    protected FacilityIdAttributePropertyType consFacilityIdAttribute;
+    protected List<FacilityAttributePropertyType> consFacilityAttribute;
+    protected ConstructionBaseAttributePropertyType consBaseAttribute;
+    protected ConstructionStructureAttributePropertyType consStructureAttribute;
+    protected List<DisasterRiskAttributePropertyType> consDisasterRiskAttribute;
+    protected List<DmAttributePropertyType> consDmAttribute;
+    protected DataQualityAttributePropertyType consDataQualityAttribute;
+    protected List<KeyValuePairAttributePropertyType> consKeyValuePairAttribute;
+    protected GeometryPropertyType lod0Geometry;
+    protected GeometryPropertyType lod1Geometry;
+    protected GeometryPropertyType lod2Geometry;
+    protected GeometryPropertyType lod3Geometry;
+    protected GeometryPropertyType lod4Geometry;
+    @XmlElement(name = "boundedBy")
+    protected List<_BoundarySurfacePropertyType> boundedBySurface;
+    protected List<ConstructionInstallationPropertyType> constructionInstallation;
 
     /**
-     * Gets the rest of the content model. 
+     * Gets the value of the conditionOfConstruction property.
      * 
-     * <p>
-     * You are getting this "catch-all" property because of the following reason: 
-     * The field name "BoundedBy" is used by two different parts of a schema. See: 
-     * line 1777 of file:/D:/Tools/ade-xjc-2.10.0/ade-xjc-2.10.0/iur-3.1/schemas/urbanObject.xsd
-     * line 28 of file:/D:/Tools/ade-xjc-2.10.0/ade-xjc-2.10.0/schemas/gml/3.1.1/base/feature.xsd
-     * <p>
-     * To get rid of this property, apply a property customization to one 
-     * of both of the following declarations to change their names: 
-     * Gets the value of the rest property.
+     * @return
+     *     possible object is
+     *     {@link ConditionOfConstructionValue }
+     *     
+     */
+    public ConditionOfConstructionValue getConditionOfConstruction() {
+        return conditionOfConstruction;
+    }
+
+    /**
+     * Sets the value of the conditionOfConstruction property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ConditionOfConstructionValue }
+     *     
+     */
+    public void setConditionOfConstruction(ConditionOfConstructionValue value) {
+        this.conditionOfConstruction = value;
+    }
+
+    public boolean isSetConditionOfConstruction() {
+        return (this.conditionOfConstruction!= null);
+    }
+
+    /**
+     * Gets the value of the dateOfConstruction property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getDateOfConstruction() {
+        return dateOfConstruction;
+    }
+
+    /**
+     * Sets the value of the dateOfConstruction property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setDateOfConstruction(XMLGregorianCalendar value) {
+        this.dateOfConstruction = value;
+    }
+
+    public boolean isSetDateOfConstruction() {
+        return (this.dateOfConstruction!= null);
+    }
+
+    /**
+     * Gets the value of the dateOfDemolition property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public XMLGregorianCalendar getDateOfDemolition() {
+        return dateOfDemolition;
+    }
+
+    /**
+     * Sets the value of the dateOfDemolition property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setDateOfDemolition(XMLGregorianCalendar value) {
+        this.dateOfDemolition = value;
+    }
+
+    public boolean isSetDateOfDemolition() {
+        return (this.dateOfDemolition!= null);
+    }
+
+    /**
+     * Gets the value of the constructionEvent property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the rest property.
+     * This is why there is not a <CODE>set</CODE> method for the constructionEvent property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRest().add(newItem);
+     *    getConstructionEvent().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link ConditionOfConstructionValue }{@code >}
-     * {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
-     * {@link JAXBElement }{@code <}{@link XMLGregorianCalendar }{@code >}
-     * {@link JAXBElement }{@code <}{@link ConstructionEventPropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ElevationPropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link HeightPropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link OccupancyPropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link FacilityTypeAttributePropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link FacilityIdAttributePropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link FacilityAttributePropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ConstructionBaseAttributePropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ConstructionStructureAttributePropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link DisasterRiskAttributePropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link DmAttributePropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link DataQualityAttributePropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link KeyValuePairAttributePropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link GeometryPropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link GeometryPropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link GeometryPropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link GeometryPropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link GeometryPropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link _BoundarySurfacePropertyType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ConstructionInstallationPropertyType }{@code >}
+     * {@link ConstructionEventPropertyType }
      * 
      * 
      */
-    public List<JAXBElement<?>> getRest() {
-        if (rest == null) {
-            rest = new ArrayList<JAXBElement<?>>();
+    public List<ConstructionEventPropertyType> getConstructionEvent() {
+        if (constructionEvent == null) {
+            constructionEvent = new ArrayList<ConstructionEventPropertyType>();
         }
-        return this.rest;
+        return this.constructionEvent;
+    }
+
+    public boolean isSetConstructionEvent() {
+        return ((this.constructionEvent!= null)&&(!this.constructionEvent.isEmpty()));
+    }
+
+    public void unsetConstructionEvent() {
+        this.constructionEvent = null;
+    }
+
+    /**
+     * Gets the value of the elevation property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the elevation property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getElevation().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ElevationPropertyType }
+     * 
+     * 
+     */
+    public List<ElevationPropertyType> getElevation() {
+        if (elevation == null) {
+            elevation = new ArrayList<ElevationPropertyType>();
+        }
+        return this.elevation;
+    }
+
+    public boolean isSetElevation() {
+        return ((this.elevation!= null)&&(!this.elevation.isEmpty()));
+    }
+
+    public void unsetElevation() {
+        this.elevation = null;
+    }
+
+    /**
+     * Gets the value of the height property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the height property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getHeight().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link HeightPropertyType }
+     * 
+     * 
+     */
+    public List<HeightPropertyType> getHeight() {
+        if (height == null) {
+            height = new ArrayList<HeightPropertyType>();
+        }
+        return this.height;
+    }
+
+    public boolean isSetHeight() {
+        return ((this.height!= null)&&(!this.height.isEmpty()));
+    }
+
+    public void unsetHeight() {
+        this.height = null;
+    }
+
+    /**
+     * Gets the value of the occupancy property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the occupancy property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getOccupancy().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link OccupancyPropertyType }
+     * 
+     * 
+     */
+    public List<OccupancyPropertyType> getOccupancy() {
+        if (occupancy == null) {
+            occupancy = new ArrayList<OccupancyPropertyType>();
+        }
+        return this.occupancy;
+    }
+
+    public boolean isSetOccupancy() {
+        return ((this.occupancy!= null)&&(!this.occupancy.isEmpty()));
+    }
+
+    public void unsetOccupancy() {
+        this.occupancy = null;
+    }
+
+    /**
+     * Gets the value of the consFacilityTypeAttribute property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the consFacilityTypeAttribute property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getConsFacilityTypeAttribute().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link FacilityTypeAttributePropertyType }
+     * 
+     * 
+     */
+    public List<FacilityTypeAttributePropertyType> getConsFacilityTypeAttribute() {
+        if (consFacilityTypeAttribute == null) {
+            consFacilityTypeAttribute = new ArrayList<FacilityTypeAttributePropertyType>();
+        }
+        return this.consFacilityTypeAttribute;
+    }
+
+    public boolean isSetConsFacilityTypeAttribute() {
+        return ((this.consFacilityTypeAttribute!= null)&&(!this.consFacilityTypeAttribute.isEmpty()));
+    }
+
+    public void unsetConsFacilityTypeAttribute() {
+        this.consFacilityTypeAttribute = null;
+    }
+
+    /**
+     * Gets the value of the consFacilityIdAttribute property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link FacilityIdAttributePropertyType }
+     *     
+     */
+    public FacilityIdAttributePropertyType getConsFacilityIdAttribute() {
+        return consFacilityIdAttribute;
+    }
+
+    /**
+     * Sets the value of the consFacilityIdAttribute property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link FacilityIdAttributePropertyType }
+     *     
+     */
+    public void setConsFacilityIdAttribute(FacilityIdAttributePropertyType value) {
+        this.consFacilityIdAttribute = value;
+    }
+
+    public boolean isSetConsFacilityIdAttribute() {
+        return (this.consFacilityIdAttribute!= null);
+    }
+
+    /**
+     * Gets the value of the consFacilityAttribute property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the consFacilityAttribute property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getConsFacilityAttribute().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link FacilityAttributePropertyType }
+     * 
+     * 
+     */
+    public List<FacilityAttributePropertyType> getConsFacilityAttribute() {
+        if (consFacilityAttribute == null) {
+            consFacilityAttribute = new ArrayList<FacilityAttributePropertyType>();
+        }
+        return this.consFacilityAttribute;
+    }
+
+    public boolean isSetConsFacilityAttribute() {
+        return ((this.consFacilityAttribute!= null)&&(!this.consFacilityAttribute.isEmpty()));
+    }
+
+    public void unsetConsFacilityAttribute() {
+        this.consFacilityAttribute = null;
+    }
+
+    /**
+     * Gets the value of the consBaseAttribute property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ConstructionBaseAttributePropertyType }
+     *     
+     */
+    public ConstructionBaseAttributePropertyType getConsBaseAttribute() {
+        return consBaseAttribute;
+    }
+
+    /**
+     * Sets the value of the consBaseAttribute property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ConstructionBaseAttributePropertyType }
+     *     
+     */
+    public void setConsBaseAttribute(ConstructionBaseAttributePropertyType value) {
+        this.consBaseAttribute = value;
+    }
+
+    public boolean isSetConsBaseAttribute() {
+        return (this.consBaseAttribute!= null);
+    }
+
+    /**
+     * Gets the value of the consStructureAttribute property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link ConstructionStructureAttributePropertyType }
+     *     
+     */
+    public ConstructionStructureAttributePropertyType getConsStructureAttribute() {
+        return consStructureAttribute;
+    }
+
+    /**
+     * Sets the value of the consStructureAttribute property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ConstructionStructureAttributePropertyType }
+     *     
+     */
+    public void setConsStructureAttribute(ConstructionStructureAttributePropertyType value) {
+        this.consStructureAttribute = value;
+    }
+
+    public boolean isSetConsStructureAttribute() {
+        return (this.consStructureAttribute!= null);
+    }
+
+    /**
+     * Gets the value of the consDisasterRiskAttribute property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the consDisasterRiskAttribute property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getConsDisasterRiskAttribute().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link DisasterRiskAttributePropertyType }
+     * 
+     * 
+     */
+    public List<DisasterRiskAttributePropertyType> getConsDisasterRiskAttribute() {
+        if (consDisasterRiskAttribute == null) {
+            consDisasterRiskAttribute = new ArrayList<DisasterRiskAttributePropertyType>();
+        }
+        return this.consDisasterRiskAttribute;
+    }
+
+    public boolean isSetConsDisasterRiskAttribute() {
+        return ((this.consDisasterRiskAttribute!= null)&&(!this.consDisasterRiskAttribute.isEmpty()));
+    }
+
+    public void unsetConsDisasterRiskAttribute() {
+        this.consDisasterRiskAttribute = null;
+    }
+
+    /**
+     * Gets the value of the consDmAttribute property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the consDmAttribute property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getConsDmAttribute().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link DmAttributePropertyType }
+     * 
+     * 
+     */
+    public List<DmAttributePropertyType> getConsDmAttribute() {
+        if (consDmAttribute == null) {
+            consDmAttribute = new ArrayList<DmAttributePropertyType>();
+        }
+        return this.consDmAttribute;
+    }
+
+    public boolean isSetConsDmAttribute() {
+        return ((this.consDmAttribute!= null)&&(!this.consDmAttribute.isEmpty()));
+    }
+
+    public void unsetConsDmAttribute() {
+        this.consDmAttribute = null;
+    }
+
+    /**
+     * Gets the value of the consDataQualityAttribute property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link DataQualityAttributePropertyType }
+     *     
+     */
+    public DataQualityAttributePropertyType getConsDataQualityAttribute() {
+        return consDataQualityAttribute;
+    }
+
+    /**
+     * Sets the value of the consDataQualityAttribute property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link DataQualityAttributePropertyType }
+     *     
+     */
+    public void setConsDataQualityAttribute(DataQualityAttributePropertyType value) {
+        this.consDataQualityAttribute = value;
+    }
+
+    public boolean isSetConsDataQualityAttribute() {
+        return (this.consDataQualityAttribute!= null);
+    }
+
+    /**
+     * Gets the value of the consKeyValuePairAttribute property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the consKeyValuePairAttribute property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getConsKeyValuePairAttribute().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link KeyValuePairAttributePropertyType }
+     * 
+     * 
+     */
+    public List<KeyValuePairAttributePropertyType> getConsKeyValuePairAttribute() {
+        if (consKeyValuePairAttribute == null) {
+            consKeyValuePairAttribute = new ArrayList<KeyValuePairAttributePropertyType>();
+        }
+        return this.consKeyValuePairAttribute;
+    }
+
+    public boolean isSetConsKeyValuePairAttribute() {
+        return ((this.consKeyValuePairAttribute!= null)&&(!this.consKeyValuePairAttribute.isEmpty()));
+    }
+
+    public void unsetConsKeyValuePairAttribute() {
+        this.consKeyValuePairAttribute = null;
+    }
+
+    /**
+     * Gets the value of the lod0Geometry property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link GeometryPropertyType }
+     *     
+     */
+    public GeometryPropertyType getLod0Geometry() {
+        return lod0Geometry;
+    }
+
+    /**
+     * Sets the value of the lod0Geometry property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link GeometryPropertyType }
+     *     
+     */
+    public void setLod0Geometry(GeometryPropertyType value) {
+        this.lod0Geometry = value;
+    }
+
+    public boolean isSetLod0Geometry() {
+        return (this.lod0Geometry!= null);
+    }
+
+    /**
+     * Gets the value of the lod1Geometry property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link GeometryPropertyType }
+     *     
+     */
+    public GeometryPropertyType getLod1Geometry() {
+        return lod1Geometry;
+    }
+
+    /**
+     * Sets the value of the lod1Geometry property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link GeometryPropertyType }
+     *     
+     */
+    public void setLod1Geometry(GeometryPropertyType value) {
+        this.lod1Geometry = value;
+    }
+
+    public boolean isSetLod1Geometry() {
+        return (this.lod1Geometry!= null);
+    }
+
+    /**
+     * Gets the value of the lod2Geometry property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link GeometryPropertyType }
+     *     
+     */
+    public GeometryPropertyType getLod2Geometry() {
+        return lod2Geometry;
+    }
+
+    /**
+     * Sets the value of the lod2Geometry property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link GeometryPropertyType }
+     *     
+     */
+    public void setLod2Geometry(GeometryPropertyType value) {
+        this.lod2Geometry = value;
+    }
+
+    public boolean isSetLod2Geometry() {
+        return (this.lod2Geometry!= null);
+    }
+
+    /**
+     * Gets the value of the lod3Geometry property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link GeometryPropertyType }
+     *     
+     */
+    public GeometryPropertyType getLod3Geometry() {
+        return lod3Geometry;
+    }
+
+    /**
+     * Sets the value of the lod3Geometry property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link GeometryPropertyType }
+     *     
+     */
+    public void setLod3Geometry(GeometryPropertyType value) {
+        this.lod3Geometry = value;
+    }
+
+    public boolean isSetLod3Geometry() {
+        return (this.lod3Geometry!= null);
+    }
+
+    /**
+     * Gets the value of the lod4Geometry property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link GeometryPropertyType }
+     *     
+     */
+    public GeometryPropertyType getLod4Geometry() {
+        return lod4Geometry;
+    }
+
+    /**
+     * Sets the value of the lod4Geometry property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link GeometryPropertyType }
+     *     
+     */
+    public void setLod4Geometry(GeometryPropertyType value) {
+        this.lod4Geometry = value;
+    }
+
+    public boolean isSetLod4Geometry() {
+        return (this.lod4Geometry!= null);
+    }
+
+    /**
+     * Gets the value of the boundedBySurface property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the boundedBySurface property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getBoundedBySurface().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link _BoundarySurfacePropertyType }
+     * 
+     * 
+     */
+    public List<_BoundarySurfacePropertyType> getBoundedBySurface() {
+        if (boundedBySurface == null) {
+            boundedBySurface = new ArrayList<_BoundarySurfacePropertyType>();
+        }
+        return this.boundedBySurface;
+    }
+
+    public boolean isSetBoundedBySurface() {
+        return ((this.boundedBySurface!= null)&&(!this.boundedBySurface.isEmpty()));
+    }
+
+    public void unsetBoundedBySurface() {
+        this.boundedBySurface = null;
+    }
+
+    /**
+     * Gets the value of the constructionInstallation property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the constructionInstallation property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getConstructionInstallation().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link ConstructionInstallationPropertyType }
+     * 
+     * 
+     */
+    public List<ConstructionInstallationPropertyType> getConstructionInstallation() {
+        if (constructionInstallation == null) {
+            constructionInstallation = new ArrayList<ConstructionInstallationPropertyType>();
+        }
+        return this.constructionInstallation;
+    }
+
+    public boolean isSetConstructionInstallation() {
+        return ((this.constructionInstallation!= null)&&(!this.constructionInstallation.isEmpty()));
+    }
+
+    public void unsetConstructionInstallation() {
+        this.constructionInstallation = null;
     }
 
 }

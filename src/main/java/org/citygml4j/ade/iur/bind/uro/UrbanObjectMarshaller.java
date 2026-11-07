@@ -97,6 +97,46 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(LargeCustomerFacilityAttribute.class, this::createLargeCustomerFacilityAttribute)
                     .with(RealEstateIDAttribute.class, this::createRealEstateIDAttribute)
                     .with(BuildingUsecaseAttribute.class, this::createBuildingUsecaseAttribute)
+                    .with(IfcBuilding.class, this::createIfcBuilding)
+                    .with(IfcSite.class, this::createIfcSite)
+                    .with(IfcSpace.class, this::createIfcSpace)
+                    .with(IfcBuildingStorey.class, this::createIfcBuildingStorey)
+                    .with(IfcBuildingElement.class, this::createIfcBuildingElement)
+                    .with(IfcWall.class, this::createIfcWall)
+                    .with(IfcWallStandardCase.class, this::createIfcWallStandardCase)
+                    .with(IfcCurtainWall.class, this::createIfcCurtainWall)
+                    .with(IfcRoof.class, this::createIfcRoof)
+                    .with(IfcWindow.class, this::createIfcWindow)
+                    .with(IfcDoor.class, this::createIfcDoor)
+                    .with(IfcOpeningElement.class, this::createIfcOpeningElement)
+                    .with(IfcFurnishingElement.class, this::createIfcFurnishingElement)
+                    .with(IfcProject.class, this::createIfcProject)
+                    .with(IfcGeometricRepresentationContext.class, this::createIfcGeometricRepresentationContext)
+                    .with(IfcAxis2Placement3D.class, this::createIfcAxis2Placement3D)
+                    .with(IfcUnit.class, this::createIfcUnit)
+                    .with(IfcGroup.class, this::createIfcGroup)
+                    .with(IfcZone.class, this::createIfcZone)
+                    .with(IfcPsetBuildingCommon.class, this::createIfcPsetBuildingCommon)
+                    .with(IfcPsetSiteCommon.class, this::createIfcPsetSiteCommon)
+                    .with(IfcCoordinateReferenceSystem.class, this::createIfcCoordinateReferenceSystem)
+                    .with(IfcProjectedCRS.class, this::createIfcProjectedCRS)
+                    .with(IfcMapConversion.class, this::createIfcMapConversion)
+                    .with(IfcClassificationReference.class, this::createIfcClassificationReference)
+                    .with(IfcClassification.class, this::createIfcClassification)
+                    .with(IfcPsetSpaceCommon.class, this::createIfcPsetSpaceCommon)
+                    .with(IfcSpaceBaseQuantity.class, this::createIfcSpaceBaseQuantity)
+                    .with(IfcPsetWindowCommon.class, this::createIfcPsetWindowCommon)
+                    .with(IfcPsetDoorCommon.class, this::createIfcPsetDoorCommon)
+                    .with(IfcPsetOpeningElementCommon.class, this::createIfcPsetOpeningElementCommon)
+                    .with(IndoorFurnishingAttribute.class, this::createIndoorFurnishingAttribute)
+                    .with(IndoorZoneAttribute.class, this::createIndoorZoneAttribute)
+                    .with(IndoorPublicTagAttribute.class, this::createIndoorPublicTagAttribute)
+                    .with(IndoorSpaceAttribute.class, this::createIndoorSpaceAttribute)
+                    .with(IndoorFacilityAttribute.class, this::createIndoorFacilityAttribute)
+                    .with(IndoorStoreyAttribute.class, this::createIndoorStoreyAttribute)
+                    .with(IndoorTactileTileAttribute.class, this::createIndoorTactileTileAttribute)
+                    .with(IndoorUserDefinedAttribute.class, this::createIndoorUserDefinedAttribute)
+                    .with(UserDefinedValue.class, this::createUserDefinedValue)
                     .with(CityFurnitureDetailAttribute.class, this::createCityFurnitureDetailAttribute)
                     .with(LandUseDetailAttribute.class, this::createLandUseDetailAttribute)
                     .with(TrafficObjectUsecaseAttribute.class, this::createTrafficObjectUsecaseAttribute)
@@ -142,6 +182,22 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(BldgDmAttributePropertyElement.class, this::createBldgDmAttributePropertyElement)
                     .with(BldgRealEstateIDAttributePropertyElement.class, this::createBldgRealEstateIDAttributePropertyElement)
                     .with(BldgUsecaseAttributePropertyElement.class, this::createBldgUsecaseAttributePropertyElement)
+                    .with(IfcBuildingAttributePropertyElement.class, this::createIfcBuildingAttributePropertyElement)
+                    .with(IfcBuildingStoreyAttributePropertyElement.class, this::createIfcBuildingStoreyAttributePropertyElement)
+                    .with(IfcLandUseAttributePropertyElement.class, this::createIfcLandUseAttributePropertyElement)
+                    .with(IfcRoomAttributePropertyElement.class, this::createIfcRoomAttributePropertyElement)
+                    .with(IfcOpeningAttributePropertyElement.class, this::createIfcOpeningAttributePropertyElement)
+                    .with(IfcBoundarySurfaceAttributePropertyElement.class, this::createIfcBoundarySurfaceAttributePropertyElement)
+                    .with(IfcBuildingInstallationAttributePropertyElement.class, this::createIfcBuildingInstallationAttributePropertyElement)
+                    .with(IfcIntBuildingInstallationAttributePropertyElement.class, this::createIfcIntBuildingInstallationAttributePropertyElement)
+                    .with(IfcBuildingFurnitureAttributePropertyElement.class, this::createIfcBuildingFurnitureAttributePropertyElement)
+                    .with(IndoorBuildingAttributePropertyElement.class, this::createIndoorBuildingAttributePropertyElement)
+                    .with(IndoorBoundarySurfaceAttributePropertyElement.class, this::createIndoorBoundarySurfaceAttributePropertyElement)
+                    .with(IndoorIntInstallationAttributePropertyElement.class, this::createIndoorIntInstallationAttributePropertyElement)
+                    .with(IndoorOpeningAttributePropertyElement.class, this::createIndoorOpeningAttributePropertyElement)
+                    .with(IndoorFurnitureAttributePropertyElement.class, this::createIndoorFurnitureAttributePropertyElement)
+                    .with(IndoorRoomAttributePropertyElement.class, this::createIndoorRoomAttributePropertyElement)
+                    .with(IndoorStoreyAttributePropertyElement.class, this::createIndoorStoreyAttributePropertyElement)
                     .with(FrnFacilityIdAttributePropertyElement.class, this::createFrnFacilityIdAttributePropertyElement)
                     .with(FrnFacilityTypeAttributePropertyElement.class, this::createFrnFacilityTypeAttributePropertyElement)
                     .with(FrnFacilityAttributePropertyElement.class, this::createFrnFacilityAttributePropertyElement)
@@ -281,6 +337,55 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(RealEstateIDAttributeProperty.class, this::marshalRealEstateIDAttributeProperty)
                     .with(BuildingUsecaseAttribute.class, this::marshalBuildingUsecaseAttribute)
                     .with(BuildingUsecaseAttributeProperty.class, this::marshalBuildingUsecaseAttributeProperty)
+                    .with(IfcBuilding.class, this::marshalIfcBuilding)
+                    .with(IfcSite.class, this::marshalIfcSite)
+                    .with(IfcSpace.class, this::marshalIfcSpace)
+                    .with(IfcBuildingStorey.class, this::marshalIfcBuildingStorey)
+                    .with(IfcBuildingElement.class, this::marshalIfcBuildingElement)
+                    .with(IfcWall.class, this::marshalIfcWall)
+                    .with(IfcWallStandardCase.class, this::marshalIfcWallStandardCase)
+                    .with(IfcCurtainWall.class, this::marshalIfcCurtainWall)
+                    .with(IfcRoof.class, this::marshalIfcRoof)
+                    .with(IfcWindow.class, this::marshalIfcWindow)
+                    .with(IfcDoor.class, this::marshalIfcDoor)
+                    .with(IfcOpeningElement.class, this::marshalIfcOpeningElement)
+                    .with(IfcFurnishingElement.class, this::marshalIfcFurnishingElement)
+                    .with(IfcProject.class, this::marshalIfcProject)
+                    .with(IfcGeometricRepresentationContext.class, this::marshalIfcGeometricRepresentationContext)
+                    .with(IfcGeometricRepresentationContextProperty.class, this::marshalIfcGeometricRepresentationContextProperty)
+                    .with(IfcAxis2Placement3D.class, this::marshalIfcAxis2Placement3D)
+                    .with(IfcAxis2Placement3DProperty.class, this::marshalIfcAxis2Placement3DProperty)
+                    .with(IfcUnit.class, this::marshalIfcUnit)
+                    .with(IfcUnitProperty.class, this::marshalIfcUnitProperty)
+                    .with(IfcGroup.class, this::marshalIfcGroup)
+                    .with(IfcZone.class, this::marshalIfcZone)
+                    .with(IfcPsetBuildingCommon.class, this::marshalIfcPsetBuildingCommon)
+                    .with(IfcPsetSiteCommon.class, this::marshalIfcPsetSiteCommon)
+                    .with(IfcCoordinateReferenceSystem.class, this::marshalIfcCoordinateReferenceSystem)
+                    .with(IfcProjectedCRS.class, this::marshalIfcProjectedCRS)
+                    .with(IfcCoordinateReferenceSystemProperty.class, this::marshalIfcCoordinateReferenceSystemProperty)
+                    .with(IfcMapConversion.class, this::marshalIfcMapConversion)
+                    .with(IfcCoordinateReferenceSystemSelect.class, this::marshalIfcCoordinateReferenceSystemSelect)
+                    .with(IfcClassificationReference.class, this::marshalIfcClassificationReference)
+                    .with(IfcClassification.class, this::marshalIfcClassification)
+                    .with(IfcClassificationProperty.class, this::marshalIfcClassificationProperty)
+                    .with(IfcPsetSpaceCommon.class, this::marshalIfcPsetSpaceCommon)
+                    .with(IfcSpaceBaseQuantity.class, this::marshalIfcSpaceBaseQuantity)
+                    .with(IfcPsetWindowCommon.class, this::marshalIfcPsetWindowCommon)
+                    .with(IfcPsetDoorCommon.class, this::marshalIfcPsetDoorCommon)
+                    .with(IfcPsetOpeningElementCommon.class, this::marshalIfcPsetOpeningElementCommon)
+                    .with(IfcAttributeProperty.class, this::marshalIfcAttributeProperty)
+                    .with(IndoorFurnishingAttribute.class, this::marshalIndoorFurnishingAttribute)
+                    .with(IndoorZoneAttribute.class, this::marshalIndoorZoneAttribute)
+                    .with(IndoorPublicTagAttribute.class, this::marshalIndoorPublicTagAttribute)
+                    .with(IndoorSpaceAttribute.class, this::marshalIndoorSpaceAttribute)
+                    .with(IndoorFacilityAttribute.class, this::marshalIndoorFacilityAttribute)
+                    .with(IndoorStoreyAttribute.class, this::marshalIndoorStoreyAttribute)
+                    .with(IndoorTactileTileAttribute.class, this::marshalIndoorTactileTileAttribute)
+                    .with(IndoorUserDefinedAttribute.class, this::marshalIndoorUserDefinedAttribute)
+                    .with(UserDefinedValue.class, this::marshalUserDefinedValue)
+                    .with(UserDefinedValueProperty.class, this::marshalUserDefinedValueProperty)
+                    .with(IndoorAttributeProperty.class, this::marshalIndoorAttributeProperty)
                     .with(CityFurnitureDetailAttribute.class, this::marshalCityFurnitureDetailAttribute)
                     .with(CityFurnitureDetailAttributeProperty.class, this::marshalCityFurnitureDetailAttributeProperty)
                     .with(LandUseDetailAttribute.class, this::marshalLandUseDetailAttribute)
@@ -2244,6 +2349,784 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return dest;
     }
 
+    private void marshalIfcRoot(IfcRoot src, IfcRootType dest) {
+        dest.setGlobalId(src.getGlobalId());
+        dest.setName(src.getName());
+        dest.setDescription(src.getDescription());
+    }
+
+    private void marshalIfcObjectDefinition(IfcObjectDefinition src, IfcObjectDefinitionType dest) {
+        marshalIfcRoot(src, dest);
+    }
+
+    private void marshalIfcObject(IfcObject src, IfcObjectType dest) {
+        marshalIfcObjectDefinition(src, dest);
+        dest.setObjectType(src.getObjectType());
+    }
+
+    private void marshalIfcProduct(IfcProduct src, IfcProductType dest) {
+        marshalIfcObject(src, dest);
+    }
+
+    private void marshalIfcSpatialStructureElement(IfcSpatialStructureElement src, IfcSpatialStructureElementType dest) {
+        marshalIfcProduct(src, dest);
+
+        dest.setLongName(src.getLongName());
+
+        if (src.getCompositionType() != null)
+            dest.setCompositionType(jp.geospatial.iur._3_1.uro.IfcElementCompositionEnum.fromValue(src.getCompositionType().value()));
+    }
+
+    private IfcBuildingType marshalIfcBuilding(IfcBuilding src) {
+        IfcBuildingType dest = factory.createIfcBuildingType();
+        marshalIfcSpatialStructureElement(src, dest);
+
+        if (src.getElevationOfRefHeight() != null)
+            dest.setElevationOfRefHeight(helper.getGMLMarshaller().marshalLength(src.getElevationOfRefHeight()));
+
+        if (src.getElevationOfTerrain() != null)
+            dest.setElevationOfTerrain(helper.getGMLMarshaller().marshalLength(src.getElevationOfTerrain()));
+
+        if (src.getBuildingAddress() != null)
+            dest.setBuildingAddress(helper.getCore200Marshaller().marshalAddressProperty(src.getBuildingAddress()));
+
+        return dest;
+    }
+
+    private IfcSiteType marshalIfcSite(IfcSite src) {
+        IfcSiteType dest = factory.createIfcSiteType();
+        marshalIfcSpatialStructureElement(src, dest);
+
+        dest.setRefLongitude(src.getRefLongitude());
+        dest.setRefLatitude(src.getRefLatitude());
+
+        if (src.getRefElevation() != null)
+            dest.setRefElevation(helper.getGMLMarshaller().marshalLength(src.getRefElevation()));
+
+        dest.setLandTitleNumber(src.getLandTitleNumber());
+
+        if (src.getSiteAddress() != null)
+            dest.setSiteAddress(helper.getCore200Marshaller().marshalAddressProperty(src.getSiteAddress()));
+
+        return dest;
+    }
+
+    private IfcSpaceType marshalIfcSpace(IfcSpace src) {
+        IfcSpaceType dest = factory.createIfcSpaceType();
+        marshalIfcSpatialStructureElement(src, dest);
+
+        if (src.getInteriorOrExteriorSpace() != null)
+            dest.setInteriorOrExteriorSpace(jp.geospatial.iur._3_1.uro.IfcInternalOrExternalEnum.fromValue(src.getInteriorOrExteriorSpace().value()));
+
+        if (src.getElevationWithFlooring() != null)
+            dest.setElevationWithFlooring(helper.getGMLMarshaller().marshalLength(src.getElevationWithFlooring()));
+
+        return dest;
+    }
+
+    private IfcBuildingStoreyType marshalIfcBuildingStorey(IfcBuildingStorey src) {
+        IfcBuildingStoreyType dest = factory.createIfcBuildingStoreyType();
+        marshalIfcSpatialStructureElement(src, dest);
+
+        if (src.getElevation() != null)
+            dest.setElevation(helper.getGMLMarshaller().marshalLength(src.getElevation()));
+
+        return dest;
+    }
+
+    private void marshalIfcElement(IfcElement src, IfcElementType dest) {
+        marshalIfcProduct(src, dest);
+        dest.setTag(src.getTag());
+    }
+
+    private void marshalIfcBuildingElement(IfcBuildingElement src, IfcBuildingElementType dest) {
+        marshalIfcElement(src, dest);
+
+        if (src.getElementType() != null)
+            dest.setElementType(helper.getGMLMarshaller().marshalCode(src.getElementType()));
+
+        if (src.getPredefinedType() != null)
+            dest.setPredefinedType(helper.getGMLMarshaller().marshalCode(src.getPredefinedType()));
+
+        if (src.getShapeType() != null)
+            dest.setShapeType(helper.getGMLMarshaller().marshalCode(src.getShapeType()));
+
+        if (src.getNumberOfRiser() != null)
+            dest.setNumberOfRiser(BigInteger.valueOf(src.getNumberOfRiser()));
+
+        if (src.getNumberOfTreads() != null)
+            dest.setNumberOfTreads(BigInteger.valueOf(src.getNumberOfTreads()));
+
+        if (src.getRiserHeight() != null)
+            dest.setRiserHeight(helper.getGMLMarshaller().marshalLength(src.getRiserHeight()));
+
+        if (src.getTreadLength() != null)
+            dest.setTreadLength(helper.getGMLMarshaller().marshalLength(src.getTreadLength()));
+
+        if (src.getOperationType() != null)
+            dest.setOperationType(jp.geospatial.iur._3_1.uro.IfcTransportElementTypeEnum.fromValue(src.getOperationType().value()));
+
+        if (src.getCapacityByWeight() != null)
+            dest.setCapacityByWeight(helper.getGMLMarshaller().marshalMeasure(src.getCapacityByWeight()));
+
+        if (src.getCapacityByNumber() != null)
+            dest.setCapacityByNumber(BigInteger.valueOf(src.getCapacityByNumber()));
+    }
+
+    private IfcBuildingElementType marshalIfcBuildingElement(IfcBuildingElement src) {
+        IfcBuildingElementType dest = factory.createIfcBuildingElementType();
+        marshalIfcBuildingElement(src, dest);
+        return dest;
+    }
+
+    private void marshalIfcWall(IfcWall src, IfcWallType dest) {
+        marshalIfcBuildingElement(src, dest);
+
+        if (src.getNominalLength() != null)
+            dest.setNominalLength(helper.getGMLMarshaller().marshalLength(src.getNominalLength()));
+
+        if (src.getNominalWidth() != null)
+            dest.setNominalWidth(helper.getGMLMarshaller().marshalLength(src.getNominalWidth()));
+
+        if (src.getNominalHeight() != null)
+            dest.setNominalHeight(helper.getGMLMarshaller().marshalLength(src.getNominalHeight()));
+
+        if (src.getGrossFootPrintArea() != null)
+            dest.setGrossFootPrintArea(helper.getGMLMarshaller().marshalMeasure(src.getGrossFootPrintArea()));
+
+        if (src.getNetFootPrintArea() != null)
+            dest.setNetFootPrintArea(helper.getGMLMarshaller().marshalMeasure(src.getNetFootPrintArea()));
+
+        if (src.getGrossSideArea() != null)
+            dest.setGrossSideArea(helper.getGMLMarshaller().marshalMeasure(src.getGrossSideArea()));
+
+        if (src.getNetSideArea() != null)
+            dest.setNetSideArea(helper.getGMLMarshaller().marshalMeasure(src.getNetSideArea()));
+
+        if (src.getGrossSideAreaLeft() != null)
+            dest.setGrossSideAreaLeft(helper.getGMLMarshaller().marshalMeasure(src.getGrossSideAreaLeft()));
+
+        if (src.getNetSideAreaLeft() != null)
+            dest.setNetSideAreaLeft(helper.getGMLMarshaller().marshalMeasure(src.getNetSideAreaLeft()));
+
+        if (src.getGrossSideAreaRight() != null)
+            dest.setGrossSideAreaRight(helper.getGMLMarshaller().marshalMeasure(src.getGrossSideAreaRight()));
+
+        if (src.getNetSideAreaRight() != null)
+            dest.setNetSideAreaRight(helper.getGMLMarshaller().marshalMeasure(src.getNetSideAreaRight()));
+
+        if (src.getGrossVolume() != null)
+            dest.setGrossVolume(helper.getGMLMarshaller().marshalMeasure(src.getGrossVolume()));
+
+        if (src.getNetVolume() != null)
+            dest.setNetVolume(helper.getGMLMarshaller().marshalMeasure(src.getNetVolume()));
+    }
+
+    private IfcWallType marshalIfcWall(IfcWall src) {
+        IfcWallType dest = factory.createIfcWallType();
+        marshalIfcWall(src, dest);
+        return dest;
+    }
+
+    private IfcWallStandardCaseType marshalIfcWallStandardCase(IfcWallStandardCase src) {
+        IfcWallStandardCaseType dest = factory.createIfcWallStandardCaseType();
+        marshalIfcWall(src, dest);
+        return dest;
+    }
+
+    private IfcCurtainWallType marshalIfcCurtainWall(IfcCurtainWall src) {
+        IfcCurtainWallType dest = factory.createIfcCurtainWallType();
+        marshalIfcBuildingElement(src, dest);
+        return dest;
+    }
+
+    private IfcRoofType marshalIfcRoof(IfcRoof src) {
+        IfcRoofType dest = factory.createIfcRoofType();
+        marshalIfcBuildingElement(src, dest);
+        return dest;
+    }
+
+    private IfcWindowType marshalIfcWindow(IfcWindow src) {
+        IfcWindowType dest = factory.createIfcWindowType();
+        marshalIfcBuildingElement(src, dest);
+
+        if (src.getOverallHeight() != null)
+            dest.setOverallHeight(helper.getGMLMarshaller().marshalLength(src.getOverallHeight()));
+
+        if (src.getOverallWidth() != null)
+            dest.setOverallWidth(helper.getGMLMarshaller().marshalLength(src.getOverallWidth()));
+
+        return dest;
+    }
+
+    private IfcDoorType marshalIfcDoor(IfcDoor src) {
+        IfcDoorType dest = factory.createIfcDoorType();
+        marshalIfcBuildingElement(src, dest);
+
+        if (src.getOverallHeight() != null)
+            dest.setOverallHeight(helper.getGMLMarshaller().marshalLength(src.getOverallHeight()));
+
+        if (src.getOverallWidth() != null)
+            dest.setOverallWidth(helper.getGMLMarshaller().marshalLength(src.getOverallWidth()));
+
+        return dest;
+    }
+
+    private IfcOpeningElementType marshalIfcOpeningElement(IfcOpeningElement src) {
+        IfcOpeningElementType dest = factory.createIfcOpeningElementType();
+        marshalIfcElement(src, dest);
+
+        if (src.getNominalArea() != null)
+            dest.setNominalArea(helper.getGMLMarshaller().marshalMeasure(src.getNominalArea()));
+
+        if (src.getNominalVolume() != null)
+            dest.setNominalVolume(helper.getGMLMarshaller().marshalMeasure(src.getNominalVolume()));
+
+        return dest;
+    }
+
+    private IfcFurnishingElementType marshalIfcFurnishingElement(IfcFurnishingElement src) {
+        IfcFurnishingElementType dest = factory.createIfcFurnishingElementType();
+        marshalIfcElement(src, dest);
+        return dest;
+    }
+
+    private IfcProjectType marshalIfcProject(IfcProject src) {
+        IfcProjectType dest = factory.createIfcProjectType();
+        marshalIfcObject(src, dest);
+
+        dest.setLongName(src.getLongName());
+        dest.setPhase(src.getPhase());
+
+        if (src.getRepresentationContexts() != null)
+            dest.setRepresentationContexts(marshalIfcGeometricRepresentationContextProperty(src.getRepresentationContexts()));
+
+        for (IfcUnitProperty unitsInContext : src.getUnitsInContext())
+            dest.getUnitsInContext().add(marshalIfcUnitProperty(unitsInContext));
+
+        return dest;
+    }
+
+    private IfcGeometricRepresentationContextType marshalIfcGeometricRepresentationContext(IfcGeometricRepresentationContext src) {
+        IfcGeometricRepresentationContextType dest = factory.createIfcGeometricRepresentationContextType();
+
+        dest.setContextIdentifier(src.getContextIdentifier());
+        dest.setContextType(src.getContextType());
+
+        if (src.getCoordinateSpaceDimension() != null)
+            dest.setCoordinateSpaceDimension(BigInteger.valueOf(src.getCoordinateSpaceDimension()));
+
+        dest.setPrecision(src.getPrecision());
+
+        if (src.getWorldCoordinateSystem() != null)
+            dest.setWorldCoordinateSystem(marshalIfcAxis2Placement3DProperty(src.getWorldCoordinateSystem()));
+
+        for (Double trueNorth : src.getTrueNorth())
+            dest.getTrueNorth().add(trueNorth);
+
+        return dest;
+    }
+
+    private IfcGeometricRepresentationContextPropertyType marshalIfcGeometricRepresentationContextProperty(IfcGeometricRepresentationContextProperty src) {
+        IfcGeometricRepresentationContextPropertyType dest = factory.createIfcGeometricRepresentationContextPropertyType();
+
+        if (src.isSetObject())
+            dest.setIfcGeometricRepresentationContext(marshalIfcGeometricRepresentationContext(src.getObject()));
+
+        return dest;
+    }
+
+    private IfcAxis2Placement3DType marshalIfcAxis2Placement3D(IfcAxis2Placement3D src) {
+        IfcAxis2Placement3DType dest = factory.createIfcAxis2Placement3DType();
+
+        if (src.getLocation() != null)
+            dest.setLocation(helper.getGMLMarshaller().marshalPointProperty(src.getLocation()));
+
+        for (Double axis : src.getAxis())
+            dest.getAxis().add(axis);
+
+        for (Double refDirection : src.getRefDirection())
+            dest.getRefDirection().add(refDirection);
+
+        return dest;
+    }
+
+    private IfcAxis2Placement3DPropertyType marshalIfcAxis2Placement3DProperty(IfcAxis2Placement3DProperty src) {
+        IfcAxis2Placement3DPropertyType dest = factory.createIfcAxis2Placement3DPropertyType();
+
+        if (src.isSetObject())
+            dest.setIfcAxis2Placement3D(marshalIfcAxis2Placement3D(src.getObject()));
+
+        return dest;
+    }
+
+    private IfcUnitType marshalIfcUnit(IfcUnit src) {
+        IfcUnitType dest = factory.createIfcUnitType();
+
+        if (src.getDimensions() != null)
+            dest.setDimensions(BigInteger.valueOf(src.getDimensions()));
+
+        if (src.getUnitType() != null)
+            dest.setUnitType(jp.geospatial.iur._3_1.uro.IfcUnitEnum.fromValue(src.getUnitType().value()));
+
+        dest.setPrefix(src.getPrefix());
+        dest.setName(src.getName());
+
+        return dest;
+    }
+
+    private IfcUnitPropertyType marshalIfcUnitProperty(IfcUnitProperty src) {
+        IfcUnitPropertyType dest = factory.createIfcUnitPropertyType();
+
+        if (src.isSetObject())
+            dest.setIfcUnit(marshalIfcUnit(src.getObject()));
+
+        return dest;
+    }
+
+    private void marshalIfcGroup(IfcGroup src, IfcGroupType dest) {
+        marshalIfcObject(src, dest);
+    }
+
+    private IfcGroupType marshalIfcGroup(IfcGroup src) {
+        IfcGroupType dest = factory.createIfcGroupType();
+        marshalIfcGroup(src, dest);
+        return dest;
+    }
+
+    private IfcZoneType marshalIfcZone(IfcZone src) {
+        IfcZoneType dest = factory.createIfcZoneType();
+        marshalIfcGroup(src, dest);
+        return dest;
+    }
+
+    private IfcPsetBuildingCommonType marshalIfcPsetBuildingCommon(IfcPsetBuildingCommon src) {
+        IfcPsetBuildingCommonType dest = factory.createIfcPsetBuildingCommonType();
+
+        dest.setBuildingId(src.getBuildingId());
+        dest.setIsPermanentId(src.getIsPermanentId());
+        dest.setMainFireUse(src.getMainFireUse());
+        dest.setAncillaryFireUse(src.getAncillaryFireUse());
+        dest.setSprinklerProtection(src.getSprinklerProtection());
+        dest.setSprinklerProtectionAutomatic(src.getSprinklerProtectionAutomatic());
+
+        if (src.getOccupancyType() != null)
+            dest.setOccupancyType(helper.getGMLMarshaller().marshalCode(src.getOccupancyType()));
+
+        if (src.getGrossPlannedArea() != null)
+            dest.setGrossPlannedArea(helper.getGMLMarshaller().marshalMeasure(src.getGrossPlannedArea()));
+
+        if (src.getNumberOfStoreys() != null)
+            dest.setNumberOfStoreys(BigInteger.valueOf(src.getNumberOfStoreys()));
+
+        if (src.getYearOfConstruction() != null)
+            dest.setYearOfConstruction(marshaller.toCalendar(src.getYearOfConstruction()));
+
+        dest.setIsLandmarked(src.getIsLandmarked());
+
+        return dest;
+    }
+
+    private IfcPsetSiteCommonType marshalIfcPsetSiteCommon(IfcPsetSiteCommon src) {
+        IfcPsetSiteCommonType dest = factory.createIfcPsetSiteCommonType();
+
+        if (src.getBuildableArea() != null)
+            dest.setBuildableArea(helper.getGMLMarshaller().marshalMeasure(src.getBuildableArea()));
+
+        if (src.getTotalArea() != null)
+            dest.setTotalArea(helper.getGMLMarshaller().marshalMeasure(src.getTotalArea()));
+
+        if (src.getBuildingHeightLimit() != null)
+            dest.setBuildingHeightLimit(helper.getGMLMarshaller().marshalLength(src.getBuildingHeightLimit()));
+
+        return dest;
+    }
+
+    private void marshalIfcCoordinateReferenceSystem(IfcCoordinateReferenceSystem src, IfcCoordinateReferenceSystemType dest) {
+        dest.setName(src.getName());
+        dest.setDescription(src.getDescription());
+        dest.setGeodeticDatum(src.getGeodeticDatum());
+        dest.setVerticalDatum(src.getVerticalDatum());
+    }
+
+    private IfcCoordinateReferenceSystemType marshalIfcCoordinateReferenceSystem(IfcCoordinateReferenceSystem src) {
+        IfcCoordinateReferenceSystemType dest = factory.createIfcCoordinateReferenceSystemType();
+        marshalIfcCoordinateReferenceSystem(src, dest);
+        return dest;
+    }
+
+    private IfcProjectedCRSType marshalIfcProjectedCRS(IfcProjectedCRS src) {
+        IfcProjectedCRSType dest = factory.createIfcProjectedCRSType();
+        marshalIfcCoordinateReferenceSystem(src, dest);
+
+        dest.setMapUnit(src.getMapUnit());
+        dest.setMapProjection(src.getMapProjection());
+        dest.setMapZone(src.getMapZone());
+
+        return dest;
+    }
+
+    private IfcCoordinateReferenceSystemPropertyType marshalIfcCoordinateReferenceSystemProperty(IfcCoordinateReferenceSystemProperty src) {
+        IfcCoordinateReferenceSystemPropertyType dest = factory.createIfcCoordinateReferenceSystemPropertyType();
+
+        if (src.getObject() != null) {
+            JAXBElement<?> elem = helper.getJAXBMarshaller().marshalJAXBElement(src.getObject());
+            if (elem != null && elem.getValue() instanceof IfcCoordinateReferenceSystemType)
+                dest.setIfcCoordinateReferenceSystem((JAXBElement<? extends IfcCoordinateReferenceSystemType>) elem);
+        }
+
+        return dest;
+    }
+
+    private IfcMapConversionType marshalIfcMapConversion(IfcMapConversion src) {
+        IfcMapConversionType dest = factory.createIfcMapConversionType();
+
+        if (src.getSourceCRS() != null)
+            dest.setSourceCRS(marshalIfcCoordinateReferenceSystemSelect(src.getSourceCRS()));
+
+        if (src.getTargetCRS() != null)
+            dest.setTargetCRS(marshalIfcCoordinateReferenceSystemProperty(src.getTargetCRS()));
+
+        if (src.getEastings() != null)
+            dest.setEastings(helper.getGMLMarshaller().marshalLength(src.getEastings()));
+
+        if (src.getNorthings() != null)
+            dest.setNorthings(helper.getGMLMarshaller().marshalLength(src.getNorthings()));
+
+        if (src.getOrthogonalHeight() != null)
+            dest.setOrthogonalHeight(helper.getGMLMarshaller().marshalLength(src.getOrthogonalHeight()));
+
+        dest.setXAxisAbscissa(src.getXAxisAbscissa());
+        dest.setXAxisOrdinate(src.getXAxisOrdinate());
+        dest.setScale(src.getScale());
+
+        return dest;
+    }
+
+    private IfcCoordinateReferenceSystemSelectType marshalIfcCoordinateReferenceSystemSelect(IfcCoordinateReferenceSystemSelect src) {
+        IfcCoordinateReferenceSystemSelectType dest = factory.createIfcCoordinateReferenceSystemSelectType();
+
+        if (src.getCrs() != null)
+            dest.setCrs(marshalIfcCoordinateReferenceSystemProperty(src.getCrs()));
+
+        if (src.getContext() != null)
+            dest.setContext(marshalIfcGeometricRepresentationContextProperty(src.getContext()));
+
+        return dest;
+    }
+
+    private IfcClassificationReferenceType marshalIfcClassificationReference(IfcClassificationReference src) {
+        IfcClassificationReferenceType dest = factory.createIfcClassificationReferenceType();
+
+        dest.setLocation(src.getLocation());
+
+        if (src.getItemReference() != null)
+            dest.setItemReference(helper.getGMLMarshaller().marshalCode(src.getItemReference()));
+
+        dest.setName(src.getName());
+
+        if (src.getReferencedSource() != null)
+            dest.setReferencedSource(marshalIfcClassificationProperty(src.getReferencedSource()));
+
+        return dest;
+    }
+
+    private IfcClassificationType marshalIfcClassification(IfcClassification src) {
+        IfcClassificationType dest = factory.createIfcClassificationType();
+
+        dest.setSource(src.getSource());
+        dest.setEdition(src.getEdition());
+
+        if (src.getEditionDate() != null)
+            dest.setEditionDate(marshaller.toCalendar(src.getEditionDate()));
+
+        dest.setName(src.getName());
+
+        return dest;
+    }
+
+    private IfcClassificationPropertyType marshalIfcClassificationProperty(IfcClassificationProperty src) {
+        IfcClassificationPropertyType dest = factory.createIfcClassificationPropertyType();
+
+        if (src.isSetObject())
+            dest.setIfcClassification(marshalIfcClassification(src.getObject()));
+
+        return dest;
+    }
+
+    private IfcPsetSpaceCommonType marshalIfcPsetSpaceCommon(IfcPsetSpaceCommon src) {
+        IfcPsetSpaceCommonType dest = factory.createIfcPsetSpaceCommonType();
+
+        dest.setReference(src.getReference());
+        dest.setCategory(src.getCategory());
+        dest.setFloorCovering(src.getFloorCovering());
+        dest.setWallCovering(src.getWallCovering());
+        dest.setCeilingCovering(src.getCeilingCovering());
+        dest.setSkirtingBoard(src.getSkirtingBoard());
+
+        if (src.getGrossPlannedArea() != null)
+            dest.setGrossPlannedArea(helper.getGMLMarshaller().marshalMeasure(src.getGrossPlannedArea()));
+
+        if (src.getNetPlannedArea() != null)
+            dest.setNetPlannedArea(helper.getGMLMarshaller().marshalMeasure(src.getNetPlannedArea()));
+
+        dest.setPubliclyAccessible(src.getPubliclyAccessible());
+        dest.setHandicapAccessible(src.getHandicapAccessible());
+        dest.setConcealedFlooring(src.getConcealedFlooring());
+        dest.setConcealedCeiling(src.getConcealedCeiling());
+
+        return dest;
+    }
+
+    private IfcSpaceBaseQuantityType marshalIfcSpaceBaseQuantity(IfcSpaceBaseQuantity src) {
+        IfcSpaceBaseQuantityType dest = factory.createIfcSpaceBaseQuantityType();
+
+        if (src.getNominalHeight() != null)
+            dest.setNominalHeight(helper.getGMLMarshaller().marshalLength(src.getNominalHeight()));
+
+        if (src.getClearHeight() != null)
+            dest.setClearHeight(helper.getGMLMarshaller().marshalLength(src.getClearHeight()));
+
+        if (src.getFinishCeilingHeight() != null)
+            dest.setFinishCeilingHeight(helper.getGMLMarshaller().marshalLength(src.getFinishCeilingHeight()));
+
+        if (src.getGrossPerimeter() != null)
+            dest.setGrossPerimeter(helper.getGMLMarshaller().marshalLength(src.getGrossPerimeter()));
+
+        if (src.getNetPerimeter() != null)
+            dest.setNetPerimeter(helper.getGMLMarshaller().marshalLength(src.getNetPerimeter()));
+
+        if (src.getGrossCeilingArea() != null)
+            dest.setGrossCeilingArea(helper.getGMLMarshaller().marshalMeasure(src.getGrossCeilingArea()));
+
+        if (src.getGrossFloorArea() != null)
+            dest.setGrossFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getGrossFloorArea()));
+
+        if (src.getNetCeilingArea() != null)
+            dest.setNetCeilingArea(helper.getGMLMarshaller().marshalMeasure(src.getNetCeilingArea()));
+
+        if (src.getNetFloorArea() != null)
+            dest.setNetFloorArea(helper.getGMLMarshaller().marshalMeasure(src.getNetFloorArea()));
+
+        if (src.getGrossWallArea() != null)
+            dest.setGrossWallArea(helper.getGMLMarshaller().marshalMeasure(src.getGrossWallArea()));
+
+        if (src.getNetWallArea() != null)
+            dest.setNetWallArea(helper.getGMLMarshaller().marshalMeasure(src.getNetWallArea()));
+
+        if (src.getGrossVolume() != null)
+            dest.setGrossVolume(helper.getGMLMarshaller().marshalMeasure(src.getGrossVolume()));
+
+        if (src.getNetVolume() != null)
+            dest.setNetVolume(helper.getGMLMarshaller().marshalMeasure(src.getNetVolume()));
+
+        return dest;
+    }
+
+    private IfcPsetWindowCommonType marshalIfcPsetWindowCommon(IfcPsetWindowCommon src) {
+        IfcPsetWindowCommonType dest = factory.createIfcPsetWindowCommonType();
+
+        dest.setReference(src.getReference());
+        dest.setAcousticRating(src.getAcousticRating());
+        dest.setFireRating(src.getFireRating());
+        dest.setSecurityRating(src.getSecurityRating());
+        dest.setIsExternal(src.getIsExternal());
+        dest.setInfiltration(src.getInfiltration());
+        dest.setThermalTransmittance(src.getThermalTransmittance());
+        dest.setGlazingAreaFraction(src.getGlazingAreaFraction());
+        dest.setSmokeStop(src.getSmokeStop());
+
+        return dest;
+    }
+
+    private IfcPsetDoorCommonType marshalIfcPsetDoorCommon(IfcPsetDoorCommon src) {
+        IfcPsetDoorCommonType dest = factory.createIfcPsetDoorCommonType();
+
+        dest.setReference(src.getReference());
+        dest.setAcousticRating(src.getAcousticRating());
+        dest.setFirerating(src.getFirerating());
+        dest.setSecurityRating(src.getSecurityRating());
+        dest.setIsExternal(src.getIsExternal());
+        dest.setInfiltration(src.getInfiltration());
+        dest.setThermalTransmittance(src.getThermalTransmittance());
+        dest.setGlazingAreaFraction(src.getGlazingAreaFraction());
+        dest.setHandicapAccessible(src.getHandicapAccessible());
+        dest.setFireExit(src.getFireExit());
+        dest.setSelfClosing(src.getSelfClosing());
+        dest.setSmokeStop(src.getSmokeStop());
+
+        return dest;
+    }
+
+    private IfcPsetOpeningElementCommonType marshalIfcPsetOpeningElementCommon(IfcPsetOpeningElementCommon src) {
+        IfcPsetOpeningElementCommonType dest = factory.createIfcPsetOpeningElementCommonType();
+
+        dest.setReference(src.getReference());
+        dest.setPurpose(src.getPurpose());
+        dest.setFireExit(src.getFireExit());
+        dest.setProtectedOpening(src.getProtectedOpening());
+        dest.setParallelJambs(src.getParallelJambs());
+
+        return dest;
+    }
+
+    private IfcAttributePropertyType marshalIfcAttributeProperty(IfcAttributeProperty src) {
+        IfcAttributePropertyType dest = factory.createIfcAttributePropertyType();
+
+        if (src.getObject() != null) {
+            JAXBElement<?> elem = helper.getJAXBMarshaller().marshalJAXBElement(src.getObject());
+            if (elem != null && elem.getValue() instanceof IfcAttributeType)
+                dest.setIfcAttribute((JAXBElement<? extends IfcAttributeType>) elem);
+        }
+
+        return dest;
+    }
+
+    private void marshalIndoorAttribute(IndoorAttribute src, IndoorAttributeType dest) {
+        if (src.getSource() != null)
+            dest.setSource(helper.getGMLMarshaller().marshalCode(src.getSource()));
+    }
+
+    private IndoorFurnishingAttributeType marshalIndoorFurnishingAttribute(IndoorFurnishingAttribute src) {
+        IndoorFurnishingAttributeType dest = factory.createIndoorFurnishingAttributeType();
+        marshalIndoorAttribute(src, dest);
+
+        dest.setFloorId(src.getFloorId());
+
+        return dest;
+    }
+
+    private IndoorZoneAttributeType marshalIndoorZoneAttribute(IndoorZoneAttribute src) {
+        IndoorZoneAttributeType dest = factory.createIndoorZoneAttributeType();
+        marshalIndoorAttribute(src, dest);
+
+        dest.setFloorId(src.getFloorId());
+
+        return dest;
+    }
+
+    private IndoorPublicTagAttributeType marshalIndoorPublicTagAttribute(IndoorPublicTagAttribute src) {
+        IndoorPublicTagAttributeType dest = factory.createIndoorPublicTagAttributeType();
+        marshalIndoorAttribute(src, dest);
+
+        dest.setUcode(src.getUcode());
+
+        return dest;
+    }
+
+    private IndoorSpaceAttributeType marshalIndoorSpaceAttribute(IndoorSpaceAttribute src) {
+        IndoorSpaceAttributeType dest = factory.createIndoorSpaceAttributeType();
+        marshalIndoorAttribute(src, dest);
+
+        dest.setFloorId(src.getFloorId());
+        dest.setIsRestricted(src.getIsRestricted());
+        dest.setSuite(src.getSuite());
+        dest.setIsPublic(src.getIsPublic());
+
+        if (src.getTollType() != null)
+            dest.setTollType(helper.getGMLMarshaller().marshalCode(src.getTollType()));
+
+        return dest;
+    }
+
+    private IndoorFacilityAttributeType marshalIndoorFacilityAttribute(IndoorFacilityAttribute src) {
+        IndoorFacilityAttributeType dest = factory.createIndoorFacilityAttributeType();
+        marshalIndoorAttribute(src, dest);
+
+        dest.setWeekdayHours(src.getWeekdayHours());
+        dest.setWeekendHours(src.getWeekendHours());
+        dest.setPhone(src.getPhone());
+        dest.setWebsite(src.getWebsite());
+
+        return dest;
+    }
+
+    private IndoorStoreyAttributeType marshalIndoorStoreyAttribute(IndoorStoreyAttribute src) {
+        IndoorStoreyAttributeType dest = factory.createIndoorStoreyAttributeType();
+        marshalIndoorAttribute(src, dest);
+
+        dest.setCategory(src.getCategory());
+        dest.setOrdinal(src.getOrdinal());
+
+        return dest;
+    }
+
+    private IndoorTactileTileAttributeType marshalIndoorTactileTileAttribute(IndoorTactileTileAttribute src) {
+        IndoorTactileTileAttributeType dest = factory.createIndoorTactileTileAttributeType();
+        marshalIndoorAttribute(src, dest);
+
+        dest.setStartNode(src.getStartNode());
+        dest.setEndNode(src.getEndNode());
+
+        if (src.getCategory() != null)
+            dest.setCategory(helper.getGMLMarshaller().marshalCode(src.getCategory()));
+
+        dest.setRoof(src.getRoof());
+        dest.setFloorId(src.getFloorId());
+
+        return dest;
+    }
+
+    private IndoorUserDefinedAttributeType marshalIndoorUserDefinedAttribute(IndoorUserDefinedAttribute src) {
+        IndoorUserDefinedAttributeType dest = factory.createIndoorUserDefinedAttributeType();
+        marshalIndoorAttribute(src, dest);
+
+        dest.setName(src.getName());
+
+        if (src.getNominalValue() != null)
+            dest.setNominalValue(marshalUserDefinedValueProperty(src.getNominalValue()));
+
+        dest.setDescription(src.getDescription());
+        dest.setUnit(src.getUnit());
+
+        return dest;
+    }
+
+    private UserDefinedValueType marshalUserDefinedValue(UserDefinedValue src) {
+        UserDefinedValueType dest = factory.createUserDefinedValueType();
+
+        dest.setStringValue(src.getStringValue());
+
+        if (src.getIntValue() != null)
+            dest.setIntValue(BigInteger.valueOf(src.getIntValue()));
+
+        dest.setDoubleValue(src.getDoubleValue());
+
+        if (src.getCodeValue() != null)
+            dest.setCodeValue(helper.getGMLMarshaller().marshalCode(src.getCodeValue()));
+
+        if (src.getDateValue() != null)
+            dest.setDateValue(marshaller.toCalendar(src.getDateValue()));
+
+        dest.setUriValue(src.getUriValue());
+
+        if (src.getMeasuredValue() != null)
+            dest.setMeasuredValue(helper.getGMLMarshaller().marshalMeasure(src.getMeasuredValue()));
+
+        return dest;
+    }
+
+    private UserDefinedValuePropertyType marshalUserDefinedValueProperty(UserDefinedValueProperty src) {
+        UserDefinedValuePropertyType dest = factory.createUserDefinedValuePropertyType();
+
+        if (src.isSetObject())
+            dest.setUserDefinedValue(marshalUserDefinedValue(src.getObject()));
+
+        return dest;
+    }
+
+    private IndoorAttributePropertyType marshalIndoorAttributeProperty(IndoorAttributeProperty src) {
+        IndoorAttributePropertyType dest = factory.createIndoorAttributePropertyType();
+
+        if (src.getObject() != null) {
+            JAXBElement<?> elem = helper.getJAXBMarshaller().marshalJAXBElement(src.getObject());
+            if (elem != null && elem.getValue() instanceof IndoorAttributeType)
+                dest.setIndoorAttribute((JAXBElement<? extends IndoorAttributeType>) elem);
+        }
+
+        return dest;
+    }
+
     private CityFurnitureDetailAttributeType marshalCityFurnitureDetailAttribute(CityFurnitureDetailAttribute src) {
         CityFurnitureDetailAttributeType dest = factory.createCityFurnitureDetailAttributeType();
 
@@ -3118,6 +4001,166 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createBuildingUsecaseAttribute(marshalBuildingUsecaseAttribute(src));
     }
 
+    private JAXBElement<?> createIfcBuilding(IfcBuilding src) {
+        return factory.createIfcBuilding(marshalIfcBuilding(src));
+    }
+
+    private JAXBElement<?> createIfcSite(IfcSite src) {
+        return factory.createIfcSite(marshalIfcSite(src));
+    }
+
+    private JAXBElement<?> createIfcSpace(IfcSpace src) {
+        return factory.createIfcSpace(marshalIfcSpace(src));
+    }
+
+    private JAXBElement<?> createIfcBuildingStorey(IfcBuildingStorey src) {
+        return factory.createIfcBuildingStorey(marshalIfcBuildingStorey(src));
+    }
+
+    private JAXBElement<?> createIfcBuildingElement(IfcBuildingElement src) {
+        return factory.createIfcBuildingElement(marshalIfcBuildingElement(src));
+    }
+
+    private JAXBElement<?> createIfcWall(IfcWall src) {
+        return factory.createIfcWall(marshalIfcWall(src));
+    }
+
+    private JAXBElement<?> createIfcWallStandardCase(IfcWallStandardCase src) {
+        return factory.createIfcWallStandardCase(marshalIfcWallStandardCase(src));
+    }
+
+    private JAXBElement<?> createIfcCurtainWall(IfcCurtainWall src) {
+        return factory.createIfcCurtainWall(marshalIfcCurtainWall(src));
+    }
+
+    private JAXBElement<?> createIfcRoof(IfcRoof src) {
+        return factory.createIfcRoof(marshalIfcRoof(src));
+    }
+
+    private JAXBElement<?> createIfcWindow(IfcWindow src) {
+        return factory.createIfcWindow(marshalIfcWindow(src));
+    }
+
+    private JAXBElement<?> createIfcDoor(IfcDoor src) {
+        return factory.createIfcDoor(marshalIfcDoor(src));
+    }
+
+    private JAXBElement<?> createIfcOpeningElement(IfcOpeningElement src) {
+        return factory.createIfcOpeningElement(marshalIfcOpeningElement(src));
+    }
+
+    private JAXBElement<?> createIfcFurnishingElement(IfcFurnishingElement src) {
+        return factory.createIfcFurnishingElement(marshalIfcFurnishingElement(src));
+    }
+
+    private JAXBElement<?> createIfcProject(IfcProject src) {
+        return factory.createIfcProject(marshalIfcProject(src));
+    }
+
+    private JAXBElement<?> createIfcGeometricRepresentationContext(IfcGeometricRepresentationContext src) {
+        return factory.createIfcGeometricRepresentationContext(marshalIfcGeometricRepresentationContext(src));
+    }
+
+    private JAXBElement<?> createIfcAxis2Placement3D(IfcAxis2Placement3D src) {
+        return factory.createIfcAxis2Placement3D(marshalIfcAxis2Placement3D(src));
+    }
+
+    private JAXBElement<?> createIfcUnit(IfcUnit src) {
+        return factory.createIfcUnit(marshalIfcUnit(src));
+    }
+
+    private JAXBElement<?> createIfcGroup(IfcGroup src) {
+        return factory.createIfcGroup(marshalIfcGroup(src));
+    }
+
+    private JAXBElement<?> createIfcZone(IfcZone src) {
+        return factory.createIfcZone(marshalIfcZone(src));
+    }
+
+    private JAXBElement<?> createIfcPsetBuildingCommon(IfcPsetBuildingCommon src) {
+        return factory.createIfcPsetBuildingCommon(marshalIfcPsetBuildingCommon(src));
+    }
+
+    private JAXBElement<?> createIfcPsetSiteCommon(IfcPsetSiteCommon src) {
+        return factory.createIfcPsetSiteCommon(marshalIfcPsetSiteCommon(src));
+    }
+
+    private JAXBElement<?> createIfcCoordinateReferenceSystem(IfcCoordinateReferenceSystem src) {
+        return factory.createIfcCoordinateReferenceSystem(marshalIfcCoordinateReferenceSystem(src));
+    }
+
+    private JAXBElement<?> createIfcProjectedCRS(IfcProjectedCRS src) {
+        return factory.createIfcProjectedCRS(marshalIfcProjectedCRS(src));
+    }
+
+    private JAXBElement<?> createIfcMapConversion(IfcMapConversion src) {
+        return factory.createIfcMapConversion(marshalIfcMapConversion(src));
+    }
+
+    private JAXBElement<?> createIfcClassificationReference(IfcClassificationReference src) {
+        return factory.createIfcClassificationReference(marshalIfcClassificationReference(src));
+    }
+
+    private JAXBElement<?> createIfcClassification(IfcClassification src) {
+        return factory.createIfcClassification(marshalIfcClassification(src));
+    }
+
+    private JAXBElement<?> createIfcPsetSpaceCommon(IfcPsetSpaceCommon src) {
+        return factory.createIfcPsetSpaceCommon(marshalIfcPsetSpaceCommon(src));
+    }
+
+    private JAXBElement<?> createIfcSpaceBaseQuantity(IfcSpaceBaseQuantity src) {
+        return factory.createIfcSpaceBaseQuantity(marshalIfcSpaceBaseQuantity(src));
+    }
+
+    private JAXBElement<?> createIfcPsetWindowCommon(IfcPsetWindowCommon src) {
+        return factory.createIfcPsetWindowCommon(marshalIfcPsetWindowCommon(src));
+    }
+
+    private JAXBElement<?> createIfcPsetDoorCommon(IfcPsetDoorCommon src) {
+        return factory.createIfcPsetDoorCommon(marshalIfcPsetDoorCommon(src));
+    }
+
+    private JAXBElement<?> createIfcPsetOpeningElementCommon(IfcPsetOpeningElementCommon src) {
+        return factory.createIfcPsetOpeningElementCommon(marshalIfcPsetOpeningElementCommon(src));
+    }
+
+    private JAXBElement<?> createIndoorFurnishingAttribute(IndoorFurnishingAttribute src) {
+        return factory.createIndoorFurnishingAttribute(marshalIndoorFurnishingAttribute(src));
+    }
+
+    private JAXBElement<?> createIndoorZoneAttribute(IndoorZoneAttribute src) {
+        return factory.createIndoorZoneAttribute(marshalIndoorZoneAttribute(src));
+    }
+
+    private JAXBElement<?> createIndoorPublicTagAttribute(IndoorPublicTagAttribute src) {
+        return factory.createIndoorPublicTagAttribute(marshalIndoorPublicTagAttribute(src));
+    }
+
+    private JAXBElement<?> createIndoorSpaceAttribute(IndoorSpaceAttribute src) {
+        return factory.createIndoorSpaceAttribute(marshalIndoorSpaceAttribute(src));
+    }
+
+    private JAXBElement<?> createIndoorFacilityAttribute(IndoorFacilityAttribute src) {
+        return factory.createIndoorFacilityAttribute(marshalIndoorFacilityAttribute(src));
+    }
+
+    private JAXBElement<?> createIndoorStoreyAttribute(IndoorStoreyAttribute src) {
+        return factory.createIndoorStoreyAttribute(marshalIndoorStoreyAttribute(src));
+    }
+
+    private JAXBElement<?> createIndoorTactileTileAttribute(IndoorTactileTileAttribute src) {
+        return factory.createIndoorTactileTileAttribute(marshalIndoorTactileTileAttribute(src));
+    }
+
+    private JAXBElement<?> createIndoorUserDefinedAttribute(IndoorUserDefinedAttribute src) {
+        return factory.createIndoorUserDefinedAttribute(marshalIndoorUserDefinedAttribute(src));
+    }
+
+    private JAXBElement<?> createUserDefinedValue(UserDefinedValue src) {
+        return factory.createUserDefinedValue(marshalUserDefinedValue(src));
+    }
+
     private JAXBElement<?> createCityFurnitureDetailAttribute(CityFurnitureDetailAttribute src) {
         return factory.createCityFurnitureDetailAttribute(marshalCityFurnitureDetailAttribute(src));
     }
@@ -3296,6 +4339,70 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
     private JAXBElement<?> createBldgUsecaseAttributePropertyElement(BldgUsecaseAttributePropertyElement src) {
         return factory.createBldgUsecaseAttribute(marshalBuildingUsecaseAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIfcBuildingAttributePropertyElement(IfcBuildingAttributePropertyElement src) {
+        return factory.createIfcBuildingAttribute(marshalIfcAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIfcBuildingStoreyAttributePropertyElement(IfcBuildingStoreyAttributePropertyElement src) {
+        return factory.createIfcBuildingStoreyAttribute(marshalIfcAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIfcLandUseAttributePropertyElement(IfcLandUseAttributePropertyElement src) {
+        return factory.createIfcLandUseAttribute(marshalIfcAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIfcRoomAttributePropertyElement(IfcRoomAttributePropertyElement src) {
+        return factory.createIfcRoomAttribute(marshalIfcAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIfcOpeningAttributePropertyElement(IfcOpeningAttributePropertyElement src) {
+        return factory.createIfcOpeningAttribute(marshalIfcAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIfcBoundarySurfaceAttributePropertyElement(IfcBoundarySurfaceAttributePropertyElement src) {
+        return factory.createIfcBoundarySurfaceAttribute(marshalIfcAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIfcBuildingInstallationAttributePropertyElement(IfcBuildingInstallationAttributePropertyElement src) {
+        return factory.createIfcBuildingInstallationAttribute(marshalIfcAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIfcIntBuildingInstallationAttributePropertyElement(IfcIntBuildingInstallationAttributePropertyElement src) {
+        return factory.createIfcIntBuildingInstallationAttribute(marshalIfcAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIfcBuildingFurnitureAttributePropertyElement(IfcBuildingFurnitureAttributePropertyElement src) {
+        return factory.createIfcBuildingFurnitureAttribute(marshalIfcAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIndoorBuildingAttributePropertyElement(IndoorBuildingAttributePropertyElement src) {
+        return factory.createIndoorBuildingAttribute(marshalIndoorAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIndoorBoundarySurfaceAttributePropertyElement(IndoorBoundarySurfaceAttributePropertyElement src) {
+        return factory.createIndoorBoundarySurfaceAttribute(marshalIndoorAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIndoorIntInstallationAttributePropertyElement(IndoorIntInstallationAttributePropertyElement src) {
+        return factory.createIndoorIntInstallationAttribute(marshalIndoorAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIndoorOpeningAttributePropertyElement(IndoorOpeningAttributePropertyElement src) {
+        return factory.createIndoorOpeningAttribute(marshalIndoorAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIndoorFurnitureAttributePropertyElement(IndoorFurnitureAttributePropertyElement src) {
+        return factory.createIndoorFurnitureAttribute(marshalIndoorAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIndoorRoomAttributePropertyElement(IndoorRoomAttributePropertyElement src) {
+        return factory.createIndoorRoomAttribute(marshalIndoorAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createIndoorStoreyAttributePropertyElement(IndoorStoreyAttributePropertyElement src) {
+        return factory.createIndoorStoreyAttributeProperty(marshalIndoorAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createFrnFacilityIdAttributePropertyElement(FrnFacilityIdAttributePropertyElement src) {

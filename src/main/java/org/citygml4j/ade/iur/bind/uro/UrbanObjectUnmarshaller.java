@@ -117,6 +117,55 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                     .with(RealEstateIDAttributePropertyType.class, this::unmarshalRealEstateIDAttributeProperty)
                     .with(BuildingUsecaseAttributeType.class, this::unmarshalBuildingUsecaseAttribute)
                     .with(BuildingUsecaseAttributePropertyType.class, this::unmarshalBuildingUsecaseAttributeProperty)
+                    .with(IfcBuildingType.class, this::unmarshalIfcBuilding)
+                    .with(IfcSiteType.class, this::unmarshalIfcSite)
+                    .with(IfcSpaceType.class, this::unmarshalIfcSpace)
+                    .with(IfcBuildingStoreyType.class, this::unmarshalIfcBuildingStorey)
+                    .with(IfcBuildingElementType.class, this::unmarshalIfcBuildingElement)
+                    .with(IfcWallType.class, this::unmarshalIfcWall)
+                    .with(IfcWallStandardCaseType.class, this::unmarshalIfcWallStandardCase)
+                    .with(IfcCurtainWallType.class, this::unmarshalIfcCurtainWall)
+                    .with(IfcRoofType.class, this::unmarshalIfcRoof)
+                    .with(IfcWindowType.class, this::unmarshalIfcWindow)
+                    .with(IfcDoorType.class, this::unmarshalIfcDoor)
+                    .with(IfcOpeningElementType.class, this::unmarshalIfcOpeningElement)
+                    .with(IfcFurnishingElementType.class, this::unmarshalIfcFurnishingElement)
+                    .with(IfcProjectType.class, this::unmarshalIfcProject)
+                    .with(IfcGeometricRepresentationContextType.class, this::unmarshalIfcGeometricRepresentationContext)
+                    .with(IfcGeometricRepresentationContextPropertyType.class, this::unmarshalIfcGeometricRepresentationContextProperty)
+                    .with(IfcAxis2Placement3DType.class, this::unmarshalIfcAxis2Placement3D)
+                    .with(IfcAxis2Placement3DPropertyType.class, this::unmarshalIfcAxis2Placement3DProperty)
+                    .with(IfcUnitType.class, this::unmarshalIfcUnit)
+                    .with(IfcUnitPropertyType.class, this::unmarshalIfcUnitProperty)
+                    .with(IfcGroupType.class, this::unmarshalIfcGroup)
+                    .with(IfcZoneType.class, this::unmarshalIfcZone)
+                    .with(IfcPsetBuildingCommonType.class, this::unmarshalIfcPsetBuildingCommon)
+                    .with(IfcPsetSiteCommonType.class, this::unmarshalIfcPsetSiteCommon)
+                    .with(IfcCoordinateReferenceSystemType.class, this::unmarshalIfcCoordinateReferenceSystem)
+                    .with(IfcProjectedCRSType.class, this::unmarshalIfcProjectedCRS)
+                    .with(IfcCoordinateReferenceSystemPropertyType.class, this::unmarshalIfcCoordinateReferenceSystemProperty)
+                    .with(IfcMapConversionType.class, this::unmarshalIfcMapConversion)
+                    .with(IfcCoordinateReferenceSystemSelectType.class, this::unmarshalIfcCoordinateReferenceSystemSelect)
+                    .with(IfcClassificationReferenceType.class, this::unmarshalIfcClassificationReference)
+                    .with(IfcClassificationType.class, this::unmarshalIfcClassification)
+                    .with(IfcClassificationPropertyType.class, this::unmarshalIfcClassificationProperty)
+                    .with(IfcPsetSpaceCommonType.class, this::unmarshalIfcPsetSpaceCommon)
+                    .with(IfcSpaceBaseQuantityType.class, this::unmarshalIfcSpaceBaseQuantity)
+                    .with(IfcPsetWindowCommonType.class, this::unmarshalIfcPsetWindowCommon)
+                    .with(IfcPsetDoorCommonType.class, this::unmarshalIfcPsetDoorCommon)
+                    .with(IfcPsetOpeningElementCommonType.class, this::unmarshalIfcPsetOpeningElementCommon)
+                    .with(IfcAttributePropertyType.class, this::unmarshalIfcAttributeProperty)
+                    .with(IndoorFurnishingAttributeType.class, this::unmarshalIndoorFurnishingAttribute)
+                    .with(IndoorZoneAttributeType.class, this::unmarshalIndoorZoneAttribute)
+                    .with(IndoorPublicTagAttributeType.class, this::unmarshalIndoorPublicTagAttribute)
+                    .with(IndoorSpaceAttributeType.class, this::unmarshalIndoorSpaceAttribute)
+                    .with(IndoorFacilityAttributeType.class, this::unmarshalIndoorFacilityAttribute)
+                    .with(IndoorStoreyAttributeType.class, this::unmarshalIndoorStoreyAttribute)
+                    .with(IndoorTactileTileAttributeType.class, this::unmarshalIndoorTactileTileAttribute)
+                    .with(IndoorUserDefinedAttributeType.class, this::unmarshalIndoorUserDefinedAttribute)
+                    .with(UserDefinedValueType.class, this::unmarshalUserDefinedValue)
+                    .with(UserDefinedValuePropertyType.class, this::unmarshalUserDefinedValueProperty)
+                    .with(IndoorAttributePropertyType.class, this::unmarshalIndoorAttributeProperty)
                     .with(CityFurnitureDetailAttributeType.class, this::unmarshalCityFurnitureDetailAttribute)
                     .with(CityFurnitureDetailAttributePropertyType.class, this::unmarshalCityFurnitureDetailAttributeProperty)
                     .with(LandUseDetailAttributeType.class, this::unmarshalLandUseDetailAttribute)
@@ -221,6 +270,38 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new BldgRealEstateIDAttributePropertyElement(unmarshalRealEstateIDAttributeProperty((RealEstateIDAttributePropertyType) value));
             case "bldgUsecaseAttribute":
                 return new BldgUsecaseAttributePropertyElement(unmarshalBuildingUsecaseAttributeProperty((BuildingUsecaseAttributePropertyType) value));
+            case "ifcBuildingAttribute":
+                return new IfcBuildingAttributePropertyElement(unmarshalIfcAttributeProperty((IfcAttributePropertyType) value));
+            case "ifcBuildingStoreyAttribute":
+                return new IfcBuildingStoreyAttributePropertyElement(unmarshalIfcAttributeProperty((IfcAttributePropertyType) value));
+            case "ifcLandUseAttribute":
+                return new IfcLandUseAttributePropertyElement(unmarshalIfcAttributeProperty((IfcAttributePropertyType) value));
+            case "ifcRoomAttribute":
+                return new IfcRoomAttributePropertyElement(unmarshalIfcAttributeProperty((IfcAttributePropertyType) value));
+            case "ifcOpeningAttribute":
+                return new IfcOpeningAttributePropertyElement(unmarshalIfcAttributeProperty((IfcAttributePropertyType) value));
+            case "ifcBoundarySurfaceAttribute":
+                return new IfcBoundarySurfaceAttributePropertyElement(unmarshalIfcAttributeProperty((IfcAttributePropertyType) value));
+            case "ifcBuildingInstallationAttribute":
+                return new IfcBuildingInstallationAttributePropertyElement(unmarshalIfcAttributeProperty((IfcAttributePropertyType) value));
+            case "ifcIntBuildingInstallationAttribute":
+                return new IfcIntBuildingInstallationAttributePropertyElement(unmarshalIfcAttributeProperty((IfcAttributePropertyType) value));
+            case "ifcBuildingFurnitureAttribute":
+                return new IfcBuildingFurnitureAttributePropertyElement(unmarshalIfcAttributeProperty((IfcAttributePropertyType) value));
+            case "indoorBuildingAttribute":
+                return new IndoorBuildingAttributePropertyElement(unmarshalIndoorAttributeProperty((IndoorAttributePropertyType) value));
+            case "indoorBoundarySurfaceAttribute":
+                return new IndoorBoundarySurfaceAttributePropertyElement(unmarshalIndoorAttributeProperty((IndoorAttributePropertyType) value));
+            case "indoorIntInstallationAttribute":
+                return new IndoorIntInstallationAttributePropertyElement(unmarshalIndoorAttributeProperty((IndoorAttributePropertyType) value));
+            case "indoorOpeningAttribute":
+                return new IndoorOpeningAttributePropertyElement(unmarshalIndoorAttributeProperty((IndoorAttributePropertyType) value));
+            case "indoorFurnitureAttribute":
+                return new IndoorFurnitureAttributePropertyElement(unmarshalIndoorAttributeProperty((IndoorAttributePropertyType) value));
+            case "indoorRoomAttribute":
+                return new IndoorRoomAttributePropertyElement(unmarshalIndoorAttributeProperty((IndoorAttributePropertyType) value));
+            case "indoorStoreyAttribute":
+                return new IndoorStoreyAttributePropertyElement(unmarshalIndoorAttributeProperty((IndoorAttributePropertyType) value));
             case "frnFacilityIdAttribute":
                 return new FrnFacilityIdAttributePropertyElement(unmarshalFacilityIdAttributeProperty((FacilityIdAttributePropertyType) value));
             case "frnFacilityTypeAttribute":
@@ -2355,6 +2436,794 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
 
         if (src.isSetBuildingUsecaseAttribute())
             dest.setObject(unmarshalBuildingUsecaseAttribute(src.getBuildingUsecaseAttribute()));
+
+        return dest;
+    }
+
+    private void unmarshalIfcRoot(IfcRootType src, IfcRoot dest) throws MissingADESchemaException {
+        dest.setGlobalId(src.getGlobalId());
+        dest.setName(src.getName());
+        dest.setDescription(src.getDescription());
+    }
+
+    private void unmarshalIfcObjectDefinition(IfcObjectDefinitionType src, IfcObjectDefinition dest) throws MissingADESchemaException {
+        unmarshalIfcRoot(src, dest);
+    }
+
+    private void unmarshalIfcObject(IfcObjectType src, IfcObject dest) throws MissingADESchemaException {
+        unmarshalIfcObjectDefinition(src, dest);
+        dest.setObjectType(src.getObjectType());
+    }
+
+    private void unmarshalIfcProduct(IfcProductType src, IfcProduct dest) throws MissingADESchemaException {
+        unmarshalIfcObject(src, dest);
+    }
+
+    private void unmarshalIfcSpatialStructureElement(IfcSpatialStructureElementType src, IfcSpatialStructureElement dest) throws MissingADESchemaException {
+        unmarshalIfcProduct(src, dest);
+
+        dest.setLongName(src.getLongName());
+
+        if (src.isSetCompositionType())
+            dest.setCompositionType(org.citygml4j.ade.iur.model.uro.IfcElementCompositionEnum.fromValue(src.getCompositionType().value()));
+    }
+
+    private IfcBuilding unmarshalIfcBuilding(IfcBuildingType src) throws MissingADESchemaException {
+        IfcBuilding dest = new IfcBuilding();
+        unmarshalIfcSpatialStructureElement(src, dest);
+
+        if (src.isSetElevationOfRefHeight())
+            dest.setElevationOfRefHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getElevationOfRefHeight()));
+
+        if (src.isSetElevationOfTerrain())
+            dest.setElevationOfTerrain(helper.getGMLUnmarshaller().unmarshalLength(src.getElevationOfTerrain()));
+
+        if (src.isSetBuildingAddress())
+            dest.setBuildingAddress(helper.getCore200Unmarshaller().unmarshalAddressProperty(src.getBuildingAddress()));
+
+        return dest;
+    }
+
+    private IfcSite unmarshalIfcSite(IfcSiteType src) throws MissingADESchemaException {
+        IfcSite dest = new IfcSite();
+        unmarshalIfcSpatialStructureElement(src, dest);
+
+        dest.setRefLongitude(src.getRefLongitude());
+        dest.setRefLatitude(src.getRefLatitude());
+
+        if (src.isSetRefElevation())
+            dest.setRefElevation(helper.getGMLUnmarshaller().unmarshalLength(src.getRefElevation()));
+
+        dest.setLandTitleNumber(src.getLandTitleNumber());
+
+        if (src.isSetSiteAddress())
+            dest.setSiteAddress(helper.getCore200Unmarshaller().unmarshalAddressProperty(src.getSiteAddress()));
+
+        return dest;
+    }
+
+    private IfcSpace unmarshalIfcSpace(IfcSpaceType src) throws MissingADESchemaException {
+        IfcSpace dest = new IfcSpace();
+        unmarshalIfcSpatialStructureElement(src, dest);
+
+        if (src.isSetInteriorOrExteriorSpace())
+            dest.setInteriorOrExteriorSpace(org.citygml4j.ade.iur.model.uro.IfcInternalOrExternalEnum.fromValue(src.getInteriorOrExteriorSpace().value()));
+
+        if (src.isSetElevationWithFlooring())
+            dest.setElevationWithFlooring(helper.getGMLUnmarshaller().unmarshalLength(src.getElevationWithFlooring()));
+
+        return dest;
+    }
+
+    private IfcBuildingStorey unmarshalIfcBuildingStorey(IfcBuildingStoreyType src) throws MissingADESchemaException {
+        IfcBuildingStorey dest = new IfcBuildingStorey();
+        unmarshalIfcSpatialStructureElement(src, dest);
+
+        if (src.isSetElevation())
+            dest.setElevation(helper.getGMLUnmarshaller().unmarshalLength(src.getElevation()));
+
+        return dest;
+    }
+
+    private void unmarshalIfcElement(IfcElementType src, IfcElement dest) throws MissingADESchemaException {
+        unmarshalIfcProduct(src, dest);
+        dest.setTag(src.getTag());
+    }
+
+    private void unmarshalIfcBuildingElement(IfcBuildingElementType src, IfcBuildingElement dest) throws MissingADESchemaException {
+        unmarshalIfcElement(src, dest);
+
+        if (src.isSetElementType())
+            dest.setElementType(helper.getGMLUnmarshaller().unmarshalCode(src.getElementType()));
+
+        if (src.isSetPredefinedType())
+            dest.setPredefinedType(helper.getGMLUnmarshaller().unmarshalCode(src.getPredefinedType()));
+
+        if (src.isSetShapeType())
+            dest.setShapeType(helper.getGMLUnmarshaller().unmarshalCode(src.getShapeType()));
+
+        if (src.isSetNumberOfRiser())
+            dest.setNumberOfRiser(src.getNumberOfRiser().intValue());
+
+        if (src.isSetNumberOfTreads())
+            dest.setNumberOfTreads(src.getNumberOfTreads().intValue());
+
+        if (src.isSetRiserHeight())
+            dest.setRiserHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getRiserHeight()));
+
+        if (src.isSetTreadLength())
+            dest.setTreadLength(helper.getGMLUnmarshaller().unmarshalLength(src.getTreadLength()));
+
+        if (src.isSetOperationType())
+            dest.setOperationType(org.citygml4j.ade.iur.model.uro.IfcTransportElementTypeEnum.fromValue(src.getOperationType().value()));
+
+        if (src.isSetCapacityByWeight())
+            dest.setCapacityByWeight(helper.getGMLUnmarshaller().unmarshalMeasure(src.getCapacityByWeight()));
+
+        if (src.isSetCapacityByNumber())
+            dest.setCapacityByNumber(src.getCapacityByNumber().intValue());
+    }
+
+    private IfcBuildingElement unmarshalIfcBuildingElement(IfcBuildingElementType src) throws MissingADESchemaException {
+        IfcBuildingElement dest = new IfcBuildingElement();
+        unmarshalIfcBuildingElement(src, dest);
+        return dest;
+    }
+
+    private void unmarshalIfcWall(IfcWallType src, IfcWall dest) throws MissingADESchemaException {
+        unmarshalIfcBuildingElement(src, dest);
+
+        if (src.isSetNominalLength())
+            dest.setNominalLength(helper.getGMLUnmarshaller().unmarshalLength(src.getNominalLength()));
+
+        if (src.isSetNominalWidth())
+            dest.setNominalWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getNominalWidth()));
+
+        if (src.isSetNominalHeight())
+            dest.setNominalHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getNominalHeight()));
+
+        if (src.isSetGrossFootPrintArea())
+            dest.setGrossFootPrintArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGrossFootPrintArea()));
+
+        if (src.isSetNetFootPrintArea())
+            dest.setNetFootPrintArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNetFootPrintArea()));
+
+        if (src.isSetGrossSideArea())
+            dest.setGrossSideArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGrossSideArea()));
+
+        if (src.isSetNetSideArea())
+            dest.setNetSideArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNetSideArea()));
+
+        if (src.isSetGrossSideAreaLeft())
+            dest.setGrossSideAreaLeft(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGrossSideAreaLeft()));
+
+        if (src.isSetNetSideAreaLeft())
+            dest.setNetSideAreaLeft(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNetSideAreaLeft()));
+
+        if (src.isSetGrossSideAreaRight())
+            dest.setGrossSideAreaRight(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGrossSideAreaRight()));
+
+        if (src.isSetNetSideAreaRight())
+            dest.setNetSideAreaRight(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNetSideAreaRight()));
+
+        if (src.isSetGrossVolume())
+            dest.setGrossVolume(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGrossVolume()));
+
+        if (src.isSetNetVolume())
+            dest.setNetVolume(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNetVolume()));
+    }
+
+    private IfcWall unmarshalIfcWall(IfcWallType src) throws MissingADESchemaException {
+        IfcWall dest = new IfcWall();
+        unmarshalIfcWall(src, dest);
+        return dest;
+    }
+
+    private IfcWallStandardCase unmarshalIfcWallStandardCase(IfcWallStandardCaseType src) throws MissingADESchemaException {
+        IfcWallStandardCase dest = new IfcWallStandardCase();
+        unmarshalIfcWall(src, dest);
+        return dest;
+    }
+
+    private IfcCurtainWall unmarshalIfcCurtainWall(IfcCurtainWallType src) throws MissingADESchemaException {
+        IfcCurtainWall dest = new IfcCurtainWall();
+        unmarshalIfcBuildingElement(src, dest);
+        return dest;
+    }
+
+    private IfcRoof unmarshalIfcRoof(IfcRoofType src) throws MissingADESchemaException {
+        IfcRoof dest = new IfcRoof();
+        unmarshalIfcBuildingElement(src, dest);
+        return dest;
+    }
+
+    private IfcWindow unmarshalIfcWindow(IfcWindowType src) throws MissingADESchemaException {
+        IfcWindow dest = new IfcWindow();
+        unmarshalIfcBuildingElement(src, dest);
+
+        if (src.isSetOverallHeight())
+            dest.setOverallHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getOverallHeight()));
+
+        if (src.isSetOverallWidth())
+            dest.setOverallWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getOverallWidth()));
+
+        return dest;
+    }
+
+    private IfcDoor unmarshalIfcDoor(IfcDoorType src) throws MissingADESchemaException {
+        IfcDoor dest = new IfcDoor();
+        unmarshalIfcBuildingElement(src, dest);
+
+        if (src.isSetOverallHeight())
+            dest.setOverallHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getOverallHeight()));
+
+        if (src.isSetOverallWidth())
+            dest.setOverallWidth(helper.getGMLUnmarshaller().unmarshalLength(src.getOverallWidth()));
+
+        return dest;
+    }
+
+    private IfcOpeningElement unmarshalIfcOpeningElement(IfcOpeningElementType src) throws MissingADESchemaException {
+        IfcOpeningElement dest = new IfcOpeningElement();
+        unmarshalIfcElement(src, dest);
+
+        if (src.isSetNominalArea())
+            dest.setNominalArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNominalArea()));
+
+        if (src.isSetNominalVolume())
+            dest.setNominalVolume(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNominalVolume()));
+
+        return dest;
+    }
+
+    private IfcFurnishingElement unmarshalIfcFurnishingElement(IfcFurnishingElementType src) throws MissingADESchemaException {
+        IfcFurnishingElement dest = new IfcFurnishingElement();
+        unmarshalIfcElement(src, dest);
+        return dest;
+    }
+
+    private IfcProject unmarshalIfcProject(IfcProjectType src) throws MissingADESchemaException {
+        IfcProject dest = new IfcProject();
+        unmarshalIfcObject(src, dest);
+
+        dest.setLongName(src.getLongName());
+        dest.setPhase(src.getPhase());
+
+        if (src.isSetRepresentationContexts())
+            dest.setRepresentationContexts(unmarshalIfcGeometricRepresentationContextProperty(src.getRepresentationContexts()));
+
+        if (src.isSetUnitsInContext()) {
+            for (IfcUnitPropertyType unitsInContext : src.getUnitsInContext())
+                dest.getUnitsInContext().add(unmarshalIfcUnitProperty(unitsInContext));
+        }
+
+        return dest;
+    }
+
+    private IfcGeometricRepresentationContext unmarshalIfcGeometricRepresentationContext(IfcGeometricRepresentationContextType src) throws MissingADESchemaException {
+        IfcGeometricRepresentationContext dest = new IfcGeometricRepresentationContext();
+
+        dest.setContextIdentifier(src.getContextIdentifier());
+        dest.setContextType(src.getContextType());
+
+        if (src.isSetCoordinateSpaceDimension())
+            dest.setCoordinateSpaceDimension(src.getCoordinateSpaceDimension().intValue());
+
+        dest.setPrecision(src.getPrecision());
+
+        if (src.isSetWorldCoordinateSystem())
+            dest.setWorldCoordinateSystem(unmarshalIfcAxis2Placement3DProperty(src.getWorldCoordinateSystem()));
+
+        if (src.isSetTrueNorth()) {
+            for (Double trueNorth : src.getTrueNorth())
+                dest.getTrueNorth().add(trueNorth);
+        }
+
+        return dest;
+    }
+
+    private IfcGeometricRepresentationContextProperty unmarshalIfcGeometricRepresentationContextProperty(IfcGeometricRepresentationContextPropertyType src) throws MissingADESchemaException {
+        IfcGeometricRepresentationContextProperty dest = new IfcGeometricRepresentationContextProperty();
+
+        if (src.isSetIfcGeometricRepresentationContext())
+            dest.setObject(unmarshalIfcGeometricRepresentationContext(src.getIfcGeometricRepresentationContext()));
+
+        return dest;
+    }
+
+    private IfcAxis2Placement3D unmarshalIfcAxis2Placement3D(IfcAxis2Placement3DType src) throws MissingADESchemaException {
+        IfcAxis2Placement3D dest = new IfcAxis2Placement3D();
+
+        if (src.isSetLocation())
+            dest.setLocation(helper.getGMLUnmarshaller().unmarshalPointProperty(src.getLocation()));
+
+        if (src.isSetAxis()) {
+            for (Double axis : src.getAxis())
+                dest.getAxis().add(axis);
+        }
+
+        if (src.isSetRefDirection()) {
+            for (Double refDirection : src.getRefDirection())
+                dest.getRefDirection().add(refDirection);
+        }
+
+        return dest;
+    }
+
+    private IfcAxis2Placement3DProperty unmarshalIfcAxis2Placement3DProperty(IfcAxis2Placement3DPropertyType src) throws MissingADESchemaException {
+        IfcAxis2Placement3DProperty dest = new IfcAxis2Placement3DProperty();
+
+        if (src.isSetIfcAxis2Placement3D())
+            dest.setObject(unmarshalIfcAxis2Placement3D(src.getIfcAxis2Placement3D()));
+
+        return dest;
+    }
+
+    private IfcUnit unmarshalIfcUnit(IfcUnitType src) throws MissingADESchemaException {
+        IfcUnit dest = new IfcUnit();
+
+        if (src.isSetDimensions())
+            dest.setDimensions(src.getDimensions().intValue());
+
+        if (src.isSetUnitType())
+            dest.setUnitType(org.citygml4j.ade.iur.model.uro.IfcUnitEnum.fromValue(src.getUnitType().value()));
+
+        dest.setPrefix(src.getPrefix());
+        dest.setName(src.getName());
+
+        return dest;
+    }
+
+    private IfcUnitProperty unmarshalIfcUnitProperty(IfcUnitPropertyType src) throws MissingADESchemaException {
+        IfcUnitProperty dest = new IfcUnitProperty();
+
+        if (src.isSetIfcUnit())
+            dest.setObject(unmarshalIfcUnit(src.getIfcUnit()));
+
+        return dest;
+    }
+
+    private void unmarshalIfcGroup(IfcGroupType src, IfcGroup dest) throws MissingADESchemaException {
+        unmarshalIfcObject(src, dest);
+    }
+
+    private IfcGroup unmarshalIfcGroup(IfcGroupType src) throws MissingADESchemaException {
+        IfcGroup dest = new IfcGroup();
+        unmarshalIfcGroup(src, dest);
+        return dest;
+    }
+
+    private IfcZone unmarshalIfcZone(IfcZoneType src) throws MissingADESchemaException {
+        IfcZone dest = new IfcZone();
+        unmarshalIfcGroup(src, dest);
+        return dest;
+    }
+
+    private IfcPsetBuildingCommon unmarshalIfcPsetBuildingCommon(IfcPsetBuildingCommonType src) throws MissingADESchemaException {
+        IfcPsetBuildingCommon dest = new IfcPsetBuildingCommon();
+
+        dest.setBuildingId(src.getBuildingId());
+        dest.setIsPermanentId(src.isIsPermanentId());
+        dest.setMainFireUse(src.getMainFireUse());
+        dest.setAncillaryFireUse(src.getAncillaryFireUse());
+        dest.setSprinklerProtection(src.isSprinklerProtection());
+        dest.setSprinklerProtectionAutomatic(src.isSprinklerProtectionAutomatic());
+
+        if (src.isSetOccupancyType())
+            dest.setOccupancyType(helper.getGMLUnmarshaller().unmarshalCode(src.getOccupancyType()));
+
+        if (src.isSetGrossPlannedArea())
+            dest.setGrossPlannedArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGrossPlannedArea()));
+
+        if (src.isSetNumberOfStoreys())
+            dest.setNumberOfStoreys(src.getNumberOfStoreys().intValue());
+
+        if (src.isSetYearOfConstruction()) {
+            LocalDate date = src.getYearOfConstruction().toGregorianCalendar().toZonedDateTime().toLocalDate();
+            dest.setYearOfConstruction(Year.of(date.getYear()));
+        }
+
+        dest.setIsLandmarked(src.isIsLandmarked());
+
+        return dest;
+    }
+
+    private IfcPsetSiteCommon unmarshalIfcPsetSiteCommon(IfcPsetSiteCommonType src) throws MissingADESchemaException {
+        IfcPsetSiteCommon dest = new IfcPsetSiteCommon();
+
+        if (src.isSetBuildableArea())
+            dest.setBuildableArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getBuildableArea()));
+
+        if (src.isSetTotalArea())
+            dest.setTotalArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getTotalArea()));
+
+        if (src.isSetBuildingHeightLimit())
+            dest.setBuildingHeightLimit(helper.getGMLUnmarshaller().unmarshalLength(src.getBuildingHeightLimit()));
+
+        return dest;
+    }
+
+    private void unmarshalIfcCoordinateReferenceSystem(IfcCoordinateReferenceSystemType src, IfcCoordinateReferenceSystem dest) throws MissingADESchemaException {
+        dest.setName(src.getName());
+        dest.setDescription(src.getDescription());
+        dest.setGeodeticDatum(src.getGeodeticDatum());
+        dest.setVerticalDatum(src.getVerticalDatum());
+    }
+
+    private IfcCoordinateReferenceSystem unmarshalIfcCoordinateReferenceSystem(IfcCoordinateReferenceSystemType src) throws MissingADESchemaException {
+        IfcCoordinateReferenceSystem dest = new IfcCoordinateReferenceSystem();
+        unmarshalIfcCoordinateReferenceSystem(src, dest);
+        return dest;
+    }
+
+    private IfcProjectedCRS unmarshalIfcProjectedCRS(IfcProjectedCRSType src) throws MissingADESchemaException {
+        IfcProjectedCRS dest = new IfcProjectedCRS();
+        unmarshalIfcCoordinateReferenceSystem(src, dest);
+
+        dest.setMapUnit(src.getMapUnit());
+        dest.setMapProjection(src.getMapProjection());
+        dest.setMapZone(src.getMapZone());
+
+        return dest;
+    }
+
+    private IfcCoordinateReferenceSystemProperty unmarshalIfcCoordinateReferenceSystemProperty(IfcCoordinateReferenceSystemPropertyType src) throws MissingADESchemaException {
+        IfcCoordinateReferenceSystemProperty dest = new IfcCoordinateReferenceSystemProperty();
+
+        if (src.isSetIfcCoordinateReferenceSystem()) {
+            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.getIfcCoordinateReferenceSystem());
+            if (object instanceof IfcCoordinateReferenceSystem)
+                dest.setObject((IfcCoordinateReferenceSystem) object);
+        }
+
+        return dest;
+    }
+
+    private IfcMapConversion unmarshalIfcMapConversion(IfcMapConversionType src) throws MissingADESchemaException {
+        IfcMapConversion dest = new IfcMapConversion();
+
+        if (src.isSetSourceCRS())
+            dest.setSourceCRS(unmarshalIfcCoordinateReferenceSystemSelect(src.getSourceCRS()));
+
+        if (src.isSetTargetCRS())
+            dest.setTargetCRS(unmarshalIfcCoordinateReferenceSystemProperty(src.getTargetCRS()));
+
+        if (src.isSetEastings())
+            dest.setEastings(helper.getGMLUnmarshaller().unmarshalLength(src.getEastings()));
+
+        if (src.isSetNorthings())
+            dest.setNorthings(helper.getGMLUnmarshaller().unmarshalLength(src.getNorthings()));
+
+        if (src.isSetOrthogonalHeight())
+            dest.setOrthogonalHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getOrthogonalHeight()));
+
+        dest.setXAxisAbscissa(src.getXAxisAbscissa());
+        dest.setXAxisOrdinate(src.getXAxisOrdinate());
+        dest.setScale(src.getScale());
+
+        return dest;
+    }
+
+    private IfcCoordinateReferenceSystemSelect unmarshalIfcCoordinateReferenceSystemSelect(IfcCoordinateReferenceSystemSelectType src) throws MissingADESchemaException {
+        IfcCoordinateReferenceSystemSelect dest = new IfcCoordinateReferenceSystemSelect();
+
+        if (src.isSetCrs())
+            dest.setCrs(unmarshalIfcCoordinateReferenceSystemProperty(src.getCrs()));
+
+        if (src.isSetContext())
+            dest.setContext(unmarshalIfcGeometricRepresentationContextProperty(src.getContext()));
+
+        return dest;
+    }
+
+    private IfcClassificationReference unmarshalIfcClassificationReference(IfcClassificationReferenceType src) throws MissingADESchemaException {
+        IfcClassificationReference dest = new IfcClassificationReference();
+
+        dest.setLocation(src.getLocation());
+
+        if (src.isSetItemReference())
+            dest.setItemReference(helper.getGMLUnmarshaller().unmarshalCode(src.getItemReference()));
+
+        dest.setName(src.getName());
+
+        if (src.isSetReferencedSource())
+            dest.setReferencedSource(unmarshalIfcClassificationProperty(src.getReferencedSource()));
+
+        return dest;
+    }
+
+    private IfcClassification unmarshalIfcClassification(IfcClassificationType src) throws MissingADESchemaException {
+        IfcClassification dest = new IfcClassification();
+
+        dest.setSource(src.getSource());
+        dest.setEdition(src.getEdition());
+
+        if (src.isSetEditionDate())
+            dest.setEditionDate(src.getEditionDate().toGregorianCalendar().toZonedDateTime().toLocalDate());
+
+        dest.setName(src.getName());
+
+        return dest;
+    }
+
+    private IfcClassificationProperty unmarshalIfcClassificationProperty(IfcClassificationPropertyType src) throws MissingADESchemaException {
+        IfcClassificationProperty dest = new IfcClassificationProperty();
+
+        if (src.isSetIfcClassification())
+            dest.setObject(unmarshalIfcClassification(src.getIfcClassification()));
+
+        return dest;
+    }
+
+    private IfcPsetSpaceCommon unmarshalIfcPsetSpaceCommon(IfcPsetSpaceCommonType src) throws MissingADESchemaException {
+        IfcPsetSpaceCommon dest = new IfcPsetSpaceCommon();
+
+        dest.setReference(src.getReference());
+        dest.setCategory(src.getCategory());
+        dest.setFloorCovering(src.getFloorCovering());
+        dest.setWallCovering(src.getWallCovering());
+        dest.setCeilingCovering(src.getCeilingCovering());
+        dest.setSkirtingBoard(src.getSkirtingBoard());
+
+        if (src.isSetGrossPlannedArea())
+            dest.setGrossPlannedArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGrossPlannedArea()));
+
+        if (src.isSetNetPlannedArea())
+            dest.setNetPlannedArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNetPlannedArea()));
+
+        dest.setPubliclyAccessible(src.isPubliclyAccessible());
+        dest.setHandicapAccessible(src.isHandicapAccessible());
+        dest.setConcealedFlooring(src.isConcealedFlooring());
+        dest.setConcealedCeiling(src.isConcealedCeiling());
+
+        return dest;
+    }
+
+    private IfcSpaceBaseQuantity unmarshalIfcSpaceBaseQuantity(IfcSpaceBaseQuantityType src) throws MissingADESchemaException {
+        IfcSpaceBaseQuantity dest = new IfcSpaceBaseQuantity();
+
+        if (src.isSetNominalHeight())
+            dest.setNominalHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getNominalHeight()));
+
+        if (src.isSetClearHeight())
+            dest.setClearHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getClearHeight()));
+
+        if (src.isSetFinishCeilingHeight())
+            dest.setFinishCeilingHeight(helper.getGMLUnmarshaller().unmarshalLength(src.getFinishCeilingHeight()));
+
+        if (src.isSetGrossPerimeter())
+            dest.setGrossPerimeter(helper.getGMLUnmarshaller().unmarshalLength(src.getGrossPerimeter()));
+
+        if (src.isSetNetPerimeter())
+            dest.setNetPerimeter(helper.getGMLUnmarshaller().unmarshalLength(src.getNetPerimeter()));
+
+        if (src.isSetGrossCeilingArea())
+            dest.setGrossCeilingArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGrossCeilingArea()));
+
+        if (src.isSetGrossFloorArea())
+            dest.setGrossFloorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGrossFloorArea()));
+
+        if (src.isSetNetCeilingArea())
+            dest.setNetCeilingArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNetCeilingArea()));
+
+        if (src.isSetNetFloorArea())
+            dest.setNetFloorArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNetFloorArea()));
+
+        if (src.isSetGrossWallArea())
+            dest.setGrossWallArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGrossWallArea()));
+
+        if (src.isSetNetWallArea())
+            dest.setNetWallArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNetWallArea()));
+
+        if (src.isSetGrossVolume())
+            dest.setGrossVolume(helper.getGMLUnmarshaller().unmarshalMeasure(src.getGrossVolume()));
+
+        if (src.isSetNetVolume())
+            dest.setNetVolume(helper.getGMLUnmarshaller().unmarshalMeasure(src.getNetVolume()));
+
+        return dest;
+    }
+
+    private IfcPsetWindowCommon unmarshalIfcPsetWindowCommon(IfcPsetWindowCommonType src) throws MissingADESchemaException {
+        IfcPsetWindowCommon dest = new IfcPsetWindowCommon();
+
+        dest.setReference(src.getReference());
+        dest.setAcousticRating(src.getAcousticRating());
+        dest.setFireRating(src.getFireRating());
+        dest.setSecurityRating(src.getSecurityRating());
+        dest.setIsExternal(src.isIsExternal());
+        dest.setInfiltration(src.getInfiltration());
+        dest.setThermalTransmittance(src.getThermalTransmittance());
+        dest.setGlazingAreaFraction(src.getGlazingAreaFraction());
+        dest.setSmokeStop(src.isSmokeStop());
+
+        return dest;
+    }
+
+    private IfcPsetDoorCommon unmarshalIfcPsetDoorCommon(IfcPsetDoorCommonType src) throws MissingADESchemaException {
+        IfcPsetDoorCommon dest = new IfcPsetDoorCommon();
+
+        dest.setReference(src.getReference());
+        dest.setAcousticRating(src.getAcousticRating());
+        dest.setFirerating(src.getFirerating());
+        dest.setSecurityRating(src.getSecurityRating());
+        dest.setIsExternal(src.isIsExternal());
+        dest.setInfiltration(src.getInfiltration());
+        dest.setThermalTransmittance(src.getThermalTransmittance());
+        dest.setGlazingAreaFraction(src.getGlazingAreaFraction());
+        dest.setHandicapAccessible(src.isHandicapAccessible());
+        dest.setFireExit(src.isFireExit());
+        dest.setSelfClosing(src.isSelfClosing());
+        dest.setSmokeStop(src.isSmokeStop());
+
+        return dest;
+    }
+
+    private IfcPsetOpeningElementCommon unmarshalIfcPsetOpeningElementCommon(IfcPsetOpeningElementCommonType src) throws MissingADESchemaException {
+        IfcPsetOpeningElementCommon dest = new IfcPsetOpeningElementCommon();
+
+        dest.setReference(src.getReference());
+        dest.setPurpose(src.getPurpose());
+        dest.setFireExit(src.isFireExit());
+        dest.setProtectedOpening(src.isProtectedOpening());
+        dest.setParallelJambs(src.isParallelJambs());
+
+        return dest;
+    }
+
+    private IfcAttributeProperty unmarshalIfcAttributeProperty(IfcAttributePropertyType src) throws MissingADESchemaException {
+        IfcAttributeProperty dest = new IfcAttributeProperty();
+
+        if (src.isSetIfcAttribute()) {
+            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.getIfcAttribute());
+            if (object instanceof IfcAttribute)
+                dest.setObject((IfcAttribute) object);
+        }
+
+        return dest;
+    }
+
+    private void unmarshalIndoorAttribute(IndoorAttributeType src, IndoorAttribute dest) throws MissingADESchemaException {
+        if (src.isSetSource())
+            dest.setSource(helper.getGMLUnmarshaller().unmarshalCode(src.getSource()));
+    }
+
+    private IndoorFurnishingAttribute unmarshalIndoorFurnishingAttribute(IndoorFurnishingAttributeType src) throws MissingADESchemaException {
+        IndoorFurnishingAttribute dest = new IndoorFurnishingAttribute();
+        unmarshalIndoorAttribute(src, dest);
+
+        dest.setFloorId(src.getFloorId());
+
+        return dest;
+    }
+
+    private IndoorZoneAttribute unmarshalIndoorZoneAttribute(IndoorZoneAttributeType src) throws MissingADESchemaException {
+        IndoorZoneAttribute dest = new IndoorZoneAttribute();
+        unmarshalIndoorAttribute(src, dest);
+
+        dest.setFloorId(src.getFloorId());
+
+        return dest;
+    }
+
+    private IndoorPublicTagAttribute unmarshalIndoorPublicTagAttribute(IndoorPublicTagAttributeType src) throws MissingADESchemaException {
+        IndoorPublicTagAttribute dest = new IndoorPublicTagAttribute();
+        unmarshalIndoorAttribute(src, dest);
+
+        dest.setUcode(src.getUcode());
+
+        return dest;
+    }
+
+    private IndoorSpaceAttribute unmarshalIndoorSpaceAttribute(IndoorSpaceAttributeType src) throws MissingADESchemaException {
+        IndoorSpaceAttribute dest = new IndoorSpaceAttribute();
+        unmarshalIndoorAttribute(src, dest);
+
+        dest.setFloorId(src.getFloorId());
+        dest.setIsRestricted(src.isIsRestricted());
+        dest.setSuite(src.getSuite());
+        dest.setIsPublic(src.isIsPublic());
+
+        if (src.isSetTollType())
+            dest.setTollType(helper.getGMLUnmarshaller().unmarshalCode(src.getTollType()));
+
+        return dest;
+    }
+
+    private IndoorFacilityAttribute unmarshalIndoorFacilityAttribute(IndoorFacilityAttributeType src) throws MissingADESchemaException {
+        IndoorFacilityAttribute dest = new IndoorFacilityAttribute();
+        unmarshalIndoorAttribute(src, dest);
+
+        dest.setWeekdayHours(src.getWeekdayHours());
+        dest.setWeekendHours(src.getWeekendHours());
+        dest.setPhone(src.getPhone());
+        dest.setWebsite(src.getWebsite());
+
+        return dest;
+    }
+
+    private IndoorStoreyAttribute unmarshalIndoorStoreyAttribute(IndoorStoreyAttributeType src) throws MissingADESchemaException {
+        IndoorStoreyAttribute dest = new IndoorStoreyAttribute();
+        unmarshalIndoorAttribute(src, dest);
+
+        dest.setCategory(src.isCategory());
+        dest.setOrdinal(src.getOrdinal());
+
+        return dest;
+    }
+
+    private IndoorTactileTileAttribute unmarshalIndoorTactileTileAttribute(IndoorTactileTileAttributeType src) throws MissingADESchemaException {
+        IndoorTactileTileAttribute dest = new IndoorTactileTileAttribute();
+        unmarshalIndoorAttribute(src, dest);
+
+        dest.setStartNode(src.getStartNode());
+        dest.setEndNode(src.getEndNode());
+
+        if (src.isSetCategory())
+            dest.setCategory(helper.getGMLUnmarshaller().unmarshalCode(src.getCategory()));
+
+        dest.setRoof(src.getRoof());
+        dest.setFloorId(src.getFloorId());
+
+        return dest;
+    }
+
+    private IndoorUserDefinedAttribute unmarshalIndoorUserDefinedAttribute(IndoorUserDefinedAttributeType src) throws MissingADESchemaException {
+        IndoorUserDefinedAttribute dest = new IndoorUserDefinedAttribute();
+        unmarshalIndoorAttribute(src, dest);
+
+        dest.setName(src.getName());
+
+        if (src.isSetNominalValue())
+            dest.setNominalValue(unmarshalUserDefinedValueProperty(src.getNominalValue()));
+
+        dest.setDescription(src.getDescription());
+        dest.setUnit(src.getUnit());
+
+        return dest;
+    }
+
+    private UserDefinedValue unmarshalUserDefinedValue(UserDefinedValueType src) throws MissingADESchemaException {
+        UserDefinedValue dest = new UserDefinedValue();
+
+        dest.setStringValue(src.getStringValue());
+
+        if (src.isSetIntValue())
+            dest.setIntValue(src.getIntValue().intValue());
+
+        dest.setDoubleValue(src.getDoubleValue());
+
+        if (src.isSetCodeValue())
+            dest.setCodeValue(helper.getGMLUnmarshaller().unmarshalCode(src.getCodeValue()));
+
+        if (src.isSetDateValue())
+            dest.setDateValue(src.getDateValue().toGregorianCalendar().toZonedDateTime().toLocalDate());
+
+        dest.setUriValue(src.getUriValue());
+
+        if (src.isSetMeasuredValue())
+            dest.setMeasuredValue(helper.getGMLUnmarshaller().unmarshalMeasure(src.getMeasuredValue()));
+
+        return dest;
+    }
+
+    private UserDefinedValueProperty unmarshalUserDefinedValueProperty(UserDefinedValuePropertyType src) throws MissingADESchemaException {
+        UserDefinedValueProperty dest = new UserDefinedValueProperty();
+
+        if (src.isSetUserDefinedValue())
+            dest.setObject(unmarshalUserDefinedValue(src.getUserDefinedValue()));
+
+        return dest;
+    }
+
+    private IndoorAttributeProperty unmarshalIndoorAttributeProperty(IndoorAttributePropertyType src) throws MissingADESchemaException {
+        IndoorAttributeProperty dest = new IndoorAttributeProperty();
+
+        if (src.isSetIndoorAttribute()) {
+            ModelObject object = helper.getJAXBUnmarshaller().unmarshal(src.getIndoorAttribute());
+            if (object instanceof IndoorAttribute)
+                dest.setObject((IndoorAttribute) object);
+        }
 
         return dest;
     }

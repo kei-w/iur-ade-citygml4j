@@ -3006,8 +3006,13 @@ public class UrbanFunctionUnmarshaller implements ADEUnmarshaller {
 
         dest.setIdentifier(src.getIdentifier());
         dest.setCompanyName(src.getCompanyName());
-        dest.setCompanyType(src.getCompanyType());
-        dest.setFacilityType(src.getFacilityType());
+
+        if (src.isSetCompanyType())
+            dest.setCompanyType(helper.getGMLUnmarshaller().unmarshalCode(src.getCompanyType()));
+
+        if (src.isSetFacilityType())
+            dest.setFacilityType(helper.getGMLUnmarshaller().unmarshalCode(src.getFacilityType()));
+
         dest.setSecionName(src.getSecionName());
 
         if (src.isSetFrequencyOfService())

@@ -3086,8 +3086,13 @@ public class UrbanFunctionMarshaller implements ADEMarshaller {
 
         dest.setIdentifier(src.getIdentifier());
         dest.setCompanyName(src.getCompanyName());
-        dest.setCompanyType(src.getCompanyType());
-        dest.setFacilityType(src.getFacilityType());
+
+        if (src.getCompanyType() != null)
+            dest.setCompanyType(helper.getGMLMarshaller().marshalCode(src.getCompanyType()));
+
+        if (src.getFacilityType() != null)
+            dest.setFacilityType(helper.getGMLMarshaller().marshalCode(src.getFacilityType()));
+
         dest.setSecionName(src.getSecionName());
 
         if (src.getFrequencyOfService() != null)

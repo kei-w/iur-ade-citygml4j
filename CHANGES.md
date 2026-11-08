@@ -60,6 +60,10 @@ Change Log
   `urt:Stop/point`, ...) and, in the GML walkers, those of the public transit data types held by
   `urt:dataType`; the generated `urf` walker methods of derived types gain the same visits.
 
+##### Changes (schema revisions, 2026-11-08)
+* The `urf` schema is updated to the latest published revision 3.1.1: `urf:PublicTransitFacility/companyType` and
+  `facilityType` are `gml:CodeType` (strings in 3.1.0), so their code spaces are kept.
+
 ##### Known limitations
 * `gml:pos` values (`uro:Elevation/elevationValue`, `uro:OffsetDepth/pos`) keep their coordinates only; `srsName` and
   `srsDimension` are not stored.

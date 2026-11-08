@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 17:59:35 JST 2026
+// Generated: Sun Nov 08 11:58:45 JST 2026
 //
 
 
@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
+import net.opengis.gml.CodeType;
 
 
 /**
@@ -27,8 +28,8 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence&gt;
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="companyName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="companyType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="facilityType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="companyType" type="{http://www.opengis.net/gml}CodeType" minOccurs="0"/&gt;
+ *         &lt;element name="facilityType" type="{http://www.opengis.net/gml}CodeType" minOccurs="0"/&gt;
  *         &lt;element name="secionName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="frequencyOfService" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
  *         &lt;element name="numberOfCustomers" type="{http://www.w3.org/2001/XMLSchema}integer" minOccurs="0"/&gt;
@@ -57,8 +58,8 @@ public class PublicTransitFacilityType
     @XmlElement(name = "id", required = true)
     protected String identifier;
     protected String companyName;
-    protected String companyType;
-    protected String facilityType;
+    protected CodeType companyType;
+    protected CodeType facilityType;
     protected String secionName;
     protected BigInteger frequencyOfService;
     protected BigInteger numberOfCustomers;
@@ -124,10 +125,10 @@ public class PublicTransitFacilityType
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link CodeType }
      *     
      */
-    public String getCompanyType() {
+    public CodeType getCompanyType() {
         return companyType;
     }
 
@@ -136,10 +137,10 @@ public class PublicTransitFacilityType
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link CodeType }
      *     
      */
-    public void setCompanyType(String value) {
+    public void setCompanyType(CodeType value) {
         this.companyType = value;
     }
 
@@ -152,10 +153,10 @@ public class PublicTransitFacilityType
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link CodeType }
      *     
      */
-    public String getFacilityType() {
+    public CodeType getFacilityType() {
         return facilityType;
     }
 
@@ -164,10 +165,10 @@ public class PublicTransitFacilityType
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link CodeType }
      *     
      */
-    public void setFacilityType(String value) {
+    public void setFacilityType(CodeType value) {
         this.facilityType = value;
     }
 

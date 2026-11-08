@@ -24,12 +24,14 @@ package org.citygml4j.ade.iur.model.urf;
 
 import org.citygml4j.builder.copy.CopyBuilder;
 import org.citygml4j.builder.copy.ObjectCopier;
+import org.citygml4j.model.common.base.ModelObjects;
+import org.citygml4j.model.gml.basicTypes.Code;
 
 public class PublicTransitFacility extends UrbanFunction {
     private String identifier;
     private String companyName;
-    private String companyType;
-    private String facilityType;
+    private Code companyType;
+    private Code facilityType;
     private String secionName;
     private Integer frequencyOfService;
     private Integer numberOfCustomers;
@@ -50,20 +52,20 @@ public class PublicTransitFacility extends UrbanFunction {
         this.companyName = companyName;
     }
 
-    public String getCompanyType() {
+    public Code getCompanyType() {
         return companyType;
     }
 
-    public void setCompanyType(String companyType) {
-        this.companyType = companyType;
+    public void setCompanyType(Code companyType) {
+        this.companyType = ModelObjects.setParent(companyType, this);
     }
 
-    public String getFacilityType() {
+    public Code getFacilityType() {
         return facilityType;
     }
 
-    public void setFacilityType(String facilityType) {
-        this.facilityType = facilityType;
+    public void setFacilityType(Code facilityType) {
+        this.facilityType = ModelObjects.setParent(facilityType, this);
     }
 
     public String getSecionName() {

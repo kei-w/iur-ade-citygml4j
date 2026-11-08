@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:uro="https://www.geospatial.jp/iur/uro/3.0" xmlns:core="http://www.opengis.net/citygml/2.0" xmlns:luse="http://www.opengis.net/citygml/landuse/2.0" xmlns:bldg="http://www.opengis.net/citygml/building/2.0" xmlns:brid="http://www.opengis.net/citygml/bridge/2.0" xmlns:tran="http://www.opengis.net/citygml/transportation/2.0" xmlns:tun="http://www.opengis.net/citygml/tunnel/2.0" xmlns:grp="http://www.opengis.net/citygml/cityobjectgroup/2.0" xmlns:frn="http://www.opengis.net/citygml/cityfurniture/2.0" xmlns:veg="http://www.opengis.net/citygml/vegetation/2.0" xmlns:wtr="http://www.opengis.net/citygml/waterbody/2.0" xmlns:dem="http://www.opengis.net/citygml/relief/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" targetNamespace="https://www.geospatial.jp/iur/uro/3.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.0.3">
+<xs:schema xmlns:uro="https://www.geospatial.jp/iur/uro/3.0" xmlns:core="http://www.opengis.net/citygml/2.0" xmlns:luse="http://www.opengis.net/citygml/landuse/2.0" xmlns:bldg="http://www.opengis.net/citygml/building/2.0" xmlns:brid="http://www.opengis.net/citygml/bridge/2.0" xmlns:tran="http://www.opengis.net/citygml/transportation/2.0" xmlns:tun="http://www.opengis.net/citygml/tunnel/2.0" xmlns:grp="http://www.opengis.net/citygml/cityobjectgroup/2.0" xmlns:frn="http://www.opengis.net/citygml/cityfurniture/2.0" xmlns:veg="http://www.opengis.net/citygml/vegetation/2.0" xmlns:wtr="http://www.opengis.net/citygml/waterbody/2.0" xmlns:dem="http://www.opengis.net/citygml/relief/2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml" targetNamespace="https://www.geospatial.jp/iur/uro/3.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.0.4">
 	<xs:annotation>
 		<xs:documentation>XML Schema for Urban Object module</xs:documentation>
 	</xs:annotation>
@@ -58,6 +58,7 @@
 	<xs:element name="bldgFacilityTypeAttribute" type="uro:FacilityTypeAttributePropertyType" substitutionGroup="bldg:_GenericApplicationPropertyOfAbstractBuilding"/>
 	<xs:element name="bldgFacilityAttribute" type="uro:FacilityAttributePropertyType" substitutionGroup="bldg:_GenericApplicationPropertyOfAbstractBuilding"/>
 	<xs:element name="bldgDmAttribute" type="uro:DmAttributePropertyType" substitutionGroup="bldg:_GenericApplicationPropertyOfAbstractBuilding"/>
+	<xs:element name="bldgRealEstateIDAttribute" type="uro:RealEstateIDAttributePropertyType" substitutionGroup="bldg:_GenericApplicationPropertyOfAbstractBuilding"/>
 	<!-- ==================================================== -->
 	<xs:element name="luseFacilityIdAttribute" type="uro:FacilityIdAttributePropertyType" substitutionGroup="luse:_GenericApplicationPropertyOfLandUse"/>
 	<xs:element name="luseFacilityTypeAttribute" type="uro:FacilityTypeAttributePropertyType" substitutionGroup="luse:_GenericApplicationPropertyOfLandUse"/>
@@ -71,6 +72,31 @@
 	<!-- ==================================================== -->
 	<xs:element name="demDmAttribute" type="uro:DmAttributePropertyType" substitutionGroup="dem:_GenericApplicationPropertyOfReliefComponent"/>
 	<!-- ==================================================== -->
+	<xs:element name="RealEstateIDAttribute" type="uro:RealEstateIDAttributeType" substitutionGroup="uro:BuildingAttribute">
+		<xs:annotation>
+			<xs:documentation>不動産ID</xs:documentation>
+			<xs:documentation>第3.3版追加</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="RealEstateIDAttributeType">
+		<xs:complexContent>
+			<xs:extension base="uro:BuildingAttributeType">
+				<xs:sequence>
+					<xs:element name="realEstateIDOfBuilding" type="xs:string"/>
+					<xs:element name="numberOfBuildingUnitOwnership" type="xs:integer" minOccurs="0"/>
+					<xs:element name="realEstateIDOfBuildingUnitOwnership" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="numberOfRealEstateIDOfLand" type="xs:integer" minOccurs="0"/>
+					<xs:element name="realEstateIDOfLand" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="matchingScore" type="xs:integer"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RealEstateIDAttributePropertyType">
+		<xs:sequence>
+			<xs:element ref="uro:RealEstateIDAttribute"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="FacilityTypeAttribute" type="uro:FacilityTypeAttributeType"/>
 	<xs:complexType name="FacilityTypeAttributePropertyType">
 		<xs:sequence>
@@ -1460,7 +1486,11 @@
 			<xs:element name="urbanPlanningAreaName" type="xs:string" minOccurs="0"/>
 			<xs:element name="enforcer" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="dateOfDecision" type="xs:date" minOccurs="0"/>
-			<xs:element name="dateOfRevision" type="xs:date" minOccurs="0" maxOccurs="unbounded"><xs:annotation><xs:documentation>第3.2版修正</xs:documentation></xs:annotation></xs:element>
+			<xs:element name="dateOfRevision" type="xs:date" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>第3.2版修正</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="areaPlanned" type="gml:MeasureType" minOccurs="0"/>
 			<xs:element name="areaInService" type="gml:MeasureType" minOccurs="0"/>
 			<xs:element name="remarks" type="xs:string" minOccurs="0"/>
@@ -1660,13 +1690,16 @@
 		</xs:sequence>
 		<xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
 	</xs:complexType>
-	<xs:complexType name="AppurtenanceType"><xs:annotation><xs:documentation>第3.2版修正</xs:documentation></xs:annotation>
+	<xs:complexType name="AppurtenanceType">
+		<xs:annotation>
+			<xs:documentation>第3.2版修正</xs:documentation>
+		</xs:annotation>
 		<xs:complexContent>
-		<xs:extension base="uro:UtilityNodeType">
-		<xs:sequence>
-			<xs:element name="appurtenanceType" type="gml:CodeType" minOccurs="0"/>
-		</xs:sequence>		
-		</xs:extension>
+			<xs:extension base="uro:UtilityNodeType">
+				<xs:sequence>
+					<xs:element name="appurtenanceType" type="gml:CodeType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="UtilityNodeContainer" type="uro:UtilityNodeContainerType" abstract="true" substitutionGroup="uro:UtilityNetworkElement">
@@ -1883,7 +1916,11 @@
 			<xs:documentation>第3.2版修正</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="pos" type="gml:DirectPositionType" minOccurs="0"><xs:annotation><xs:documentation>第3.2版修正</xs:documentation></xs:annotation></xs:element>
+			<xs:element name="pos" type="gml:DirectPositionType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>第3.2版修正</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="offset" type="gml:LengthType" minOccurs="0"/>
 			<xs:element name="depth" type="gml:LengthType" minOccurs="0"/>
 			<xs:element name="minDepth" type="gml:LengthType" minOccurs="0"/>
@@ -1901,7 +1938,11 @@
 		<xs:complexContent>
 			<xs:extension base="uro:FacilityAttributeType">
 				<xs:sequence>
-					<xs:element name="maintenanceType" type="gml:CodeType"><xs:annotation><xs:documentation>第3.2版修正</xs:documentation></xs:annotation></xs:element>
+					<xs:element name="maintenanceType" type="gml:CodeType">
+						<xs:annotation>
+							<xs:documentation>第3.2版修正</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="maintenanceFiscalYear" type="xs:gYear" minOccurs="0"/>
 					<xs:element name="maintenanceYear" type="xs:gYear" minOccurs="0"/>
 					<xs:element name="maintenanceDate" type="xs:date" minOccurs="0"/>

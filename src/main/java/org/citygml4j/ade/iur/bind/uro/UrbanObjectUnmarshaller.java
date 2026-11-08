@@ -99,6 +99,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                     .with(TunnelStructureAttributePropertyType.class, this::unmarshalTunnelStructureAttributeProperty)
                     .with(TunnelFunctionalAttributeType.class, this::unmarshalTunnelFunctionalAttribute)
                     .with(TunnelFunctionalAttributePropertyType.class, this::unmarshalTunnelFunctionalAttributeProperty)
+                    .with(RealEstateIDAttributeType.class, this::unmarshalRealEstateIDAttribute)
+                    .with(RealEstateIDAttributePropertyType.class, this::unmarshalRealEstateIDAttributeProperty)
                     .with(RailwayRouteAttributeType.class, this::unmarshalRailwayRouteAttribute)
                     .with(RailwayRouteAttributePropertyType.class, this::unmarshalRailwayRouteAttributeProperty)
                     .with(RailwayTrackAttributeType.class, this::unmarshalRailwayTrackAttribute)
@@ -339,6 +341,8 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
                 return new BldgFacilityAttributePropertyElement(unmarshalFacilityAttributeProperty((FacilityAttributePropertyType) value));
             case "bldgDmAttribute":
                 return new BldgDmAttributePropertyElement(unmarshalDmAttributeProperty((DmAttributePropertyType) value));
+            case "bldgRealEstateIDAttribute":
+                return new BldgRealEstateIDAttributePropertyElement(unmarshalRealEstateIDAttributeProperty((RealEstateIDAttributePropertyType) value));
             case "luseFacilityIdAttribute":
                 return new LuseFacilityIdAttributePropertyElement(unmarshalFacilityIdAttributeProperty((FacilityIdAttributePropertyType) value));
             case "luseFacilityTypeAttribute":
@@ -1967,6 +1971,42 @@ public class UrbanObjectUnmarshaller implements ADEUnmarshaller {
 
         if (src.isSetTunnelFunctionalAttribute())
             dest.setObject(unmarshalTunnelFunctionalAttribute(src.getTunnelFunctionalAttribute()));
+
+        return dest;
+    }
+
+    private RealEstateIDAttribute unmarshalRealEstateIDAttribute(RealEstateIDAttributeType src) throws MissingADESchemaException {
+        RealEstateIDAttribute dest = new RealEstateIDAttribute();
+
+        dest.setRealEstateIDOfBuilding(src.getRealEstateIDOfBuilding());
+
+        if (src.isSetNumberOfBuildingUnitOwnership())
+            dest.setNumberOfBuildingUnitOwnership(src.getNumberOfBuildingUnitOwnership().intValue());
+
+        if (src.isSetRealEstateIDOfBuildingUnitOwnership()) {
+            for (String realEstateIDOfBuildingUnitOwnership : src.getRealEstateIDOfBuildingUnitOwnership())
+                dest.getRealEstateIDOfBuildingUnitOwnership().add(realEstateIDOfBuildingUnitOwnership);
+        }
+
+        if (src.isSetNumberOfRealEstateIDOfLand())
+            dest.setNumberOfRealEstateIDOfLand(src.getNumberOfRealEstateIDOfLand().intValue());
+
+        if (src.isSetRealEstateIDOfLand()) {
+            for (String realEstateIDOfLand : src.getRealEstateIDOfLand())
+                dest.getRealEstateIDOfLand().add(realEstateIDOfLand);
+        }
+
+        if (src.isSetMatchingScore())
+            dest.setMatchingScore(src.getMatchingScore().intValue());
+
+        return dest;
+    }
+
+    private RealEstateIDAttributeProperty unmarshalRealEstateIDAttributeProperty(RealEstateIDAttributePropertyType src) throws MissingADESchemaException {
+        RealEstateIDAttributeProperty dest = new RealEstateIDAttributeProperty();
+
+        if (src.isSetRealEstateIDAttribute())
+            dest.setObject(unmarshalRealEstateIDAttribute(src.getRealEstateIDAttribute()));
 
         return dest;
     }

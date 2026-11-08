@@ -58,6 +58,11 @@ Change Log
   `urt:Stop/point`, ...) and, in the GML walkers, those of the public transit data types held by
   `urt:dataType`; the generated `urf` walker methods of derived types gain the same visits.
 
+##### Changes (schema revisions, 2026-11-08)
+* The `uro` schema is updated to the latest published revision 3.0.4, which adds the building attribute
+  `uro:bldgRealEstateIDAttribute` (`RealEstateIDAttribute`, a `BuildingAttribute`); the model, binding and JAXB
+  classes are regenerated.
+
 ##### Known limitations
 * `uro:ControlPoint/uro:parameter` is not supported: the 3.0 XSD declares it with the type of `uro:ControlPoint` itself.
 * `gml:pos` values (`uro:Elevation/elevationValue`, `uro:OffsetDepth/pos`) keep their coordinates only; `srsName` and

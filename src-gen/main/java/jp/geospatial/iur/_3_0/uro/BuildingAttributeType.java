@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 17:21:15 JST 2026
+// Generated: Sun Nov 08 11:52:47 JST 2026
 //
 
 
@@ -35,6 +35,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "BuildingAttributeType")
 @XmlSeeAlso({
+    RealEstateIDAttributeType.class,
     BuildingIDAttributeType.class,
     BuildingDetailAttributeType.class,
     LargeCustomerFacilityAttributeType.class,

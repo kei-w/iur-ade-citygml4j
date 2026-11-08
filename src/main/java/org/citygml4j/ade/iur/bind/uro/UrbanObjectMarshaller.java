@@ -89,6 +89,7 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(TransportationDataQualityAttribute.class, this::createTransportationDataQualityAttribute)
                     .with(TunnelStructureAttribute.class, this::createTunnelStructureAttribute)
                     .with(TunnelFunctionalAttribute.class, this::createTunnelFunctionalAttribute)
+                    .with(RealEstateIDAttribute.class, this::createRealEstateIDAttribute)
                     .with(RailwayRouteAttribute.class, this::createRailwayRouteAttribute)
                     .with(RailwayTrackAttribute.class, this::createRailwayTrackAttribute)
                     .with(ControlPoint.class, this::createControlPoint)
@@ -233,6 +234,7 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(BldgFacilityTypeAttributePropertyElement.class, this::createBldgFacilityTypeAttributePropertyElement)
                     .with(BldgFacilityAttributePropertyElement.class, this::createBldgFacilityAttributePropertyElement)
                     .with(BldgDmAttributePropertyElement.class, this::createBldgDmAttributePropertyElement)
+                    .with(BldgRealEstateIDAttributePropertyElement.class, this::createBldgRealEstateIDAttributePropertyElement)
                     .with(LuseFacilityIdAttributePropertyElement.class, this::createLuseFacilityIdAttributePropertyElement)
                     .with(LuseFacilityTypeAttributePropertyElement.class, this::createLuseFacilityTypeAttributePropertyElement)
                     .with(LuseFacilityAttributePropertyElement.class, this::createLuseFacilityAttributePropertyElement)
@@ -341,6 +343,8 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
                     .with(TunnelStructureAttributeProperty.class, this::marshalTunnelStructureAttributeProperty)
                     .with(TunnelFunctionalAttribute.class, this::marshalTunnelFunctionalAttribute)
                     .with(TunnelFunctionalAttributeProperty.class, this::marshalTunnelFunctionalAttributeProperty)
+                    .with(RealEstateIDAttribute.class, this::marshalRealEstateIDAttribute)
+                    .with(RealEstateIDAttributeProperty.class, this::marshalRealEstateIDAttributeProperty)
                     .with(RailwayRouteAttribute.class, this::marshalRailwayRouteAttribute)
                     .with(RailwayRouteAttributeProperty.class, this::marshalRailwayRouteAttributeProperty)
                     .with(RailwayTrackAttribute.class, this::marshalRailwayTrackAttribute)
@@ -1966,6 +1970,38 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
         if (src.isSetObject())
             dest.setTunnelFunctionalAttribute(marshalTunnelFunctionalAttribute(src.getObject()));
+
+        return dest;
+    }
+
+    private RealEstateIDAttributeType marshalRealEstateIDAttribute(RealEstateIDAttribute src) {
+        RealEstateIDAttributeType dest = factory.createRealEstateIDAttributeType();
+
+        dest.setRealEstateIDOfBuilding(src.getRealEstateIDOfBuilding());
+
+        if (src.getNumberOfBuildingUnitOwnership() != null)
+            dest.setNumberOfBuildingUnitOwnership(BigInteger.valueOf(src.getNumberOfBuildingUnitOwnership()));
+
+        for (String realEstateIDOfBuildingUnitOwnership : src.getRealEstateIDOfBuildingUnitOwnership())
+            dest.getRealEstateIDOfBuildingUnitOwnership().add(realEstateIDOfBuildingUnitOwnership);
+
+        if (src.getNumberOfRealEstateIDOfLand() != null)
+            dest.setNumberOfRealEstateIDOfLand(BigInteger.valueOf(src.getNumberOfRealEstateIDOfLand()));
+
+        for (String realEstateIDOfLand : src.getRealEstateIDOfLand())
+            dest.getRealEstateIDOfLand().add(realEstateIDOfLand);
+
+        if (src.getMatchingScore() != null)
+            dest.setMatchingScore(BigInteger.valueOf(src.getMatchingScore()));
+
+        return dest;
+    }
+
+    private RealEstateIDAttributePropertyType marshalRealEstateIDAttributeProperty(RealEstateIDAttributeProperty src) {
+        RealEstateIDAttributePropertyType dest = factory.createRealEstateIDAttributePropertyType();
+
+        if (src.isSetObject())
+            dest.setRealEstateIDAttribute(marshalRealEstateIDAttribute(src.getObject()));
 
         return dest;
     }
@@ -4620,6 +4656,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
         return factory.createTunnelFunctionalAttribute(marshalTunnelFunctionalAttribute(src));
     }
 
+    private JAXBElement<?> createRealEstateIDAttribute(RealEstateIDAttribute src) {
+        return factory.createRealEstateIDAttribute(marshalRealEstateIDAttribute(src));
+    }
+
     private JAXBElement<?> createRailwayRouteAttribute(RailwayRouteAttribute src) {
         return factory.createRailwayRouteAttribute(marshalRailwayRouteAttribute(src));
     }
@@ -5194,6 +5234,10 @@ public class UrbanObjectMarshaller implements ADEMarshaller {
 
     private JAXBElement<?> createBldgDmAttributePropertyElement(BldgDmAttributePropertyElement src) {
         return factory.createBldgDmAttribute(marshalDmAttributeProperty(src.getValue()));
+    }
+
+    private JAXBElement<?> createBldgRealEstateIDAttributePropertyElement(BldgRealEstateIDAttributePropertyElement src) {
+        return factory.createBldgRealEstateIDAttribute(marshalRealEstateIDAttributeProperty(src.getValue()));
     }
 
     private JAXBElement<?> createLuseFacilityIdAttributePropertyElement(LuseFacilityIdAttributePropertyElement src) {

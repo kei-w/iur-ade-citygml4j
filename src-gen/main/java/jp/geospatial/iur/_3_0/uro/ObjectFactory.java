@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 17:21:15 JST 2026
+// Generated: Sun Nov 08 11:52:47 JST 2026
 //
 
 
@@ -70,6 +70,7 @@ public class ObjectFactory {
     private final static QName _BldgFacilityTypeAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "bldgFacilityTypeAttribute");
     private final static QName _BldgFacilityAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "bldgFacilityAttribute");
     private final static QName _BldgDmAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "bldgDmAttribute");
+    private final static QName _BldgRealEstateIDAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "bldgRealEstateIDAttribute");
     private final static QName _LuseFacilityIdAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "luseFacilityIdAttribute");
     private final static QName _LuseFacilityTypeAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "luseFacilityTypeAttribute");
     private final static QName _LuseFacilityAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "luseFacilityAttribute");
@@ -79,6 +80,8 @@ public class ObjectFactory {
     private final static QName _WtrFacilityAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "wtrFacilityAttribute");
     private final static QName _WtrDmAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "wtrDmAttribute");
     private final static QName _DemDmAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "demDmAttribute");
+    private final static QName _RealEstateIDAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "RealEstateIDAttribute");
+    private final static QName _BuildingAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "BuildingAttribute");
     private final static QName _FacilityTypeAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "FacilityTypeAttribute");
     private final static QName _FacilityIdAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "FacilityIdAttribute");
     private final static QName _RiverFacilityIdAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "RiverFacilityIdAttribute");
@@ -248,7 +251,6 @@ public class ObjectFactory {
     private final static QName _BuildingDisasterRiskAttributeProperty_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "buildingDisasterRiskAttribute");
     private final static QName _KeyValuePairAttributeProperty_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "keyValuePairAttribute");
     private final static QName _BuildingDataQualityAttributeProperty_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "buildingDataQualityAttribute");
-    private final static QName _BuildingAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "BuildingAttribute");
     private final static QName _BuildingIDAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "BuildingIDAttribute");
     private final static QName _BuildingDetailAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "BuildingDetailAttribute");
     private final static QName _LargeCustomerFacilityAttribute_QNAME = new QName("https://www.geospatial.jp/iur/uro/3.0", "LargeCustomerFacilityAttribute");
@@ -408,6 +410,22 @@ public class ObjectFactory {
      */
     public TunnelFunctionalAttributePropertyType createTunnelFunctionalAttributePropertyType() {
         return new TunnelFunctionalAttributePropertyType();
+    }
+
+    /**
+     * Create an instance of {@link RealEstateIDAttributePropertyType }
+     * 
+     */
+    public RealEstateIDAttributePropertyType createRealEstateIDAttributePropertyType() {
+        return new RealEstateIDAttributePropertyType();
+    }
+
+    /**
+     * Create an instance of {@link RealEstateIDAttributeType }
+     * 
+     */
+    public RealEstateIDAttributeType createRealEstateIDAttributeType() {
+        return new RealEstateIDAttributeType();
     }
 
     /**
@@ -3300,6 +3318,19 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RealEstateIDAttributePropertyType }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link RealEstateIDAttributePropertyType }{@code >}
+     */
+    @XmlElementDecl(namespace = "https://www.geospatial.jp/iur/uro/3.0", name = "bldgRealEstateIDAttribute", substitutionHeadNamespace = "http://www.opengis.net/citygml/building/2.0", substitutionHeadName = "_GenericApplicationPropertyOfAbstractBuilding")
+    public JAXBElement<RealEstateIDAttributePropertyType> createBldgRealEstateIDAttribute(RealEstateIDAttributePropertyType value) {
+        return new JAXBElement<RealEstateIDAttributePropertyType>(_BldgRealEstateIDAttribute_QNAME, RealEstateIDAttributePropertyType.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link FacilityIdAttributePropertyType }{@code >}
      * 
      * @param value
@@ -3414,6 +3445,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "https://www.geospatial.jp/iur/uro/3.0", name = "demDmAttribute", substitutionHeadNamespace = "http://www.opengis.net/citygml/relief/2.0", substitutionHeadName = "_GenericApplicationPropertyOfReliefComponent")
     public JAXBElement<DmAttributePropertyType> createDemDmAttribute(DmAttributePropertyType value) {
         return new JAXBElement<DmAttributePropertyType>(_DemDmAttribute_QNAME, DmAttributePropertyType.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RealEstateIDAttributeType }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link RealEstateIDAttributeType }{@code >}
+     */
+    @XmlElementDecl(namespace = "https://www.geospatial.jp/iur/uro/3.0", name = "RealEstateIDAttribute", substitutionHeadNamespace = "https://www.geospatial.jp/iur/uro/3.0", substitutionHeadName = "BuildingAttribute")
+    public JAXBElement<RealEstateIDAttributeType> createRealEstateIDAttribute(RealEstateIDAttributeType value) {
+        return new JAXBElement<RealEstateIDAttributeType>(_RealEstateIDAttribute_QNAME, RealEstateIDAttributeType.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link BuildingAttributeType }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link BuildingAttributeType }{@code >}
+     */
+    @XmlElementDecl(namespace = "https://www.geospatial.jp/iur/uro/3.0", name = "BuildingAttribute")
+    public JAXBElement<BuildingAttributeType> createBuildingAttribute(BuildingAttributeType value) {
+        return new JAXBElement<BuildingAttributeType>(_BuildingAttribute_QNAME, BuildingAttributeType.class, null, value);
     }
 
     /**
@@ -5611,19 +5668,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "https://www.geospatial.jp/iur/uro/3.0", name = "buildingDataQualityAttribute", substitutionHeadNamespace = "http://www.opengis.net/citygml/building/2.0", substitutionHeadName = "_GenericApplicationPropertyOfAbstractBuilding")
     public JAXBElement<BuildingDataQualityAttributePropertyType> createBuildingDataQualityAttributeProperty(BuildingDataQualityAttributePropertyType value) {
         return new JAXBElement<BuildingDataQualityAttributePropertyType>(_BuildingDataQualityAttributeProperty_QNAME, BuildingDataQualityAttributePropertyType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BuildingAttributeType }{@code >}
-     * 
-     * @param value
-     *     Java instance representing xml element's value.
-     * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link BuildingAttributeType }{@code >}
-     */
-    @XmlElementDecl(namespace = "https://www.geospatial.jp/iur/uro/3.0", name = "BuildingAttribute")
-    public JAXBElement<BuildingAttributeType> createBuildingAttribute(BuildingAttributeType value) {
-        return new JAXBElement<BuildingAttributeType>(_BuildingAttribute_QNAME, BuildingAttributeType.class, null, value);
     }
 
     /**

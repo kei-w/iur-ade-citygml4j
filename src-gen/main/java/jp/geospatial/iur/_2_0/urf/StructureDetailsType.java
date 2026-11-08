@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 20:15:07 JST 2026
+// Generated: Sun Nov 08 12:02:58 JST 2026
 //
 
 
@@ -10,6 +10,7 @@ package jp.geospatial.iur._2_0.urf;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import net.opengis.gml.CodeType;
 import net.opengis.gml.LengthType;
@@ -25,8 +26,8 @@ import net.opengis.gml.LengthType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="startLocation" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="endLocation" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="startLocation" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="endLocation" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="viaLocations" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="length" type="{http://www.opengis.net/gml}LengthType" minOccurs="0"/&gt;
  *         &lt;element name="structureType" type="{http://www.opengis.net/gml}CodeType" minOccurs="0"/&gt;
@@ -56,7 +57,9 @@ import net.opengis.gml.LengthType;
 })
 public class StructureDetailsType {
 
+    @XmlElement(required = true)
     protected String startLocation;
+    @XmlElement(required = true)
     protected String endLocation;
     protected String viaLocations;
     protected LengthType length;

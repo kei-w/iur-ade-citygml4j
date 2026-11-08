@@ -50,6 +50,11 @@ Change Log
   `urt:Stop/point`, ...) and, in the GML walkers, those of the public transit data types held by
   `urt:dataType`; the generated `urf` walker methods of derived types gain the same visits.
 
+##### Changes (schema revisions, 2026-11-08)
+* The `urf` schema is updated to the 2.0 schema published on geospatial.jp (the Hachioji 2020 dataset ships an
+  earlier file with the same namespace): `urf:SpecialUseAttractionDistrict/maximumBuildingHeight` is a
+  `gml:StringOrRefType`.
+
 ##### Known limitations
 * `uro:ControlPoint/uro:parameter` is not supported: the 2.0 XSD declares it with the type of `uro:ControlPoint` itself.
 * `urg:StatisticalGrid/urg:value` (`xs:anyType`) is not supported.

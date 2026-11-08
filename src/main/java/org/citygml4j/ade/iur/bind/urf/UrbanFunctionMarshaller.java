@@ -765,7 +765,8 @@ public class UrbanFunctionMarshaller implements ADEMarshaller {
         if (src.getMinimumBuildingArea() != null)
             dest.setMinimumBuildingArea(helper.getGMLMarshaller().marshalMeasure(src.getMinimumBuildingArea()));
 
-        dest.setMaximumBuildingHeight(src.getMaximumBuildingHeight());
+        if (src.getMaximumBuildingHeight() != null)
+            dest.setMaximumBuildingHeight(helper.getGMLMarshaller().marshalStringOrRef(src.getMaximumBuildingHeight()));
 
         if (src.getOtherRestrictions() != null)
             dest.setOtherRestrictions(helper.getGMLMarshaller().marshalStringOrRef(src.getOtherRestrictions()));

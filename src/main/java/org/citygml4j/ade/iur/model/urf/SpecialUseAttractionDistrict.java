@@ -33,7 +33,7 @@ public class SpecialUseAttractionDistrict extends DistrictsAndZones {
     private Double maximumFloorAreaRate;
     private Double minimumFloorAreaRate;
     private Measure minimumBuildingArea;
-    private String maximumBuildingHeight;
+    private StringOrRef maximumBuildingHeight;
     private StringOrRef otherRestrictions;
 
     public StringOrRef getUseToBeInduced() {
@@ -68,12 +68,12 @@ public class SpecialUseAttractionDistrict extends DistrictsAndZones {
         this.minimumBuildingArea = ModelObjects.setParent(minimumBuildingArea, this);
     }
 
-    public String getMaximumBuildingHeight() {
+    public StringOrRef getMaximumBuildingHeight() {
         return maximumBuildingHeight;
     }
 
-    public void setMaximumBuildingHeight(String maximumBuildingHeight) {
-        this.maximumBuildingHeight = maximumBuildingHeight;
+    public void setMaximumBuildingHeight(StringOrRef maximumBuildingHeight) {
+        this.maximumBuildingHeight = ModelObjects.setParent(maximumBuildingHeight, this);
     }
 
     public StringOrRef getOtherRestrictions() {

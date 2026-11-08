@@ -2,7 +2,7 @@
 // Generated with ade-xjc - XML Schema binding compiler for CityGML ADEs, version 2.10.0
 // ade-xjc is part of the citygml4j project, see https://github.com/citygml4j
 // Any modifications to this file will be lost upon recompilation of the source
-// Generated: Sat Nov 07 20:15:07 JST 2026
+// Generated: Sun Nov 08 12:02:58 JST 2026
 //
 
 
@@ -30,7 +30,7 @@ import net.opengis.gml.StringOrRefType;
  *         &lt;element name="maximumFloorAreaRate" type="{http://www.w3.org/2001/XMLSchema}double"/&gt;
  *         &lt;element name="minimumFloorAreaRate" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
  *         &lt;element name="minimumBuildingArea" type="{http://www.opengis.net/gml}MeasureType" minOccurs="0"/&gt;
- *         &lt;element name="maximumBuildingHeight" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="maximumBuildingHeight" type="{http://www.opengis.net/gml}StringOrRefType" minOccurs="0"/&gt;
  *         &lt;element name="otherRestrictions" type="{http://www.opengis.net/gml}StringOrRefType" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/extension&gt;
@@ -58,7 +58,7 @@ public class SpecialUseAttractionDistrictType
     protected double maximumFloorAreaRate;
     protected Double minimumFloorAreaRate;
     protected MeasureType minimumBuildingArea;
-    protected String maximumBuildingHeight;
+    protected StringOrRefType maximumBuildingHeight;
     protected StringOrRefType otherRestrictions;
 
     /**
@@ -170,10 +170,10 @@ public class SpecialUseAttractionDistrictType
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link StringOrRefType }
      *     
      */
-    public String getMaximumBuildingHeight() {
+    public StringOrRefType getMaximumBuildingHeight() {
         return maximumBuildingHeight;
     }
 
@@ -182,10 +182,10 @@ public class SpecialUseAttractionDistrictType
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link StringOrRefType }
      *     
      */
-    public void setMaximumBuildingHeight(String value) {
+    public void setMaximumBuildingHeight(StringOrRefType value) {
         this.maximumBuildingHeight = value;
     }
 

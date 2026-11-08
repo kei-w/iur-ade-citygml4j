@@ -656,7 +656,8 @@ public class UrbanFunctionUnmarshaller implements ADEUnmarshaller {
         if (src.isSetMinimumBuildingArea())
             dest.setMinimumBuildingArea(helper.getGMLUnmarshaller().unmarshalMeasure(src.getMinimumBuildingArea()));
 
-        dest.setMaximumBuildingHeight(src.getMaximumBuildingHeight());
+        if (src.isSetMaximumBuildingHeight())
+            dest.setMaximumBuildingHeight(helper.getGMLUnmarshaller().unmarshalStringOrRef(src.getMaximumBuildingHeight()));
 
         if (src.isSetOtherRestrictions())
             dest.setOtherRestrictions(helper.getGMLUnmarshaller().unmarshalStringOrRef(src.getOtherRestrictions()));
